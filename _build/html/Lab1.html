@@ -513,7 +513,7 @@ alias python=&#39;python3&#39;
 </div>
 <div class="section" id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
-<p>The distribution of pixels in your above image should not have many outliers beyond 3-sigma from the mean, but there will be some. Find the location of any 2 sigma outliers in the image, and highlight them by circling their location.
+<p>The distribution of pixels in your above image should not have many outliers beyond 3-sigma from the mean, but there will be some. Find the location of any 3-sigma outliers in the image, and highlight them by circling their location.
 Confirm that the fraction of these out of the total number of pixels agrees with the expectation for a normal distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -574,7 +574,9 @@ Confirm that the fraction of these out of the total number of pixels agrees with
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">16</span><span class="p">])</span>
+<span class="c1"># Your Code</span>
 </pre></div>
 </div>
 </div>
@@ -911,7 +913,7 @@ T_{\rm vir} \simeq 5.6\times10^4\;\textrm{K}\left(\frac{\mu}{0.59}\right)\left(\
     <div class="container">
       <p>
         
-          By The Jupyter Book community<br/>
+          By Imad Pasha & Marla Geha<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

@@ -193,7 +193,7 @@ conda install -n a330 numpy scipy astropy matplotlib
 
 # ## Question 2
 # 
-# The distribution of pixels in your above image should not have many outliers beyond 3-sigma from the mean, but there will be some. Find the location of any 2 sigma outliers in the image, and highlight them by circling their location. 
+# The distribution of pixels in your above image should not have many outliers beyond 3-sigma from the mean, but there will be some. Find the location of any 3-sigma outliers in the image, and highlight them by circling their location. 
 # Confirm that the fraction of these out of the total number of pixels agrees with the expectation for a normal distribution.
 
 # In[ ]:
@@ -256,9 +256,11 @@ for i in a:
 # The command `np.newaxis` will be useful here, or for a slightly longer solution, try `np.repeat` and `reshape()`. 
 # ```
 
-# In[3]:
+# In[ ]:
 
 
+a = np.array([1,5,10,20])
+b = np.array([1,2,4,16])
 # Your Code
 
 
