@@ -1,0 +1,1037 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 2: Astronomical Imaging I &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Lab 1: Overview, Review, and Environments" href="../Lab1/Lab1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lab2/Lab2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lab2/Lab2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-the-glove-fits">
+   If the glove
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     FITS
+    </span>
+   </code>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-loading-a-fits-file">
+     Problem 1: Loading a FITS file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-data-i-o">
+     Problem 2: Data I/O
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-2-1">
+       Problem 2.1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-2-2">
+       Problem 2.2
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-2-3">
+       Problem 2.3
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-2-4">
+       Problem 2.4
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-cutouts-and-aperture-photometry">
+     Problem 3: Cutouts and Aperture Photometry
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-3-1">
+       Problem 3.1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-3-2">
+       Problem 3.2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-4-continuum-subtraction">
+     Problem 4: Continuum Subtraction
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-4-1">
+       Problem 4.1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-4-2">
+       Problem 4.2
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-4-3">
+       Problem 4.3
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-4-4">
+       Problem 4.4
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#problem-4-5">
+       Problem 4.5
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bonus-question-up-to-3-points">
+       Bonus Question (up to 3 points)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-2-astronomical-imaging-i">
+<h1>Lab 2: Astronomical Imaging I<a class="headerlink" href="#lab-2-astronomical-imaging-i" title="Permalink to this headline">¶</a></h1>
+<p><em>Gather round, for I shall tell a tale old as time.
+Long, long ago, astronomers gazed at the heavens, and with naught but their eyes, recorded the positions of the stars they saw there.
+Then, with the telescope, long, heavy contraptions which reached for the skies like an outstretched arm, (thanks, f/20 focal lengths)
+they gazed through eyepieces in freezing domes, falling, on occasion, to their deaths from cages suspended at prime foci.</em></p>
+<p><em>Next came glass – emulsion plates – which upon extended exposure revealed upon their ghostly frames the splotches of stars and soon, galaxies and nebulae.
+Many a grad student, of course, spent their nights twiddling thumbs over micrometer dials to keep these stars in place. Manual guiding… this story teller shudders to imagine it.
+And yet, even then, with permanent record, no measure could be made that weren’t ‘tween the eyes of an observer, peering at the glass through magnifying eyepiece, assigning grades of brightness and, amazingly, pretty much nailing the spectral classification of stars by their absorption features</em>.</p>
+<p><em>And after this painstaking work, came the earliest CCDs, fractured by detector failures, riddled with readout noise, consumed by cosmic ray hits, laid low by low quantum efficiencies.</em></p>
+<p><em>Now… we use Python.</em></p>
+<hr>
+Astronomical images are one of the basic building blocks of astronomical research. While we now obtain data in myriad ways, from gravitational waves to neutrinos, from spectra to polarimetry, the basic tenant of astronomy (and it's most recongizable public impact) is the images we make of the sky. 
+<p>That is why the first science topic we’ll be tackling is imaging. And along the way, we’ll learn how <code class="docutils literal notranslate"><span class="pre">astropy</span></code> makes our lives <em>so</em> much easier when dealing with images, and how to use robust functions to perform the analyses one might want to carry out on images (after we’re done admiring their beauty).</p>
+</div>
+<div class="section" id="if-the-glove-fits">
+<h1>If the glove <code class="docutils literal notranslate"><span class="pre">FITS</span></code><a class="headerlink" href="#if-the-glove-fits" title="Permalink to this headline">¶</a></h1>
+<p>Many of you are probably familiar with the <code class="docutils literal notranslate"><span class="pre">FITS</span></code> standard. It stands for <code class="docutils literal notranslate"><span class="pre">Flexible</span> <span class="pre">Image</span> <span class="pre">Transport</span> <span class="pre">System</span></code>, and for all intents and purposes, it acts as a container (much like a zip file). Within it, one can store several kinds of information: images (2d arrays of values), as the name implies, headers (dictionary like objects with metadata), and sometimes tabular data as well. A <code class="docutils literal notranslate"><span class="pre">FITS</span></code> file can contain any number of <em>extensions</em>, which just refer to “slots” where stuff is stored. Every “slot” has a <code class="docutils literal notranslate"><span class="pre">header</span></code> attribute and a <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute. Thus, you could store a hundred astronomical images in 1 file, each with a different extension and a different header describing the image in that slot.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Contextual clues are important when dealing with <code class="docutils literal notranslate"><span class="pre">FITS</span></code> files. Files that are explicitly single images almost always have the image stored in the 0th extension, while files that are explicitly table data tend to have the table stored in the 1st extension (with the 0th empty).</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">FITS</span></code> standard is pretty old, and may be retired soon, but almost all ground based telescopes still use it for their native image output, so it behooves us to know how to get image data out of <code class="docutils literal notranslate"><span class="pre">FITS</span></code> files.</p>
+<div class="section" id="problem-1-loading-a-fits-file">
+<h2>Problem 1: Loading a FITS file<a class="headerlink" href="#problem-1-loading-a-fits-file" title="Permalink to this headline">¶</a></h2>
+<p>Write a function which takes as its argument a <code class="docutils literal notranslate"><span class="pre">string</span></code> filepath to a <code class="docutils literal notranslate"><span class="pre">FITS</span></code> file, and should have an optional argument to set the extension (default 0). It should then load the given extension of that <code class="docutils literal notranslate"><span class="pre">fits</span></code> file using a <a class="reference external" href="https://docs.astropy.org/en/stable/io/fits/index.html#opening-a-fits-file">context manager</a>, and return a tuple containing the header and data of that extension.</p>
+<p>The function should have documentation that describes the inputs and outputs. Documentation is <strong>incredibly important</strong> when writing code, both in-line and (# comments) and at the top of functions, methods, and classes.</p>
+<p>In this class, we’ll be using <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx-compatible</a> documentation written in the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">Numpy/Scipy style</a>. There are several reasons to do this.</p>
+<ol class="simple">
+<li><p>It is a user-friendly and write-friendly, readable documentation format that is easy to add to your functions.</p></li>
+<li><p>It can be rendered by Sphinx, the most popular automatic documentation renderer. If you’ve ever read the online documentation pages for functions in, e.g., numpy and scipy, those pages were rendered automatically based on the docstrings of the functions in question. This is possible with tools like Sphinx, but the documentation must be formatted correctly for this to work.</p></li>
+</ol>
+<p>In the cell below, I’ve provided a dummy function which takes in any number of inputs (mininum 3) and chooses a random input to return. The formatting of the documentation is shown there (as well as in the link above).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="k">def</span> <span class="nf">random_return</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    A function which requires three inputs which are floats, accepts any number of additional inputs (of any kind), and returns one randomly chosen input. </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a: int</span>
+<span class="sd">        description of this integer input</span>
+<span class="sd">    b: int</span>
+<span class="sd">        description of this integer input</span>
+<span class="sd">    c: int</span>
+<span class="sd">        description of this integer input</span>
+<span class="sd">    *args: tuple</span>
+<span class="sd">        any additional arguments get stored here</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    choice </span>
+<span class="sd">        The randomly selected input (type not specified)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">full_input_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">choice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">full_input_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">choice</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random_return</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>When our function has been imported in some code, we can use the <code class="docutils literal notranslate"><span class="pre">help</span></code> command to see the documentation at any time:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">random_return</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function random_return in module __main__:
+
+random_return(a, b, c, *args)
+    A function which requires three inputs which are floats, accepts any number of additional inputs (of any kind), and returns one randomly chosen input. 
+    
+    Parameters
+    ----------
+    a: int
+        description of this integer input
+    b: int
+        description of this integer input
+    c: int
+        description of this integer input
+    *args: tuple
+        any additional arguments get stored here
+    
+    Returns
+    -------
+    choice 
+        The randomly selected input (type not specified)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You will also notice my use of <code class="docutils literal notranslate"><span class="pre">*args</span></code> in this function. This allows me to enter additional function arguments. Similar is <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>, which allows additional arguments tied to an input keyword. The former gets stored in a tuple, while the latter gets stored in a dictionary. We’ll be using these a lot in class — you can refresh or learn the basics in Section 2.8 of the chapter on functional programming <a class="reference external" href="https://prappleizer.github.io/Tutorials/FunctionalProgramming/FunctionalProgramming_web.html">here</a>.</p>
+<p>So as a brief overview of documentation, it contains</p>
+<ol class="simple">
+<li><p>A brief summary of the function</p></li>
+<li><p>The word Parameters with the next line having underlines of the same length</p></li>
+<li><p>arguments, which are followed by a colon and the data type(s). On the next line, indented, descriptions of the arguments</p></li>
+<li><p>The word Returns, with the same underline scheme</p></li>
+<li><p>The returned objects, labeled the same way as the input.</p></li>
+</ol>
+<p>Also above, we saw how to format when no data type is specified. There, additional inputs could’ve been <em>any</em> data type, so we can’t be sure what the output will be. The main thing we didn’t cover is optional arguments. Those are set like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">optional</span>
+    <span class="n">Description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">thing</span><span class="o">.</span> <span class="p">(</span><span class="n">default</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>So we mark it as optional, and then give the default for it.</p>
+<p>With that, you’re ready to write and document your code below. <strong>All functions you write in this class should have documentation</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span> 
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># your code</span>
+<span class="k">def</span> <span class="nf">load_fits</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+
+            
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-data-i-o">
+<h2>Problem 2: Data I/O<a class="headerlink" href="#problem-2-data-i-o" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="problem-2-1">
+<h3>Problem 2.1<a class="headerlink" href="#problem-2-1" title="Permalink to this headline">¶</a></h3>
+<p>Using the function you created above, read in the header and data of the file <code class="docutils literal notranslate"><span class="pre">antenna_Rband.fits</span></code> which came with the lab assignment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While this may seem small, the fact that your read-in is now one line instead of ~5 does improve your efficiency! But only if you use your function enough times to overcome the initial time spent writing it…
+We also have the flexibility to take our function and give it more features over time, which we will do in this class.</p>
+</div>
+</div>
+<div class="section" id="problem-2-2">
+<h3>Problem 2.2<a class="headerlink" href="#problem-2-2" title="Permalink to this headline">¶</a></h3>
+<p>Next, we need to plot the image data. There are several operations that we almost always perform when plotting astronomical data, as well as several user-preferences for how we “by default” plot images before we begin tweaking things. If you spend any time as an astronomer, you will plot quite literally <em>thousands</em> of images — why set all these settings every time, when we can write a handy function to do it for us?</p>
+<p>Write a function which takes in as input arguments</p>
+<ul class="simple">
+<li><p>an image (2D array or masked array)</p></li>
+</ul>
+<p>as well as the following optional arguments (so set a default)</p>
+<ul class="simple">
+<li><p>figsize (default (15,13) )</p></li>
+<li><p>cmap (default ‘gray_r’)</p></li>
+<li><p>scale (default 0.5)</p></li>
+<li><p>**kwargs (see <a class="reference external" href="https://prappleizer.github.io/Tutorials/FunctionalProgramming/FunctionalProgramming_web.html">here</a>)</p></li>
+</ul>
+<p>Inside the function, create figure and axes objects using <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code>. When working in notebooks, it is often useful to set the <code class="docutils literal notranslate"><span class="pre">figsize</span></code> argument of subplots to a nice large-ish value, such as <code class="docutils literal notranslate"><span class="pre">(15,13)</span></code>, which will make the image fill most of the notebook. Since <em>your</em> function has set figsize as an argument, you can feed <code class="docutils literal notranslate"><span class="pre">figsize</span></code> directly into the <code class="docutils literal notranslate"><span class="pre">subplots</span></code> call, so that a user of the function can leave the default or set their own.</p>
+<p>Next, use <code class="docutils literal notranslate"><span class="pre">ax.imshow()</span></code> to actually plot the image. You’ll want to save the output of this, e.g., <code class="docutils literal notranslate"><span class="pre">im</span> <span class="pre">=</span> <span class="pre">ax.imshow(...)</span></code>. In this plotting call, set <code class="docutils literal notranslate"><span class="pre">imshow</span></code>’s argument <code class="docutils literal notranslate"><span class="pre">origin='lower'</span></code>. We <em>always</em> want to do this when dealing with imaging, as we want (0,0) to be a coordinate.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, matplotlib uses a “matrix-style” plotting, where 0 of the y axis is in the <em>top</em> left corner, and 0 of the x axis is in the <em>bottom</em> left corner.</p>
+</div>
+<p>Also within the call to <code class="docutils literal notranslate"><span class="pre">imshow()</span></code>, feed in the cmap from your function (i.e., <code class="docutils literal notranslate"><span class="pre">cmap=cmap</span></code>). The other critical <code class="docutils literal notranslate"><span class="pre">imshow()</span></code> arguments are <code class="docutils literal notranslate"><span class="pre">vmin</span></code> and <code class="docutils literal notranslate"><span class="pre">vmax</span></code>, which sets the saturation points (and thus the contrast) of the image.</p>
+<p>We haven’t set <code class="docutils literal notranslate"><span class="pre">vmin</span></code> and <code class="docutils literal notranslate"><span class="pre">vmax</span></code> as arguments of our outer function, but because of <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>, we can still create a default here that can be overriden from outside.</p>
+<p>As a default, within your function, calculate the mean and standard deviation of the image. Set some temporary variables with the quantities <code class="docutils literal notranslate"><span class="pre">mu</span> <span class="pre">-</span> <span class="pre">scale*sigma</span></code> and <code class="docutils literal notranslate"><span class="pre">mu</span> <span class="pre">+</span> <span class="pre">scale*sigma</span></code> (where here <code class="docutils literal notranslate"><span class="pre">mu</span></code> is the calculated mean and <code class="docutils literal notranslate"><span class="pre">sigma</span></code> is the calculated std dev, and <code class="docutils literal notranslate"><span class="pre">scale</span></code> was the optional input). Next, check the kwargs dictionary (which will exist in your function because we added the packing argument <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> to our function. IF <code class="docutils literal notranslate"><span class="pre">vmin</span></code> and <code class="docutils literal notranslate"><span class="pre">vmax</span></code> are in this dictionary, plug those into your imshow command. Otherwise, use the values determined by the calculation above. Bonus point for accomodating either no vmin/vmax entered, just vmin or vmax, or both (using the calculated values when things aren’t provided).</p>
+<p>Your function should <strong>return</strong> the created <code class="docutils literal notranslate"><span class="pre">fig</span></code> and <code class="docutils literal notranslate"><span class="pre">ax</span></code> objects so the user can continue to tweak them.</p>
+<p>Run your function and test its outputs. Once you’re satisfied it’s working, use it to plot the provided data. Find either a vmin/vmax pair, or a choice of <code class="docutils literal notranslate"><span class="pre">scale</span></code> which makes the image look pretty!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Your code</span>
+<span class="k">def</span> <span class="nf">implot</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">    WRITE DOCSTRING HERE</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span> <span class="c1">#replace with your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I&#39;ve included my output below for your comparison. Overwrite it with your own! </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab2_11_0.png" src="../_images/Lab2_11_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-3">
+<h3>Problem 2.3<a class="headerlink" href="#problem-2-3" title="Permalink to this headline">¶</a></h3>
+<p>Copy your function down, we’re going to keep messing with it.</p>
+<p>So far, we’ve made it so that with a simple function call and, potentially, with just the input of an image array, we get out a nice plot with a scaling, colormap, and origin selection. In this section, we are going to allow (optionally) for a colorbar to be added to the figure. We’re also going to add in the ability for the figure to be plotted in celestial coordinates (i.e., RA and DEC) instead of pixel units, if information about the image (via the world coordinate system, WCS) exists in the image header.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Generally, WCS information is present in the headers of <em>published</em> images like the one here, but <em>not</em> present in raw data gathered at the telescope. This is because images need to undergo a process known as <em>plate solving</em> to determine both the direction (coordinates) toward the image, as well as the pixel scale (i.e., how many arcseconds per pixel in the image).</p>
+</div>
+<p>Add three new optional arguments to your function.</p>
+<ul class="simple">
+<li><p>colorbar = False</p></li>
+<li><p>header = None</p></li>
+<li><p>wcs = None</p></li>
+</ul>
+<p>Let’s start with the colorbar. At the end of your plotting commands, check if <code class="docutils literal notranslate"><span class="pre">colorbar=True</span></code>, and if so, create a colorbar via <code class="docutils literal notranslate"><span class="pre">plt.colorbar()</span></code>, setting the <code class="docutils literal notranslate"><span class="pre">mappable</span></code> argument to whatever you saved the output of <code class="docutils literal notranslate"><span class="pre">ax.imshow()</span></code> into above. Also set the <code class="docutils literal notranslate"><span class="pre">ax</span></code> argument to be your ax; this will tell <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to steal a bit of space from that axis to make room for the colorbar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When I do this, the colorbar is matching the figure height, rather than the axis height. If that bugs you like it bugs me, check out <a class="reference external" href="https://stackoverflow.com/a/33505522">this solution</a> from StackOverflow, which you can adapt within your function to make the cbar match the axis height.</p>
+</div>
+<p>In order to plot in RA and DEC coordinates, we need to first have an <code class="docutils literal notranslate"><span class="pre">astropy</span></code> <code class="docutils literal notranslate"><span class="pre">WCS</span></code> object associated with the image in question. You can import <code class="docutils literal notranslate"><span class="pre">WCS</span></code> from <code class="docutils literal notranslate"><span class="pre">astropy.wcs</span></code>. WCS objects are created from the headers of plate-solved fits files. In our function, we allow the user to input either a header or a WCS object directly. More on WCS can be found in the lecture notes, or <a class="reference external" href="https://docs.astropy.org/en/stable/wcs/index.html">here</a>.</p>
+<p>Within your function, check if a wcs is input – if it is, we’re good to go and can safely ignore <code class="docutils literal notranslate"><span class="pre">header</span></code> (even if it is provided). If instead only <code class="docutils literal notranslate"><span class="pre">header</span></code> is provided, use the <code class="docutils literal notranslate"><span class="pre">WCS()</span></code> function to create a new wcs object from that header.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You’ll want to do this at the very top of your function.</p>
+</div>
+<p>We now need to move our <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">....</span></code> creation line into an if-statement. If we are using WCS “stuff”, you’ll need to set a <code class="docutils literal notranslate"><span class="pre">projection</span></code> for your plot that uses the wcs. This is accomplished as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="o">...</span><span class="p">,</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span><span class="n">wcs</span><span class="p">})</span> 
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">wcs</span></code> is whatever you’ve named the output of <code class="docutils literal notranslate"><span class="pre">WCS(header)</span></code> or is the WCS input directly into the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span>
+
+<span class="c1"># your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In this case, we will get an error from our function that happens because of some distortion coefficient nonsense between astropy and drizzled HST images. Since it’s not pertinent to our lab, I’m providing below a snippet of code you should use to fix your header before running <code class="docutils literal notranslate"><span class="pre">WCS(header)</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">strip_SIP</span><span class="p">(</span><span class="n">header</span><span class="p">):</span>
+    <span class="n">A_prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">header</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;A_&#39;</span><span class="p">)]</span>
+    <span class="n">B_prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">header</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;B_&#39;</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">A_prefixes</span><span class="p">,</span><span class="n">B_prefixes</span><span class="p">):</span>
+        <span class="k">del</span> <span class="n">header</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">header</span><span class="p">[</span><span class="n">b</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">header</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If this worked correctly, when you add the header you read in from our image, you should now see the axes of your plot change from pixels to <code class="docutils literal notranslate"><span class="pre">pos.eq.ra</span></code> and <code class="docutils literal notranslate"><span class="pre">pos.eq.dec</span></code>. We’re now looking at actual on-sky coordinates! Yay!</p>
+</div>
+<div class="section" id="problem-2-4">
+<h3>Problem 2.4<a class="headerlink" href="#problem-2-4" title="Permalink to this headline">¶</a></h3>
+<p>Within the if-blocks of your function that sets the <code class="docutils literal notranslate"><span class="pre">ax</span></code> to be a wcs projection, set the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> labels to read “Right Ascension [hms]” and “Declination [degrees]” in fontsize 15.</p>
+<p>Lastly, to polish things off, use <code class="docutils literal notranslate"><span class="pre">ax.tick_params()</span></code> to set inward, larger ticks, and increase the axis tick label size to 15.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You’ll notice (especially with larger ticks) that the are not perpendicular to the axes spines. This is because this particular image has been rotated with respect to the standard celestial coordinate axes. This can be seen more clearly if you add the following to your function:
+<code class="docutils literal notranslate"><span class="pre">ax.coords.grid(color='gray',</span> <span class="pre">alpha=0.5,</span> <span class="pre">linestyle='solid')</span></code>. Try doing that, adding an optional keyword to your function called ‘grid’ and enabling this command if it is set.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To check if a condition is true (e.g, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">condition</span> <span class="pre">==</span> <span class="pre">True:</span></code>), you can just type <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">condition:</span></code></p>
+</div>
+<p>It’s taken us some time, but this image could now be placed in a scientific publication. And, since we have a handy function for it, we can make images that look this nice on the fly with a short one line command, yet still have a lot of flexibility over many important inputs. And of course, the figure and axes objects are returned, so one could run this function and then continue tweaking the plot after the fact.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As a final note, I want to draw your attention to the fact that once you use the <code class="docutils literal notranslate"><span class="pre">wcs</span></code> projection on some plot, it’s no longer a normal ax object, it’s a wcsax object. This makes changing certain elements of those axes a little more involved than for a standard one. I use <a class="reference external" href="https://docs.astropy.org/en/stable/visualization/wcsaxes/ticks_labels_grid.html">this page</a> and the others linked there when doing so.</p>
+</div>
+</div>
+</div>
+<div class="section" id="problem-3-cutouts-and-aperture-photometry">
+<h2>Problem 3: Cutouts and Aperture Photometry<a class="headerlink" href="#problem-3-cutouts-and-aperture-photometry" title="Permalink to this headline">¶</a></h2>
+<p>When working with astronomical images, like the one we’ve been using in this lab, it is often advantageous to be working with a cutout – a chunk of the image centered on a certain coordinate, and of a certain size. For example, if there is an HII region or star cluster of interest in the above image, we may like to zoom in on it to examine it more closely.</p>
+<p>Now that we’ve switched over to using celestial coordinates instead of pixels as our projection frame, zooming in on a region is not as simple as slicing our array, e.g., <code class="docutils literal notranslate"><span class="pre">image[500:700,200:550]</span></code>. On the plus side, the framework we’ll learn here is very robust, and will allow for all sorts of useful measurements.</p>
+<p>To make a cutout, we’ll need the <code class="docutils literal notranslate"><span class="pre">Cutout2D</span></code> module within <code class="docutils literal notranslate"><span class="pre">astropy</span></code>, which I’ll import below. To provide the position of the cutout, we need to be able to feed in astronomical coordinates. For this, we’ll use <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code>, a module in <code class="docutils literal notranslate"><span class="pre">astropy.coordinates</span></code>. Finally, we’ll need to integrate the <code class="docutils literal notranslate"><span class="pre">units</span></code> module in <code class="docutils literal notranslate"><span class="pre">astropy</span></code> to successfully create coordinate objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.nddata</span> <span class="kn">import</span> <span class="n">Cutout2D</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s start with a <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code> object. There are several coordinate systems used in astronomy, e.g., Galactic coordinates (<span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(l\)</span>), Equatorial (<span class="math notranslate nohighlight">\(RA\)</span>, <span class="math notranslate nohighlight">\(DEC\)</span>). The most common (especially in any extragalactic setting) is RA and DEC (as you can see in the image you’ve plotted already).</p>
+<p>The <a class="reference external" href="https://docs.astropy.org/en/stable/api/astropy.coordinates.SkyCoord.html">documentation</a> for <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code> is solid, and worth reading.</p>
+<p>The general way we create these objects is, e.g.,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="s1">&#39;12:01:53.6 -18:53:11&#39;</span><span class="p">,</span><span class="n">unit</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">,</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can input various types of strings and formattings for the coordinates, just be sure to specify the units as shown above. The documentation shows the various methods.</p>
+</div>
+<div class="section" id="problem-3-1">
+<h3>Problem 3.1<a class="headerlink" href="#problem-3-1" title="Permalink to this headline">¶</a></h3>
+<p>In this case, the coordinates I set above are for NGC 4039, which is the smaller of the two galaxies in the image we’re using.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If at any point you’re trying to make a coordinate object for a well known galaxy/object, try, e.g., <code class="docutils literal notranslate"><span class="pre">coord</span> <span class="pre">=</span> <span class="pre">SkyCoord.from_name('NGC</span> <span class="pre">4038')</span></code>, and ususally that will work!</p>
+</div>
+<p>In the cell below, use the coordinate we’ve created, plus a size (use 1x1 arcminutes), and the wcs object for our image, to create a <code class="docutils literal notranslate"><span class="pre">Cutout2D</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#cutout = # your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, use your fancy new function to plot the new cutout.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cutout objects contain the image and their own wcs, accessible via, e.g., <code class="docutils literal notranslate"><span class="pre">cutout.data</span></code> and <code class="docutils literal notranslate"><span class="pre">cutout.wcs</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot it</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-3-2">
+<h3>Problem 3.2<a class="headerlink" href="#problem-3-2" title="Permalink to this headline">¶</a></h3>
+<p>We’re now going to do some aperture photometry.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>Aperture Photometry is the process of defining a region on an image (generally, but not always circular), and measuring the sum pixel value within that region. The region is known as an aperture, and the “collapsing” of the 2D spatial information about counts in each pixel into a single number is known as photometry.</p>
+</div>
+<p>Below, I provide a new coordinate, this time centered on the region between the two galaxies. Make a new cutout of that region (again, 1x1 arcmin), and plot it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="s1">&#39;12:01:55.0 -18:52:45&#39;</span><span class="p">,</span><span class="n">unit</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">,</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot it</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this region, there are a lot of blobby looking roughly circular sources — Some of the larger ones are HII star forming regions, the smaller ones are likely stars. Later in this lab, we’ll use multi-wavelength data to try to suss out what is what.</p>
+<p>Often, for calibration purposes, we’d need to create apertures around all those sources in the image. We definitely don’t want to do that by hand! Instead, we’re going to use the <code class="docutils literal notranslate"><span class="pre">sep</span></code> package.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Simply <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sep</span></code> inside your <code class="docutils literal notranslate"><span class="pre">a330</span></code> environment terminal to get it installed, you should then be able to import it.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sep</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are three steps to performing aperture photometry with <code class="docutils literal notranslate"><span class="pre">sep</span></code>, which are detailed in <a class="reference external" href="https://sep.readthedocs.io/en/v0.4.x/">it’s documentation</a>.</p>
+<ul class="simple">
+<li><p>Estimate the background</p></li>
+<li><p>Find Sources</p></li>
+<li><p>Perform Aperture Photometry</p></li>
+</ul>
+<p>Using the instructions presented in the documentation linked, measure the background of the cutout image, and run the source extractor on it. Don’t forget to subtract the background before running the extractor!</p>
+<p>To do this, write a function that takes as input the data (in this case, a <code class="docutils literal notranslate"><span class="pre">cutout.data</span></code> object and a threshold scale (to be multiplied by the <code class="docutils literal notranslate"><span class="pre">globalrms</span></code>, and performs these steps, returning the <code class="docutils literal notranslate"><span class="pre">objects</span></code> array. Don’t forget to document it!</p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>I used a threshold value of 2.0, and got ~100 objects.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When I ran this, I got an error that my “array was not C-contiguous.” I found the solution to this issue in <a class="reference external" href="https://stackoverflow.com/a/26782930">this stackoverflow post</a>. Loosely, <code class="docutils literal notranslate"><span class="pre">sep</span></code> uses C-bindings to actually run the heavy lifting code in C rather than Python (it’s faster). This means input arrays must be arranged in physical memory the way C is used to. This particular array was not, but it is easy to order it this way.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code</span>
+
+<span class="k">def</span> <span class="nf">run_sep</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    DOCSTRING HERE </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Run your function and store the output in a variable called <code class="docutils literal notranslate"><span class="pre">objects</span></code>. You should now have an object array containing many detected sources.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># run func</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The positions of the determined sources are stored in the output structured array and can be indexed with, e.g., <code class="docutils literal notranslate"><span class="pre">objects['x']</span></code> and <code class="docutils literal notranslate"><span class="pre">objects['y']</span></code>. Replot your image of the cutout, but now circle the positions of all your detected sources. Do they line up with actual point sources in the image?</p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Try using ax.plot, setting your symbol to ‘o’, your color to ‘None’, your marker edge color (mec) to some color, and the marker size (ms) to some largeish value, for a quick way to circle objects.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s my image, for comparison </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8231254520&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Lab2_40_1.png" src="../_images/Lab2_40_1.png" />
+</div>
+</div>
+<p>It looks like we’ve done a pretty adequate job finding the sources in this field – there’a a few that got missed, and a few we might want to remove, but overall, this is pretty solid.</p>
+<p>We need to start working with these objects we’ve found. While <code class="docutils literal notranslate"><span class="pre">sep</span></code> can perform aperture photometry itself (reading the docs, you can see it is simple to feed in the objects and a pixel radius), we’re going to be a bit more careful about things. To better visualize and work with this data, I’d like it to be a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. We’re going to be using those a lot in this course. Converting a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> structured array to a dataframe is simple: I provide the code below. Run it, and then simply type <code class="docutils literal notranslate"><span class="pre">df</span></code> in a new cell to see a nicely formatted pandas table of our objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="c1">#run this</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">sep</span></code> providing the first pass, we can cull a few objets from our sample that very clearly are not star forming regions. Using your DataFrame, plot the flux of each detected object using the <code class="docutils literal notranslate"><span class="pre">flux</span></code> column. You should have at least a few that are huge outliers, with dramatically more flux the rest.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">remove_outliers</span></code> that reads in a dataframe and a flux-min and flux-max. It should filter the dataframe to only include fluxes between the input values, and return the new dataframe. Then use this function on your data, choosing an appropriate cutoff.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code </span>
+
+<span class="k">def</span> <span class="nf">remove_outliers</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># run the function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot again</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Re-plot the set of sources you have now, over the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should see that some of the circles which were over bright parts of the galaxy are no longer here.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may find that there are some visible sources which, despite tinkering, don’t get caught by <code class="docutils literal notranslate"><span class="pre">sep</span></code>. That’s okay – if we really wanted them, we could just go in and put down apertures by hand. Generally when performing a step like this in the field, we have a pre-determined set of points to use, because we have measured fluxes for them, and wish to flux calibrate our data.</p>
+</div>
+</div>
+</div>
+<div class="section" id="problem-4-continuum-subtraction">
+<h2>Problem 4: Continuum Subtraction<a class="headerlink" href="#problem-4-continuum-subtraction" title="Permalink to this headline">¶</a></h2>
+<p>At this point, we have the tools necessary to make flux measurements in apertures (at least, via <code class="docutils literal notranslate"><span class="pre">sep</span></code> – we will also learn how to do this with the <code class="docutils literal notranslate"><span class="pre">photutils</span></code> package). However, <span class="math notranslate nohighlight">\(R\)</span> band photometry of HII regions is not exceedingly interesting. More interesting is the flux in <span class="math notranslate nohighlight">\(H\alpha\)</span>, an emission line caused by Hydrogen recombination. This line (at 6563 Angstrom) is located <em>within</em> the <span class="math notranslate nohighlight">\(R\)</span> band, and is imaged using a narrow filter compared ot <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p>The flux measured by an <span class="math notranslate nohighlight">\(H\alpha\)</span> filter contains both the flux from the emission line as well as the underlying continuum — essentially, the starlight from the galaxy. If we can get a clean measure of the flux in <span class="math notranslate nohighlight">\(H\alpha\)</span> (sans this continuum), we can make a direct estimate of the star formation rate of the system.</p>
+<div class="section" id="problem-4-1">
+<h3>Problem 4.1<a class="headerlink" href="#problem-4-1" title="Permalink to this headline">¶</a></h3>
+<p>To do this, we need to access an <span class="math notranslate nohighlight">\(H\alpha\)</span> image, and then subtract off the continuum present (which we’ll infer from our <span class="math notranslate nohighlight">\(R\)</span> band image). Located in the lab directory is a file called <code class="docutils literal notranslate"><span class="pre">antenna_Haband.fits</span></code>. Use your fits loader function from above to read in this new image, create an equivalent sized and centered cutout to the <span class="math notranslate nohighlight">\(R\)</span> band data, and plot it, with the same sources found in the <span class="math notranslate nohighlight">\(R\)</span> band circled.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There’s a few interesting things to note right away here. Looking just north of the center of the image, there’s now a large amount of flux in <span class="math notranslate nohighlight">\(H\alpha\)</span> coming from some blobs which do not appear in the <span class="math notranslate nohighlight">\(R\)</span> band. This is likely due to the fact that by zero-ing in on the ionized gas, we can see the large envelopes of gas being lit up by the star formation in this region.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The active merger scenario between these two galaxies is triggering a lot of star formation.</p>
+</div>
+</div>
+<div class="section" id="problem-4-2">
+<h3>Problem 4.2<a class="headerlink" href="#problem-4-2" title="Permalink to this headline">¶</a></h3>
+<p>To get a better idea of how the <span class="math notranslate nohighlight">\(H\alpha\)</span> flux compares to the <span class="math notranslate nohighlight">\(R\)</span> band distribution, use the <code class="docutils literal notranslate"><span class="pre">plt.contour()</span></code> tool to measure contours of <span class="math notranslate nohighlight">\(H\alpha\)</span>, drawing them over the
+<span class="math notranslate nohighlight">\(H\alpha\)</span> image and tweaking the levels until you think you are well tracing the distribution. Then, plot those contours over the <span class="math notranslate nohighlight">\(R\)</span> band data instead.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>It is often beneficial to use <code class="docutils literal notranslate"><span class="pre">np.logspace()</span></code> when defining contour levels, as it allows you to cover large dynamic range with fewer contours. You may also find it helpful to set your contour <code class="docutils literal notranslate"><span class="pre">alpha</span></code> to something &lt; 1, to better see both the image underneath and the contours.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To help guide you, I’ve shown what I got for my plot below — you need not emulate it exactly. The blue box shown in the image will be useful to you in the next part of the problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># My solution</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab2_57_0.png" src="../_images/Lab2_57_0.png" />
+</div>
+</div>
+<p>We can now see things a lot more clearly! It is obvious that the <span class="math notranslate nohighlight">\(H\alpha\)</span> contours trace some of the sources we were seeing in the <span class="math notranslate nohighlight">\(R\)</span> band, but that the gas is more extended around these clusters of sources, as we might expect.</p>
+</div>
+<div class="section" id="problem-4-3">
+<h3>Problem 4.3<a class="headerlink" href="#problem-4-3" title="Permalink to this headline">¶</a></h3>
+<p>We must now attempt a continuum subtraction of the data. We can’t simply subtract the <span class="math notranslate nohighlight">\(R\)</span> band from the <span class="math notranslate nohighlight">\(H\alpha\)</span> band, because the <span class="math notranslate nohighlight">\(R\)</span> band filter is much wider, and thus for similar exposure times, collects many more photons than the narrower <span class="math notranslate nohighlight">\(H\alpha\)</span> filter. Ideally, one could use a set of foreground stars (which are pure continuum sources in both images) to measure fluxes in both, and find a scaling constant. Here, all of the sources we see in this image are most likely actually HII regions. This means if we use them to scale between our images, we will likely oversubtract true flux.</p>
+<p>Instead, what I’m going to do here (which may be slightly sketchy), is pick a “blank” region of continuum emission from the <span class="math notranslate nohighlight">\(R\)</span> band which has no <span class="math notranslate nohighlight">\(H\alpha\)</span> contours, and assert that this patch must have the same flux in both images. In the picture above, I indicated a blue rectangular patch on the sky. This is what we’ll be using to measure our continuum-to-narrowband ratio.</p>
+<p>To make this patch, we’re going to use <code class="docutils literal notranslate"><span class="pre">SkyRectangularAperture</span></code>, from <code class="docutils literal notranslate"><span class="pre">photutils</span></code>. You can pip install <code class="docutils literal notranslate"><span class="pre">photutils</span></code> in your <code class="docutils literal notranslate"><span class="pre">a330</span></code> environment if you don’t have it. Then do the following imports:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">photutils.aperture</span> <span class="kn">import</span> <span class="n">SkyRectangularAperture</span>
+<span class="kn">from</span> <span class="nn">photutils.aperture</span> <span class="kn">import</span> <span class="n">aperture_photometry</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As shown in <a class="reference external" href="https://photutils.readthedocs.io/en/stable/api/photutils.aperture.SkyRectangularAperture.html">it’s documentation</a>, we need to feed in a <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code> position, as well as a width and a height.
+I’ve provided the new coordinate to use below.</p>
+<p>Create a rectangle of your own, measuring <span class="math notranslate nohighlight">\(0.27''\)</span> by <span class="math notranslate nohighlight">\(0.2''\)</span>. You can now use the <code class="docutils literal notranslate"><span class="pre">aperture_photometry()</span></code> function to measure the flux in your aperture, applied to a certain image. Using the <a class="reference external" href="https://photutils.readthedocs.io/en/stable/api/photutils.aperture.aperture_photometry.html#photutils.aperture.aperture_photometry">documentation</a> as needed, find the flux in this box for both the <span class="math notranslate nohighlight">\(R\)</span> band and <span class="math notranslate nohighlight">\(H\alpha\)</span> band data, and then determine the ratio between those values. Don’t forget about the <code class="docutils literal notranslate"><span class="pre">wcs</span></code>!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">patch_cent</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="s1">&#39;12:01:53.7 -18:52:52&#39;</span><span class="p">,</span><span class="n">unit</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">hourangle</span><span class="p">,</span><span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">))</span>
+
+<span class="c1"># Your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now use this ratio to perform our subtraction.</p>
+</div>
+<div class="section" id="problem-4-4">
+<h3>Problem 4.4<a class="headerlink" href="#problem-4-4" title="Permalink to this headline">¶</a></h3>
+<p>Now, fill in the function below, which should read in your rectangular patch, the <span class="math notranslate nohighlight">\(R\)</span> band image, and the <span class="math notranslate nohighlight">\(H\alpha\)</span> image. Within the function, copy in the code that determines the ratio, and then use the ratio you found to scale your <span class="math notranslate nohighlight">\(R\)</span> band image, then subtract it from the <span class="math notranslate nohighlight">\(H\alpha\)</span> image. The function should return this new image array.</p>
+<p>Plot up your continuum subtracted image using your <code class="docutils literal notranslate"><span class="pre">implot()</span></code> function, adding back in the apertures we found earlier and the contours we made from the full <span class="math notranslate nohighlight">\(H\alpha\)</span> image.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code</span>
+<span class="k">def</span> <span class="nf">continuum_subtract</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    DOCSTRING HERE</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>What do you notice about the distribution of apertures with respect to the distribution of <span class="math notranslate nohighlight">\(H\alpha\)</span> gas? Is there a strong alignment of the <span class="math notranslate nohighlight">\(R\)</span> band sources and the gas? What does this imply about most of the <span class="math notranslate nohighlight">\(R\)</span> band sources?</p>
+<p><em>Answer here</em></p>
+</div>
+<div class="section" id="problem-4-5">
+<h3>Problem 4.5<a class="headerlink" href="#problem-4-5" title="Permalink to this headline">¶</a></h3>
+<p>Lastly, let’s load up the <span class="math notranslate nohighlight">\(B\)</span> band image. As you probably know, the <span class="math notranslate nohighlight">\(B\)</span> band traces bluer light, and thus will more preferentially see young, hot stars (whereas the <span class="math notranslate nohighlight">\(R\)</span> band traces the main sequence and turn off stellar distribution).</p>
+<p>Load up the <code class="docutils literal notranslate"><span class="pre">antenna_Bband.fits</span></code> image, make a cutout, and plot it below. Use your <code class="docutils literal notranslate"><span class="pre">load_fits()</span></code> function and your <code class="docutils literal notranslate"><span class="pre">implot()</span></code> function. Make a new set of countours from your <em>continuum subtracted</em> <span class="math notranslate nohighlight">\(H\alpha\)</span> data, and overplot that onto the <span class="math notranslate nohighlight">\(B\)</span> band data. What do you see?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In my own image, there are some clusters of <span class="math notranslate nohighlight">\(B\)</span>-band flux that align well with the <span class="math notranslate nohighlight">\(H\alpha\)</span> contours, and some <span class="math notranslate nohighlight">\(B\)</span> band sources out on their own. It is unsurprising that there is a correspondance between them; excess in <span class="math notranslate nohighlight">\(B\)</span> light implies the prescence of UV radiation as well, from young O/B stars. It is this radiation responsible for ionizing the gas that is shining in <span class="math notranslate nohighlight">\(H\alpha\)</span>, so the <span class="math notranslate nohighlight">\(H\alpha\)</span>-emitting gas should be loosely clustered around sources bright in the <span class="math notranslate nohighlight">\(B\)</span> band (the experiment would be even cleaner if we used, say, <em>GALEX</em> FUV data).</p>
+</div>
+<div class="section" id="bonus-question-up-to-3-points">
+<h3>Bonus Question (up to 3 points)<a class="headerlink" href="#bonus-question-up-to-3-points" title="Permalink to this headline">¶</a></h3>
+<p>If you want to take your analysis farther, try measuring some fluxes off of your continuum subtracted <span class="math notranslate nohighlight">\(H\alpha\)</span> data, placing several manual apertures down over the regions of highest <span class="math notranslate nohighlight">\(H\alpha\)</span> concentration (which also align with <span class="math notranslate nohighlight">\(B\)</span> band concentrations).</p>
+<p>The measures you get from this will be in counts on the detector. We need to convert these counts into flux units (e.g., erg s<span class="math notranslate nohighlight">\(^{-1}\)</span> cm<span class="math notranslate nohighlight">\(^{-2}\)</span>). To do this,</p>
+<ul class="simple">
+<li><p>pull the ‘PHOTFLAM’ keyword from the header of your <span class="math notranslate nohighlight">\(H\alpha\)</span> data</p></li>
+<li><p>also pull the ‘EXPTIME’ value from the header.</p></li>
+</ul>
+<p>Start by taking your fluxes in counts, multiplying by the <code class="docutils literal notranslate"><span class="pre">PHOTFLAM</span></code> value, and dividing by the <code class="docutils literal notranslate"><span class="pre">EXPTIME</span></code> value. This puts you in erg s<span class="math notranslate nohighlight">\(^{-1}\)</span> cm<span class="math notranslate nohighlight">\(^{-2}\)</span> <em>per Angstrom</em>. Thus, what we have is technically a <em>flux density</em>. To convert to a true flux, we’ll simply integrate over the bandpass… but for this example, let’s assume a constant flux across the bandpass, which for the ACS 658N filter (<span class="math notranslate nohighlight">\(H\alpha\)</span>), is 136.27 angstroms.</p>
+<p>Once you have fluxes, use the distance to NGC 4038/9 to determine the luminosity in erg/s of your collective set of sources, and then use the <span class="math notranslate nohighlight">\(SFR(H\alpha)\)</span> calibration of <a class="reference external" href="https://iopscience.iop.org/article/10.1086/319025/fulltext/52481.text.html">Kennicut &amp; Bell</a> to convert to an SFR. How does your answer compare to, e.g.,</p>
+<ul class="simple">
+<li><p>The SFR of the Milky Way?</p></li>
+<li><p>The SFR of the Orion Nebula?</p></li>
+<li><p>The SFR of the Tarantula Nebula?</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "a330"
+        },
+        kernelOptions: {
+            kernelName: "a330",
+            path: "./Lab2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'a330'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lab1/Lab1.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lab 1: Overview, Review, and Environments</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>

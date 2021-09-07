@@ -1,0 +1,817 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Astronomical Imaging &amp; Functional Programming &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 1: Overview, Review, and Environments" href="../Lab1/Lab1.html" />
+    <link rel="prev" title="Astro 330 Course Book" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lecture1/Lecture1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lecture1/Lecture1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functional-programming">
+   Functional Programming
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-write-a-function">
+     How to Write a Function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#documentation">
+     Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#args-and-kwargs">
+   *Args and **kwargs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#checking-kwargs">
+     Checking kwargs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-images">
+   Working with Images
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-s-in-an-image">
+     What’s in an image
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#narrowband-data-and-continuum-subtraction">
+       Narrowband Data and Continuum Subtraction
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#image-handling-with-astropy">
+   Image Handling with Astropy
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opening-the-image">
+     Opening the Image
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lab-preview">
+       Lab Preview
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="astronomical-imaging-functional-programming">
+<h1>1. Astronomical Imaging &amp; Functional Programming<a class="headerlink" href="#astronomical-imaging-functional-programming" title="Permalink to this headline">¶</a></h1>
+<hr>
+<p><strong>Programming Topics</strong>: Functions, optional arguments, args and kwargs, documentation</p>
+<p><strong>Science Topics</strong>: filters/bands, multiband data, combinations, and continuum subtraction</p>
+<p><strong>Specialized Tools</strong>: <code class="docutils literal notranslate"><span class="pre">Astropy</span></code> tools for working with image data (<code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code>, <code class="docutils literal notranslate"><span class="pre">units</span></code>, <code class="docutils literal notranslate"><span class="pre">WCS</span></code>, and <code class="docutils literal notranslate"><span class="pre">Cutout2D</span></code>)</p>
+</div>
+<div class="section" id="functional-programming">
+<h1>Functional Programming<a class="headerlink" href="#functional-programming" title="Permalink to this headline">¶</a></h1>
+<hr>
+Everyone here is familiar with the idea of functions in Python. We import them (e.g., `np.array()`) and use them. We can also define our own functions. The standard function in python looks like<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Description of A function</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Do something in the function</span>
+    <span class="k">return</span> <span class="c1">#something</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Why write functional code? What concrete benefits arise from writing functions in our code?</p>
+<p><strong>My Answers</strong></p>
+<hr>
+<ul class="simple">
+<li><p>Prevents repetition of code that is run often</p></li>
+<li><p>Allows for manual or automatic unit testing (ensuring each definable task in the code is working as expected)</p></li>
+<li><p>Allows for double documentation. Functions themselves encourage docstrings, which helps users (you included) understand your function’s purpose. It also means your “main” code is composed fewer lines, due to calling functions instead. This makes the primary code easier to read, especially if the functions are well-named.</p></li>
+<li><p>Functions are modular: you can import functions from one python file to another, the basic structure of package creation. (also works for classes)</p></li>
+<li><p>Functions encourage simple outputs</p></li>
+<li><p>Functions create regions of local scope, which helps prevent mucking up your global namespace</p></li>
+</ul>
+<div class="section" id="how-to-write-a-function">
+<h2>How to Write a Function<a class="headerlink" href="#how-to-write-a-function" title="Permalink to this headline">¶</a></h2>
+<p>Besides the formatting, how do we actually construct good functions? How do we do so efficiently?</p>
+<ul class="simple">
+<li><p><strong>Playtest</strong> code in the <strong>global namespace</strong> (i.e., your script or notebook). When it’s working, <strong>move into a function</strong>.</p></li>
+<li><p>Functions should be <strong>&lt; 50 lines</strong>, and <strong>ideally &lt; 20</strong>. They should handle <strong>simple, repetitive operations</strong> that don’t have many steps</p></li>
+<li><p>A function <strong>wrapping</strong> several smaller functions is better than one long function</p></li>
+<li><p>Anytime you find yourself <strong>copying and pasting code</strong>, you could probably use a function</p></li>
+<li><p><strong>Don’t</strong> write <strong>detailed docstrings</strong> until the function is <strong>“mature”</strong>. #Comments throughout are sufficient.</p></li>
+<li><p>Because you won’t have to type them out often, variable names in functions can be <strong>highly descriptive.</strong></p></li>
+<li><p>It’s better to let the <strong>code</strong> guide <strong>when to make</strong> functions, rather than forcing all code into functions <em>a priori</em>.</p></li>
+</ul>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>Documentation is one of the <strong>most important things</strong> we create as programmers. It is the <strong>number 1</strong> descriminator in whether a codebase remains useful over any extended period of time.</p>
+<p>I consider all of the following documentation</p>
+<ul class="simple">
+<li><p>variable names</p></li>
+<li><p>function and class names</p></li>
+<li><p>#inline comments</p></li>
+<li><p>docstrings for classes, methods, and functions</p></li>
+</ul>
+<p>Docstrings are the most formal form of documentation. These are descriptions of scripts, methods, classes, and functions which are typically written in one of several standard methods.</p>
+<p>The docstring styling is important, because there are automated programs such as <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> and <a class="reference external" href="https://www.mkdocs.org/">mkdocs</a> which can analyze your code base and construct documentation websites for you.</p>
+<p>We’ll be using the <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">numpy/scipy</a> in this class. It is a standard styling which is compatible with the tools listed above and is easy to write and read. It looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="n">arg2</span><span class="p">,</span><span class="n">arg3</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    A function which does something with three optional arguments and some keyword arguments</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arg1: float</span>
+<span class="sd">        description of arg1, which has been indicated to be a float</span>
+<span class="sd">    arg2: array_like</span>
+<span class="sd">        description of arg2, which has been indicated to be an array </span>
+<span class="sd">    arg3: int, optional</span>
+<span class="sd">        description of arg3, an optional input. Default: 0 </span>
+<span class="sd">    **kwargs: dict_like, optional</span>
+<span class="sd">        Any additional keyword arguments will be stored in the functions kwargs dictionary.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    output1, output2: int, float</span>
+<span class="sd">        This function returns 2 outputs, one an int and one a float, apparently. </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Requires numpy version &gt;1.15.5</span>
+<span class="sd">    Notes go here </span>
+<span class="sd">    </span>
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    Any links to other functions can go here </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I definitely don’t write that level of documentation for most of my functions (at least not as I’m writing them). My docs, when I’m playtesting code, usually look more like</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="c1"># Does Calculation X using a,b,c, which should be floats</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, once the function has been fleshed out, and I know for (mostly) sure that the inputs and outputs I want are stable, I’ll write up the more official docstring from above. In writing code for myself or colleagues (i.e., not distributed), notes and see also is generally overkill. But the basic docs laying out parameters and returns is worth doing.
+<a class="reference external" href="https://prospect.readthedocs.io/en/latest/api/models_api.html">Here’s a website</a> built using automatic docstrings.</p>
+</div>
+</div>
+<div class="section" id="args-and-kwargs">
+<h1>*Args and **kwargs<a class="headerlink" href="#args-and-kwargs" title="Permalink to this headline">¶</a></h1>
+<p>The simplest version of a Python function includes several <strong>ordered</strong> inputs, defined in the <code class="docutils literal notranslate"><span class="pre">def</span></code> line of the function definition. One step higher in complexity, after the ordered arguments, one can add <strong>optional</strong> or <strong>keyword</strong> arguments, which have set defaults but can be overwritten by the user by entering an argument with the appropriate keyword, via <code class="docutils literal notranslate"><span class="pre">kw=something</span></code>.</p>
+<p>These methods are likely familiar. Less familiar may be the use of <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> as inputs to your functions.</p>
+<p>In the simplest sense, these arguments are <strong>packing</strong> and <strong>unpacking</strong> variables. As a reminder about unpacking and packing, let’s look at an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">f</span> <span class="o">=</span> <span class="n">theta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the code above, we “packed” theta into an iterable containing subparts, and read this container into <code class="docutils literal notranslate"><span class="pre">func</span></code>. We then unpacked it by setting 6 variables all equal to <code class="docutils literal notranslate"><span class="pre">theta</span></code>. This works only if the number of variables equals the length of the input.</p>
+<p>Tuples are the default for packing things, but any simple iterable (like a list) work. Here’s another example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By returning <code class="docutils literal notranslate"><span class="pre">a,b</span></code>, we are actually telling python to pack the outputs into a tuple. If we then run out function by setting a single variable, via <code class="docutils literal notranslate"><span class="pre">out</span> <span class="pre">=</span> <span class="pre">func()</span></code>, then <code class="docutils literal notranslate"><span class="pre">out</span></code> will be a tuple containing two items. But we can also run our function via <code class="docutils literal notranslate"><span class="pre">c,d</span> <span class="pre">=</span> <span class="pre">func()</span></code>, and it will unpack that tuple directly into the two variables specified.</p>
+<p>As a random side note, one of our favorite functions, <code class="docutils literal notranslate"><span class="pre">np.where()</span></code>, returns a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> containing the indices of interest and then, usually, nothing. Hence, you’ll often see people run where as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="p">,</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">somthing</span><span class="o">&gt;</span><span class="n">something_else</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>That comma tells python to unpack the tuple, and the lack of a second variable tells it to simply dump whatever the second output is.</p>
+<p>Packing and unpacking are key to our use of args and kwargs in functions. But first, why use them at all?</p>
+<ul class="simple">
+<li><p>You may want to allow any number of inputs to your function</p></li>
+<li><p>You may want to pass arguments from your function to another.</p></li>
+</ul>
+<p>Matplotlib is a classic example of a library with many <code class="docutils literal notranslate"><span class="pre">**kwarg</span></code> enabled functions. When we use wrappers that conveniently allow a complex plot to be made in one line, we still want to be able to put in parameters that alter or set more granular settings.</p>
+<p>By adding <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> as an optional input to our functions, the user can supply any number of extra keyword/arg pairs. These sit harmlessly in a dictionary called <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>. If then inside our function we call another function which has <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> enabled, we can then feed our <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> dict into that function, and unpack it into keyword argument pairs again with the <code class="docutils literal notranslate"><span class="pre">**</span></code>.</p>
+<p><strong>Example</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">plot_wrapper</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">plot_wrapper</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lecture1_29_0.png" src="../_images/Lecture1_29_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">plot_wrapper</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lecture1_30_0.png" src="../_images/Lecture1_30_0.png" />
+</div>
+</div>
+<p>Notice that when I run <code class="docutils literal notranslate"><span class="pre">plot_wrapper</span></code>, I’m passing in arguments accepted by <code class="docutils literal notranslate"><span class="pre">ax.plot</span></code>, and since I feed <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> into <code class="docutils literal notranslate"><span class="pre">ax.plot</span></code> inside my function, it passes through to the plot command.</p>
+<div class="section" id="checking-kwargs">
+<h2>Checking kwargs<a class="headerlink" href="#checking-kwargs" title="Permalink to this headline">¶</a></h2>
+<p>In the above example, we blindly fed all kwargs of <code class="docutils literal notranslate"><span class="pre">plot_wrapper</span></code> into <code class="docutils literal notranslate"><span class="pre">ax.plot</span></code>. So If I were to add a kwarg to <code class="docutils literal notranslate"><span class="pre">plot_wrapper</span></code> that is <strong>not</strong> a kwarg of <code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code>, I’d get an error.</p>
+<p>We can be more careful by either demanding a dictionary input for <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> commands specifically, or we can check the keys of <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> manually and ensure that we only pass the relevant ones along.
+Since we can’t be sure which of the <em>many</em> inputs a user would use, in this case, it makes most sense to demand a <code class="docutils literal notranslate"><span class="pre">dict</span></code>. We still use the magic of unpacking to take that dictionary and pass it into the plotting command as key-value pairs, though.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_wrapper</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">line_args</span><span class="o">=</span><span class="p">{},</span><span class="n">symb_args</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span><span class="o">**</span><span class="n">line_args</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span><span class="o">**</span><span class="n">symb_args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_wrapper</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lecture1_35_0.png" src="../_images/Lecture1_35_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_wrapper</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">line_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;lw&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="p">},</span> 
+                 <span class="n">symb_args</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ms&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;mec&#39;</span><span class="p">:</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="mf">0.8</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lecture1_36_0.png" src="../_images/Lecture1_36_0.png" />
+</div>
+</div>
+<p>Notice that normally, one can’t feed a dictionary of key-values into a function. <code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code> expects the keywords to look like <code class="docutils literal notranslate"><span class="pre">(...,lw=3,alpha=0.5)</span></code>. But because we used <code class="docutils literal notranslate"><span class="pre">**</span></code> on our dict, we <em>unpacked</em> it into the function.</p>
+<p>So, to summarize: <code class="docutils literal notranslate"><span class="pre">**</span></code> packs up a key=value pairs when used in a function definition, storing in a dict called <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>, and then using <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> <em>again</em> in the <em>call</em> (rather than definition) of another function will unpack that dictionary and pass the inputs to the function as desired.</p>
+</div>
+</div>
+<div class="section" id="working-with-images">
+<h1>Working with Images<a class="headerlink" href="#working-with-images" title="Permalink to this headline">¶</a></h1>
+<p>Now that we’re caught up on our function definitions, documentation, and fancy use, let’s dive into the science part: images!</p>
+<div class="section" id="what-s-in-an-image">
+<h2>What’s in an image<a class="headerlink" href="#what-s-in-an-image" title="Permalink to this headline">¶</a></h2>
+<p>Astronomical images differ from standard images taken with a phone or DSLR camera primarily in that they both use older CCD technology and are typically “black and white”, recording only intensity of light and not color.</p>
+<p>Knowledge about color instead comes from the placement of <strong>filters</strong> in front of the detectors which have a certain <strong>bandpass</strong>, allowing through light within a certain wavelength range and blocking light outside it.</p>
+<p>Thus, we only ever get one color at a time, unless the telescope splits incoming light by color using, for example, a <strong>dichroic</strong>, and then sends the two streams to two detectors with different filters simultaneously.</p>
+<p>This means that in some sense, single-band (i.e., one narrow-ish wavelength range) images are simple programmatically: They are 2D arrays in which each pixel (position in array) contains a single number: counts (in some units).</p>
+<p>Usually, these units are counts in ADU (analog-to-digital units), which are roughly related to the actual counts of photons hitting the detector, via properties such as the gain of the system.</p>
+<p>Generally, we are not concerned with the exact units/gain/etc., because we back out the flux in photons (or energy, rather) via empirical calibrations with objects in the sky of known flux.</p>
+<div class="section" id="narrowband-data-and-continuum-subtraction">
+<h3>Narrowband Data and Continuum Subtraction<a class="headerlink" href="#narrowband-data-and-continuum-subtraction" title="Permalink to this headline">¶</a></h3>
+<p>Many astronomical surveys are carried out with <strong>broadband</strong> filters, such as <em>U,B,V,R,I</em> or <em>Sloan-u,g,r,i,z</em>. These wide filters let in a lot of light, making for quicker observations.</p>
+<p><strong>Narrowband</strong> filters, meanwhile, are generally used to target <strong>emission lines</strong> from gas. This includes the famous <span class="math notranslate nohighlight">\(H\alpha\)</span> line, along with other ionization lines.</p>
+<p>Narrowband filters attempt to block all light except that just surrounding the emission line. But the emission seen (at some wavelength targeting a line) is the superposition of the emission line and the stellar continuum (i.e., the star light also coming from the galaxy/region).</p>
+<p>Thus, to use narrowband data properly, it must be <strong>continuum subtracted</strong>. Generally, this is done by scaling a broadband image also encompassing the line (so for <span class="math notranslate nohighlight">\(\lambda\)</span>6563 <span class="math notranslate nohighlight">\(H\alpha\)</span>. <span class="math notranslate nohighlight">\(R\)</span>-band) and then subtracting it from the narrowband image.</p>
+<p><em><strong>Breakout Question: Discuss with your partner an obvious problem with recovering emission line fluxes using this method.</strong></em></p>
+<p><strong>Why bring this up?</strong></p>
+<p>In Lab 2, we’ll be working with a set of <em>HST</em> images in different bands, including <span class="math notranslate nohighlight">\(H\alpha\)</span>, and you’ll have to perform a continuum subtraction.</p>
+<p>When working directly with images, the primary mode of operation is the measurement of flux in different regions on the sky – in both broadband, and narrowband data.</p>
+<p><a class="reference external" href="http://www.astrofoto.ca/serge/DSO/M33_Ha-RC.htm">http://www.astrofoto.ca/serge/DSO/M33_Ha-RC.htm</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="image-handling-with-astropy">
+<h1>Image Handling with Astropy<a class="headerlink" href="#image-handling-with-astropy" title="Permalink to this headline">¶</a></h1>
+<p>Lastly, we need to know how to work with astronomical images in Python. As “simple” 2D arrays, simply opening and plotting an image is easy. But keeping track of, say, the celestial coordinates associated with a pointing on the sky, is not.</p>
+<p>Luckily, the open-source <code class="docutils literal notranslate"><span class="pre">astropy</span></code> library has many tools that facilitate the streamlined handling of astronomical imaging.</p>
+<div class="section" id="opening-the-image">
+<h2>Opening the Image<a class="headerlink" href="#opening-the-image" title="Permalink to this headline">¶</a></h2>
+<p>Opening images using astropy is made easy using the <code class="docutils literal notranslate"><span class="pre">fits</span></code> file handler. We’ll use a context manager to read in an image:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span> 
+
+<span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;antenna_Rband.fits&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdu</span><span class="p">:</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can confirm we’ve loaded a 2D array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 4.8691406,  5.432617 ,  5.713867 , ..., 11.48584  , 11.48584  ,
+        11.48584  ],
+       [ 5.573242 ,  5.713867 ,  5.291504 , ..., 11.48584  , 11.48584  ,
+        11.48584  ],
+       [ 6.4179688,  5.573242 ,  5.573242 , ..., 11.48584  , 11.48584  ,
+        11.48584  ],
+       ...,
+       [11.48584  , 11.48584  , 11.48584  , ...,  6.2768555,  5.432617 ,
+         5.9956055],
+       [11.48584  , 11.48584  , 11.48584  , ...,  5.291504 ,  5.432617 ,
+         5.573242 ],
+       [11.48584  , 11.48584  , 11.48584  , ...,  5.291504 ,  4.8691406,
+         3.4614258]], dtype=float32)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can make a basic plot showing it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fcfd9379bb0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lecture1_58_1.png" src="../_images/Lecture1_58_1.png" />
+</div>
+</div>
+<p>That may not have looked like much, but it did at least confirm we have a 2D image. Let’s tweak some settings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="n">m</span><span class="o">-</span><span class="n">s</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">m</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lecture1_60_0.png" src="../_images/Lecture1_60_0.png" />
+</div>
+</div>
+<p>Next, we need to plot with our <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes representing sky coordinate (RA/DEC) rather than pixel position. For this, we’ll need to use <code class="docutils literal notranslate"><span class="pre">astropy</span></code>’s <code class="docutils literal notranslate"><span class="pre">World</span> <span class="pre">Coordinate</span> <span class="pre">System</span></code> module. There are several defined coordinate systems on the sky, but for this class, we’ll primarily be using RA and DEC. (i.e., equitorial coordinates measured in hour angles and degrees).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span> 
+
+<span class="n">wcs_im</span> <span class="o">=</span> <span class="n">WCS</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: 
+                Inconsistent SIP distortion information is present in the FITS header and the WCS object:
+                SIP coefficients were detected, but CTYPE is missing a &quot;-SIP&quot; suffix.
+                astropy.wcs is using the SIP distortion coefficients,
+                therefore the coordinates calculated here might be incorrect.
+
+                If you do not want to apply the SIP distortion coefficients,
+                please remove the SIP coefficients from the FITS header or the
+                WCS object.  As an example, if the image is already distortion-corrected
+                (e.g., drizzled) then distortion components should not apply and the SIP
+                coefficients should be removed.
+
+                While the SIP distortion coefficients are being applied here, if that was indeed the intent,
+                for consistency please append &quot;-SIP&quot; to the CTYPE in the FITS header or the WCS object.
+
+                 [astropy.wcs.wcs]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: FITSFixedWarning: &#39;datfix&#39; made the change &#39;Set MJD-OBS to 53207.000000 from DATE-OBS&#39;. [astropy.wcs.wcs]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The wcs for a given image is constructed from the image header, where some information about the pixel scale and image pointing are stored. Notice here we got a warning. This happens sometimes with <em>HST</em> images that are mosaics of pointings that have already been drizzled (an image alignment/combination process). We need to remove the mentioned coefficients.</p>
+<p>The following will be provided for lab:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">strip_SIP</span><span class="p">(</span><span class="n">header</span><span class="p">):</span>
+    <span class="n">A_prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">header</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;A_&#39;</span><span class="p">)]</span>
+    <span class="n">B_prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">header</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;B_&#39;</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">A_prefixes</span><span class="p">,</span><span class="n">B_prefixes</span><span class="p">):</span>
+        <span class="k">del</span> <span class="n">header</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
+        <span class="k">del</span> <span class="n">header</span><span class="p">[</span><span class="n">b</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">header</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">header_fixed</span> <span class="o">=</span> <span class="n">strip_SIP</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+<span class="n">wcs</span> <span class="o">=</span> <span class="n">WCS</span><span class="p">(</span><span class="n">header_fixed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are now ready to plot our image in celestial coordinates. Our game plan is to use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>’s <code class="docutils literal notranslate"><span class="pre">projection</span></code>. You may be familiar with this as the way to make an axis, e.g., in polar coordinates. <code class="docutils literal notranslate"><span class="pre">Astropy</span></code> <code class="docutils literal notranslate"><span class="pre">WCS</span></code> objects can be treated as projections in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Below I show two ways to initialize an axis with our new wcs projection.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span><span class="n">wcs</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lecture1_67_0.png" src="../_images/Lecture1_67_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">wcs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lecture1_68_0.png" src="../_images/Lecture1_68_0.png" />
+</div>
+</div>
+<p>The two methods work equally well. The former is slightly preferred, as it makes it easy to make multiple panels with a wcs projection.</p>
+<p>Now, all we have to do, is plop our image into it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span><span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span><span class="n">wcs</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span><span class="n">vmin</span><span class="o">=</span><span class="n">m</span><span class="o">-</span><span class="n">s</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="n">m</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lecture1_70_0.png" src="../_images/Lecture1_70_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;WCSAxesSubplot:xlabel=&#39;pos.eq.ra&#39;, ylabel=&#39;pos.eq.dec&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="lab-preview">
+<h3>Lab Preview<a class="headerlink" href="#lab-preview" title="Permalink to this headline">¶</a></h3>
+<p>In the lab, you’ll be working with the same image of the Antenna galaxy, in several bands. In addition to the basic reading in and use of header/wcs, you’ll be learning about <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code>, the <code class="docutils literal notranslate"><span class="pre">astropy</span></code> handler for coordinates, and <code class="docutils literal notranslate"><span class="pre">units</span></code> which is a module we’ll be discussing throughout class. You’ll use <code class="docutils literal notranslate"><span class="pre">Cutout2D</span></code> to make zoom in plots of the image while retaining coordinate information. And you’ll use the <code class="docutils literal notranslate"><span class="pre">photutils</span></code> package and <code class="docutils literal notranslate"><span class="pre">sep</span></code> to find sources and perform some aperture photometry.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "a330"
+        },
+        kernelOptions: {
+            kernelName: "a330",
+            path: "./Lecture1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'a330'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Astro 330 Course Book</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lab1/Lab1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lab 1: Overview, Review, and Environments</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>
