@@ -1,0 +1,960 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 1: Overview, Review, and Environments &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 2: Astronomical Imaging I" href="../Lab2/Lab2.html" />
+    <link rel="prev" title="1. Astronomical Imaging &amp; Functional Programming" href="../Lecture1/Lecture1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lab1/Lab1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lab1/Lab1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lab 1: Overview, Review, and Environments
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectives">
+     Objectives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-i-computational-ecosystem">
+   Part I: Computational Ecosystem
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-a">
+     Question A
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-up-an-environment">
+     Setting up an Environment.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-jupyter">
+     Adding Jupyter
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-packages">
+     Installing Packages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-ii-python-review">
+   Part II: Python Review
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-1">
+     Question 1
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-2">
+     Question 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-3">
+     Question 3
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-4">
+     Question 4:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-5">
+     Question 5
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-6">
+     Question 6
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-7">
+     Question 7
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-8">
+     Question 8
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-9">
+     Question 9
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question-10">
+     Question 10
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-1-overview-review-and-environments">
+<h1>Lab 1: Overview, Review, and Environments<a class="headerlink" href="#lab-1-overview-review-and-environments" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+<p>In this lab, we’ll</p>
+<ul class="simple">
+<li><p>Review the computational infrastructure around our data science environments,</p></li>
+<li><p>Go through the process of ensuring that we have a Python environment set up for this class with the proper installed packages</p></li>
+<li><p>Within our environment, we’ll review the basic data science operations in Python, and introduce some tips and tricks.</p></li>
+</ul>
+<div class="admonition-take-a-deep-breath admonition">
+<p class="admonition-title">Take a Deep Breath</p>
+<p>Don’t freak out if stuff presented here is brand new to you! Ask a friend, google around (esp. stack overflow) and find a solution. All of these examples can be done in a few lines of code.</p>
+</div>
+</div>
+</div>
+<div class="section" id="part-i-computational-ecosystem">
+<h1>Part I: Computational Ecosystem<a class="headerlink" href="#part-i-computational-ecosystem" title="Permalink to this headline">¶</a></h1>
+<p>In the space below, or in your own assignment, answer the following:</p>
+<div class="section" id="question-a">
+<h2>Question A<a class="headerlink" href="#question-a" title="Permalink to this headline">¶</a></h2>
+<p>Describe the following terms, and point out the differences between them. Feel free to look things up.</p>
+<ul class="simple">
+<li><p>python:</p></li>
+<li><p>the terminal:</p></li>
+<li><p>the file system:</p></li>
+<li><p>jupyter:</p></li>
+<li><p>an IDE:</p></li>
+<li><p>a text editor:</p></li>
+<li><p>git:</p></li>
+<li><p>PATH:</p></li>
+</ul>
+<p>I am writing this lab in a notebook. We’ll be discussing the pros and cons of notebooks in class. Below, I’m going to check which python installation on my computer is being pointed to within my PATH. As a reminder, you can see your full path by echoing it from the terminal. Within a notebook, that looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="nv">$PATH</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ipasha/anaconda3/bin:/Users/ipasha/anaconda3/condabin:/anaconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/ipasha/anaconda3/bin:.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The “!” in my notebook allows me to run terminal commands from a notebook; you don’t need this symbol when running commands in an actual terminal.</p>
+</div>
+<p>I can check my python as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>which python
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ipasha/anaconda3/bin/python
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that calls to <code class="docutils literal notranslate"><span class="pre">python</span></code> are triggering the python installed in <code class="docutils literal notranslate"><span class="pre">anaconda3</span></code>, which is what we want (see the installation video for more details). If your call to <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> in the terminal returns something like <code class="docutils literal notranslate"><span class="pre">usr/bin/python</span></code>, then something has likely gone wrong with your installation. There are some troubleshooting steps suggested in the installation video.</p>
+</div>
+<div class="section" id="setting-up-an-environment">
+<h2>Setting up an Environment.<a class="headerlink" href="#setting-up-an-environment" title="Permalink to this headline">¶</a></h2>
+<p>We can think of packages as programs installed on our computer. But what if one of my projects needs Photoshop 14.0, and another needs a feature that was only available in Photoshop 12.5.2? An environment is the system on which your code is being executed. When you fire up a terminal, this is usually your <em>base</em> environment, the default one for your <em>user</em> on a given computer system. But rather than always installing programs in this base installation, we can create custom environments for each of our projects. We can then install the exact dependencies for those projects within our environments, and we’ll know they won’t mess with each other.</p>
+<p>For this class, we’re going to be doing a lot of package installations. To ensure we are all on the same page and are working with the same tools, we’re going to use a <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">environment</span></code> to maintain versioning. Note: there are multiple environment creation tools/methods. Conda environments are the predominant standard in astronomy, hence their use here.</p>
+<p>In your terminal, type the following:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are on WINDOWS, you NEED to use the ANACONDA TERMINAL. NOT YOUR WINDOWS POWER SHELL/COMMAND PROMPT. Search your pc for anaconda and you’ll see an anaconda launcher (if you followed the installation video correctly). From there, you should be able to find an anaconda terminal/prompt. That’s where you should do anything whenever I say “from your terminal”.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">a330</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once you run this, answer “y” to the prompts, and your new environment will be installed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above command may take several minutes to execute.</p>
+</div>
+<p>Next, we want to activate this environment (still in our terminal). We do this as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">a330</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you do so, you should see the left hand edge of your prompt switch from (base) to (a330).</p>
+<p>Next, let’s make an alias so that getting into our a330 environment is a snap. We’re going to access a file called <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>, which allows us to set aliases and environment variables. This file is located in your home directory, so I can print mine here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>more ~/.bash_profile
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># &gt;&gt;&gt; conda init &gt;&gt;&gt;
+# !! Contents within this block are managed by &#39;conda init&#39; !!
+__conda_setup=&quot;$(CONDA_REPORT_ERRORS=false &#39;/anaconda3/bin/conda&#39; shell.bash hook 2&gt; /dev/null)&quot;
+if [ $? -eq 0 ]; then
+    \eval &quot;$__conda_setup&quot;
+else
+    if [ -f &quot;/anaconda3/etc/profile.d/conda.sh&quot; ]; then
+# . &quot;/anaconda3/etc/profile.d/conda.sh&quot;  # commented out by conda initialize
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH=&quot;/anaconda3/bin:$PATH&quot;
+    fi
+fi
+unset __conda_setup
+# &lt;&lt;&lt; conda init &lt;&lt;&lt;
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export PATH=$PATH:/Users/ipasha/anaconda3/bin
+export PYTHONPATH=/Users/ipasha/anaconda3/bin/python3.8
+PATH=$PATH:.
+alias python=&#39;python3&#39;
+
+
+[K[?1l&gt;/ipasha/.bash_profile[m[K
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice above I use the <code class="docutils literal notranslate"><span class="pre">~</span></code> which is a shorthand for home directory. On my computer, the default home directory for my user is <code class="docutils literal notranslate"><span class="pre">/Users/ipasha/</span></code>.</p>
+<p>This file has some conda stuff in it at the top, as well as some path and python path exports, as well as an alias.</p>
+<p>Yours should also have the conda init stuff, if you installed anaconda properly. Using your text editor of choice, add a line to this file that reads <code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">a330='conda</span> <span class="pre">activate</span> <span class="pre">a330'</span></code>.</p>
+<div class="sidebar">
+<p class="sidebar-title">Using Vi/vim</p>
+<p>Vi/vim is a built-in terminal program that allows for the editing of files. It is helpful to learn, especially when working on remote servers. We’ll go into it more later, but here is a step by step for performing the above step with vim.</p>
+<ul class="simple">
+<li><p>First: from the terminal, type <code class="docutils literal notranslate"><span class="pre">vim</span> <span class="pre">~/.bash_profile</span></code> and hit enter. This will open the editor. If ‘vim’ isn’t recognized, try ‘vi’.</p></li>
+<li><p>Next: Press the “I” key to open insert mode. Move your cursor with the arrow keys to the desired line, then type in the alias command shown to left.</p></li>
+<li><p>Finally: Press <code class="docutils literal notranslate"><span class="pre">esc</span></code> to get out of insert mode, then type <code class="docutils literal notranslate"><span class="pre">:wq</span></code> and hit enter in order to “write” then “quit”.</p></li>
+</ul>
+</div>
+<p>Now, from your terminal, source your profile by typing <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.bash_profile</span></code>. You’re good to go! Test that you can activate your environment by typing <code class="docutils literal notranslate"><span class="pre">a330</span></code> and hitting enter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To deactivate, just type <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code>.</p>
+</div>
+</div>
+<div class="section" id="adding-jupyter">
+<h2>Adding Jupyter<a class="headerlink" href="#adding-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>You’ll be using notebooks during this class, and we need to make sure that we can access our new environment from within Jupyter notebook. To ensure this, we’re going to do the following:</p>
+<p>First, make sure your environment is activated.</p>
+<p>Then, type:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">anaconda</span> <span class="n">ipykernel</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This ensures we can select different kernels inside jupyter. A kernel is basically “the thing that is python”, the root thing being run on your system when you use python. By creating environments, we’re creating different unique kernels, and we can now get to them within our notebooks.</p>
+<p>Now, run the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">a330</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once you’ve done this, you should have the ability to access your new environment from within Jupyter. We can test this as follows:</p>
+<ul class="simple">
+<li><p>First, open a new terminal window, and activate your environment (if you made the alias, this means typing <code class="docutils literal notranslate"><span class="pre">a330</span></code> in your terminal.</p></li>
+<li><p>Next, type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> to open jupyter lab. If for some reason you don’t have jupyter lab yet, you can install it now with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">jupyterlab</span></code>.</p></li>
+<li><p>Once you have lab open, there should be a ‘launcher’ page, with one option being to create a new notebook using python – you <em>should</em> see your environment listed there.</p></li>
+<li><p>If you don’t hit refresh on the webpage just in case.</p></li>
+<li><p>You can also click on the option to open a python3 notebook. Inside, in the top right corner, it should say your current environment (probably Python 3). Clicking that, it should give you the option to choose a different environment, and your environment should be listed there.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already had a lab open, you’ll have to hit refresh to get it to show up.</p>
+</div>
+</div>
+<div class="section" id="installing-packages">
+<h2>Installing Packages<a class="headerlink" href="#installing-packages" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have our environment, we’re going to install the set of packages we need for this class. We may need more of them as the semester goes on, but for now, do the following (in your terminal, within your environment).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">n</span> <span class="n">a330</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">astropy</span> <span class="n">matplotlib</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>(again, hitting “y” when prompted). Again, this step might take a minute or so to run.</p>
+<p>Congrats, you now have an environment set up for this class, and can jump in and out of it at will, either in your terminal, or within a Jupyter notebook.</p>
+<div class="admonition-hot-tip admonition">
+<p class="admonition-title">Hot Tip</p>
+<p>It’s highly recommended you do these steps anytime you start a new research project. Up front, you may not know all the dependencies that will arise, but as you go along, if you keep your work to that environment, you’ll be able to carefully control which versions of which packages you’re accessing at all times.</p>
+</div>
+</div>
+</div>
+<div class="section" id="part-ii-python-review">
+<h1>Part II: Python Review<a class="headerlink" href="#part-ii-python-review" title="Permalink to this headline">¶</a></h1>
+<p>In this section, I’ll ask you to perform some pythonic operations to get back into the swing of things if it has been a little while.</p>
+<p>For this assignment, please carry out your work in a Jupyter notebook, with the questions labeled and your output shown. You’ll submit this notebook via Github, but we will discuss how to perform this step in class.</p>
+<div class="section" id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
+<p>Create a 2D array of dimensions 1000 x 1000, in which the values in each pixel are random-gaussian distributed about a mean of 10, with a sigma of 2, and then use matplotlib to display this image. Make sure (0,0) is in the lower lefthand corner.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-2">
+<h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
+<p>The distribution of pixels in your above image should not have many outliers beyond 3-sigma from the mean, but there will be some. Find the location of any 3-sigma outliers in the image, and highlight them by circling their location.
+Confirm that the fraction of these out of the total number of pixels agrees with the expectation for a normal distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-3">
+<h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
+<p>When dealing with astronomical data, it is sometimes advisable to not include outliers in a calculation being performed on a set of data (in this example, an image). We know, of course, that the data we’re plotting ARE coming from a gaussian distribution, so there’s no reason to exclude, e.g., 3-sigma outliers, but for this example, let’s assume we want to.</p>
+<p>Create a numpy masked array in which all pixels that are &gt; 3<span class="math notranslate nohighlight">\(\sigma\)</span> from the image mean are masked. Then, calculate the mean and sigma of the new masked array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Clipping the outliers of this distribution should not affect the mean in any strong way, but should noticably decrease <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
+</div>
+<div class="section" id="question-4">
+<h2>Question 4:<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h2>
+<p>Using Array indexing, re-plot the same array from above, but zoom in on the inner 20% of the image, such that the full width is 20% of the total. Note: try not to hard code your indexing. You should be able to flexibly change the percentage. For this one, use a white-to-black color map.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Your image should now be 200 by 200 pixels across. Note that your new image has its own indexing. A common “gotcha” when working with arrays like this is to index in, but then try to use indices found (e.g., via <code class="docutils literal notranslate"><span class="pre">where()</span></code>) in the larger array on the cropped in version, which can lead to errors.</p>
+</div>
+<div class="section" id="question-5">
+<h2>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h2>
+<p>Often, we have an expression to calculate of the form</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_i \sum_j a_i b_j
+\]</div>
+<p>Your natural impulse for coding this double sum might look like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+         <span class="n">total</span><span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">j</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>which, mathematically, makes sense! But as it turns out, there’s a way we can do this without any loops at all — and when <span class="math notranslate nohighlight">\(\vec{a}\)</span> and <span class="math notranslate nohighlight">\(\vec{b}\)</span> get long, this becomes hugely important in our code.</p>
+<p>The trick we’re going to use here is called <a class="reference external" href="https://numpy.org/doc/stable/user/basics.broadcasting.html">array broadcasting</a>, which you can read about at the link if you’re not already familar. I’m going to give you <span class="math notranslate nohighlight">\(\vec{a}\)</span> and <span class="math notranslate nohighlight">\(\vec{b}\)</span> below. For this exercise, calculate the double sum indicated above without the use of a for-loop. Check that your code worked by using the slow double-loop method.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">np.newaxis</span></code> will be useful here, or for a slightly longer solution, try <code class="docutils literal notranslate"><span class="pre">np.repeat</span></code> and <code class="docutils literal notranslate"><span class="pre">reshape()</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">16</span><span class="p">])</span>
+<span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you’re familiar with the jupyter magic command <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code>, try timing your loop vs non-loop solutions with a longer list (say, 5000 random numbers in <span class="math notranslate nohighlight">\(\vec{a}\)</span> and <span class="math notranslate nohighlight">\(\vec{b}\)</span>). How much faster is the non-loop?</p>
+</div>
+</div>
+<div class="section" id="question-6">
+<h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">¶</a></h2>
+<p>Often in astronomy we need to work with grids of values. For example, let’s say we have a model that describes some data, and the model has 2 parameters, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>We might choose different combinations of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, and determine a metric for how well models of such combinations fit our data (e.g., <span class="math notranslate nohighlight">\(\chi^2\)</span>).</p>
+<p>We may then want to plot this <span class="math notranslate nohighlight">\(\chi^2\)</span> value for each point on our grid – that is, at each grid position corresponding to some <span class="math notranslate nohighlight">\(a_i\)</span> and <span class="math notranslate nohighlight">\(b_j\)</span>.</p>
+<p>Below, I provide a function, <code class="docutils literal notranslate"><span class="pre">chi2</span></code>, which returns a single number given some singular inputs <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<p>Create some arrays of <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> to test that range between 1 and 25, and have 10 entries evenly spaced between those values. Then, loop over them and find the <span class="math notranslate nohighlight">\(\chi^2\)</span> using my function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can’t get around the double loop in this case, because we are operating under the assumption that the calculation of some single <span class="math notranslate nohighlight">\(\chi^2\)</span> using a unique combination of <span class="math notranslate nohighlight">\(a_i\)</span> and <span class="math notranslate nohighlight">\(b_j\)</span> cannot be vectorized. If it could, we wouldn’t need to do this activity. But often, we can’t, because the creation of a model given some inputs is nontrivial.</p>
+</div>
+<p>Once you’ve stored the <span class="math notranslate nohighlight">\(\chi^2\)</span> values for each combination of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, create a plot with <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> as the axes and show using colored circles the <span class="math notranslate nohighlight">\(\chi^2\)</span> value at each location. Add a colorbar to see the values being plotted.</p>
+<p>To create this grid, use the <code class="docutils literal notranslate"><span class="pre">np.meshgrid()</span></code> function. For your plot, make sure the marker size is big enough to see the colors well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">chi2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">((</span><span class="mi">15</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="mi">12</span><span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.2</span> <span class="c1">#note, this is nonsense, but should return a different value for each input a,b</span>
+
+<span class="c1"># Your Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-7">
+<h2>Question 7<a class="headerlink" href="#question-7" title="Permalink to this headline">¶</a></h2>
+<p>Re-show your final plot above, making the following changes:</p>
+<ul class="simple">
+<li><p>label your colorbar as <span class="math notranslate nohighlight">\(\chi^2\)</span> using latex notation, with a fontsize&gt;13</p></li>
+<li><p>Make your ticks point inward and be longer</p></li>
+<li><p>Make your ticks appear on the top and right hand axes of the plot as well</p></li>
+<li><p>If you didn’t already, label the x and y axes appropriately and with a font size &gt; 13</p></li>
+<li><p>Make sure the numbers along the axes have fontsizes &gt; 13</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-8">
+<h2>Question 8<a class="headerlink" href="#question-8" title="Permalink to this headline">¶</a></h2>
+<p>Some quick list comprehensions! For any unfamilar, <strong>comprehensions</strong> are pythonic statements that allow you to compress a for-loop (generally) into a single line, and usually runs faster than a full loop (but not by a ton).</p>
+<p>Take the for-loop below and write it as a list comprehension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">visited_cities</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;San Diego&#39;</span><span class="p">,</span> <span class="s1">&#39;Boston&#39;</span><span class="p">,</span> <span class="s1">&#39;New York City&#39;</span><span class="p">,</span><span class="s1">&#39;Atlanta&#39;</span><span class="p">]</span>
+<span class="n">all_cities</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;San Diego&#39;</span><span class="p">,</span> <span class="s1">&#39;Denver&#39;</span><span class="p">,</span> <span class="s1">&#39;Boston&#39;</span><span class="p">,</span> <span class="s1">&#39;Portland&#39;</span><span class="p">,</span> <span class="s1">&#39;New York City&#39;</span><span class="p">,</span> <span class="s1">&#39;San Francisco&#39;</span><span class="p">,</span> <span class="s1">&#39;Atlanta&#39;</span><span class="p">]</span>
+
+<span class="n">not_visited</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">all_cities</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">city</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited_cities</span><span class="p">:</span>
+        <span class="n">not_visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">city</span><span class="p">)</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="n">not_visited</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Denver&#39;, &#39;Portland&#39;, &#39;San Francisco&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, create an array of integers including 1 through 30, inclusive. Using a comprehension, create a numpy array containing the squared value of only the odd numbers in your original array. (<em>Hint, remember the modulo operator</em>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the next example, you have a list of first names and a list of last names. Use a list comprehension to create an array that is a list of full names (with a space between first and last names).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span><span class="s1">&#39;Samantha&#39;</span><span class="p">,</span><span class="s1">&#39;John&#39;</span><span class="p">,</span><span class="s1">&#39;Renee&#39;</span><span class="p">]</span>
+<span class="n">last_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Smith&#39;</span><span class="p">,</span><span class="s1">&#39;Bee&#39;</span><span class="p">,</span><span class="s1">&#39;Oliver&#39;</span><span class="p">,</span><span class="s1">&#39;Carpenter&#39;</span><span class="p">]</span>
+
+<span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-challenge-problem-worth-extra-credit admonition">
+<p class="admonition-title">Challenge Problem (worth Extra Credit)</p>
+<p>I’ve created new lists that contain strings of the names in the format Lastname,Firstname, with random leading/trailing spaces and terrible capitalizations. Use a list comprehension to make our nice, “Firstname Lastname” list again.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sMitH,BoB   &#39;</span><span class="p">,</span> <span class="s1">&#39;  bee,samanthA&#39;</span><span class="p">,</span><span class="s1">&#39; oLIVER,JOHN &#39;</span><span class="p">,</span><span class="s1">&#39;  caRPENTer,reneE  &#39;</span><span class="p">]</span>
+
+<span class="c1"># Your Code </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that with this last example, we’re entering a degree of single-line length and complexity that it almost doesn’t make sense to use a comprehension anymore. Just because something CAN be done in one line doesn’t mean is has to be, or should be.</p>
+</div>
+<p>You may be wondering what use case this type of coding has in astronomy – turns out, quite a lot. Take this example: you read in a data table and the columns have names like “FLUX HA”, “FLUX ERR”, etc.</p>
+<p>If you’re trying to make a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> of this table, it is advantageous to rename these columns something like <code class="docutils literal notranslate"><span class="pre">flux_ha</span></code> and <code class="docutils literal notranslate"><span class="pre">flux_err</span></code>. This way, commands like <code class="docutils literal notranslate"><span class="pre">df.flux_ha</span></code> can be used.</p>
+<p>Being able to iterate over the string list of column names and turn caps into lower case, spaces into underscores, etc., is a useful skill that will come in handy when wrangling data.</p>
+<p>In the solutions, I will show how I myself would do the above example in production code:</p>
+<p>By making the string cleaning steps a function, I could take the time to explain what is going on within the function, as well as control for additional possibilities (like the names being in First,Last formatting). I could make this function more robust and complex, and my final comprehension stays readable and simple, as I loop over the names and run each through my handy functions (with some settings tweaked, potentially).</p>
+</div>
+<div class="section" id="question-9">
+<h2>Question 9<a class="headerlink" href="#question-9" title="Permalink to this headline">¶</a></h2>
+<p>Take the arrays <code class="docutils literal notranslate"><span class="pre">XX</span></code>, <code class="docutils literal notranslate"><span class="pre">YY</span></code>, and <code class="docutils literal notranslate"><span class="pre">ZZ</span></code> below and create one multidimensional array in which they are the columns. Print to confirm this worked.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">XX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+<span class="n">YY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">])</span>
+<span class="n">ZZ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">])</span>
+
+<span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-10">
+<h2>Question 10<a class="headerlink" href="#question-10" title="Permalink to this headline">¶</a></h2>
+<p>Units, units, units. The bane of every scientists’ existence… except theorists that set every constant equal to 1.</p>
+<p>In the real world, we measure fluxes or magnitudes in astronomical images, infer temperatures and densities from data and simulations, and ultimately have to deal with units one way or another.</p>
+<p>Thankfully, our friends at <code class="docutils literal notranslate"><span class="pre">astropy</span></code> know this, and they’ve come to save the day. This next question serves as an introduction to the <code class="docutils literal notranslate"><span class="pre">units</span></code> module in astropy, which can be both a live saver and a pain in the ass, but at the end of the day is absolutely worth learning.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The standard import for this library is <code class="docutils literal notranslate"><span class="pre">u</span></code>, so be careful not to name any variables that letter.</p>
+<p>To “assign” units to a variable, we multiply by the desired unit as follows. Note that generally the module knows several aliases/common abrreviations for a unit, if it is uniquely identifiable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">star_temp</span> <span class="o">=</span> <span class="mi">5000</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">K</span> 
+<span class="n">star_radius</span> <span class="o">=</span> <span class="mf">0.89</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">Rsun</span> 
+<span class="n">star_mass</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">Msun</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can perform trivial conversions using the <code class="docutils literal notranslate"><span class="pre">.to()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">star_radius</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[619173 \; \mathrm{km}\]</div>
+</div>
+</div>
+<p>Once we attach units to something, it is now a <code class="docutils literal notranslate"><span class="pre">Quantity</span></code> object. Quantity objects are great, above, we saw they have built-in methods to facilitate conversion. They can also be annoying – sometimes another function we’ve written needs just the raw value or array back out. To get this, we use the <code class="docutils literal notranslate"><span class="pre">.value</span></code> attribute of a quantity object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">star_mass</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">kg</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.1930459224188305e+30
+</pre></div>
+</div>
+</div>
+</div>
+<p>This now strips away all <code class="docutils literal notranslate"><span class="pre">Quantity</span></code> stuff and gives us an array or value to use elsewhere in our code.</p>
+<p>Units are great because they help us combine quantities while tracking units and dimensional analysis. A common operation in astronomy is converting a flux to a luminosity given a distance, using</p>
+<div class="math notranslate nohighlight">
+\[
+F = \frac{L}{4\pi D^2}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the luminosity and <span class="math notranslate nohighlight">\(D\)</span> is the distance to the source.</p>
+<p>What if I’ve made a flux measurement in astronomical units such as erg/s/cm<span class="math notranslate nohighlight">\(^2\)</span>, and I want to know the luminosity in solar luminosities, and my distance happens to be in Mpc? Regardless of my input units, I can easily do this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.6</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Mpc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mf">7.5e-14</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">erg</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">L</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Lsun</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[30381.226 \; \mathrm{L_{\odot}}\]</div>
+</div>
+</div>
+<p>This conversion worked because the units worked out. If my units of flux weren’t correct, I’d get an error:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.6</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Mpc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mf">7.5e-14</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">erg</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">)</span>
+<span class="n">L</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Lsun</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UnitConversionError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">142</span><span class="o">-</span><span class="mi">1</span><span class="n">a5aea91b170</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">L</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="mf">3.6</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Mpc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mf">7.5e-14</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">erg</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">AA</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">L</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Lsun</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/astropy/units/quantity.py</span> in <span class="ni">to</span><span class="nt">(self, unit, equivalencies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span>         <span class="c1"># and don&#39;t want to slow down this method (esp. the scalar case).</span>
+<span class="g g-Whitespace">    </span><span class="mi">688</span>         <span class="n">unit</span> <span class="o">=</span> <span class="n">Unit</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">689</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_view</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_to_value</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">equivalencies</span><span class="p">),</span> <span class="n">unit</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">690</span> 
+<span class="g g-Whitespace">    </span><span class="mi">691</span>     <span class="k">def</span> <span class="nf">to_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">equivalencies</span><span class="o">=</span><span class="p">[]):</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/astropy/units/quantity.py</span> in <span class="ni">_to_value</span><span class="nt">(self, unit, equivalencies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">658</span>         <span class="k">if</span> <span class="n">equivalencies</span> <span class="o">==</span> <span class="p">[]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">659</span>             <span class="n">equivalencies</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_equivalencies</span>
+<span class="ne">--&gt; </span><span class="mi">660</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span>                             <span class="n">equivalencies</span><span class="o">=</span><span class="n">equivalencies</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span> 
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/astropy/units/core.py</span> in <span class="ni">to</span><span class="nt">(self, other, value, equivalencies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">985</span>             <span class="k">return</span> <span class="n">UNITY</span>
+<span class="g g-Whitespace">    </span><span class="mi">986</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">987</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_converter</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">equivalencies</span><span class="o">=</span><span class="n">equivalencies</span><span class="p">)(</span><span class="n">value</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">988</span> 
+<span class="g g-Whitespace">    </span><span class="mi">989</span>     <span class="k">def</span> <span class="nf">in_units</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">equivalencies</span><span class="o">=</span><span class="p">[]):</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/astropy/units/core.py</span> in <span class="ni">_get_converter</span><span class="nt">(self, other, equivalencies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">916</span>                             <span class="k">pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">917</span> 
+<span class="ne">--&gt; </span><span class="mi">918</span>             <span class="k">raise</span> <span class="n">exc</span>
+<span class="g g-Whitespace">    </span><span class="mi">919</span> 
+<span class="g g-Whitespace">    </span><span class="mi">920</span>     <span class="k">def</span> <span class="nf">_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/astropy/units/core.py</span> in <span class="ni">_get_converter</span><span class="nt">(self, other, equivalencies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span>         <span class="c1"># if that doesn&#39;t work, maybe we can do it with equivalencies?</span>
+<span class="g g-Whitespace">    </span><span class="mi">902</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">903</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_equivalencies</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">904</span>                 <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_equivalencies</span><span class="p">(</span><span class="n">equivalencies</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">905</span>         <span class="k">except</span> <span class="n">UnitsError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/astropy/units/core.py</span> in <span class="ni">_apply_equivalencies</span><span class="nt">(self, unit, other, equivalencies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">884</span>         <span class="n">other_str</span> <span class="o">=</span> <span class="n">get_err_str</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">885</span> 
+<span class="ne">--&gt; </span><span class="mi">886</span>         <span class="k">raise</span> <span class="n">UnitConversionError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>             <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> and </span><span class="si">{}</span><span class="s2"> are not convertible&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span>                 <span class="n">unit_str</span><span class="p">,</span> <span class="n">other_str</span><span class="p">))</span>
+
+<span class="ne">UnitConversionError</span>: &#39;erg Mpc2 / (Angstrom cm2 s)&#39; and &#39;solLum&#39; (power) are not convertible
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">units</span></code> realized that I was putting in units of flux density, but wanted a luminosity out, and ultimately those units don’t resolve out. Thus, it can be a great way to catch errors in your inputs.</p>
+<p>Note: just be careful that sometimes, you throw a constant into an equation but the constant has some units. If you’re going to use the unit module to do a calculation, ALL inputs that HAVE units must be assigned them correctly as above for it to work.</p>
+<p>For your exercise, consider the following:</p>
+<p>The virial temperature of a galaxy halo is given roughly by</p>
+<div class="math notranslate nohighlight">
+\[
+T_{\rm vir} \simeq 5.6\times10^4\;\textrm{K}\left(\frac{\mu}{0.59}\right)\left(\frac{M_{\rm halo}}{10^{10}\; M_{\odot}}\right)^{2/3}\left(\frac{1+z}{4}\right)
+\]</div>
+<p>where here, we can assume <span class="math notranslate nohighlight">\(\mu\)</span> is 0.59.</p>
+<p>Write a function that takes as an input a halo mass, redshift, and optionally <span class="math notranslate nohighlight">\(\mu\)</span> (default 0.59), and returns the virial temperature in Kelvin. Your function should take in an astropy quantity with mass units, but should allow for the mass to be input with any appropriate units.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Code</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lab1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lecture1/Lecture1.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">1. Astronomical Imaging &amp; Functional Programming</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lab2/Lab2.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lab 2: Astronomical Imaging I</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>
