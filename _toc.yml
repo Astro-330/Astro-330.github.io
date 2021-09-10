@@ -9,5 +9,7 @@ parts:
   - caption: Labs
     chapters:
     - file: Lab1/Lab1
+    - file: Lab1/Lab1_solutions
     - file: Lab2/Lab2
+
     
