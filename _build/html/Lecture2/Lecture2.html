@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Object Oriented Programming &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 1: Overview, Review, and Environments" href="../Lab1/Lab1.html" />
+    <link rel="prev" title="1. Astronomical Imaging &amp; Functional Programming" href="../Lecture1/Lecture1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Object Oriented Programming
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lecture2/Lecture2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lecture2/Lecture2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   2. Object Oriented Programming
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-i-methods-and-attributes">
+     Part I: Methods and Attributes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-ii-defining-classes">
+     Part II: Defining Classes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-methods">
+     Creating Methods
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise">
+       Exercise
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#psf-photometry">
+   PSF Photometry
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formulas-needed">
+     Formulas Needed
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="object-oriented-programming">
+<h1>2. Object Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">¶</a></h1>
+<p>In this lecture, we’ll go over the basics of writing object oriented code. Because this is a large shift in programming syntax (and thinking), we’ll be spending several lectures building up intuition for it.</p>
+<div class="section" id="part-i-methods-and-attributes">
+<h2>Part I: Methods and Attributes<a class="headerlink" href="#part-i-methods-and-attributes" title="Permalink to this headline">¶</a></h2>
+<p><em>Writing</em> classes can be intimidating at first, and doing so involves some general boilerplate that can be confusing at first.</p>
+<p><em>Using</em> classes, on the other hand, is generally fairly intuitive. One reason for this:</p>
+<p><em><strong>Everything in Python is an Object</strong></em>. This means we are fairly used to using objects, even if we don’t know it.</p>
+<p>Let’s begin with a simple example. I’m going to initialize a basic <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span><span class="o">*</span><span class="mf">15.5</span> 
+<span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[15.5, 15.5, 15.5, 15.5, 15.5, 15.5],
+       [15.5, 15.5, 15.5, 15.5, 15.5, 15.5],
+       [15.5, 15.5, 15.5, 15.5, 15.5, 15.5],
+       [15.5, 15.5, 15.5, 15.5, 15.5, 15.5],
+       [15.5, 15.5, 15.5, 15.5, 15.5, 15.5]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>This simple array, <code class="docutils literal notranslate"><span class="pre">arr</span></code>, is an <em>object</em>. Objects in python have both <em>attributes</em> and <em>methods</em>. Both are accessed via what we call <em>dot notation</em>. Using dot notation, we can access an attribute of an object as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">shape</span></code> is an attribute of all <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays. By executing <code class="docutils literal notranslate"><span class="pre">arr.shape</span></code>, we retrieved this attribute. For documented classes, available attributes are generally listed in the documentation. The are also generally available for tab completion.</p>
+<p>Attributes are called as such because they are not <em>callable</em>. We can query them, but they are more like “properties” of the object, which are often used to make our code more robust (e.g., instead of hard-coding numbers into a code, we can flexibly adjust based on the sizes and shapes of the arrays within).</p>
+<p>Alternatively, <code class="docutils literal notranslate"><span class="pre">methods</span></code> of an object are callable functions that the object knows how to run, generally upon itself (with or without additional information). Returning to our <code class="docutils literal notranslate"><span class="pre">arr</span></code> array, we can call a method that reshapes the array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[15.5, 15.5, 15.5, 15.5, 15.5],
+       [15.5, 15.5, 15.5, 15.5, 15.5],
+       [15.5, 15.5, 15.5, 15.5, 15.5],
+       [15.5, 15.5, 15.5, 15.5, 15.5],
+       [15.5, 15.5, 15.5, 15.5, 15.5],
+       [15.5, 15.5, 15.5, 15.5, 15.5]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use the same dot notation as for attribute access, but we then give parenthesis and arguments as necessary, as we would when calling a function. We can see here that the output of this method is a reshaping of the array. Most Python objects (especially the basic datatypes, such as <code class="docutils literal notranslate"><span class="pre">lists</span></code>, <code class="docutils literal notranslate"><span class="pre">arrays</span></code>, <code class="docutils literal notranslate"><span class="pre">dictionaries</span></code>, and even <code class="docutils literal notranslate"><span class="pre">floats</span></code>, <code class="docutils literal notranslate"><span class="pre">ints</span></code>, and <code class="docutils literal notranslate"><span class="pre">strings</span></code>) have many useful attributes and methods attached to them, and knowing them can save you time in your coding.</p>
+<p>In examples previous, we’ve seen plenty of quick method and attribute use — for example, taking a string and running <code class="docutils literal notranslate"><span class="pre">.startswith()</span></code> on it, or <code class="docutils literal notranslate"><span class="pre">.strip()</span></code>.</p>
+<p>But how do we give ourselves the ability to write <code class="docutils literal notranslate"><span class="pre">classes</span></code> which give us this sort of attribute/method access flexibility?</p>
+</div>
+<div class="section" id="part-ii-defining-classes">
+<h2>Part II: Defining Classes<a class="headerlink" href="#part-ii-defining-classes" title="Permalink to this headline">¶</a></h2>
+<p>Classes are defined via the <code class="docutils literal notranslate"><span class="pre">class</span></code> call, and all contain, at minimum, a method known as <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyObject</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Methods of a class are defined just like normal functions, but are all indented within the block of the class. They also all contain <code class="docutils literal notranslate"><span class="pre">self</span></code> as the first argument of the method. Why is this?</p>
+<p>When we created an array above, we did something known as <em>instantiating an object</em>. Somewhere in the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library is a master template for what all <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">arrays</span></code> look like, and we put in some arguments to determine what our specific instance of the class would look like. (In our context, this is the value of the array, 15.5, and its shape).</p>
+<p>After this, we were able to to call methods of the class via its name (that we set it to in our code) plus the dot notation. The mapping of the <em>internal</em> methods of the class to the <em>external</em> method call is handled by the use of the <code class="docutils literal notranslate"><span class="pre">self</span></code> argument.</p>
+<p>As long as we remember to set <code class="docutils literal notranslate"><span class="pre">self</span></code> as the first argument of every method (followed by any other arguments you would typically add), our classes should work properly. There’s one other critical element of using self:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyObject</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">parameter</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parameter</span> <span class="o">=</span> <span class="n">parameter</span>       
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ve now given our class it’s first initialized attribute, <code class="docutils literal notranslate"><span class="pre">parameter</span></code>. This parameter is fed in when we <em>instantiate</em> the object, not as any additional call:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obj1</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="n">parameter</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obj1</span><span class="o">.</span><span class="n">parameter</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>By setting the <em>class attribute</em> <code class="docutils literal notranslate"><span class="pre">self.parameter</span> <span class="pre">=</span> <span class="pre">parameter</span></code>, we make it accessible both anywhere within the scope of our class (even in other methods) as well as outside, as a dot-accessible attribute. Any variable otherwise created in any class method that doesn’t have <code class="docutils literal notranslate"><span class="pre">self.</span></code> in front of it won’t be accessible outside the class as an attribute. Notice we never make reference to <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> when interacting with the object from the outside.</p>
+<p>Let’s move to a slightly more physical example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Body</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">mass</span><span class="p">,</span><span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="n">sun</span> <span class="o">=</span> <span class="n">Body</span><span class="p">(</span><span class="s1">&#39;Sun&#39;</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Msun</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Rsun</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sun</span><span class="o">.</span><span class="n">mass</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[1 \; \mathrm{M_{\odot}}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sun</span><span class="o">.</span><span class="n">radius</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[1 \; \mathrm{R_{\odot}}\]</div>
+</div>
+</div>
+<p>Our new <code class="docutils literal notranslate"><span class="pre">Body</span></code> class takes the inputs to the initialization function and decides that they should immediately be class attributes (accessible anywhere in the class or outside, as demonstrated above.)</p>
+<p>We need not set every input to <code class="docutils literal notranslate"><span class="pre">__init__</span></code> to <em>be</em> a class attribute. For example, if a class reads in a string pointer to some <code class="docutils literal notranslate"><span class="pre">fits</span></code> file, we may load the file and then not care about having access to that input string anymore.</p>
+</div>
+<div class="section" id="creating-methods">
+<h2>Creating Methods<a class="headerlink" href="#creating-methods" title="Permalink to this headline">¶</a></h2>
+<p>The init method just handles stuff we need to put into to the class to get it up and running. Let’s define our first “real” method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Body</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">mass</span><span class="p">,</span><span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+    <span class="k">def</span> <span class="nf">calc_density</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">vol</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">3</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">/</span> <span class="n">vol</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">((</span><span class="n">u</span><span class="o">.</span><span class="n">g</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sun</span> <span class="o">=</span> <span class="n">Body</span><span class="p">(</span><span class="s1">&#39;Sun&#39;</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Msun</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Rsun</span><span class="p">)</span>
+<span class="n">sun</span><span class="o">.</span><span class="n">calc_density</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[1.4097798 \; \mathrm{\frac{g}{cm^{3}}}\]</div>
+</div>
+</div>
+<p>You may be thinking that we could, technically, define a class <em>attribute</em> called density since it depends only on the previously defined parameters. It’s true that we could’ve done this, but, in this case, changing the mass attribute wouldn’t propogate to the density. By forcing the calculation each time, we ensure that changes to the mass or radius then are reflected in a <em>query</em> of the density.</p>
+<div class="section" id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<p>Copy the class below, add an input attribute <span class="math notranslate nohighlight">\(x\)</span>, representing position. Assume it is a vector containing the x, y, z position of the object.
+Then, add a method to the class <code class="docutils literal notranslate"><span class="pre">calc_grav</span></code>, which takes as input another instance of a <code class="docutils literal notranslate"><span class="pre">Body</span></code> class, and uses its own position and mass, and the other body’s position and mass, to calculate the force <span class="math notranslate nohighlight">\(F_{\rm grav}\)</span> between them via Newton’s law. Create two bodies and test your methods!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Body</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">mass</span><span class="p">,</span><span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+    <span class="k">def</span> <span class="nf">calc_density</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">vol</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mf">3.</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">3</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">/</span> <span class="n">vol</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="psf-photometry">
+<h1>PSF Photometry<a class="headerlink" href="#psf-photometry" title="Permalink to this headline">¶</a></h1>
+<p>We’re all familiar (from 255) with aperture photometry. Aperture photometry sets a radius within which to sum the flux from some astronomical source.</p>
+<p>One question to ask when performing aperture photometry is what radius to choose. Too large, and you introduce noise from pixels that are sky. Too small, and you miss some flux from the actual star.</p>
+<p>We also know that the true “point source” of a star is spread out by the point spread function of the telescope/optics/detector. If we can <em>estimate</em> the shape (width) of the PSF in an image of sources, then we can construct a model which weights each pixel based on it’s estimated fractional contribution to the stellar flux. Thus, pixels near the center of the stellar distribution are summed in full, while those near the edge are not included (or only just barely).</p>
+<p>To construct a pipeline that uses this technique, we’ll need to</p>
+<ul class="simple">
+<li><p>Read in an astronomical image with stars (and other point sources)</p></li>
+<li><p>Perform the releant cleanings and calibrations to the image</p></li>
+<li><p>Algorithmically locate the peaks (point sources) in the image, and carefully calculate their centers</p></li>
+<li><p>Estimate the PSF and construct the normalized model</p></li>
+<li><p>Multiply the weight model by each source and calculate the sum using a weighting formula (using cutouts and our known positions)</p></li>
+</ul>
+<p><em>Jamboard Discussion</em>: Based on the list above, discuss some reasons why moving to <code class="docutils literal notranslate"><span class="pre">classes</span></code> might be beneficial in trying to create such a pipeline.</p>
+<p><a class="reference external" href="http://bit.ly/330jamboard">bit.ly/330jamboard</a></p>
+<div class="section" id="formulas-needed">
+<h2>Formulas Needed<a class="headerlink" href="#formulas-needed" title="Permalink to this headline">¶</a></h2>
+<p><strong>Centroid</strong></p>
+<div class="math notranslate nohighlight">
+\[
+x_{\rm com} = \frac{\sum x_i \hat{f}_i}{\sum \hat{f}_i}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y_{\rm com} = \frac{\sum y_i \hat{f}_i}{\sum \hat{f}_i}
+\]</div>
+<p>where the <span class="math notranslate nohighlight">\(x_i\)</span> are the pixel numbers and <span class="math notranslate nohighlight">\(\hat{f}_i\)</span> are the fluxes in those pixels. This formula amounts to a light weighted mean — pixels with larger fluxes will push the mean toward their pixel value. (This is also just a center of mass formula).</p>
+<p><strong>2nd Moment</strong></p>
+<p>The centroid is the first moment of the light distribution. The second moment gives us an estimate of the width of a distribution. (To use stats terms, a mean is a first moment measurement, the standard deviation is a second moment measurement).</p>
+<p>We will use the following formulas in the lab to determine the x and y widths of distributions:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_x = \left[\frac{\sum x_i^2 \hat{f}_i}{\sum \hat{f}_i} - x_{\rm com}^2\right]^{1/2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sigma_y = \left[\frac{\sum y_i^2 \hat{f}_i}{\sum \hat{f}_i} - y_{\rm com}^2\right]^{1/2}
+\]</div>
+<p><strong>PSF Photometry</strong></p>
+<p>Finally, the actual step of PSF photometry is performed via</p>
+<div class="math notranslate nohighlight">
+\[
+f_{\rm PSF} = \frac{\sum \hat{f_i} p_i}{\sum p_i^2},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{f}_i\)</span> are our pixel fluxes from before, and <span class="math notranslate nohighlight">\(p_i\)</span> is our model for the PSF. One can model the 2D PSF with several functional forms. The Moffat profile is one of the closest matches to real stars, but it requires more than one shape parameter. Since our second moment only gives us one, we’ll use a 2D Gaussian in the lab.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "a330"
+        },
+        kernelOptions: {
+            kernelName: "a330",
+            path: "./Lecture2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'a330'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lecture1/Lecture1.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">1. Astronomical Imaging &amp; Functional Programming</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lab1/Lab1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lab 1: Overview, Review, and Environments</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>

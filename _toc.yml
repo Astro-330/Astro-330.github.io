@@ -5,6 +5,7 @@ parts:
   - caption: Lectures
     chapters:
     - file: Lecture1/Lecture1
+    - file: Lecture2/Lecture2
     
   - caption: Labs
     chapters:
