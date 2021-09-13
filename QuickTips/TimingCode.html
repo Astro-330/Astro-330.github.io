@@ -1,0 +1,1263 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timing your code &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Lab 2: Astronomical Imaging I" href="../Lab2/Lab2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture2/Lecture2.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quick Tips
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Timing your code
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/QuickTips/TimingCode.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/QuickTips/TimingCode.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-1">
+   Method 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-2">
+   Method 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-3">
+   Method 3
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="timing-your-code">
+<h1>Timing your code<a class="headerlink" href="#timing-your-code" title="Permalink to this headline">¶</a></h1>
+<p>Throughout the semester, we will highlight ways to make code faster.  It is almost always faster to stay away from using <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loops</span></code>; solutions generally involve using clever options associated with arrays to do quick math. Below are some examples to illustrate this from the first problem in Lab 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span>  <span class="o">=</span> <span class="mi">10</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In Lab 1, Q1 asks you to generate a 1000x1000 array of random numbers.   There are many ways to do this correctly, but some are faster than others.</p>
+<p>Here are 3 methods for generating the array in Q1.   I will use the command ‘%%timeit’ which runs a cell several times to determine the average run time. Note than when you run a cell using this comand, you’ll have to wait ~factor of 10 longer than its normal runtime to give the <code class="docutils literal notranslate"><span class="pre">timeit</span></code> module enough loops to get a steady average.</p>
+<div class="section" id="method-1">
+<h2>Method 1<a class="headerlink" href="#method-1" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>    
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">arr</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.5 ms ± 502 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-2">
+<h2>Method 2<a class="headerlink" href="#method-2" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.09 s ± 17.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-3">
+<h2>Method 3<a class="headerlink" href="#method-3" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+
+<span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.4 ms ± 97.3 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Method 1 looks like a <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loop</span></code>, yet it is only marginally slower than Method 3 which doesn’t use a <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loop</span></code>.   Method 2 looks like it could be fast, but the double for loop makes it 100 times slower!!</p>
+<p>One reason for this is that Method one loops over only one axis (rows, in this case), and creating a 1000 length long random array is very fast, even if you do it 1000 times. But Method 2, which loops over every pixel, has to run the generator 1000x1000 = 1,000,000 times!</p>
+<p>For pieces of code that are hard to isolate, you can also determine run time using <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">time</span></code>.   Below I use both to explicitly show what %%timeit is doing.   The cell below is run many times, and you can see the different runtimes for the same command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time = </span><span class="si">{:0.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t1</span><span class="o">-</span><span class="n">t0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time = 0.02817
+Time = 0.02477
+Time = 0.01990
+Time = 0.01894
+Time = 0.01897
+Time = 0.01885
+Time = 0.01870
+Time = 0.01882
+Time = 0.02057
+Time = 0.01901
+Time = 0.01888
+Time = 0.01971
+Time = 0.01972
+Time = 0.01902
+Time = 0.01960
+Time = 0.02023
+Time = 0.01985
+Time = 0.01940
+Time = 0.01938
+Time = 0.01929
+Time = 0.01934
+Time = 0.02038
+Time = 0.01969
+Time = 0.01966
+Time = 0.01999
+Time = 0.01903
+Time = 0.01878
+Time = 0.01864
+Time = 0.01858
+Time = 0.01873
+Time = 0.01864
+Time = 0.01982
+Time = 0.02041
+Time = 0.02020
+Time = 0.01991
+Time = 0.01969
+Time = 0.01930
+Time = 0.02067
+Time = 0.01864
+Time = 0.01870
+Time = 0.01858
+Time = 0.01854
+Time = 0.01877
+Time = 0.01874
+Time = 0.01879
+Time = 0.01951
+Time = 0.01914
+Time = 0.01859
+Time = 0.01878
+Time = 0.01882
+Time = 0.01897
+Time = 0.01894
+Time = 0.01886
+Time = 0.01877
+Time = 0.01880
+Time = 0.01996
+Time = 0.01941
+Time = 0.02082
+Time = 0.01956
+Time = 0.01976
+Time = 0.02011
+Time = 0.02063
+Time = 0.02057
+Time = 0.02114
+Time = 0.02090
+Time = 0.02057
+Time = 0.02114
+Time = 0.02047
+Time = 0.02016
+Time = 0.01984
+Time = 0.02037
+Time = 0.01990
+Time = 0.01983
+Time = 0.01992
+Time = 0.01979
+Time = 0.01990
+Time = 0.02005
+Time = 0.02291
+Time = 0.02016
+Time = 0.01988
+Time = 0.01934
+Time = 0.02004
+Time = 0.02047
+Time = 0.01989
+Time = 0.01949
+Time = 0.01993
+Time = 0.01986
+Time = 0.01984
+Time = 0.02061
+Time = 0.02041
+Time = 0.01940
+Time = 0.01963
+Time = 0.01983
+Time = 0.02057
+Time = 0.01992
+Time = 0.01979
+Time = 0.02024
+Time = 0.02042
+Time = 0.01959
+Time = 0.02091
+Time = 0.02043
+Time = 0.01936
+Time = 0.02061
+Time = 0.02027
+Time = 0.01973
+Time = 0.02026
+Time = 0.02002
+Time = 0.02045
+Time = 0.02065
+Time = 0.02147
+Time = 0.02326
+Time = 0.02081
+Time = 0.01952
+Time = 0.01950
+Time = 0.01973
+Time = 0.01946
+Time = 0.01905
+Time = 0.01908
+Time = 0.01898
+Time = 0.01885
+Time = 0.02021
+Time = 0.01974
+Time = 0.01884
+Time = 0.01912
+Time = 0.01903
+Time = 0.01891
+Time = 0.01869
+Time = 0.01870
+Time = 0.01898
+Time = 0.01923
+Time = 0.01976
+Time = 0.01993
+Time = 0.02126
+Time = 0.01940
+Time = 0.01871
+Time = 0.01884
+Time = 0.01976
+Time = 0.01903
+Time = 0.01950
+Time = 0.02013
+Time = 0.02137
+Time = 0.01987
+Time = 0.02132
+Time = 0.02137
+Time = 0.02020
+Time = 0.01999
+Time = 0.01984
+Time = 0.02001
+Time = 0.01991
+Time = 0.01971
+Time = 0.01941
+Time = 0.01927
+Time = 0.01921
+Time = 0.02036
+Time = 0.01947
+Time = 0.02330
+Time = 0.02128
+Time = 0.01931
+Time = 0.01933
+Time = 0.01943
+Time = 0.01926
+Time = 0.01873
+Time = 0.01838
+Time = 0.01982
+Time = 0.02018
+Time = 0.02304
+Time = 0.01954
+Time = 0.02036
+Time = 0.02011
+Time = 0.02098
+Time = 0.02000
+Time = 0.01978
+Time = 0.01986
+Time = 0.01985
+Time = 0.01933
+Time = 0.01938
+Time = 0.01985
+Time = 0.01911
+Time = 0.01903
+Time = 0.01866
+Time = 0.01869
+Time = 0.01864
+Time = 0.01823
+Time = 0.01800
+Time = 0.01869
+Time = 0.01895
+Time = 0.01939
+Time = 0.02077
+Time = 0.02055
+Time = 0.02015
+Time = 0.02033
+Time = 0.01992
+Time = 0.02054
+Time = 0.02069
+Time = 0.02018
+Time = 0.01974
+Time = 0.01958
+Time = 0.02049
+Time = 0.01968
+Time = 0.01900
+Time = 0.01877
+Time = 0.01877
+Time = 0.01864
+Time = 0.01874
+Time = 0.01867
+Time = 0.01873
+Time = 0.01865
+Time = 0.01866
+Time = 0.02061
+Time = 0.01811
+Time = 0.01843
+Time = 0.01828
+Time = 0.01790
+Time = 0.01866
+Time = 0.01919
+Time = 0.01834
+Time = 0.01868
+Time = 0.01856
+Time = 0.01906
+Time = 0.02017
+Time = 0.01874
+Time = 0.01900
+Time = 0.02005
+Time = 0.01996
+Time = 0.02046
+Time = 0.01965
+Time = 0.01982
+Time = 0.01992
+Time = 0.01987
+Time = 0.02086
+Time = 0.02065
+Time = 0.02032
+Time = 0.01984
+Time = 0.01875
+Time = 0.01901
+Time = 0.01891
+Time = 0.01864
+Time = 0.01878
+Time = 0.01865
+Time = 0.01795
+Time = 0.01888
+Time = 0.01878
+Time = 0.02013
+Time = 0.01830
+Time = 0.01841
+Time = 0.01827
+Time = 0.01838
+Time = 0.01878
+Time = 0.01846
+Time = 0.01855
+Time = 0.01813
+Time = 0.01853
+Time = 0.01962
+Time = 0.01880
+Time = 0.01875
+Time = 0.01843
+Time = 0.01838
+Time = 0.01832
+Time = 0.01825
+Time = 0.01937
+Time = 0.01863
+Time = 0.01827
+Time = 0.01854
+Time = 0.02109
+Time = 0.01802
+Time = 0.01851
+Time = 0.01824
+Time = 0.01844
+Time = 0.01826
+Time = 0.01824
+Time = 0.01843
+Time = 0.01809
+Time = 0.01797
+Time = 0.01881
+Time = 0.02046
+Time = 0.01902
+Time = 0.01805
+Time = 0.01865
+Time = 0.01941
+Time = 0.01927
+Time = 0.01857
+Time = 0.01829
+Time = 0.01819
+Time = 0.01814
+Time = 0.01883
+Time = 0.01975
+Time = 0.01891
+Time = 0.01857
+Time = 0.01905
+Time = 0.01896
+Time = 0.01996
+Time = 0.01972
+Time = 0.01990
+Time = 0.02033
+Time = 0.01989
+Time = 0.02049
+Time = 0.02044
+Time = 0.01968
+Time = 0.01952
+Time = 0.02012
+Time = 0.01994
+Time = 0.01981
+Time = 0.02021
+Time = 0.01945
+Time = 0.01893
+Time = 0.01866
+Time = 0.01917
+Time = 0.02036
+Time = 0.01903
+Time = 0.01875
+Time = 0.01873
+Time = 0.01981
+Time = 0.02000
+Time = 0.01965
+Time = 0.02033
+Time = 0.02049
+Time = 0.02084
+Time = 0.02115
+Time = 0.01988
+Time = 0.02119
+Time = 0.02112
+Time = 0.02162
+Time = 0.02072
+Time = 0.02068
+Time = 0.02021
+Time = 0.02030
+Time = 0.01996
+Time = 0.02107
+Time = 0.02016
+Time = 0.02025
+Time = 0.02014
+Time = 0.01973
+Time = 0.02053
+Time = 0.01970
+Time = 0.02017
+Time = 0.01975
+Time = 0.02028
+Time = 0.02168
+Time = 0.02023
+Time = 0.02056
+Time = 0.02027
+Time = 0.02003
+Time = 0.02079
+Time = 0.02083
+Time = 0.02047
+Time = 0.02084
+Time = 0.02161
+Time = 0.02206
+Time = 0.02152
+Time = 0.02159
+Time = 0.02172
+Time = 0.02074
+Time = 0.02073
+Time = 0.02056
+Time = 0.02086
+Time = 0.02003
+Time = 0.02119
+Time = 0.02092
+Time = 0.02055
+Time = 0.02015
+Time = 0.02066
+Time = 0.01995
+Time = 0.02016
+Time = 0.02117
+Time = 0.02004
+Time = 0.02038
+Time = 0.01980
+Time = 0.02046
+Time = 0.01966
+Time = 0.02030
+Time = 0.02061
+Time = 0.02000
+Time = 0.02007
+Time = 0.02010
+Time = 0.01996
+Time = 0.01993
+Time = 0.02046
+Time = 0.01974
+Time = 0.02069
+Time = 0.02523
+Time = 0.02296
+Time = 0.02199
+Time = 0.02106
+Time = 0.01980
+Time = 0.01939
+Time = 0.01917
+Time = 0.01938
+Time = 0.01923
+Time = 0.01961
+Time = 0.02023
+Time = 0.01974
+Time = 0.02177
+Time = 0.02066
+Time = 0.01921
+Time = 0.02060
+Time = 0.01990
+Time = 0.01955
+Time = 0.01949
+Time = 0.01938
+Time = 0.01925
+Time = 0.01962
+Time = 0.01921
+Time = 0.01952
+Time = 0.01906
+Time = 0.01947
+Time = 0.01933
+Time = 0.01950
+Time = 0.01951
+Time = 0.02000
+Time = 0.01951
+Time = 0.02060
+Time = 0.02025
+Time = 0.01956
+Time = 0.01947
+Time = 0.01887
+Time = 0.01906
+Time = 0.01932
+Time = 0.01940
+Time = 0.01905
+Time = 0.01935
+Time = 0.01956
+Time = 0.02109
+Time = 0.01921
+Time = 0.01866
+Time = 0.01944
+Time = 0.01945
+Time = 0.01889
+Time = 0.01901
+Time = 0.01927
+Time = 0.01952
+Time = 0.01922
+Time = 0.01984
+Time = 0.02058
+Time = 0.01922
+Time = 0.01902
+Time = 0.01889
+Time = 0.01869
+Time = 0.01935
+Time = 0.01953
+Time = 0.01945
+Time = 0.01868
+Time = 0.01812
+Time = 0.02090
+Time = 0.01943
+Time = 0.02072
+Time = 0.02509
+Time = 0.02497
+Time = 0.02209
+Time = 0.01857
+Time = 0.01831
+Time = 0.01832
+Time = 0.01792
+Time = 0.01874
+Time = 0.01963
+Time = 0.02031
+Time = 0.01823
+Time = 0.01825
+Time = 0.01865
+Time = 0.01869
+Time = 0.01828
+Time = 0.01824
+Time = 0.01821
+Time = 0.01788
+Time = 0.01838
+Time = 0.01862
+Time = 0.02016
+Time = 0.01851
+Time = 0.01826
+Time = 0.01820
+Time = 0.01830
+Time = 0.01829
+Time = 0.01832
+Time = 0.01874
+Time = 0.01805
+Time = 0.01794
+Time = 0.02195
+Time = 0.01921
+Time = 0.01906
+Time = 0.01893
+Time = 0.01879
+Time = 0.01922
+Time = 0.01940
+Time = 0.01873
+Time = 0.01866
+Time = 0.01849
+Time = 0.01851
+Time = 0.01968
+Time = 0.01941
+Time = 0.01983
+Time = 0.01865
+Time = 0.01854
+Time = 0.01858
+Time = 0.01799
+Time = 0.01786
+Time = 0.01820
+Time = 0.01803
+Time = 0.01786
+Time = 0.01799
+Time = 0.02011
+Time = 0.01872
+Time = 0.01874
+Time = 0.01799
+Time = 0.01797
+Time = 0.01796
+Time = 0.01867
+Time = 0.02014
+Time = 0.01933
+Time = 0.01862
+Time = 0.01852
+Time = 0.01942
+Time = 0.01829
+Time = 0.02050
+Time = 0.01859
+Time = 0.01839
+Time = 0.01829
+Time = 0.01833
+Time = 0.01832
+Time = 0.01824
+Time = 0.01830
+Time = 0.01822
+Time = 0.01869
+Time = 0.02106
+Time = 0.01898
+Time = 0.01887
+Time = 0.01851
+Time = 0.01877
+Time = 0.01905
+Time = 0.01829
+Time = 0.01838
+Time = 0.01822
+Time = 0.01821
+Time = 0.01905
+Time = 0.01979
+Time = 0.01872
+Time = 0.01893
+Time = 0.01832
+Time = 0.02000
+Time = 0.02116
+Time = 0.01941
+Time = 0.02048
+Time = 0.01958
+Time = 0.02003
+Time = 0.02142
+Time = 0.02048
+Time = 0.01993
+Time = 0.02025
+Time = 0.02088
+Time = 0.01993
+Time = 0.01919
+Time = 0.01957
+Time = 0.01977
+Time = 0.01926
+Time = 0.01935
+Time = 0.01888
+Time = 0.01961
+Time = 0.01898
+Time = 0.01837
+Time = 0.01857
+Time = 0.01829
+Time = 0.01822
+Time = 0.01825
+Time = 0.01821
+Time = 0.01820
+Time = 0.01893
+Time = 0.01847
+Time = 0.02067
+Time = 0.02088
+Time = 0.01898
+Time = 0.01868
+Time = 0.01870
+Time = 0.01947
+Time = 0.01879
+Time = 0.01838
+Time = 0.01852
+Time = 0.01835
+Time = 0.01867
+Time = 0.01930
+Time = 0.01918
+Time = 0.01905
+Time = 0.01955
+Time = 0.01916
+Time = 0.02016
+Time = 0.01972
+Time = 0.01969
+Time = 0.01961
+Time = 0.01928
+Time = 0.01957
+Time = 0.02007
+Time = 0.01996
+Time = 0.02007
+Time = 0.01929
+Time = 0.01932
+Time = 0.01913
+Time = 0.01876
+Time = 0.01831
+Time = 0.01857
+Time = 0.01820
+Time = 0.02068
+Time = 0.01874
+Time = 0.01905
+Time = 0.01831
+Time = 0.01840
+Time = 0.01836
+Time = 0.01810
+Time = 0.01796
+Time = 0.01801
+Time = 0.01797
+Time = 0.01800
+Time = 0.01804
+Time = 0.02086
+Time = 0.01822
+Time = 0.01882
+Time = 0.01802
+Time = 0.01951
+Time = 0.01860
+Time = 0.01828
+Time = 0.01839
+Time = 0.01837
+Time = 0.01826
+Time = 0.01809
+Time = 0.01820
+Time = 0.01875
+Time = 0.02053
+Time = 0.01880
+Time = 0.01865
+Time = 0.01879
+Time = 0.01894
+Time = 0.01879
+Time = 0.01883
+Time = 0.01897
+Time = 0.01804
+Time = 0.01825
+Time = 0.02076
+Time = 0.01919
+Time = 0.01843
+Time = 0.01831
+Time = 0.01835
+Time = 0.01839
+Time = 0.01829
+Time = 0.01856
+Time = 0.01860
+Time = 0.01789
+Time = 0.01809
+Time = 0.01825
+Time = 0.01930
+Time = 0.02054
+Time = 0.01831
+Time = 0.01858
+Time = 0.01901
+Time = 0.01836
+Time = 0.01857
+Time = 0.01820
+Time = 0.01804
+Time = 0.01870
+Time = 0.01833
+Time = 0.01955
+Time = 0.02267
+Time = 0.01964
+Time = 0.02008
+Time = 0.01967
+Time = 0.02059
+Time = 0.02027
+Time = 0.02110
+Time = 0.01972
+Time = 0.02015
+Time = 0.02021
+Time = 0.02064
+Time = 0.01946
+Time = 0.01932
+Time = 0.01910
+Time = 0.01923
+Time = 0.01915
+Time = 0.01879
+Time = 0.01897
+Time = 0.01885
+Time = 0.01911
+Time = 0.01926
+Time = 0.02104
+Time = 0.01911
+Time = 0.01865
+Time = 0.01837
+Time = 0.01855
+Time = 0.01869
+Time = 0.01840
+Time = 0.01846
+Time = 0.01855
+Time = 0.01905
+Time = 0.01923
+Time = 0.02031
+Time = 0.01848
+Time = 0.01872
+Time = 0.01899
+Time = 0.01907
+Time = 0.01890
+Time = 0.01895
+Time = 0.01879
+Time = 0.01882
+Time = 0.01882
+Time = 0.01914
+Time = 0.02119
+Time = 0.01918
+Time = 0.01982
+Time = 0.01896
+Time = 0.01881
+Time = 0.01891
+Time = 0.01888
+Time = 0.01879
+Time = 0.01915
+Time = 0.01885
+Time = 0.01908
+Time = 0.02006
+Time = 0.01917
+Time = 0.01853
+Time = 0.01834
+Time = 0.01843
+Time = 0.01848
+Time = 0.01843
+Time = 0.01848
+Time = 0.01849
+Time = 0.01859
+Time = 0.01975
+Time = 0.02207
+Time = 0.01919
+Time = 0.01875
+Time = 0.01866
+Time = 0.01898
+Time = 0.01912
+Time = 0.01883
+Time = 0.01880
+Time = 0.01869
+Time = 0.01842
+Time = 0.01907
+Time = 0.02077
+Time = 0.01874
+Time = 0.01871
+Time = 0.01875
+Time = 0.01897
+Time = 0.01889
+Time = 0.01880
+Time = 0.01883
+Time = 0.01834
+Time = 0.01871
+Time = 0.01982
+Time = 0.02085
+Time = 0.01860
+Time = 0.01904
+Time = 0.01903
+Time = 0.01896
+Time = 0.01899
+Time = 0.01939
+Time = 0.01914
+Time = 0.02005
+Time = 0.02012
+Time = 0.02029
+Time = 0.01974
+Time = 0.01934
+Time = 0.01943
+Time = 0.01962
+Time = 0.01909
+Time = 0.01876
+Time = 0.01891
+Time = 0.01844
+Time = 0.01847
+Time = 0.01852
+Time = 0.01913
+Time = 0.01843
+Time = 0.02039
+Time = 0.01874
+Time = 0.01859
+Time = 0.01852
+Time = 0.01840
+Time = 0.01908
+Time = 0.01976
+Time = 0.01880
+Time = 0.01846
+Time = 0.01921
+Time = 0.02031
+Time = 0.01866
+Time = 0.01883
+Time = 0.01849
+Time = 0.01842
+Time = 0.01859
+Time = 0.01881
+Time = 0.01886
+Time = 0.01887
+Time = 0.01884
+Time = 0.01897
+Time = 0.02034
+Time = 0.02012
+Time = 0.01969
+Time = 0.01897
+Time = 0.01854
+Time = 0.01859
+Time = 0.01899
+Time = 0.01898
+Time = 0.01902
+Time = 0.01901
+Time = 0.01955
+Time = 0.02078
+Time = 0.01859
+Time = 0.01877
+Time = 0.01833
+Time = 0.01903
+Time = 0.02056
+Time = 0.01857
+Time = 0.01864
+Time = 0.01890
+Time = 0.01846
+Time = 0.02180
+Time = 0.01984
+Time = 0.01946
+19.4 ms ± 469 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./QuickTips"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lab2/Lab2.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lab 2: Astronomical Imaging I</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>
