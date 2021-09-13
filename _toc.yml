@@ -13,4 +13,7 @@ parts:
     - file: Lab1/Lab1_solutions
     - file: Lab2/Lab2
 
+  - caption: Quick Tips
+    chapters:
+      - file: QuickTips/TimingCode
     

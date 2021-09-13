@@ -3,3 +3,4 @@ logo: assets/a330_banner.jpg
 author: Imad Pasha & Marla Geha
 execute:
   execute_notebooks: "off"
+only_build_toc_files: true
