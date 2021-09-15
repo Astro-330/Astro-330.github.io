@@ -23,4 +23,4 @@ parts:
 
   - caption: Data Access
     chapters:
-      - file: Lab3/data_access
+      - file: data_access
