@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 3: Building a Photometric Pipeline &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 1 Solutions" href="../Lab1/Lab1_solutions.html" />
+    <link rel="prev" title="Lab 2: Astronomical Imaging I" href="../Lab2/Lab2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture2/Lecture2.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 3: Building a Photometric Pipeline
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lab Solutions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quick Tips
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/TimingCode.html">
+   Timing your code
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lab3/Lab3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lab3/Lab3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-rubric">
+   Assignment Rubric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-1">
+   Problem 1
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-1">
+     Problem 1.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-2">
+     Problem 1.2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-3">
+     Problem 1.3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-4">
+     Problem 1.4
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-2">
+   Problem 2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-1">
+     Problem 2.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-2">
+     Problem 2.2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-3">
+     Problem 2.3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-4">
+     Problem 2.4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-5">
+     Problem 2.5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-6">
+     Problem 2.6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-3">
+   Problem 3
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-1">
+     Problem 3.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-2">
+     Problem 3.2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-3">
+     Problem 3.3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-4">
+   Problem 4
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-4-1">
+     Problem 4.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-4-2">
+     Problem 4.2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-problem-1-extra-credit">
+   Bonus Problem (+1 Extra Credit)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-3-building-a-photometric-pipeline">
+<h1>Lab 3: Building a Photometric Pipeline<a class="headerlink" href="#lab-3-building-a-photometric-pipeline" title="Permalink to this headline">¶</a></h1>
+<p>In this lab, we’ll be using classes and functions to build a pipeline which will automatically extract the fluxes of stars in an image. We’re all familiar with aperture photometry, but in this case, we’re going to take the additional step of convolving our image with a PSF.</p>
+<p>Our pipeline will be split into several steps.</p>
+<ol class="simple">
+<li><p>Reading in an image</p></li>
+<li><p>Finding the local peaks in the image (the stars)</p></li>
+<li><p>Calculating the centroid of each peak region</p></li>
+<li><p>Convolving with the PSF and extracting flux.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When you modify a class and re-run it, you need to re-instantiate (or make a new instance) of the class for it to reflect the changes. This is a common mistake in notebooks, where a class might get changed but your instance of it didn’t get re-created. Watch out for this during the lab – the safest bet is to just copy-paste your instantiation code (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">MyObj()</span></code> type thing) into each problem so you sure you’re working with the latest version of your class.</p>
+<p>You’ll be copying and pasting (and overwriting) your class in this assignment quite a bit. That’s not super realistic to reality (where you’d pick one cell and keep modifying it there), but for grading purposes we ask you follow along so we can give credit for each method of the class you complete and demonstrate along the way.</p>
+</div>
+<div class="section" id="assignment-rubric">
+<h2>Assignment Rubric<a class="headerlink" href="#assignment-rubric" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">The points for this assignment are as follows:</p>
+<ul class="simple">
+<li><p class="card-text">Problem 1 (4 pts)</p></li>
+<li><p class="card-text">Problem 2 (8 pts)</p></li>
+<li><p class="card-text">Problem 3 (5 pts)</p></li>
+<li><p class="card-text">Problem 4 (3 pts)</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-1">
+<h2>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h2>
+<p>In this problem, we’ll load in the image(s) for use and begin constructing our <code class="docutils literal notranslate"><span class="pre">PSFPhot</span></code> class.</p>
+<div class="section" id="problem-1-1">
+<h3>Problem 1.1<a class="headerlink" href="#problem-1-1" title="Permalink to this headline">¶</a></h3>
+<p>Create a script (<code class="docutils literal notranslate"><span class="pre">.py</span></code> file) in this directory and copy into it your <code class="docutils literal notranslate"><span class="pre">load_fits()</span></code> and final <code class="docutils literal notranslate"><span class="pre">implot()</span></code> functions from last lab. Then import them here.</p>
+<p>Use your <code class="docutils literal notranslate"><span class="pre">load_fits()</span></code> to read in in the image <code class="docutils literal notranslate"><span class="pre">2020-04-15-0001.fits</span></code> and plot it with <code class="docutils literal notranslate"><span class="pre">implot()</span></code>.</p>
+<p>This image was taken of the M81/M82 field using the Dragonfly Telephoto Array (in a narrowband configuration).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import your functions here </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use them to load and show the image we&#39;ll be working with</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>M82 should be visible left of center, M81 on the left hand edge. Two features caused by detector amp glow are also visible at the bottom of the image.</p>
+</div>
+</div>
+<div class="section" id="problem-1-2">
+<h3>Problem 1.2<a class="headerlink" href="#problem-1-2" title="Permalink to this headline">¶</a></h3>
+<p>Finish the syntax for creating the <code class="docutils literal notranslate"><span class="pre">PSFPhot</span></code> class below. The init for the class should ask for three string paths: one to an image, one to a dark file, and one to a flat file. Within <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>, use your <code class="docutils literal notranslate"><span class="pre">load_fits()</span></code> function to get the just the science image and header into the class. Store them as class attributes <code class="docutils literal notranslate"><span class="pre">self.data_init</span></code> and <code class="docutils literal notranslate"><span class="pre">self.data_header</span></code>.</p>
+<p>Don’t forget to add a docstring to your init! It doesn’t return anything, but sets the initial attributes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PSFPhot</span><span class="p">():</span>
+   
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-1-3">
+<h3>Problem 1.3<a class="headerlink" href="#problem-1-3" title="Permalink to this headline">¶</a></h3>
+<p>Add a method to your class called <code class="docutils literal notranslate"><span class="pre">dark_subtract()</span></code> which takes an image and a string-path to a dark file. Use <code class="docutils literal notranslate"><span class="pre">load_fits()</span></code> to read it in the dark, and subtract it from the image, and return the output.</p>
+<p>Add another method called <code class="docutils literal notranslate"><span class="pre">flat_field()</span></code> which takes in an image and a string-path to a flatfield file. Use <code class="docutils literal notranslate"><span class="pre">load_fits()</span></code> to read it in, normalize it to its maximum value, and divide the input image by it.</p>
+<p>Finally, within your init function, set a new class attribute called <code class="docutils literal notranslate"><span class="pre">self.data_calibrated</span></code>, and set it equal to the output of your calibration methods as run on the set of image paths that have been input.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>This step can be done in one line with nested functions if you prefer.
+``</p>
+<p>Finally Use <code class="docutils literal notranslate"><span class="pre">implot()</span></code> to plot both the <code class="docutils literal notranslate"><span class="pre">data_init</span></code> and <code class="docutils literal notranslate"><span class="pre">data_calibrated</span></code> and show that your calibrations worked. You should see the amp glow regions dissapear, and the image sky should look nice and uniform.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PSFPhot</span><span class="p">():</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Running the dark/flat methods within init means they’ll happen right away when someone instantiates an object of this class. It’s a matter of code design and personal preference to do this, versus having the user run those methods manually as part of the UX. I choose to wrap it into the init because it’s a basic, common thing all inputs will need done to them.</p>
+</div>
+</div>
+<div class="section" id="problem-1-4">
+<h3>Problem 1.4<a class="headerlink" href="#problem-1-4" title="Permalink to this headline">¶</a></h3>
+<p>The final step in setting up our image for proper analysis is the subtraction of the globally varying sky background. Performing that fit (generally a low order 2D polynomial of some kind) is beyond the scope of this lab, but we encourage you to look into this step more if you are interested.</p>
+<p>Instead, we’re going to return to the <code class="docutils literal notranslate"><span class="pre">sep</span></code> package and take advantage of its background estimation feature. Recall it reads in the base image array and a separate mask. We want the user of this class to be able to supply a mask, so we won’t run this step automatically in <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>.</p>
+<p>Using the same stucture as in Lab 2, we’ll calculate the background using <code class="docutils literal notranslate"><span class="pre">sep</span></code>.</p>
+<p>Add a method to your class that is called <code class="docutils literal notranslate"><span class="pre">subtract_background</span></code>, whose only argument (besides <code class="docutils literal notranslate"><span class="pre">self</span></code>) should be an optional mask (default <code class="docutils literal notranslate"><span class="pre">None</span></code>).</p>
+<p>Inside, use <code class="docutils literal notranslate"><span class="pre">sep</span></code> to measure the background and access, e.g., the <code class="docutils literal notranslate"><span class="pre">bkg.back()</span></code> method, and subtract this background-image from <code class="docutils literal notranslate"><span class="pre">self.data_calibrated</span></code>. You should set <code class="docutils literal notranslate"><span class="pre">mask=mask</span></code> in the sep call so your method input gets passed through. For convenient access, store the output of <code class="docutils literal notranslate"><span class="pre">bkg.back()</span></code> in a class attribute called <code class="docutils literal notranslate"><span class="pre">self.background</span></code>, and then set <code class="docutils literal notranslate"><span class="pre">self.image</span></code> equal to the background subtracted image. This method is known as a <em>setter</em>, because we’re setting a class attribute but not returning anything.</p>
+<p>It can be handy here to add a print statement at the end of the method saying something like <code class="docutils literal notranslate"><span class="pre">&quot;Background</span> <span class="pre">estimated;</span> <span class="pre">output</span> <span class="pre">saved</span> <span class="pre">to</span> <span class="pre">attribute</span> <span class="pre">'image'</span> <span class="pre">&quot;</span></code>. Since this is the main image we’ll be using from now on, I’ve elected to give it the short name <code class="docutils literal notranslate"><span class="pre">image</span></code>. You may rather use something like <code class="docutils literal notranslate"><span class="pre">data_bg_sub</span></code>, for example</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don’t forget about the C order switch with sep.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PSFPhot</span><span class="p">():</span>
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our class usage will now look something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">PSFPhot</span><span class="p">(</span><span class="n">im_path</span><span class="p">,</span><span class="n">dark_path</span><span class="p">,</span><span class="n">flat_path</span><span class="p">)</span>
+<span class="n">pipe</span><span class="o">.</span><span class="n">subtract_background</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>or, if we create a mask (as we will below),</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">PSFPhot</span><span class="p">(</span><span class="n">im_path</span><span class="p">,</span><span class="n">dark_path</span><span class="p">,</span><span class="n">flat_path</span><span class="p">)</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="c1"># Something here </span>
+<span class="n">pipe</span><span class="o">.</span><span class="n">subtract_background</span><span class="p">(</span><span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2">
+<h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h2>
+<p>Our goal is to estimate the PSF of the above image, then measure fluxes of the stars and galaxies here accounting for the PSF.</p>
+<p>To start this process, we need to locate the stars in this image. We saw how to segment an image using <code class="docutils literal notranslate"><span class="pre">sep</span></code> last time, but in this lab we are going to carry out this step ourselves, using two methods.</p>
+<div class="section" id="problem-2-1">
+<h3>Problem 2.1<a class="headerlink" href="#problem-2-1" title="Permalink to this headline">¶</a></h3>
+<p>Before we do this, we want to take the step of masking out several regions of the image which may register as peaks but which are not nicely isolated stars. In particular, the two galaxies need to be masked out when both estimating the background and when looking for point sources.</p>
+<p>Create a mask of the dimensions of the image data, containing <code class="docutils literal notranslate"><span class="pre">False</span></code> everywhere except where we want to mask out the galaxies (rough rectangular regions are fine for this masking). It’s easiest to make the full array <code class="docutils literal notranslate"><span class="pre">False</span></code> first, then set the regions we want to mask to <code class="docutils literal notranslate"><span class="pre">True</span></code> via image indexing.</p>
+<p>Add a method to your class called <code class="docutils literal notranslate"><span class="pre">set_image_mask()</span></code> which overwrites <code class="docutils literal notranslate"><span class="pre">self.image</span></code> with a numpy masked array containing what used to be <code class="docutils literal notranslate"><span class="pre">self.image</span></code> as the data, and a mask that the user inputs.</p>
+<p>Finally, instantiate your class into a variable and check that the masking and subtraction are both working. You should plot your image by accessing it (it should be a class attribute by now). It should look like mine below.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If we have the memory to, it’s often worth avoiding overwriting class attributes. Here, we could set the masked image as <code class="docutils literal notranslate"><span class="pre">self.image_masked</span></code>, for example. I’ve elected not to here for two reasons. One: simplicity. Two: the unmasked version of the image is easily accessible still via <code class="docutils literal notranslate"><span class="pre">self.image.data</span></code>, the data attribute of numpy masked arrays.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solution</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="c1">#define mask </span>
+
+<span class="k">class</span> <span class="nc">PSFPhot</span><span class="p">():</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># instantiate your class, run the subtraction, input the mask, see that it all works.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background estimated; output saved to attribute image
+</pre></div>
+</div>
+<img alt="../_images/Lab3_17_1.png" src="../_images/Lab3_17_1.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In our use case for this lab, the mask we will use when background subtracting is the same as the one we’ll use for blocking out regions from being included in peak finding and such. But our code is flexible enough to, e.g., mask when background-subtracting but not when peak finding, or vice versa. Our mask setter only affects the image data, and the mask argument in the subtract background method only affects background subtraction.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>As it stands, <code class="docutils literal notranslate"><span class="pre">set_image_mask()</span></code> can only be run <em>after</em> <code class="docutils literal notranslate"><span class="pre">subtract_background()</span></code>, because that method sets <code class="docutils literal notranslate"><span class="pre">self.image</span></code> for the first time. We can use the <code class="docutils literal notranslate"><span class="pre">hasattr(self,'image')</span></code> check to see, when <code class="docutils literal notranslate"><span class="pre">set_image_mask()</span></code> is run, if that previous method was already run and <code class="docutils literal notranslate"><span class="pre">self.image</span></code> exists. For now, it’s ok to assume the user will use the class in order, but a more robust code would either raise an exception or otherwise handle this case in some way.</p>
+</div>
+<p>Plot the <code class="docutils literal notranslate"><span class="pre">.background</span></code> attribute of your class. It seems our image has a spatially varying background that includes a gradient across the image.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot the background</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-2">
+<h3>Problem 2.2<a class="headerlink" href="#problem-2-2" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have the appropriate image regions masked, we can move on to the peak finder.</p>
+<p>The “fast” or “efficient” method of doing this involves some scipy filtering operations. But for our purposes, the “slow way” (iterating over the image pixels) takes ~few seconds to run, and is worth doing to build intuition.</p>
+<p>Add a method to your class to find peaks in an image by looping over each pixel and checking its neighbors, with a “peak” being defined as a region of higher flux than all adjacent pixels (i.e., the 8 surrounding pixels). In order to not pick up random noise pixels, also take an input called <code class="docutils literal notranslate"><span class="pre">threshold</span></code>. Within your algorithm, don’t return any pixels which are “peaks” but for which the pixel value is below this threshold.</p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>This algorithm needs to avoid the edges of the image (since indexing “i+1” won’t work there). Creating a 1 pixel “buffer” in your looping will prevent this.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The looping solution is slow, and will not scale well if we have to run on many images, but for one image is okay.</p>
+<p>There are several solutions which generally involve either <strong>filtering</strong> the image or <strong>cross correlating</strong> the image with a template. Here’s one such solution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">maximum_filter</span>
+
+<span class="k">def</span> <span class="nf">findpeaks_maxfilter</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Algorithm for finding peaks (above a threshold) in an image</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image: array_like</span>
+<span class="sd">        2D array containing the image of interest.</span>
+<span class="sd">    threshold: float</span>
+<span class="sd">        minimum pixel value for inclusion in search</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    peaks: array_like</span>
+<span class="sd">        array containing the x and y coordinates of peak regions.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">neighborhood</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span> <span class="c1"># just 3x3 True, defining the neighborhood over which to filter</span>
+    <span class="c1"># find local maximum for each pixel</span>
+    <span class="n">amax</span> <span class="o">=</span> <span class="n">maximum_filter</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">footprint</span><span class="o">=</span><span class="n">neighborhood</span><span class="p">)</span> <span class="c1">#max filter will set each 9-square region in the image to the max in that region.</span>
+    
+    <span class="n">peaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">image</span> <span class="o">==</span> <span class="n">amax</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">image</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">))</span> <span class="c1">#find the pixels unaffected by the max filter.</span>
+    <span class="n">peaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">peaks</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">peaks</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">T</span>
+    <span class="k">return</span> <span class="n">peaks</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a moment to understand how this algorithm works. The key is in the <code class="docutils literal notranslate"><span class="pre">maximum_filter()</span></code> step. Filtering a 2D image is a process carried out in fourier space, which is what allows scipy to carry it out quickly. But what is maximum filtering?</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>Maximum Filtering is the process by which all pixels in local neighborhoods within an array are raised to the maximum value of any pixel in that neighborhood</p>
+</div>
+<p>Let’s look at a 1D case. Below, I define a 1D array that has some peaks in it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_1dpeaks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our data looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">array_1dpeaks</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">array_1dpeaks</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc8ecf17ee0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/Lab3_28_1.png" src="../_images/Lab3_28_1.png" />
+</div>
+</div>
+<p>Let’s now run the maximum filter on this data and plot it’s output. I’m going to pick a neighborhood of 3, which means +/- 1 pixel around each location.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mf</span> <span class="o">=</span> <span class="n">maximum_filter</span><span class="p">(</span><span class="n">array_1dpeaks</span><span class="p">,</span> <span class="n">footprint</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">array_1dpeaks</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;original array&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">array_1dpeaks</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;max filtered array&#39;</span><span class="p">)</span>
+<span class="n">eq</span><span class="p">,</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">array_1dpeaks</span><span class="o">==</span><span class="n">mf</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mf</span><span class="p">))[</span><span class="n">eq</span><span class="p">],</span><span class="n">mf</span><span class="p">[</span><span class="n">eq</span><span class="p">],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;local peaks&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab3_31_0.png" src="../_images/Lab3_31_0.png" />
+</div>
+</div>
+<p>What the filtering has done is for every 3 pixel neighborhood across this array, it’s raised the value of all three pixels to the maximum value across the three. So we see that anywhere the three pixels were, e.g., (1,2,1), they are all now 2. What you should notice looking at this plot is that the max filtering has also identified true peaks in our data! Notice that the only spots where the orange curve (the max filtered version of the data) is equal to the original array is exactly at locations that are local maxima. This is because when applying max filtering to an array, the only values <em>unchanged</em> by the filtering are those that <em>are</em> local maxima (in the neighborhood defined).</p>
+<p>And thus, we have our peaks! All we need to do is find out <code class="docutils literal notranslate"><span class="pre">where()</span></code> the max filtered array equals the original array. Of course, we can also put in a threshold (in this example, maybe 2.5) to ensure low level noise doesn’t enter in. This is why the <code class="docutils literal notranslate"><span class="pre">findpeaks_maxfilter()</span></code> function has a threshold option as well.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may notice that the first index in the array is marked as a peak, despite not being one. Edges are always troublesome with these algorithms, and they normally have multiple options for how edges are handled, e.g, interpolating a constant value, reflecting over the edge, etc. For our lab, we’re not going to worry about this.</p>
+</div>
+</div>
+<div class="section" id="problem-2-3">
+<h3>Problem 2.3<a class="headerlink" href="#problem-2-3" title="Permalink to this headline">¶</a></h3>
+<p>How fast is max filtering over your looping algorithm?</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code> magic command in your notebook to test how fast the two algorithms are respectively. If you were working with a sample of 1000 images, how long would the looping algorithm take compared to the max-filtering case?</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Check out the “Timing Code” page in the “Quick Tips” sidebar tab of our website to see examples of using the <code class="docutils literal notranslate"><span class="pre">timeit</span></code> module.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># time your function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># time the max filter function</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>How many times faster is the max filtering?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>How long would it take to run each on 1000 images (extrapolating from your results)?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the rest of the lab, you can either leave in your peak finder, or replace it with the max-filtering version (turning the function above into a method).</p>
+<p>Either way, add a peak-finding method into your class, which should be runnable with no inputs, but has an optional threshold argument to set a minimum flux value for inclusion.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your class here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-4">
+<h3>Problem 2.4<a class="headerlink" href="#problem-2-4" title="Permalink to this headline">¶</a></h3>
+<p>Run your peakfinder on your masked image, and assemble the list of peaks you’ll use moving forward. Your peakfinder method should save a class attribute <code class="docutils literal notranslate"><span class="pre">self.peak_locations</span></code> which contains the (<span class="math notranslate nohighlight">\(x,y\)</span>) pairs of points associated with your peaks.</p>
+<p>Plot up the original image, but use our “source circling” technique from last lab to circle all the peaks found in the masked image. I show mine below.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Recall that <code class="docutils literal notranslate"><span class="pre">implot()</span></code> returns a set of <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span></code>, so you can then plot the circles onto the same axis as the image.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># re-instantiate your object, run the subtraction, then your new peak finder here. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background estimated; output saved to attribute image
+</pre></div>
+</div>
+<img alt="../_images/Lab3_43_1.png" src="../_images/Lab3_43_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-5">
+<h3>Problem 2.5<a class="headerlink" href="#problem-2-5" title="Permalink to this headline">¶</a></h3>
+<p>This should look pretty good – most of what’s circled above is clearly a star/point source in the image. However, one problem with this method is that single hot pixels are going to be registered as peaks, even via the clever algorithm. We need a way to eliminate these from our sample before moving on.</p>
+<p>Adjust your peak-finder method to add in something that checks that not only is there a true peak, but that at least 4 of the pixels around the peak are also elevated in flux (I used 0.5 times the peak flux). The easiest way is to loop over the peaks after they’re found and institute the check — there are far fewer peaks than pixels, so this doesn’t significantly affect the runtime. But feel free to find a cleverer solution!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be careful with transpositions in this problem. when you plot coordinates, you plot(x,y), but when you index the image, you index image[y,x]. Always be tracking which is which!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PSFPhot</span><span class="p">():</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Re-find your peaks using your newer, better algorithm, and plot them below as before.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that we’ve decreased our total number of peaks. But you should find that now, everything currently circled looks like a bright, “resolved” star. (resolved insofar as the PSF is spreading the light of the star over multiple pixels).</p>
+</div>
+<div class="section" id="problem-2-6">
+<h3>Problem 2.6<a class="headerlink" href="#problem-2-6" title="Permalink to this headline">¶</a></h3>
+<p>In your the image above, you should see that ~8-10 stars look like they are circled by several very closely overlapping circles all targeting the same star. Infer (or investigate and determine) why this has happened, and write your answer below.</p>
+<p><em>answer here</em></p>
+</div>
+</div>
+<div class="section" id="problem-3">
+<h2>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h2>
+<p>We now have a function that can return the peaks in a given image. Our next step is going to be to estimate the exact center of those peaks (stars) using their <strong>centroid</strong>.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Definition</p>
+<p>The centroid is the light-weighted-mean of a set of pixels. It is not always the maximum-valued pixel, and is determined to sub-pixel accuracy.</p>
+</div>
+<p>Many of you have seen the centroid formula, but as a reminder, it looks like this (in 1D):</p>
+<div class="math notranslate nohighlight">
+\[
+x_{\rm com} = \frac{\sum{x_i \hat{f}_i}}{\sum \hat{f}_i},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_i\)</span> are the positions and <span class="math notranslate nohighlight">\(\hat{f}_i\)</span> are the fluxes at those positions.</p>
+<p>In 2D, when working with images, the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> centers of mass are independent, and the 2D centroid is just the location (<span class="math notranslate nohighlight">\(x_{\rm com}\)</span>, <span class="math notranslate nohighlight">\(y_{\rm com}\)</span>).</p>
+<div class="section" id="problem-3-1">
+<h3>Problem 3.1<a class="headerlink" href="#problem-3-1" title="Permalink to this headline">¶</a></h3>
+<p>Add a method to your class called <code class="docutils literal notranslate"><span class="pre">centroid()</span></code> which should read in an <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> peak location (these will be returned by your peak finder), then creates a cutout by indexing <code class="docutils literal notranslate"><span class="pre">self.image</span></code> in a window of N (user-settable), and determine the centroid of this window. The <span class="math notranslate nohighlight">\(x,y\)</span> location of this centroid should be returned.</p>
+<p>One subtlety — We want to use a window size greater than 1 pixel on either side of each peak. But because our peak finder is likely to have found peaks near the edge of the detector (both because it needs only 1 pixel-thick borders and because it handles edges), if we write a centroid function that, e.g., uses a 10x10 pixel window, we’ll end up trying to index over the edge of the original image whenever there’s a star near the edge. Because of this, your function should raise an exception if a peak position is entered whose distance from an edge is less than half the window size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PSFPhot</span><span class="p">():</span>
+    <span class="c1"># copy down and add to your class</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-3-2">
+<h3>Problem 3.2<a class="headerlink" href="#problem-3-2" title="Permalink to this headline">¶</a></h3>
+<p>Use your <code class="docutils literal notranslate"><span class="pre">centroid()</span></code> function to confirm that the algorithm is working by testing it on a few individual peaks from your peak list, and make a plot showing the window region and the determined centroid (along with the location of the input peak). I’m leaving behind a demo of what I mean below. The blue point is the pixel with the peak flux, while the crosshairs center on the determined centroid</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s usually ok if the centroid is not at what appears to be the very center of the light distribution of the star. Often due to seeing and detector effects, along with tricks of the stretch you happen to be using, the centroid doesn’t look perfectly centered. But it shouldn’t be super off, either – see below.</p>
+</div>
+<p>In my solution below, I plot 25 stars from my peak finder, with peaks and centroids shown. You should get similar looking results as you query stars in frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You need not plot 25, but check a handful of stars to make sure you&#39;re in business.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Background estimated; output saved to attribute image
+</pre></div>
+</div>
+<img alt="../_images/Lab3_53_1.png" src="../_images/Lab3_53_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="problem-3-3">
+<h3>Problem 3.3<a class="headerlink" href="#problem-3-3" title="Permalink to this headline">¶</a></h3>
+<p>If you recall from above, you determined why the peak algorithm occasionally marked a bunch of pixels as peaks within the same star, which shouldn’t happen. It should be clear from your answer that these stars will be unusable for the purposes of measuring the PSF of stars in the image. We thus need to remove these ~8-10 stars from our sample.</p>
+<p>Write a method <code class="docutils literal notranslate"><span class="pre">check_stars()</span></code> which takes in the list of centroids, and identifies these cases. The easiest way to do this is to simply iterate through the list of centroids and compute the distance to all other centroids in the list. Any subgroups with small distances should be removed. (Say, 5-10 pixels).</p>
+<p>This method should return the final list of centroids for use. Plot them over the data to confirm these “stacked” peak cases have been removed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-4">
+<h2>Problem 4<a class="headerlink" href="#problem-4" title="Permalink to this headline">¶</a></h2>
+<p>Armed with a dark-subtracted, flat-fielded, background-subtracted image, as well as with a list of centroids corresponding to stars in our image, we are ready to estimate the PSF.</p>
+<p>There are two main functional forms typically used to fit star profiles: 2D Gaussians, and Moffat profiles (which combines the shapes of a Gaussian and Lorentzian to best match both the inner and outer regions of the PSF).</p>
+<p>We’re going to use the <a class="reference external" href="https://docs.astropy.org/en/stable/api/astropy.modeling.functional_models.Gaussian2D.html"><code class="docutils literal notranslate"><span class="pre">Gaussian2D</span></code></a> class from <code class="docutils literal notranslate"><span class="pre">astropy</span></code> to do this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.modeling.functional_models</span> <span class="kn">import</span> <span class="n">Gaussian2D</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For each star, a Gaussian2D profile (normalized) will be used “as the PSF”. The parameters we need to know for this profile are <span class="math notranslate nohighlight">\(x,y\)</span>, for which we’ll use the centroids we calculated earlier, the amplitude (set by the normalization), and <span class="math notranslate nohighlight">\(\sigma_x,\sigma_y\)</span>, the standard deviations in the two axes. For this lab, we’re going to assume our stars are circular (<span class="math notranslate nohighlight">\(\sigma_x=\sigma_y\)</span>). This is a strictly incorrect, but not a bad assumption for most cases. All other optional arguments we won’t need, primarily due to the assumption of circularity.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are going to make a point estimate of the “size” of the stars in our image, which constrains us from using a more fancy model for the PSF. An example of a more sophisticated setup would be <em>fitting</em> a Gaussian or Moffat profile to every star, and in a Bayesian framework marginalizing over the stars to determine the best-fit PSF (including ellipticity, etc) for the image, or, even fancier, interpolating a PSF model which varies over the detector.</p>
+</div>
+<p>PSF photometry works by multiplying the <em>data</em> (say, a cutout around a star) by the <em>estimated PSF</em> during the fluxing stage. Instead of picking a radius and performing aperture photometry (which includes fully all pixels within the aperture and throws out all pixels beyond), this method attempts to weight each pixel fractionally by how likely it is to be stellar flux, with the weighting coming from the PSF of the detector. This means further pixels may still be included, but will contribute less than pixels near the center of the star.</p>
+<p>The formula for measuring the PSF flux of a star is</p>
+<div class="math notranslate nohighlight">
+\[
+f_{\rm PSF} = \frac{\sum \hat{f_i} p_i}{\sum p_i^2},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{f_i}\)</span> are the fluxes in your image and <span class="math notranslate nohighlight">\(p_i\)</span> is your PSF estimate. This formula should be reminiscent of the centroiding formula; it’s a similar weighting scheme.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Gaussian2D</span></code> is a class, but we want to interact with it pretty simply, and have simplified inputs. I’ve made a quick wrapper function below which allows us to enter <span class="math notranslate nohighlight">\(\sigma_x\)</span> and <span class="math notranslate nohighlight">\(\sigma_y\)</span> and then <span class="math notranslate nohighlight">\(x,y\)</span> grids created via <code class="docutils literal notranslate"><span class="pre">np.meshgrid()</span></code>, and creates the Gaussian and evaluates it on our grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eval_gauss</span><span class="p">(</span><span class="n">x_arr</span><span class="p">,</span><span class="n">y_arr</span><span class="p">,</span><span class="n">sigma_x</span><span class="p">,</span><span class="n">sigma_y</span><span class="p">,</span><span class="n">mu_x</span><span class="p">,</span><span class="n">mu_y</span><span class="p">):</span>
+    
+    <span class="n">g</span> <span class="o">=</span> <span class="n">Gaussian2D</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_arr</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y_arr</span><span class="p">,</span><span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">theta</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">x_mean</span><span class="o">=</span><span class="n">mu_x</span><span class="p">,</span>
+                   <span class="n">y_mean</span><span class="o">=</span><span class="n">mu_y</span><span class="p">,</span>
+                   <span class="n">x_stddev</span><span class="o">=</span><span class="n">sigma_x</span><span class="p">,</span>
+                   <span class="n">y_stddev</span><span class="o">=</span><span class="n">sigma_y</span><span class="p">)</span>
+    <span class="n">g</span><span class="o">/=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">g</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">10</span><span class="p">),</span>
+                     <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">eval_gauss</span><span class="p">(</span><span class="n">x_arr</span><span class="o">=</span><span class="n">xx</span><span class="p">,</span><span class="n">y_arr</span><span class="o">=</span><span class="n">yy</span><span class="p">,</span><span class="n">sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">mu_x</span><span class="o">=</span><span class="n">testx</span><span class="p">,</span><span class="n">mu_y</span><span class="o">=</span><span class="n">testy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fc8bc202580&gt;
+</pre></div>
+</div>
+<img alt="../_images/Lab3_62_1.png" src="../_images/Lab3_62_1.png" />
+</div>
+</div>
+<p>As we can see, I now have a model for the PSF which I can easily create for given inputs. We’re going to do this for cutouts around each star, and instead of a random <span class="math notranslate nohighlight">\(\sigma\)</span>, we’re going to estimated it using the second moment (moment of inertia) of the star itself.</p>
+<p>The formula for this (from Markevich et al. 1989) is</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma_x = \left[\frac{\sum x_i^2 \hat{f}_i}{\sum \hat{f}_i} - x_{\rm com}^2\right]^{1/2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sigma_y = \left[\frac{\sum y_i^2 \hat{f}_i}{\sum \hat{f}_i} - y_{\rm com}^2\right]^{1/2}
+\]</div>
+<p>In this case, we’ll need to use <code class="docutils literal notranslate"><span class="pre">meshgrid()</span></code> directly within our second moment function, as you can see it depends on the difference between the pixels and the centroid.</p>
+<div class="section" id="problem-4-1">
+<h3>Problem 4.1<a class="headerlink" href="#problem-4-1" title="Permalink to this headline">¶</a></h3>
+<p>Add a method to your class called <code class="docutils literal notranslate"><span class="pre">second_moment</span></code> which reads in an image cutout, the meshgrid input (xx,yy) (or constructs it), and finally, a centroid (x and y). Inside, use the formulas above to determine sigma_x and sigma_y, and return them</p>
+<p>Below, I show that a functional form of my second moment code returns 2.92 and 2.98 when run on the example psf I made above (which had a true sigma of 3).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_moment</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">testx</span><span class="p">,</span><span class="n">testy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2.9221417526244626, 2.9860561887708132)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Within 10%, this calculation, which requires no fitting, tells us <span class="math notranslate nohighlight">\(\sigma\)</span> (under the assumption the distribution is Gaussian). Thus, by running out image cutouts through this function, we can derive for ourselves a good <span class="math notranslate nohighlight">\(\sigma\)</span> to choose in our Gaussian model of the PSF.</p>
+</div>
+<div class="section" id="problem-4-2">
+<h3>Problem 4.2<a class="headerlink" href="#problem-4-2" title="Permalink to this headline">¶</a></h3>
+<p>We now have everything we need to run our pipeline.</p>
+<p>Right now, our final three methods (centroider, star checker, and width-finder) all <em>return</em> their values. I had you do it that way for testing purposes. To finalize our “object oriented pipeline” though, we should make a wrapper method that will bring them together and handle the outputs.</p>
+<p>Add a new, final method called <code class="docutils literal notranslate"><span class="pre">psf_photometry</span></code>. When the user runs this method, it should first feed the peaks into the centroid code one by one, assembling a set of centroids. It should then construct cutouts of <code class="docutils literal notranslate"><span class="pre">self.image</span></code> around each peak (or centroid), and feed those, plus the centroids, and appropriate meshgrids into the second moment function to save a pair sigma_x and sigma_y for each star as well. And finally, it should use the eval_gauss function I’ve provided above to create a reasonable PSF model, then carry out the PSF photometry (using the equation above).</p>
+<p>At the end of it all, you can save the centroids, widths, and psf-fluxes all to class attributes, where they will remain accessible. You can also find a nice way to return them for extra credit (see below).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I know this was long! Congrats for getting here!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bonus-problem-1-extra-credit">
+<h2>Bonus Problem (+1 Extra Credit)<a class="headerlink" href="#bonus-problem-1-extra-credit" title="Permalink to this headline">¶</a></h2>
+<p>A convenient way to return the set of measurements carried out by our pipeline is via a <code class="docutils literal notranslate"><span class="pre">flux</span> <span class="pre">table</span></code>, like the one returned by <code class="docutils literal notranslate"><span class="pre">aperture_photometry</span></code> from <code class="docutils literal notranslate"><span class="pre">astropy</span></code>. For our purposes, since we’ll be spending a lot of time with data frames, let’s go with that.</p>
+<p>Modify your final <code class="docutils literal notranslate"><span class="pre">psf_photometry</span></code> method to assemble a nice <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> which contains as colummns <code class="docutils literal notranslate"><span class="pre">peak_x</span></code>, <code class="docutils literal notranslate"><span class="pre">peak_y</span></code>, <code class="docutils literal notranslate"><span class="pre">centroid_x</span></code>, <code class="docutils literal notranslate"><span class="pre">centroid_y</span></code>, <code class="docutils literal notranslate"><span class="pre">width_x</span></code>, <code class="docutils literal notranslate"><span class="pre">width_y</span></code>, and <code class="docutils literal notranslate"><span class="pre">psf_flux</span></code>. Each row should be the relevant values for a given star that was originally found by your peakfinder (but which made it through our sample cleaning stage).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Inside your final method, you probably have lists or arrays containing the output of your centroid and width methods as they looped over the stars (and your find peak function returns a list of positions outright). So if you set up an empty DataFrame, you can set, e.g., <code class="docutils literal notranslate"><span class="pre">df['peak_x']</span> <span class="pre">=</span> <span class="pre">peaks[:,0]</span></code> or something like <code class="docutils literal notranslate"><span class="pre">df['width_x']</span> <span class="pre">=</span> <span class="pre">out_widths</span></code>, to set up these columns. As long as you never messed with the order of the lists, it should turn into the desired output frame.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "a330"
+        },
+        kernelOptions: {
+            kernelName: "a330",
+            path: "./Lab3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'a330'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lab2/Lab2.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lab 2: Astronomical Imaging I</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lab1/Lab1_solutions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lab 1 Solutions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>
