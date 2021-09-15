@@ -20,4 +20,7 @@ parts:
   - caption: Quick Tips
     chapters:
       - file: QuickTips/TimingCode
-    
+
+  - caption: Data Access
+    chapters:
+      - file: Lab3/data_access
