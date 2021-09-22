@@ -21,6 +21,7 @@ parts:
   - caption: Quick Tips
     chapters:
       - file: QuickTips/TimingCode
+      - file: QuickTips/Meshgrid
 
   - caption: Data Access
     chapters:
