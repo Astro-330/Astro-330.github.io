@@ -16,9 +16,9 @@
 
 # ## Part 1:   $\chi^2$ Fitting
 # 
-# In this lab, we will largely follow two papers written by D.W. Hogg (NYU/CCA).
+# In this lab, we will largely follow two papers — one written by D.W. Hogg (NYU/CCA), Jo Bovy (U Toronto), and Dustin Lang (Perimeter), and the other by Hogg and Dan Foreman-Mackey (CCA).
 # 
-# 
+# The first of these is accessible here:
 # https://ui.adsabs.harvard.edu/abs/2010arXiv1008.4686H/abstract
 
 # ### Question 1
