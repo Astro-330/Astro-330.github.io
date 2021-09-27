@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Sampling with MCMC &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 1: Overview, Review, and Environments" href="../Lab1/Lab1.html" />
+    <link rel="prev" title="2. Object Oriented Programming" href="../Lecture2/Lecture2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture2/Lecture2.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Sampling with MCMC
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3.html">
+   Lab 3: Building a Photometric Pipeline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4.html">
+   Lab 4:  Fitting a Model to Data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lab Solutions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2_solutions.html">
+   Lab 2 Solutions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quick Tips
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/TimingCode.html">
+   Timing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/Meshgrid.html">
+   Meshgrid
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Access
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lecture4/Lecture4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lecture4/Lecture4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   4. Sampling with MCMC
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-exactly-is-a-sampler">
+     What, exactly, is a sampler?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-integrals">
+     Solving integrals
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#but-how-does-the-integral-actually-get-computed">
+     But how does the integral actually get computed?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-monte-carlo">
+     Simple Monte Carlo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importance-sampling">
+     Importance Sampling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metropolis-hastings-mcmc">
+   Metropolis-Hastings MCMC
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="sampling-with-mcmc">
+<h1>4. Sampling with MCMC<a class="headerlink" href="#sampling-with-mcmc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-exactly-is-a-sampler">
+<h2>What, exactly, is a sampler?<a class="headerlink" href="#what-exactly-is-a-sampler" title="Permalink to this headline">¶</a></h2>
+<p>If you asked me a while ago what MCMC was, I might have answered that it is a tool for fitting models to data. And while it’s true that MCMC is good for this general task, known as <em>inference</em>, we can actually take a step back and understand Monte Carlo schemes from a more basic standpoint.</p>
+<p><em>MCMC is a method for solving integrals.</em></p>
+<p>Let me break that down a bit more. MCMC is a <em>sampling algorithm</em>. It generates samples from what we refer to as a <em>posterior</em>, but for the moment we can simply think of it as some function. By sampling, I mean the most naive thing possible — like drawing balls from a bucket. If I define some function <span class="math notranslate nohighlight">\(f(x)\)</span>, and I start evaluating <span class="math notranslate nohighlight">\(f(x)\)</span> at various points <span class="math notranslate nohighlight">\(x_i\)</span>, that is a sampling. What makes what we’re going to do here more special is the statistical properties of those samples, for the problems at hand.</p>
+</div>
+<div class="section" id="solving-integrals">
+<h2>Solving integrals<a class="headerlink" href="#solving-integrals" title="Permalink to this headline">¶</a></h2>
+<p>In some sense, the only thing that MCMC is truly meant for is sampling pdfs (probability density functions). But that sounds super abstract. So let’s think about this in more real terms. Let’s say I want to integrate a function,</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int_{a}^{b}f(x)dx
+\]</div>
+<p>If I asked you to integrate <span class="math notranslate nohighlight">\(f(x)\)</span>, what would you do? Well, it depends on what <span class="math notranslate nohighlight">\(f(x)\)</span> is, right? If</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2, 
+\]</div>
+<p>you would simply tell me that</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int_{a}^{b}f(x)dx = \int_{a}^{b}x^2 dx = \frac{b^3}{3} - \frac{a^3}{3}
+\]</div>
+<p>Now let’s imagine that <span class="math notranslate nohighlight">\(f(x)\)</span> is <em>ugly</em>. Ugly like one of those functions you derive halfway through a problem on a Physics midterm and you realize something must not be right because there’s <em>no way</em> you can integrate <em>that</em> ugly expression on this test (or indeed, ever).</p>
+<p>What then?</p>
+<p>Well, usually the answer would be either “Wolfram Alpha” or, more generally, “Numerical Integration”. Numerical integration says, “I can estimate the area under this complex curve by chunking it into finite rectangles/trapazoids/etc. and then calculate a sum”. You’ve probably heard of (or used some of these methods): midpoint rule, trapezoidal rule, simpsons rule, Gaussian quadrature… (many of these are implemented in the <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> module).</p>
+<p>When you’re dealing with a (relatively) well behaved function in one dimension, those methods are often the way to go (and the first thing we jump to in our code). But what happens if our problem is not one dimensional? What if, for example, <span class="math notranslate nohighlight">\(f\)</span> is a function of three spatial quantities and three additional parameters,</p>
+<div class="math notranslate nohighlight">
+\[
+f(\theta) = f(x,y,z,a,b,c)
+\]</div>
+<p>We now have <span class="math notranslate nohighlight">\(\theta\)</span> as a vector of six parameters, meaning our integral looks more like</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int \int \int \int \int \int f(x,y,z,a,b,c) dx\hspace{1pt} dy\hspace{1pt} dx\hspace{1pt} da\hspace{1pt} db\hspace{1pt} dc
+\]</div>
+<p>We can now ask ourselves, <em>Can our above numerical integration schemes handle this?</em></p>
+<p>Each scheme above has an associated error, which comes from how the scheme is integrated. From Calculus, you probably remember that the trapezoid rule usually produces smaller errors than the midpoint rule, as it better approximates the curve being traced. We can actually write down how the error of each of these scales. I’ll use the Trapezoid rule here.</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon \propto \frac{1}{N^{2/d}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of sample points (i.e., how fine our grid where we evaluate our trapezoid) and <span class="math notranslate nohighlight">\(d\)</span> is the number of dimensions being integrated over.</p>
+<p>This is a big problem. The error in our numerical solution to the integral scales to a power of the dimensions being integrated over, which requires us to have intractably large values of <span class="math notranslate nohighlight">\(N\)</span> to get accurate results. This is often referred to as “the curse of dimensionality.”</p>
+<p>So how do we get around this?</p>
+<p>What if instead of trying to “grid up” this multidimensional space and evaluate our function at each location, I simply “threw a dart” at a random location and evaluated it there? It turns out, you can show that the error in such a sampling method has an error of</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon \propto \frac{1}{N^{1/2}}
+\]</div>
+<p>Amazingly, this does not have any dependence on dimensionality! So doing a little math with the trapizoid-rule error above, we can see that for problems with dimensionality greater than ~<span class="math notranslate nohighlight">\(d=4\)</span> (for this rule, and closer to <span class="math notranslate nohighlight">\(d=6-8\)</span> for, e.g., Simpson’s rule), the error properties of an MCMC algorithm win out, and make the integration tractable.</p>
+</div>
+<div class="section" id="but-how-does-the-integral-actually-get-computed">
+<h2>But how does the integral actually get computed?<a class="headerlink" href="#but-how-does-the-integral-actually-get-computed" title="Permalink to this headline">¶</a></h2>
+<p>Let’s back up for a moment to the 1D case of <span class="math notranslate nohighlight">\(f(x)\)</span> to aid in our visualization. If I draw some arbitrary function <span class="math notranslate nohighlight">\(f(x)\)</span> across my plot, I can evaluate the integral (area) by any of the tools above.</p>
+<p>I could also sample, which in the absolute first order case means choosing random <span class="math notranslate nohighlight">\(\sim U(a,b)\)</span> (uniformly drawn) values over the bounds of the integrand (i.e., in the 1D case here, values of <span class="math notranslate nohighlight">\(x\)</span> between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>), and then evaluate <span class="math notranslate nohighlight">\(f(x)\)</span> at those values. This is, quite literally, throwing darts to pick values (and where the method gets the Monte Carlo part of it’s name).</p>
+<p>Imagine I have my function <span class="math notranslate nohighlight">\(f(x)\)</span> that looks like this</p>
+<img src="fx.png" width='400'/><p>My sampling, as I described it above, corresponds to something like</p>
+<img src="fx_samples.png" width='350'/>
+<p>where the four points <span class="math notranslate nohighlight">\(x_i\)</span> are presumed to have been drawn from some random uniform distribution. (so more likely, they will not be in ascending order of <span class="math notranslate nohighlight">\(x\)</span>).</p>
+<p>To estimate the area under the curve, I create a rectangle for each sample <span class="math notranslate nohighlight">\(f(x_i)\)</span> with with a width of <span class="math notranslate nohighlight">\((b-a)\)</span> and a height of <span class="math notranslate nohighlight">\(f(x_i)\)</span>. For example, for <span class="math notranslate nohighlight">\(f(x_1)\)</span> above, this would look like</p>
+<img src="fx1_area.png" width='350'/><p>while the rectangle for <span class="math notranslate nohighlight">\(f(x_3)\)</span> would look like</p>
+<img src="fx3_area.png" width='360'/><p>We can see that sometimes I overestimate the area, and other times I underestimate it. However, I will claim here, and prove below, that the <em>expectation value</em> (i.e., the <em>average</em>) of all of these rectangles represents an accurate estimate of the integral of the function <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p>In short, I’m asserting for the moment that the expectation value by the normal integral, i.e.,
+$<span class="math notranslate nohighlight">\(
+\int f(x)p(x)dx.
+\)</span><span class="math notranslate nohighlight">\(
+Is going to be approximated by 
+\)</span><span class="math notranslate nohighlight">\(
+E_{p(\theta)}[f(\theta)] =  \int f(\theta)p(\theta)d\theta \approx \frac{1}{K}\sum_{k=1}^{K}\frac{f(\theta_k)}{p(\theta_k)}
+\)</span>$</p>
+<p>Let’s explain why. In the case of a Uniform distribution, we know that our <span class="math notranslate nohighlight">\(p(\theta_k)\)</span> is given by, simply</p>
+<div class="math notranslate nohighlight">
+\[
+p(\theta_k) = \frac{1}{b-a}
+\]</div>
+<p>That is, a uniform over some bounds is normalized at the level <span class="math notranslate nohighlight">\(1/(b-a)\)</span> such that the area of the distribution is properly normalized to 1.</p>
+<p>Recall I computed my rectangle areas as the width <span class="math notranslate nohighlight">\((b-a)\)</span> times the height of the function at different sample locations. I’m thus approximating my integral as</p>
+<div class="math notranslate nohighlight">
+\[
+I \approx \frac{1}{K}\sum_{k=1}^{K}f(x_k)(b-a)
+\]</div>
+<p>Notice though, that <span class="math notranslate nohighlight">\((b-a)\)</span> is just <span class="math notranslate nohighlight">\(1 / p(x)\)</span> as we’ve defined it. Thus we can write our sum as we did above. But why does that work? I.e., can we show that this formula actually esimates the integral?</p>
+<p>Let’s look at the <em>expectation value</em> of the estimated integral <span class="math notranslate nohighlight">\(I\)</span>. Remember, every time I use my MCMC estimator above, I’ll get a somewhat different answer because I drew random points. What we want is the mean value of many estimates of the integral, <span class="math notranslate nohighlight">\(\langle I\rangle\)</span>, to <em>be</em> the integral’s value given enough samples. This is something I can show.</p>
+<p>The expectation value for <span class="math notranslate nohighlight">\(I\)</span>, by the normal formula, is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\langle I \rangle = \int I(x)p(x)dx = \int\left[ \frac{1}{K}\sum_{k=1}^{K}\left(\frac{f(x_k)}{p(x_k)}\right)\right]p(x) dx=E\left[ \frac{1}{K}\sum_{k=1}^{K}\left(\frac{f(x_k)}{p(x_k)}\right)\right]
+\]</div>
+<p>plugging in the expression for <span class="math notranslate nohighlight">\(I\)</span> that I asserted above.</p>
+<p>By Lebesgue’s dominated convergence theorem, (in the limit as K goes to <span class="math notranslate nohighlight">\(\infty\)</span>), we can move the expectation value inside the sum, such that
+$<span class="math notranslate nohighlight">\(
+\langle I \rangle = E\left[ \frac{1}{K}\sum_{k=1}^{K}\left(\frac{f(x_k)}{p(x_k)}\right)\right] 
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+= \frac{1}{K}\sum_{k=1}^{K}E\left[\left(\frac{f(x_k)}{p(x_k)}\right)\right]
+\)</span>$</p>
+<p>where since the expectation value for any particular <span class="math notranslate nohighlight">\(f(x_k)/p(x_k)\)</span> does not depend on <span class="math notranslate nohighlight">\(k\)</span>, and is just the expectation value over the region, we can pull it out of the sum:
+$<span class="math notranslate nohighlight">\(
+= E\left[\frac{f(x)}{p(x)}\right]\frac{1}{K}\sum_{k=1}^{K} 1
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+=E\left[\frac{f(x)}{p(x)}\right]\frac{1}{K}K
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+= E\left[\frac{f(x)}{p(x)}\right]
+\]</div>
+<p>which, by the definition of expectation values, is just
+$<span class="math notranslate nohighlight">\(
+ = \int \frac{f(x)}{p(x)}p(x) dx 
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\langle I \rangle = \int f(x)dx 
+\)</span>$</p>
+<p>It confused me for quite some time to think about what the expectation value on some quantity <span class="math notranslate nohighlight">\(f(x_i)/p(x_i)\)</span> looks like, as these are just numbers. But, recall, we are talking about the expectation value <span class="math notranslate nohighlight">\(\langle I \rangle\)</span>, which is computed over many <em>simulations</em> of I (i.e., running our sampler many times).</p>
+<p>Thinking about it this way, we can see that the first term in our sum, for example,</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\frac{f(x_0)}{p(x_0)}\right]
+\]</div>
+<p>will be <em>different</em> every time I run the sampler (since the <span class="math notranslate nohighlight">\(x_0\)</span> is a randomly generated number).</p>
+<p>Thus the value inside this expecation can take <em>any</em> value allowed on <span class="math notranslate nohighlight">\(f(x)\)</span> given the set definite boundaries. It then becomes more clear that for this particular term in the sum, the expectation value <em>must</em> just be the expectation value of the function over the bounds. This is then true for <em>every</em> term in the sum.</p>
+<p>Of course, we’ve based this derivation on a limit as <span class="math notranslate nohighlight">\(K\rightarrow\infty\)</span>, but in reality we are taking finite numbers of samples. There thus raises a question of “how many samples are needed for my approximation to be accurate?” This gets either into deep mathematics or pure heuristics, so I’ll simply say for now that we take as many samples as is feasible, and in general if we have many independent samples we are doing O.K.</p>
+<p>It’s useful to point out here that when doing <em>inference</em> problems, we’re often trying to integrate something that looks like the expectation value above, i.e., the integral of a likelihood times a prior.</p>
+</div>
+<div class="section" id="simple-monte-carlo">
+<h2>Simple Monte Carlo<a class="headerlink" href="#simple-monte-carlo" title="Permalink to this headline">¶</a></h2>
+<p>In the simplest case (Monte Carlo) we simply draw random (uniform) values of <span class="math notranslate nohighlight">\(\theta\)</span> and compute the expectation value using the sum. We then use that expectation value, and the bounds of our integral, to solve for the area.</p>
+<p>For example, let’s take</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2
+\]</div>
+<p>and I want to integrate from 1 to 2,</p>
+<div class="math notranslate nohighlight">
+\[
+I = \int_{1}^{2}x^2 dx
+\]</div>
+<p>Obviously we know the answer to this is <span class="math notranslate nohighlight">\(8/3 - 1/3 = 7/3\)</span>. Let’s solve it using Monte Carlo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">unif</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#this creates a uniform over the range [1,2]</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">sample_sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">unif</span><span class="o">.</span><span class="n">rvs</span><span class="p">()</span>
+    <span class="n">call</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">sample_sum</span> <span class="o">+=</span> <span class="n">call</span>
+    
+<span class="n">sample_sum</span> <span class="o">/=</span> <span class="n">N</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;integral as estimated from 1000 Samples: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sample_sum</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral as estimated from 1000 Samples: 2.3081404190522363
+</pre></div>
+</div>
+</div>
+</div>
+<p>We know that the true value is 2.33 repeating, here we can see that with 1000 samples, we estimate the integral to be 2.32.</p>
+<p>We can also try with a much (somewhat absurdly) higher N:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">unif</span><span class="o">.</span><span class="n">rvs</span><span class="p">()</span>
+    <span class="n">call</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">sample_sum</span> <span class="o">+=</span> <span class="n">call</span>
+    
+<span class="n">sample_sum</span> <span class="o">/=</span> <span class="n">N</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;integral as estimated from 100,000 Samples: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sample_sum</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>integral as estimated from 100,000 Samples: 2.329695672498891
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that in this case we’re very close, with the trailing digits rounding effectively to 2.33.</p>
+<p>I mentioned above that the error in our estimate of the integral in this Monte Carlo scheme scaled as <span class="math notranslate nohighlight">\(\propto N^{-1/2}\)</span>. We can write this more formally as</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon = kN^{-1/2}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is a constant that captures the normalization of our scaling relation. Our goal at this point is to bring <span class="math notranslate nohighlight">\(k\)</span> down as much as possible, so that our scaling with error has a lower normalization. (In the parlance of the expectation value <span class="math notranslate nohighlight">\(\langle I \rangle\)</span> above, we want to reduce the <em>variance</em> in the estimates of I for any given sampling run.</p>
+</div>
+<div class="section" id="importance-sampling">
+<h2>Importance Sampling<a class="headerlink" href="#importance-sampling" title="Permalink to this headline">¶</a></h2>
+<p>Imagine you have a distribution that looks something like a Gaussian, defined at some range, like below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">5.</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">0.5</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lecture4_56_0.png" src="../_images/Lecture4_56_0.png" />
+</div>
+</div>
+<p>I could sample this function using a <span class="math notranslate nohighlight">\(\sim U(0,10)\)</span>. But many of my samples would be “wasted” because they would be sampling regions (like between 0 and 3, or 8 and 10) where the value of <span class="math notranslate nohighlight">\(f(x)\)</span> is very small, and thus the contribution to the integral is negligable. What if I had a way to throw darts that were more likely to land near 5, where I want to be well-sampled, and not as much near 10?</p>
+<p>In order to improve my <span class="math notranslate nohighlight">\(k\)</span> value, and assign some <em>importance</em> to some values of <span class="math notranslate nohighlight">\(\theta\)</span> (in this case x) to sample over others, I need a new probability distribution to sample from that isn’t just the Uniform. Thinking about this for a moment, it would seem like the obvious choice is in fact, <span class="math notranslate nohighlight">\(f(x)\)</span> itself, (or rather, f(x) normalized such that it is a probability density function).</p>
+<p>This would naturally capture what I want to do: where f(x) is larger, the pdf will be larger, and the chance of drawing values there will be larger than elsewhere were f(x) is smaller. In this case, instead of a pdf that is just <span class="math notranslate nohighlight">\(1/(b-a)\)</span>, we will plug a real pdf into our sampling expression:</p>
+<div class="math notranslate nohighlight">
+\[
+\int g(\theta)p(\theta)d\theta \approx \frac{1}{K}\sum_{k=1}^{K}\frac{g(\theta_k)}{p(\theta_k)}
+\]</div>
+<p>Let’s try setting up a problem using a Gaussian like above, and sample from a pdf that is the gaussian itself.</p>
+<ul class="simple">
+<li><p>I’ll set up my “arbitrary” function to return something that is gaussian shaped, but arbitrarily normalized.</p></li>
+<li><p>I then set my “pdf” distribution to be a true, normalized normal distribution at the same (<span class="math notranslate nohighlight">\(\mu,\sigma\)</span>) (if we don’t know these values, we can approximate them).</p></li>
+<li><p>I repeat the exercise from before, normalizing each evaluation of my function by an evaluation of the proposal pdf at the same value</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#f(x) is not normalized, it&#39;s just something with a gaussian form, as I&#39;ve multiplied by a constant</span>
+<span class="k">def</span> <span class="nf">f2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">5.</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">0.5</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">gauss</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1">#this is my new p(theta)</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">100000</span>
+<span class="n">area</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">gauss</span><span class="o">.</span><span class="n">rvs</span><span class="p">()</span>
+    <span class="n">call</span> <span class="o">=</span> <span class="n">f2</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">/</span> <span class="n">gauss</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="n">area</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">call</span><span class="p">)</span>
+    
+<span class="n">norm_area</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">area</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Calculated Area: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">norm_area</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calculated Area: 3.759942411946498
+</pre></div>
+</div>
+</div>
+</div>
+<p>We know analytically that the area we should get is</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-\infty}^{\infty} a e^{-(x-b)^{2} / 2 c^{2}} d x=a\sqrt{2\pi c^2}
+\]</div>
+<p>where here, a is 3, b is 5, and c is 0.5. This gives me a computed analytical value of:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area_theoretical</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">0.5</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span>
+<span class="n">area_theoretical</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.7599424119465006
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that once again we’ve gotten the answer almost exactly right. Note that this didn’t only work because both my sampling distribution and pdf were Gaussians with different normalization. Any <span class="math notranslate nohighlight">\(f(x)\)</span> that looked roughly like a “bump” could have been estimated this way. I simply chose a Gaussian because we could compare to an analytical solution.</p>
+<p>Now that we understand qualitatively how this process works with some simple 1D integrals, let’s go back to thinking about ugly, multidimensional integrals. In the above situation, I was able to set a sampling distribution to be my target distribution because I knew the functional form of <span class="math notranslate nohighlight">\(f(x)\)</span> completely. Now, if I knew it was a Gaussian but didn’t know <span class="math notranslate nohighlight">\((\mu,\sigma)\)</span> I would have just run an optimizer on <span class="math notranslate nohighlight">\(f(x)\)</span> first to find the maximum, and perhaps chosen a reasonably wide spread.</p>
+<p>But in the tougher cases, perhaps all I know is how to <em>evaluate</em> <span class="math notranslate nohighlight">\(f(\theta)\)</span> for some multidimensional vector <span class="math notranslate nohighlight">\(\theta\)</span>, but know almost nothing about the details or shape of the distribution I’m trying to integrate. Above, I chose samples preferentially at higher likelihood because I knew ahead of time where those points would be. If I don’t I can write an algorithm to sort that out for me.</p>
+</div>
+</div>
+<div class="section" id="metropolis-hastings-mcmc">
+<h1>Metropolis-Hastings MCMC<a class="headerlink" href="#metropolis-hastings-mcmc" title="Permalink to this headline">¶</a></h1>
+<p>We’re now getting into the real meat of MCMC. I hope that taking the time to walk through the simpler cases above allows the following to be more clear!</p>
+<p>The Metropolis-Hastings algorithm alows you to create a <strong>chain</strong> of evaluations of your function, which don’t depend on the initial conditions, but rather only on the evaluation immediately before. This biased “walker” is programmed to move loosely towards areas of higher probability, but occasionally will also move towards lower probability. This walker moves in “steps” that are usually a small sphere around its current location in parameter space. This allows us to very efficiently sample from the high-probability (or in terms of the integral, most important regions) <em>even if we don’t have intimate knowledge of what that region looks like</em>. Our only requirement at this point is that we can evaluate our function at some position <span class="math notranslate nohighlight">\(\theta\)</span> and that our function as usual is positively defined over the bounds.</p>
+<p>Here is the schematic:</p>
+<ul class="simple">
+<li><p>First, pick an initial value of <span class="math notranslate nohighlight">\(\theta\)</span> and evaluate it as above. Add this to a stored “chain” of values</p></li>
+<li><p>Next, pick a <span class="math notranslate nohighlight">\(\theta^\prime\)</span> from the <em>proposal pdf,</em> a pdf distribution centered on <span class="math notranslate nohighlight">\(\theta\)</span> (more on this below)</p></li>
+<li><p>pick a number <span class="math notranslate nohighlight">\(r\)</span> from a <span class="math notranslate nohighlight">\(Unif(0,1)\)</span></p></li>
+<li><p>if <span class="math notranslate nohighlight">\(f(\theta^\prime)/f(\theta) &gt; r\)</span>, then move to that position and add it to the chain</p></li>
+<li><p>otherwise, the next position in the chain is set to be the current position (and it is added to the chain again)</p></li>
+</ul>
+<p>What do I mean by a proposal pdf? Our walker needs to know how to choose a step to take. The easiest, and most statistically simple, method for doing this is a Gaussian (multivariate if <span class="math notranslate nohighlight">\(\theta\)</span> is multivariate) with a mean of <span class="math notranslate nohighlight">\(\mu=\theta\)</span> and some spread <span class="math notranslate nohighlight">\(\sigma\)</span> that is chosen for each given problem by the amount of parameter space being covered and how sharply <span class="math notranslate nohighlight">\(f\)</span> varies. We’ll discuss the exact choice of <span class="math notranslate nohighlight">\(\sigma\)</span> more later.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lecture4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lecture2/Lecture2.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">2. Object Oriented Programming</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lab1/Lab1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lab 1: Overview, Review, and Environments</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>
