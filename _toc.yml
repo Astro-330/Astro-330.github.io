@@ -6,6 +6,7 @@ parts:
     chapters:
     - file: Lecture1/Lecture1
     - file: Lecture2/Lecture2
+    - file: Lecture4/Lecture4
     
   - caption: Labs
     chapters:
