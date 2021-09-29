@@ -23,7 +23,7 @@
 
 # ### Question 1
 # 
-# Do Exercise 1 from Hogg (2010) using a standard python routine of your choice.   The data (Table 1) are available in the A330 public page under Data Access as well as in your Git directories (as the file is small).   Please report your best fit values and errors on these values.  These should be very close to those in Figure 1 of the paper.
+# Do Exercise 1 from Hogg+ (2010) using a standard python routine of your choice (e.g., `polyfit`, `curve_fit`, etc. The data (Table 1) are available in the A330 public page under Data Access as well as in your Git directories (as the file is small). As a note, you should **remove the outlier points** from this dataset as described in the instructions for Exercise 1 in the Hogg+ document. Please report your best fit values and errors on these values.  These should be very close to those in Figure 1 of the paper.
 # 
 # ```{tip}
 # If you are using np.polyfit, set the `cov='unscaled'` keyword in polyfit to have it return not only the fit coefficients, but also the full covariance matrix. The parameter uncertainties, assuming no off-axis covariance, are the square roots of the diagonal terms (of which for a linear fit there will be 2. You can pull the diagonal terms of a square array using `np.diag()`.
