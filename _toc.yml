@@ -24,6 +24,7 @@ parts:
     chapters:
       - file: QuickTips/TimingCode
       - file: QuickTips/Meshgrid
+      - file: QuickTips/MetropolisHastingsClass
 
   - caption: Data Access
     chapters:
