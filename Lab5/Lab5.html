@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5: Stellar Spectroscopy + Fitting Models to Data &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 1 Solutions" href="../Lab1/Lab1_solutions.html" />
+    <link rel="prev" title="Lab 4: Fitting a Model to Data" href="../Lab4/Lab4.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture2/Lecture2.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture4/Lecture4.html">
+   4. Sampling with MCMC
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3.html">
+   Lab 3: Building a Photometric Pipeline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4.html">
+   Lab 4:  Fitting a Model to Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 5: Stellar Spectroscopy + Fitting Models to Data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lab Solutions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2_solutions.html">
+   Lab 2 Solutions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quick Tips
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/TimingCode.html">
+   Timing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/Meshgrid.html">
+   Meshgrid
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/MetropolisHastingsClass.html">
+   An Object Oriented Metropolis Hastings
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Access
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lab5/Lab5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lab5/Lab5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-of-this-lab">
+   Goals of this lab:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1-keck-deimos-data">
+   Question 1:   Keck DEIMOS data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2-spectral-reductions-with-pypeit">
+   Question 2:  Spectral Reductions with PypeIt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3-plotting-1d-pypeit-output-spectra-and-fitting-by-eye">
+   Question 3: Plotting 1D PypeIt output spectra and fitting by eye
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-0-5">
+   Extra (+0.5)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-4-synthetic-model-spectra">
+   Question 4: Synthetic model spectra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-5-synthetic-model-spectra-smoothing-and-continuum-fitting">
+   Question 5: Synthetic model spectra – Smoothing and Continuum fitting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-1-0">
+   Extra (1.0)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-6-chi-2-fitting-to-find-velocity">
+   Question 6:
+   <span class="math notranslate nohighlight">
+    \(\chi^2\)
+   </span>
+   fitting to find velocity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-7-chi-2-fitting-with-more-parameters">
+   Question 7:
+   <span class="math notranslate nohighlight">
+    \(\chi^2\)
+   </span>
+   fitting with more parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-8-mcmc-with-to-find-velocity">
+   Question 8:  MCMC with to find velocity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-9-mcmc-convergence">
+   Question 9:  MCMC convergence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-10-science">
+   Question 10:  Science
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-5-stellar-spectroscopy-fitting-models-to-data">
+<h1>Lab 5: Stellar Spectroscopy + Fitting Models to Data<a class="headerlink" href="#lab-5-stellar-spectroscopy-fitting-models-to-data" title="Permalink to this headline">¶</a></h1>
+<p>If imaging data is the ‘bread and butter’ of astronomy (see Lab 2), then spectrosopy is meat and potatoes.</p>
+<p>In this lab, we will guide you through reading, plotting and fitting spectra of stars in a Milky Way globular cluster.  The science goal is to determine the velocity and velocity errors for a handful of stars in order to determine if they are members of the globular cluster, or foreground stars in the Milky Way.    The coding goal is to apply both <span class="math notranslate nohighlight">\(\chi^2\)</span> fitting and MCMC fitting techniques when the model is more complicated.</p>
+<div class="section" id="goals-of-this-lab">
+<h2>Goals of this lab:<a class="headerlink" href="#goals-of-this-lab" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Explore a maintained software package (pypeit).</p></li>
+<li><p>Read a complicated fits file and plot a spectrum.</p></li>
+<li><p>Find parameters and errors via chi2 fitting when the model is not an analytic function</p></li>
+<li><p>Find parameters and errors via MCMC.</p></li>
+<li><p>Fitting polynomials to 2D surfaces, corner plots</p></li>
+</ol>
+</div>
+<div class="section" id="question-1-keck-deimos-data">
+<h2>Question 1:   Keck DEIMOS data<a class="headerlink" href="#question-1-keck-deimos-data" title="Permalink to this headline">¶</a></h2>
+<p>We will be working with data from the Keck Telescope’s DEIMOS instrument.   All Keck data is publically available on the Keck Data Archive (KOA) website.   While we will not be directly reducing the raw data, let’s take a look at these files to get a sense for what the data look like.   We’ve selected data from the Milky Way globular cluster NGC 7006.</p>
+<p>Head to the KOA website (<a class="reference external" href="https://koa.ipac.caltech.edu/cgi-bin/KOA/nph-KOAlogin">https://koa.ipac.caltech.edu/cgi-bin/KOA/nph-KOAlogin</a>) and search for all files take with DEIMOS on the night of June 3, 2011 (20110603).   Search the list for files with <code class="docutils literal notranslate"><span class="pre">Target</span> <span class="pre">Name</span> <span class="pre">==</span> <span class="pre">n7006</span></code> and <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">or</span> <span class="pre">Dispersion</span> <span class="pre">==</span> <span class="pre">mos</span></code>.    Find the column named <code class="docutils literal notranslate"><span class="pre">Quicklook</span> <span class="pre">Previews</span></code> and click on <code class="docutils literal notranslate"><span class="pre">[Raw]</span></code>.   This is a single exposure of a spectroscopic mask centered on NGC 7006.   You should see a hundred or so spectra in this image.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Include a screen grab here and/or describe in words the image that you  see.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-2-spectral-reductions-with-pypeit">
+<h2>Question 2:  Spectral Reductions with PypeIt<a class="headerlink" href="#question-2-spectral-reductions-with-pypeit" title="Permalink to this headline">¶</a></h2>
+<p>Using the raw files downloaded from the KOA above , we [the A330 instructors] have run the science and calibration frames through a spectral reduction softare package called <code class="docutils literal notranslate"><span class="pre">PypeIt</span></code>:  <a class="reference external" href="https://pypeit.readthedocs.io/en/release/">https://pypeit.readthedocs.io/en/release/</a>.  The <code class="docutils literal notranslate"><span class="pre">PypeIt</span></code> github repository can be found here:  <a class="reference external" href="https://github.com/pypeit/PypeIt">https://github.com/pypeit/PypeIt</a></p>
+<p>While we won’t actually run <code class="docutils literal notranslate"><span class="pre">PypeIt</span></code> in this lab, we will be using its output files.   This is a software project that is actively being developed, so let’s look around at the code and identify some familar pieces:</p>
+<p>On github, take a look in the /pypeit directory and click on a few of the *.py files.</p>
+<ol class="simple">
+<li><p>Find one instance of PypeIt using a Class structure</p></li>
+<li><p>Find one instance of PypeIt not fully/properly populating a doc string :)</p></li>
+<li><p>Find a line of code that you understand and explain what its doing</p></li>
+<li><p>Fine a line of code that you don’t understand.</p></li>
+<li><p>How many branches current exist from the main <code class="docutils literal notranslate"><span class="pre">release</span></code> branch?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answers to 5 items above.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the data access directory, we have provide a PypeIt output file which contains one-dimensional spectra for all the stars observed in the DEIMOS mask <code class="docutils literal notranslate"><span class="pre">n7006a</span></code> that you viewed above.   Read in the file using the astropy.io.fits commands and view the contents using <code class="docutils literal notranslate"><span class="pre">hdu.info()</span></code>.   State how many spectra are contained in this file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;spec1d_DE.20110603.45055-n7006a_DEIMOS_2011Jun03T123053.021.fits&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code to view file contents</span>
+<span class="c1"># How many spectra are contained in this file?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-3-plotting-1d-pypeit-output-spectra-and-fitting-by-eye">
+<h2>Question 3: Plotting 1D PypeIt output spectra and fitting by eye<a class="headerlink" href="#question-3-plotting-1d-pypeit-output-spectra-and-fitting-by-eye" title="Permalink to this headline">¶</a></h2>
+<p>We have selected 3 spectra from this file which are high signal-to-noise stars.   From your fits table that you have read in, select extension 121, 135 and 157.   These can also be selected using the names ‘SPAT0564-SLIT0560-DET06’, ‘SPAT1163-SLIT1162-DET06’ and ‘SPAT0288-SLIT0302-DET07’.   Save the data for each spectrum separately.</p>
+<p>Plot wavelength versus counts/flux for each star.   Please use the optimal extraction results (‘OPT_<em>’).  If you need additional guidence for what is in this file, see the PypeIt documentation on spec1d_</em> files:  <a class="reference external" href="https://pypeit.readthedocs.io/en/release/out_spec1D.html">https://pypeit.readthedocs.io/en/release/out_spec1D.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each of these three stars, plot the wavelength versus counts.  Use ylim =  8300-8800 Angstrum</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="extra-0-5">
+<h2>Extra (+0.5)<a class="headerlink" href="#extra-0-5" title="Permalink to this headline">¶</a></h2>
+<p>To get a sense for the velocity of each star, you might try measuring a rough velocity ‘by eye’.   The three strongest lines in the spectra above are from Calcium II:  8500.36, 8544.44, 8664.52 Angstrum. What velocity do you estimate?</p>
+</div>
+<div class="section" id="question-4-synthetic-model-spectra">
+<h2>Question 4: Synthetic model spectra<a class="headerlink" href="#question-4-synthetic-model-spectra" title="Permalink to this headline">¶</a></h2>
+<p>In ASTR 255 and the extra question above, you have measured the velocity of a star by measuring the center of a known absorption line (either by eye or fitting a Gaussian) and comparing to its rest wavelength.   While this process does estimate the star’s velocity, it wastes much of the information present in the full spectrum.  To determine more accurate velocities, we turn to “template fitting” where a spectrum with a known velocity is compared to our unknown science spectrum.    A template spectrum can either be empiricial (an observed spectrum of a standard star where the velocity is already known) or synthetic (numerically computed from stellar models).   Here we will use synthetic templates from the PHEONIX library:  <a class="reference external" href="https://phoenix.astro.physik.uni-goettingen.de/">https://phoenix.astro.physik.uni-goettingen.de/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">template_file</span> <span class="o">=</span> <span class="s1">&#39;dmost_lte_5000_3.0_-2.0_.fits&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_synthetic_spectrum</span><span class="p">(</span><span class="n">pfile</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to load synthetic template file into python using vacuum wavelengths</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pfile: str</span>
+<span class="sd">        path to the synthitic fits file to load. </span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pwave: float array</span>
+<span class="sd">        Wavelengths of synthetic spectrum</span>
+<span class="sd">    pflux: float array</span>
+<span class="sd">        Flux of sythetic spectrum</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">pfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdu</span><span class="p">:</span>
+        <span class="n">data</span>     <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        
+    <span class="n">pflux</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;flux&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">awave</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;wave&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+    
+
+    <span class="c1"># CONVERTING AIR WAVELENGTHS TO VACUUM</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="n">awave</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="mf">0.00008336624212083</span> <span class="o">+</span> \
+            <span class="p">(</span><span class="mf">0.02408926869968</span> <span class="o">/</span> <span class="p">(</span><span class="mf">130.1065924522</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span>\
+            <span class="p">(</span><span class="mf">0.0001599740894897</span> <span class="o">/</span> <span class="p">(</span><span class="mf">38.92568793293</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">pwave</span>  <span class="o">=</span> <span class="n">awave</span><span class="o">*</span><span class="n">n</span>
+    
+    <span class="k">return</span> <span class="n">pwave</span><span class="p">,</span> <span class="n">pflux</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in synthetic spectra and plot wavelegth versus flux</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-5-synthetic-model-spectra-smoothing-and-continuum-fitting">
+<h2>Question 5: Synthetic model spectra – Smoothing and Continuum fitting<a class="headerlink" href="#question-5-synthetic-model-spectra-smoothing-and-continuum-fitting" title="Permalink to this headline">¶</a></h2>
+<p>We will fit the sythetic spectrum to our science data with the goal of determining the velocity of our science spectrum.   The synthetic spectrum is at zero velocity.   To match the science data, we will need to (1) smooth the synthetic spectrum to the wavelength resolution of the science, (2) shift the sythetic spectrum to the velocity of the science data, and (3) rebin the synthetic spectrum and match continuum levels.</p>
+<p>We will first address how to smooth the synthetic spectrum to match the data.   We will fit for this value below, but for the moment, let’s just choose a number based on a single point estimate. The DEIMOS spectral lines are well fit by a Gaussian with a 1-<span class="math notranslate nohighlight">\(\sigma\)</span> line width that is roughly 0.5 Angstrum.   The synthetic spectra have resolution of 0.02 Angstrum.   Thus, we need to smooth the sythetic spectra with a Gaussian kernal that is 0.5/0.02 = 25 pixels.</p>
+<p>Hint: scipy has functions which do Gaussian filtering in 1D.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function to Gaussin smooth the synthtic spectrum, using a smoothing kernal of 25 pixels.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will next address the above step (3), the overall shape and value of the spectrum which we will call the ‘continuum’.   Let’s fit a function to the synthetic spectrum so that it is approximately the same as the science spectrum.   To do this, we will first rebin the sythetic spectrum in wavelenght to match the science and fit smooth function to match continuum.</p>
+<p>Chose a science spectrum from above and rebin the sythentic template so that it uses the same wavelength array (consider using np.interp).</p>
+<p>Next, figure out a linear function needed to match the continuum of the sythetic spectrum to that of the science. You may want to ignore the deepest absorption lines when fitting the function itself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function to rebin the synthetic template and match continuum shape of a science spectrum.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK, now run both functions on the sythetic spectrum and plot the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run both functions (smooth + rebin/continumm) and plot your smoothed, continuum normalized synthetic spectrum</span>
+<span class="c1"># Compare this to one of your science spectra.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="extra-1-0">
+<h2>Extra (1.0)<a class="headerlink" href="#extra-1-0" title="Permalink to this headline">¶</a></h2>
+<p>When fitting continua, we usually want to avoid the “features” in the spectrum. We could mask them out… but we could also iteratively remove them. To do this, you would fit your chosen function to the data as a start, then iterate, throwing out 3 (or 5 or whatever works) sigma distant points and re-fitting. This works because emission and absorption lines have data points far from the continuum value. Try fitting your continuum this way to get a better estimate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># iterative fit method</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-6-chi-2-fitting-to-find-velocity">
+<h2>Question 6: <span class="math notranslate nohighlight">\(\chi^2\)</span> fitting to find velocity<a class="headerlink" href="#question-6-chi-2-fitting-to-find-velocity" title="Permalink to this headline">¶</a></h2>
+<p>The science and synthetic spectra above should roughly match– except for an unknown velocity shift.   You can shift the synthetic template in velocity by changing its wavelength array <em>before smoothing</em>.  Recall that <span class="math notranslate nohighlight">\(\delta \lambda = \lambda * v/c\)</span>.</p>
+<p>Write a <span class="math notranslate nohighlight">\(\chi^2\)</span> code to find the best-fit velocity for each of the three stars above.   Look up the velocity of the globular cluster NGC 7006 to justify the range of velocities to search over.   Consider the wavelength resolution of your science data to determine the spacing of your grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a chi2 algorithm to determine the best fitting velocity and error.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-7-chi-2-fitting-with-more-parameters">
+<h2>Question 7:  <span class="math notranslate nohighlight">\(\chi^2\)</span> fitting with more parameters<a class="headerlink" href="#question-7-chi-2-fitting-with-more-parameters" title="Permalink to this headline">¶</a></h2>
+<p>In Question 6, we fixed the smoothing value to 25 pixels and used a single function to match the sythentic to science continuum.   Next, let’s redo <span class="math notranslate nohighlight">\(\chi^2\)</span>, but now including these values in the fit.   This will be a 2 parameter chi2 fit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repeat $chi^2$ fitting searching over 2 (and bonus 4) parameters: </span>
+<span class="c1">#             velocity, smoothing, and (bonus) continuum value (m,b)</span>
+<span class="c1"># If you use 4 parameters, this will get ugly.  </span>
+<span class="c1">#</span>
+<span class="c1"># Calculate errors from your chi2 contours on the velocity only.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-8-mcmc-with-to-find-velocity">
+<h2>Question 8:  MCMC with to find velocity<a class="headerlink" href="#question-8-mcmc-with-to-find-velocity" title="Permalink to this headline">¶</a></h2>
+<p>Repeat Question 7 but this time fitting with MCMC.  We suggest writing a single function <code class="docutils literal notranslate"><span class="pre">make_model</span></code>  which creates a single synthetic model spectrum given an input velocity and smoothing.
+Report your best fit velocity and errors.</p>
+<p>You can chose to fit 2 parameters (velocity and smoothing), or as a bonus all 4 parameters (velocity, smoothing and continuum fit values).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># MCMC to find velocity only.  Report your best fit velocity and errors.</span>
+<span class="c1"># Plot full corner plots for all fitted parameters.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the context of MCMC, you’ll often hear people talk about “marginalization”. This is a classic example. Marginalization is the process of fitting for parameters we care about, plus “nuisance parameters” that we don’t (like the smoothing and continuum values), and then “marginalizing out” the nuisance parameters by taking the 1D posterior spread only of the parameter of interest.</p>
+</div>
+</div>
+<div class="section" id="question-9-mcmc-convergence">
+<h2>Question 9:  MCMC convergence<a class="headerlink" href="#question-9-mcmc-convergence" title="Permalink to this headline">¶</a></h2>
+<p>Confirm that your MCMC above converged and that you are discarding the appropriate number of samples when determining your parameters (that is the burnin number).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Confirm convergence </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="question-10-science">
+<h2>Question 10:  Science<a class="headerlink" href="#question-10-science" title="Permalink to this headline">¶</a></h2>
+<p>And finally, some science questions:</p>
+<ol class="simple">
+<li><p>Do velocities agree between chi2 and mcmc within error?</p></li>
+<li><p>Are the velocity errors the same?</p></li>
+<li><p>Are these three stars part of NGC 7006?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answers to the 3 questions above</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "a330"
+        },
+        kernelOptions: {
+            kernelName: "a330",
+            path: "./Lab5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'a330'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lab4/Lab4.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lab 4:  Fitting a Model to Data</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lab1/Lab1_solutions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lab 1 Solutions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>
