@@ -136,6 +136,8 @@ def read_synthetic_spectrum(pfile):
 
 # We will fit the sythetic spectrum to our science data with the goal of determining the velocity of our science spectrum.   The synthetic spectrum is at zero velocity.   To match the science data, we will need to (1) smooth the synthetic spectrum to the wavelength resolution of the science, (2) shift the sythetic spectrum to the velocity of the science data, and (3) rebin the synthetic spectrum and match continuum levels.
 
+# #### Smoothing the templates 
+# 
 # We will first address how to smooth the synthetic spectrum to match the data.   We will fit for this value below, but for the moment, let's just choose a number based on a single point estimate. The DEIMOS spectral lines are well fit by a Gaussian with a 1-$\sigma$ line width that is roughly 0.5 Angstrum.   The synthetic spectra have resolution of 0.02 Angstrum.   Thus, we need to smooth the sythetic spectra with a Gaussian kernal that is 0.5/0.02 = 25 pixels.   
 # 
 # Hint: scipy has functions which do Gaussian filtering in 1D.
@@ -146,19 +148,27 @@ def read_synthetic_spectrum(pfile):
 # Write a function to Gaussin smooth the synthtic spectrum, using a smoothing kernal of 25 pixels.
 
 
-# We will next address the above step (3), the overall shape and value of the spectrum which we will call the 'continuum'.   Let's fit a function to the synthetic spectrum so that it is approximately the same as the science spectrum.   To do this, we will first rebin the sythetic spectrum in wavelenght to match the science and fit smooth function to match continuum.
+# #### Fitting the Continuum
 # 
-# Chose a science spectrum from above and rebin the sythentic template so that it uses the same wavelength array (consider using np.interp).
+# We will next address the above step (3), the overall shape and value of the spectrum which we will call the 'continuum'.   Let's fit a function to the synthetic spectrum so that it is approximately the same as the science spectrum. For the section of a spectrum we are working with a **linear function** (i.e., like we fit in lab 4) is sufficient. To do this, we will first rebin the synthetic spectrum in wavelength to the same array as the data. 
 # 
-# Next, figure out a linear function needed to match the continuum of the sythetic spectrum to that of the science. You may want to ignore the deepest absorption lines when fitting the function itself.
+# Choose a science spectrum from above and rebin the sythentic template so that it uses the same wavelength array (consider using `np.interp()`). We need this to carry out point by point fits and comparisons between arrays. 
+# 
+# Next, determine the **linear function** (mx+b) needed to match the continuum of the synthetic spectrum to that of the science. If you wish, you may also try a second order polynomial, if you think it is a better fit.
+# 
+# ```{tip}
+# If you just try to fit the spectrum, the absorption lines and other features will "drag" your fit away from the level of the continuum. This is easy to see by eye. There's a few ways around this. First, we could mask regions of deep absorption. Second, we could run something like `np.percentile()` on the spectrum, and remove all points farther than, say, 1 or 2-sigma from the median when doing the fit. Third, we could do an iterative fit (see the extra below). 
+# 
+# For this problem, we'll allow you to estimate the linear fit to the continuum by eye, or by any of the methods above. 
+# ```
 
 # In[29]:
 
 
-# Write a function to rebin the synthetic template and match continuum shape of a science spectrum.
+# Write a function to rebin the synthetic template to the data wavelength array and fit the continuuum.
 
 
-# OK, now run both functions on the sythetic spectrum and plot the results.  
+# OK, now run both functions (your smoothing function and your rebin/continuum function) on the sythetic spectrum and plot the results.  
 
 # In[1]:
 
@@ -168,7 +178,7 @@ def read_synthetic_spectrum(pfile):
 
 
 # ### Extra (1.0) 
-# When fitting continua, we usually want to avoid the "features" in the spectrum. We could mask them out... but we could also iteratively remove them. To do this, you would fit your chosen function to the data as a start, then iterate, throwing out 3 (or 5 or whatever works) sigma distant points and re-fitting. This works because emission and absorption lines have data points far from the continuum value. Try fitting your continuum this way to get a better estimate. 
+# When fitting continua, we usually want to avoid the "features" in the spectrum. We could mask them out, or drop percentiles of the data far from the median... but we could also iteratively remove them. To do this, you would fit your chosen function to the data as a start, then iterate, throwing out 3 (or 5 or whatever works) sigma distant points and re-fitting. This works because emission and absorption lines have data points far from the continuum value. Try fitting your continuum this way to get a better estimate. 
 
 # In[ ]:
 
