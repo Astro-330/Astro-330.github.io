@@ -14,6 +14,7 @@ parts:
     - file: Lab2/Lab2
     - file: Lab3/Lab3
     - file: Lab4/Lab4
+    - file: Lab5/Lab5
 
   - caption: Lab Solutions 
     chapters:
