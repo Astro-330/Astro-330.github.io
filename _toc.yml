@@ -21,6 +21,7 @@ parts:
       - file: Lab1/Lab1_solutions
       - file: Lab2/Lab2_solutions
       - file: Lab3/Lab3_solutions
+      - file: Lab4/Lab4_solutions
 
   - caption: Quick Tips
     chapters:
