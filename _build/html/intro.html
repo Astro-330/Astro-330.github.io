@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Astro 330 Course Book &#8212; Astro 330 Course Book</title>
+    <title>Astro 330 Course Book: Scientific Computing in Astrophysics &#8212; Astro 330 Course Book</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -199,7 +199,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
   <a class="reference internal" href="#">
-   Astro 330 Course Book
+   Astro 330 Course Book: Scientific Computing in Astrophysics
   </a>
  </li>
 </ul>
@@ -383,6 +383,39 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-the-course">
+   About the Course
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-format">
+   Course Format
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lab-assignments-github">
+   Lab Assignments &amp; Github
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grading">
+   Grading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#capstone-projects">
+   Capstone Projects
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -391,12 +424,52 @@
         
               <div>
                 
-  <div class="section" id="astro-330-course-book">
-<h1>Astro 330 Course Book<a class="headerlink" href="#astro-330-course-book" title="Permalink to this headline">¶</a></h1>
-<p>As we make our way through the course, the Lectures and Lab Assignments will be added to this book as chapters (in their respective parts). You will be able to git-pull to download the relevant notebooks, as well as view the assignments locally. They will also be online.</p>
+  <div class="section" id="astro-330-course-book-scientific-computing-in-astrophysics">
+<h1>Astro 330 Course Book: Scientific Computing in Astrophysics<a class="headerlink" href="#astro-330-course-book-scientific-computing-in-astrophysics" title="Permalink to this headline">¶</a></h1>
+<p>This website serves as the repository for materials presented in the Astro 330 Course taught by Imad Pasha and Marla Geha at Yale University. It includes Python lectures, Lab assignments, and solutions, as well as short articles (“Quick Tips”) that came up during the course. The first iteration of this class was taught in Fall 2021, and had an enrollment of ~15 students.</p>
+<p>We welcome you to peruse these materials, attempt the labs, or modify/use them for your own teaching (with attribution). All materials are provided as-is, but we welcome suggestions and bug-fixes; you can create an <a class="reference external" href="https://github.com/Astro-330/Astro-330.github.io/issues">issue</a> at the Github page for this site.</p>
+<div class="section" id="about-the-course">
+<h2>About the Course<a class="headerlink" href="#about-the-course" title="Permalink to this headline">¶</a></h2>
+<p>The course focuses on high level Python computing in the context of astrophysics research. The course goal is to provide students with the fundamentals of building astronomical pipelines and the general use of cutting edge tools and techniques currently used in the astronomical community. We will discuss and build software for the analysis, manipulation, reduction, and visualization of astronomical data from observations and simulations.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We recommend you spawn up your own notebooks for assignments, pushing them to the relevant github directory via github classroom. If you work directly in the pulled assignent document, it may be overwritten or have merge conflicts when you next try to pull. You will be able to copy the downloaded files, so you can make a copy of the Lab if you wish to work directly on it.</p>
+<p>This course is intended to build on the introductory programming experience students gained during the required ASTR 255 (“Research Methods in Astrophysics”) or equivalent research experience. Students should know basic python coding, including working with numpy arrays and creating basic plots with matplotlib, before attempting the assignments in this course.</p>
+</div>
+</div>
+<div class="section" id="course-format">
+<h2>Course Format<a class="headerlink" href="#course-format" title="Permalink to this headline">¶</a></h2>
+<p>The course consists of (1) weekly Python lectures (2) in-depth tutorial/workshop days during which students work together on programming assignments, and (3) seminar lectures by invited outside experts who are pushing the forefront of Python in Astronomy.  There are weekly coding assignments and a final capstone project. We found that several of the assignments available on the left are best given 2 weeks (with 2 in-class work days) to complete, but this will depend on the level of the students.</p>
+<p>We are grateful to the speakers who met with our students this semester - below is a running list, including some of the packages they are associated with:</p>
+<ul class="simple">
+<li><p>Prof. X Prochaska (UCSC; <code class="docutils literal notranslate"><span class="pre">pypeit</span></code>)</p></li>
+<li><p>Prof. David Hogg (NYU/Flatiron CCA; <code class="docutils literal notranslate"><span class="pre">emcee</span></code>)</p></li>
+<li><p>Shany Danieli (IAS/Princeton; <code class="docutils literal notranslate"><span class="pre">artpop</span></code>)</p></li>
+</ul>
+</div>
+<div class="section" id="lab-assignments-github">
+<h2>Lab Assignments &amp; Github<a class="headerlink" href="#lab-assignments-github" title="Permalink to this headline">¶</a></h2>
+<p>Our course handled distribution and submission of assignments via <a class="reference external" href="https://classroom.github.com/">Github classroom</a>. Students pulled assignments (Jupyter Notebooks) from Github, worked on them, and pushed the final labs back to Github.</p>
+<p>Labs were also available here at this site, which uses the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> package to create nicely formatted assignments. The data needed to complete the labs will be available in the Data Access panel to the left.</p>
+</div>
+<div class="section" id="grading">
+<h2>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h2>
+<p>We graded the course as follows:</p>
+<ul class="simple">
+<li><p>50% Weekly Assignments</p></li>
+<li><p>45% Capstone Project (Computing project + talk, see below)</p></li>
+<li><p>5%   Participation</p></li>
+</ul>
+</div>
+<div class="section" id="capstone-projects">
+<h2>Capstone Projects<a class="headerlink" href="#capstone-projects" title="Permalink to this headline">¶</a></h2>
+<p>We will soon post a document here detailing the components of the capstone project, which is completed in stages and has rubrics associated with each component. Ultimately the final project is designed as an opportunity for students to write a “substantial” piece of code that leverages the skills they have learned in the course. Their goal is to create a package which</p>
+<ul class="simple">
+<li><p>Is stored as functions and classes  in python modules, and can thus</p></li>
+<li><p>Be imported into other code for general use, is</p></li>
+<li><p>Installable via <code class="docutils literal notranslate"><span class="pre">pip</span></code>, allowing functions/classes to be imported from anywhere on the system, and is</p></li>
+<li><p>Distributed and maintained on Github.</p></li>
+</ul>
+<p>At the end of the course, we will link to the student’s packages here.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
