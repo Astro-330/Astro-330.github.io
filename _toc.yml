@@ -23,6 +23,10 @@ parts:
       - file: Lab3/Lab3_solutions
       - file: Lab4/Lab4_solutions
 
+  - caption: Final Projects
+    chapters:
+      - file: FinalProject/finalprojects
+
   - caption: Quick Tips
     chapters:
       - file: QuickTips/TimingCode
