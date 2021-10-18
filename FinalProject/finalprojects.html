@@ -1,0 +1,831 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project Guidelines &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Timing your code" href="../QuickTips/TimingCode.html" />
+    <link rel="prev" title="Lab 4: Solutions" href="../Lab4/Lab4_solutions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book: Scientific Computing in Astrophysics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture2/Lecture2.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture4/Lecture4.html">
+   4. Sampling with MCMC
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3.html">
+   Lab 3: Building a Photometric Pipeline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4.html">
+   Lab 4:  Fitting a Model to Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab5/Lab5.html">
+   Lab 5: Stellar Spectroscopy + Fitting Models to Data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lab Solutions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2_solutions.html">
+   Lab 2 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3_solutions.html">
+   Lab 3 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4_solutions.html">
+   Lab 4: Solutions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Final Projects
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Final Project Guidelines
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quick Tips
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/TimingCode.html">
+   Timing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/Meshgrid.html">
+   Meshgrid
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/MetropolisHastingsClass.html">
+   An Object Oriented Metropolis Hastings
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Access
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/FinalProject/finalprojects.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-requirments">
+   Project Requirments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-possible-projects">
+     Examples of Possible Projects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-stages-timeline-and-deadlines">
+   Project Stages + Timeline and Deadlines
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grading-breakdown-and-rubrics">
+   Grading Breakdown and Rubrics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#project-abstract-15-possible-points-5-of-grade">
+     Project Abstract (15 possible points, 5% of grade)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#project-abstract-rubric">
+       Project Abstract Rubric
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#revised-project-abstract-9-possible-points-5-of-grade">
+     Revised Project Abstract (9 possible points, 5% of grade)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rubric-for-revised-abstract">
+       Rubric for Revised Abstract
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-review-i-18-possible-points-10-of-grade">
+     Code Review I (18 possible points, 10% of grade)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rubric-for-cr1">
+       Rubric for CR1
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-review-ii-18-possible-points-10-of-grade">
+     Code Review II (18 possible points, 10% of grade)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rubric-for-cr2">
+       Rubric for CR2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#peer-reivew-final-presentation-21-possible-points-15-of-grade">
+     Peer Reivew + Final Presentation (21 possible points, 15% of grade)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#peer-review-final-presentation-rubric">
+       Peer Review + Final Presentation Rubric
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="final-project-guidelines">
+<h1>Final Project Guidelines<a class="headerlink" href="#final-project-guidelines" title="Permalink to this headline">¶</a></h1>
+<p>Your final project is an opportunity for you to write a “substantial” piece of code that leverages the skills you have learned in the course to date (as well as some you will learn by virtue of doing the project). Your goal is to create a package, which is just a fancy name for code which</p>
+<ul class="simple">
+<li><p>Is stored as functions and classes  in python files (we’ll call them modules), and can thus</p></li>
+<li><p>Be imported into other code for general use, and is
+= Installable, which simply means you can import your functions/classes from anywhere on the computer, not just in the folder where the source code is installed.</p></li>
+</ul>
+<p>You may work <strong>alone</strong> or with <strong>one (1) partner</strong>.  If you work with a partner, we expect to see ~50% contribution from both of you, and will confirm that this is the case via questioning, code reviews, and github commits. We also expect the project to be <strong>more substantive</strong> than a project worked on alone.</p>
+<div class="section" id="project-requirments">
+<h2>Project Requirments<a class="headerlink" href="#project-requirments" title="Permalink to this headline">¶</a></h2>
+<p>The following should be considered base requirements, but are subject to modification if you talk to the instructors and provide rationale for why such a change is warranted.</p>
+<p>We want you to pick projects that require a substantial amount of code to pull off. When we say substantial, we mean, roughly, N&gt;2 <code class="docutils literal notranslate"><span class="pre">classes</span></code> (each with multiple methods), and/or roughly N&gt;10 <code class="docutils literal notranslate"><span class="pre">functions</span></code> that work together to solve the problem. Your code must also be organized into <code class="docutils literal notranslate"><span class="pre">modules</span></code>, be fully installable on a system, and be hosted on <code class="docutils literal notranslate"><span class="pre">Github</span></code>. We will help you select projects of a scope such that you shouldn’t need to worry about meeting “code minimum” requirements, and we would never ask you to write longer code when you can achieve something in fewer lines. Thus, you shouldn’t think in terms of “how many lines” or “I need one more function.” Instead, we will do a few things to be sure you’re on the right track.</p>
+<ul class="simple">
+<li><p>First, we are going to expand the code for the solution to Lab 5 (spectra) into something that would be an appropriate minimum amount of code/complexity for your projects. You can peruse this code at will and qualitatively assess with your own code if you’re in the right ballpark.</p></li>
+<li><p>Second, we are going to have code reviews along the way (see below), during which we will tell you if you are on track to meet our requirements for the project.</p></li>
+<li><p>Third, we will suggest (and help) you create project ideas that are modular and extensible. This means if you finish some core functionality and your project is not “long enough,” you can easily add a new feature to it which will then contribute to a more fully featured code and a completed project.</p></li>
+</ul>
+<div class="section" id="examples-of-possible-projects">
+<h3>Examples of Possible Projects<a class="headerlink" href="#examples-of-possible-projects" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Interactive tools for anything we’ve visualized this semester</p></li>
+<li><p>Dataset explorer (for example, using the upcoming pandas stuff)</p></li>
+<li><p>Image Zoo – retrieve images (galaxies, etc), and ask the user to categorize them (store results, maybe train ML?)</p></li>
+<li><p>Retrieve cutouts from Google Mars and perform some feature analysis/detection? (or Google Earth)</p></li>
+<li><p>A tool that helps project management, etc., for a club or organization you are part of.</p></li>
+<li><p>Implement a classic game (scrabble, battleship, chess), write an AI to play against.</p></li>
+<li><p>Make a website using <a class="reference external" href="http://streamlit.io">streamlit</a> to make an element of your research code an interactive tool/widget. (<a class="reference external" href="https://share.streamlit.io/prappleizer/dslm-tilts/main/calc_tilt.py">example by me</a>)</p></li>
+<li><p>Write a user-friendly N-Body simulator to set up, e.g., planetary systems, or the Toomre &amp; Toomre galaxy simulations, run them, and visualize the results</p></li>
+<li><p>Use MCMC to write a tool that helps the user fit some astronomical (or other) models to data. Examples: Fit light curves to exoplanet data, fit earth temperature data with a climate model, etc)</p></li>
+<li><p>Write a tool that teaches an astronomical concept, that could be used in the classroom (like 255!)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="project-stages-timeline-and-deadlines">
+<h2>Project Stages + Timeline and Deadlines<a class="headerlink" href="#project-stages-timeline-and-deadlines" title="Permalink to this headline">¶</a></h2>
+<p>Because we are not having a midterm, your final project is worth 45% of your grade. We will spread this out as follows:</p>
+<ol class="simple">
+<li><p>[<strong>5%, due Oct 29</strong>] Submission of Project Abstract (1 paragraph) describing your intended project</p></li>
+<li><p>[<strong>5%, due Nov 5</strong>] Submission of Revised Project Abstract after instructor comments + skeleton sketch of the modules/functions/classes you think should be present in your code.</p></li>
+<li><p>[<strong>10%, due Nov 19</strong>] Code Review I - meet with an instructor and describe what you have so far, issues you’re facing, and next intended steps.  Sections of your project should be functional (and demo-able), and you should have ~50% of the code at least drafted</p></li>
+<li><p>[<strong>10%, due Dec 3</strong>] Code Review II: - meet with instructor with a draft of the completed project. Elements may still be under construction, but the overall code must meet the requirements by this stage.</p></li>
+<li><p>[<strong>15%, due Dec 10</strong>] Final Presentation - consists of (1) peer review, (2) a demo of your code for the class + pick 1-2 areas of the codebase to explain (ideally the part where you learned something new, or used a tool we haven’t covered in class), and (3) You will also “turn in” your projects by hosting them for the world on Github.</p></li>
+</ol>
+</div>
+<div class="section" id="grading-breakdown-and-rubrics">
+<h2>Grading Breakdown and Rubrics<a class="headerlink" href="#grading-breakdown-and-rubrics" title="Permalink to this headline">¶</a></h2>
+<p>Each section of the final project described above has an associated rubric shown below. As you prepare each phase, consider these as a checklist for what you should have ready by each deadline. We hope that by providing these rubrics, we can alleviate any uncertainty about what we’re expecting to see as you progress through the project, and you should ask any clarifying questions about these rubrics as soon as you have them.</p>
+<div class="section" id="project-abstract-15-possible-points-5-of-grade">
+<h3>Project Abstract (15 possible points, 5% of grade)<a class="headerlink" href="#project-abstract-15-possible-points-5-of-grade" title="Permalink to this headline">¶</a></h3>
+<p>Your project abstract should be a paragraph (4-6 sentences ~250 words) defining the idea for your project. It should indicate what your codebase will do, and why such a code existing would be useful/fun/cool. It should roughly sketch (in 1-2 sentences) the structure of the code.</p>
+<p><strong>Example:</strong> I propose a codebase <code class="docutils literal notranslate"><span class="pre">touchdownML</span></code> (<code class="docutils literal notranslate"><span class="pre">tdML</span></code>) which uses machine learning to help fantasy football managers to predict the scoring of players on their fantasy team, and thus make informed decisions about who to play and who to bench. This project is motivated by the fact that enormous datasets exist detailing NFL football players every catch, drop, score, etc., with ancillary data (which team was winning, the weather, etc.), and such data is readily available via APIs which make importation to python feasible. I plan to use the <code class="docutils literal notranslate"><span class="pre">sbi</span></code> ML inference package[1] to train a network to learn the connection between the myriad data for players, and the conditions which lead to fantasy scoring. My package will contain several classes, including one to request and parse raw data via APIs, one to “clean” the data and select what will be used in training, and once which connects the ML framework to my data. I will also have a “frontend” (either a class or function), which allows the user to input a player and conditions for an upcoming game, and returns a probability distribution for that player’s fantasy scoring.</p>
+<div class="section" id="project-abstract-rubric">
+<h4>Project Abstract Rubric<a class="headerlink" href="#project-abstract-rubric" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Not present/unacceptable (0)</p></th>
+<th class="head"><p>Needs Improvement (1)</p></th>
+<th class="head"><p>Acceptable (2)</p></th>
+<th class="head"><p>Strong (3)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Complete and on time</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Clearly articulates a purpose/problem to be addressed</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Describes the project feasibility and any new tools needed to carry it out</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Contains a rough framework of some major “pieces” of code that will be needed.</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Clearly articulates what the code will do, and how it will be interacted with by the user.</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="revised-project-abstract-9-possible-points-5-of-grade">
+<h3>Revised Project Abstract (9 possible points, 5% of grade)<a class="headerlink" href="#revised-project-abstract-9-possible-points-5-of-grade" title="Permalink to this headline">¶</a></h3>
+<p>The instructors will provide detailed feedback on your abstract, including whether we think the project is sufficiently broad (but not too broad), sufficiently detailed, achievable in the time we have, in python, etc. We then want you to do a little research and scratch work starting things up, evaluate our suggestions, and make a revised abstract that addresses any concerns and suggestions made. Since the example above is considered “strong” we don’t provide a revised one here.</p>
+<p>Additionally, by this point we want you to submit a code skeleton that roughly lays out a few major areas of your code. Some experimentation / getting going with your projects will help you complete this portion. An example is provided below.</p>
+<p>Package touchdownML</p>
+<ul class="simple">
+<li><p>Request module (<a class="reference external" href="http://requests.py">requests.py</a>)</p></li>
+<li><ul>
+<li><p>Any functions and classes needed to request data from API web services</p></li>
+</ul>
+</li>
+<li><p>Database module (<a class="reference external" href="http://database.py">database.py</a>)</p></li>
+<li><ul>
+<li><p>Methods to clean incoming data from requests (remove junk data, etc)</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Methods to create a singular database for each player containing all known information from past games</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Methods to create a general database of game conditions</p></li>
+</ul>
+</li>
+<li><p>Fitting module (<a class="reference external" href="http://fitting.py">fitting.py</a>)</p></li>
+<li><ul>
+<li><p>Methods to organize data in a way used by the ML code</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Methods to run (train) the network</p></li>
+</ul>
+</li>
+<li><ul>
+<li><p>Methods to visualize and interpret the results</p></li>
+</ul>
+</li>
+<li><p>Prediction model (<a class="reference external" href="http://predict.py">predict.py</a>)</p></li>
+<li><ul>
+<li><p>Methods to allow users to input players and get predicted points in a clean, OOP way.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="rubric-for-revised-abstract">
+<h4>Rubric for Revised Abstract<a class="headerlink" href="#rubric-for-revised-abstract" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Not present/unacceptable (0)</p></th>
+<th class="head"><p>Needs Improvement (1)</p></th>
+<th class="head"><p>Acceptable (2)</p></th>
+<th class="head"><p>Strong (3)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Complete and on time.</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Adjustments based on feedback have been implemented</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Skeleton sketch is feasible and sensible, and appropriately detailed</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="code-review-i-18-possible-points-10-of-grade">
+<h3>Code Review I (18 possible points, 10% of grade)<a class="headerlink" href="#code-review-i-18-possible-points-10-of-grade" title="Permalink to this headline">¶</a></h3>
+<p><em>Code review</em> is a critical part of codebase creation and maintenance, and is carried out at all tech companies and in many scientific collaborations as well. For our code review, you will be meeting with one of the instructors for ~10 minutes. During this time, you are expected to show your progress (which by CR1 should be ~50% code started/constructed, with 25-50% functional). You will take us through the codebase as it stands, indicating the purpose of elements at roughly the class or function level (but not within). You should also be able to demo at least some of the core functionality of the code. Everyone will be required to make a repo for their project on Github and by the CR1 deadline the code you have so far should be pushed there.</p>
+<p>We will also ask you to explain how you did certain things, and you should be comfortable enough with your code to answer. <em><strong>This means, primarily, if you find a snippet on StackOverflow, make sure you take the time to figure out (or ask) how it does the thing.</strong></em></p>
+<p>Finally, code review is also for the coder — we want (and require, see below) you to be able to articulate the challenges/roadblocks/bugs you’re facing, so we can provide advice that helps get you back on track.</p>
+<p>In the example I provided above, this might look like showing the database and requests modules, demo-ing the functionality of pulling data and constructing the database. Maybe also (in a notebook/scratch space) showing some initial results from trying out ML training, but incomplete/not yet fully working.</p>
+<div class="section" id="rubric-for-cr1">
+<h4>Rubric for CR1<a class="headerlink" href="#rubric-for-cr1" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Not present/unacceptable (0)</p></th>
+<th class="head"><p>Needs Improvement (1)</p></th>
+<th class="head"><p>Acceptable (2)</p></th>
+<th class="head"><p>Strong (3)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Completed by deadline</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>~50% of final codebase has been constructed</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Several core features are working (demo-d)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Uses modular structure, functions, and classes and is pushed to GH</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Can answer targeted questions about the codebase</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Articulates problem areas or elements not working and currently stuck</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="code-review-ii-18-possible-points-10-of-grade">
+<h3>Code Review II (18 possible points, 10% of grade)<a class="headerlink" href="#code-review-ii-18-possible-points-10-of-grade" title="Permalink to this headline">¶</a></h3>
+<p>Code Review II will mimic CR1. We will require that by CR2, you have met the minimum requirements of the project in terms of code length/complexity/structure (but not all of that code needs to be <em>working</em> by CR2). We want to be able to say “Good. If you get all this working, and hosted, you’ve met all the requirements of this project.” You should be able to demo all core features (saving convenience / for-fun features till the end). By this point, all code should be in its modular, near-final organization, and again, pushed to your project repo on Github. Finally, by CR2, we want you to show that your code is installed on your own system, and thus can be imported and used from anywhere.</p>
+<div class="section" id="rubric-for-cr2">
+<h4>Rubric for CR2<a class="headerlink" href="#rubric-for-cr2" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Not present/unacceptable (0)</p></th>
+<th class="head"><p>Needs Improvement (1)</p></th>
+<th class="head"><p>Acceptable (2)</p></th>
+<th class="head"><p>Strong (3)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Completed by deadline</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>~100% of final codebase has been constructed</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Almost all core features are working (can be demo-d)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Uses modular structure, functions, and classes, and is installable</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Can answer target questions about codebase</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Articulates problem areas or elements not working and currently stuck</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="peer-reivew-final-presentation-21-possible-points-15-of-grade">
+<h3>Peer Reivew + Final Presentation (21 possible points, 15% of grade)<a class="headerlink" href="#peer-reivew-final-presentation-21-possible-points-15-of-grade" title="Permalink to this headline">¶</a></h3>
+<p>Final Presentation comprises both the finalized version of the project and codebase, as well as your presentation in front of the class and a peer review, in which we will pair you up with another person/group and ask you to install each other’s packages, and follow provided instructions to get them working.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should have both instructions for installation and for the use of your code on Github, either in the Readme file or in a doc/tutorial file).</p>
+</div>
+<p>Your project itself has been graded in several capacities in CR1 and CR2. By this point, we will check primarily that your code is ~fully functional (it’s ok if one or two things are still not there), and that it is not just hosted on github, but installable from there (i.e., your peer will download and install your code and attempt to use it).</p>
+<p>We will also check finally that all project requirements are met – you should already have this by CR2, but if not, this is a chance to get some points back.</p>
+<p>The presentation itself will comprise you (and your partner if you have one) demonstrating your code. These presentations will be ~10 minutes, with the first 5 being a demo of the actual, working use of the code (what a user would see), and the other 5 being a quick tour of the codebase, highlighting 2-3 key areas that make your code tick. We can help you pick which parts of your code to present.</p>
+<div class="section" id="peer-review-final-presentation-rubric">
+<h4>Peer Review + Final Presentation Rubric<a class="headerlink" href="#peer-review-final-presentation-rubric" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Not present/unacceptable (0)</p></th>
+<th class="head"><p>Needs Improvement (1)</p></th>
+<th class="head"><p>Acceptable (2)</p></th>
+<th class="head"><p>Strong (3)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Present for Peer Review</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Project</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Code complete + working+docs/instructions</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Project hosted on github, installable by instructors</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Project Reqs met</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Presentation</strong></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Clarity of presentation</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Familiarity with presented code</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Demo works and demonstrates codebase’s function</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./FinalProject"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lab4/Lab4_solutions.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lab 4: Solutions</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../QuickTips/TimingCode.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Timing your code</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>
