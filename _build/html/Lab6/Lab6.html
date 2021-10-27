@@ -1,0 +1,1658 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 6: Pandas &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 1 Solutions" href="../Lab1/Lab1_solutions.html" />
+    <link rel="prev" title="Lab 5: Stellar Spectroscopy + Fitting Models to Data" href="../Lab5/Lab5.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book: Scientific Computing in Astrophysics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture2/Lecture2.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture4/Lecture4.html">
+   4. Sampling with MCMC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture6/Pandas.html">
+   6. Pandas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3.html">
+   Lab 3: Building a Photometric Pipeline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4.html">
+   Lab 4:  Fitting a Model to Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab5/Lab5.html">
+   Lab 5: Stellar Spectroscopy + Fitting Models to Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 6: Pandas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lab Solutions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2_solutions.html">
+   Lab 2 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3_solutions.html">
+   Lab 3 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4_solutions.html">
+   Lab 4: Solutions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Final Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../FinalProject/finalprojects.html">
+   Final Project Guidelines
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quick Tips
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/TimingCode.html">
+   Timing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/Meshgrid.html">
+   Meshgrid
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/MetropolisHastingsClass.html">
+   An Object Oriented Metropolis Hastings
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Access
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lab6/Lab6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lab6/Lab6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-1-hii-regions-planetary-nebulae-measurements-in-m81">
+   Problem 1: HII regions + Planetary Nebulae measurements in M81
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-1">
+     Problem 1.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-2">
+     Problem 1.2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-3">
+     Problem 1.3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-4">
+     Problem 1.4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-5">
+     Problem 1.5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-6">
+     Problem 1.6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bonus-1-problem-1-7">
+     Bonus: (+1) Problem 1.7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-2">
+   Problem 2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-1">
+     Problem 2.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-2">
+     Problem 2.2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-3">
+     Problem 2.3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-4">
+     Problem 2.4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-5">
+     Problem 2.5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-6">
+     Problem 2.6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-2-7">
+     Problem 2.7
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-3">
+   Problem 3
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-1">
+     Problem 3.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-2">
+     Problem 3.2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-3-3">
+     Problem 3.3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bonus-2">
+     Bonus (+2)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrap-up">
+   Wrap Up
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-6-pandas">
+<h1>Lab 6: Pandas<a class="headerlink" href="#lab-6-pandas" title="Permalink to this headline">¶</a></h1>
+<p>In this lab, we’ll work through some of the basics of using Pandas, using a few different tabular data sets. Ultimately, one need not do anything particularly fancy with DataFrames for them to be useful as data containers. But we would like to highlight a few extra abilities these objects have, that illustrate situations where we may actually have a strong reason to use pandas over another library.</p>
+<div class="section" id="problem-1-hii-regions-planetary-nebulae-measurements-in-m81">
+<h2>Problem 1: HII regions + Planetary Nebulae measurements in M81<a class="headerlink" href="#problem-1-hii-regions-planetary-nebulae-measurements-in-m81" title="Permalink to this headline">¶</a></h2>
+<p>For our first data set, we’re going to look at a file (<code class="docutils literal notranslate"><span class="pre">table2.dat</span></code>), which contains measurements of the flux and intensity of various ions’ line emission from a set of known emitting objects (PNs and HII regions) in the M81 galaxy.</p>
+<p>The columns of this file are <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">ion</span></code>, <code class="docutils literal notranslate"><span class="pre">wl</span></code>, <code class="docutils literal notranslate"><span class="pre">flux</span></code>, and <code class="docutils literal notranslate"><span class="pre">I</span></code> (intensity). Two of the columns are string-valued (name and ion), three are numerical-values (wl, flux, I). This mix of strings and floats tells us before we even decide how to read in this file that <code class="docutils literal notranslate"><span class="pre">numpy</span></code> data structures won’t be usable, as they demand all values in an array to have the same <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
+<div class="section" id="problem-1-1">
+<h3>Problem 1.1<a class="headerlink" href="#problem-1-1" title="Permalink to this headline">¶</a></h3>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> function shown in the lecture, read this data file into a dataframe called <code class="docutils literal notranslate"><span class="pre">df</span></code>, and print it.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can get a “pretty” visualization of a dataframe by simply typing its name into a jupyter cell – as long as it’s the last line of the cell, the dataframe will print more nicely than typing <code class="docutils literal notranslate"><span class="pre">print(df)</span></code>. This does not work outside of notebooks.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-1-2">
+<h3>Problem 1.2<a class="headerlink" href="#problem-1-2" title="Permalink to this headline">¶</a></h3>
+<p>Though it doesn’t show up in the clean representation above, the strings associated with the name and ion columns above have trailing and leading spaces that we don’t want.</p>
+<p>Use a <em>list comprehension</em> to modify the data frame such that each value in the name and ion columns are replaced with a <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> version of themselves.</p>
+</div>
+<div class="section" id="problem-1-3">
+<h3>Problem 1.3<a class="headerlink" href="#problem-1-3" title="Permalink to this headline">¶</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">select_object</span></code> which takes in as an argument the name of an HII region or planetrary nebula, and filters the dataframe for only the entries for that object using <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code>. Consider having the dataframe be an optional argument you set to <code class="docutils literal notranslate"><span class="pre">df</span></code>, the dataframe we are
+working with.</p>
+<p>Have your function take in an optional argument <code class="docutils literal notranslate"><span class="pre">drop_empty=True</span></code> which additionally selects only those rows where the flux/intensity is <strong>not</strong> zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your function should produce the following </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>ion</th>
+      <th>wl</th>
+      <th>flux</th>
+      <th>rms</th>
+      <th>I</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PN3m</td>
+      <td>[OII]</td>
+      <td>3727</td>
+      <td>373.9</td>
+      <td>58.6</td>
+      <td>517.3</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>PN3m</td>
+      <td>HI</td>
+      <td>4340</td>
+      <td>50.0</td>
+      <td>3.5</td>
+      <td>58.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>PN3m</td>
+      <td>HI</td>
+      <td>4861</td>
+      <td>100.0</td>
+      <td>4.5</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>PN3m</td>
+      <td>[OIII]</td>
+      <td>4959</td>
+      <td>35.4</td>
+      <td>3.8</td>
+      <td>34.4</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>PN3m</td>
+      <td>[OIII]</td>
+      <td>5007</td>
+      <td>104.2</td>
+      <td>5.2</td>
+      <td>99.9</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>PN3m</td>
+      <td>[NII]</td>
+      <td>5755</td>
+      <td>1.3</td>
+      <td>0.3</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>PN3m</td>
+      <td>HeI</td>
+      <td>5876</td>
+      <td>9.1</td>
+      <td>0.3</td>
+      <td>7.2</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>PN3m</td>
+      <td>[NII]</td>
+      <td>6548</td>
+      <td>59.8</td>
+      <td>3.5</td>
+      <td>42.2</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>PN3m</td>
+      <td>HI</td>
+      <td>6563</td>
+      <td>412.0</td>
+      <td>6.9</td>
+      <td>290.1</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>PN3m</td>
+      <td>[NII]</td>
+      <td>6584</td>
+      <td>142.5</td>
+      <td>4.5</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>PN3m</td>
+      <td>[SII]</td>
+      <td>6717</td>
+      <td>60.3</td>
+      <td>3.8</td>
+      <td>41.4</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>PN3m</td>
+      <td>[SII]</td>
+      <td>6731</td>
+      <td>44.3</td>
+      <td>3.4</td>
+      <td>30.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="problem-1-4">
+<h3>Problem 1.4<a class="headerlink" href="#problem-1-4" title="Permalink to this headline">¶</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">select_ion_by_wavelength()</span></code> which takes in the name of an ion and its wavelength (and a dataframe), and returns the filtered data frame for all objects, but only ions for the selected wavelengths.</p>
+<p>As before, have a <code class="docutils literal notranslate"><span class="pre">drop_empty</span></code> optional argument to not include entries where the flux and intensity are zero.</p>
+<p>Additionally, as the index is now uniquely identified by the name of the PN/HII region, set the index to be the name column.</p>
+</div>
+<div class="section" id="problem-1-5">
+<h3>Problem 1.5<a class="headerlink" href="#problem-1-5" title="Permalink to this headline">¶</a></h3>
+<p>It will be helpful to know for a given ion which wavelengths are avalable and have data in the dataframe. Write a function <code class="docutils literal notranslate"><span class="pre">get_wavelenghs_by_ion()</span></code> that determines for a given input ion, which wavelengths are available.</p>
+<p><strong>Bonus + 0.5: Some ions of forbidden transitions like <code class="docutils literal notranslate"><span class="pre">[OII]</span></code> have brackets in the name. Add a bit to your get_wavelengths_by_ion code that allows the user to enter either <code class="docutils literal notranslate"><span class="pre">&quot;[OII]&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;OII&quot;</span></code> and get the same answer.</strong></p>
+<p>Additionally, make a convenience function <code class="docutils literal notranslate"><span class="pre">get_ions()</span></code> that just returns the full list of ions represented in the dataframe.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.unique()</span></code> method in pandas will be useful here.</p>
+</div>
+<p><strong>Show that your function works by selecting the wavelengths for <code class="docutils literal notranslate"><span class="pre">[NII]</span></code> and <code class="docutils literal notranslate"><span class="pre">[OII]</span></code>.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your function should produce the following </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;[OII]&#39;, &#39;HeI&#39;, &#39;HI&#39;, &#39;[NeIII]&#39;, &#39;[NeIII]/HI&#39;, &#39;[SII]&#39;, &#39;[OIII]&#39;,
+       &#39;HeII&#39;, &#39;HeI/[ArIV]&#39;, &#39;[ArIV]&#39;, &#39;[NII]&#39;, &#39;[OI]&#39;, &#39;[SIII]&#39;, &#39;[ArV]&#39;,
+       &#39;[ArIII]&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show [NII]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show [OII]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-1-6">
+<h3>Problem 1.6<a class="headerlink" href="#problem-1-6" title="Permalink to this headline">¶</a></h3>
+<p>Rather than having all these convenience functions littered around our code, let’s go ahead and make a class, <code class="docutils literal notranslate"><span class="pre">FluxTable</span></code>, which initializes with our dataframe, and then has all of the functions created above as methods. The input DataFrame, <code class="docutils literal notranslate"><span class="pre">df</span></code>, should be accessible as an attribute as well.</p>
+<p>When you’re done, you should be able to do something like the following</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ions</span> <span class="o">=</span> <span class="n">FluxTable</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ions</span><span class="o">.</span><span class="n">df</span><span class="p">)</span>
+<span class="n">ions</span><span class="o">.</span><span class="n">get_ions</span><span class="p">()</span>
+<span class="n">ions</span><span class="o">.</span><span class="n">get_wavelengths_by_ions</span><span class="p">(</span><span class="s1">&#39;[OII]&#39;</span><span class="p">)</span>
+<span class="n">PN3m</span> <span class="o">=</span> <span class="n">ions</span><span class="o">.</span><span class="n">select_object</span><span class="p">(</span><span class="s1">&#39;PN3m&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your Class Here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Show that your class works by running the above examples.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run Get ions</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bonus-1-problem-1-7">
+<h3>Bonus: (+1) Problem 1.7<a class="headerlink" href="#bonus-1-problem-1-7" title="Permalink to this headline">¶</a></h3>
+<p>Finally, let’s add one final method to our class. This method will be called <code class="docutils literal notranslate"><span class="pre">query</span></code>, and it will act as a bit of a “catch all”, allowing the user to query for certain conditions as desired.</p>
+<p>Your <code class="docutils literal notranslate"><span class="pre">query</span></code> method should take as it’s primary argument a string containing a comma separated list of desired columns. It should then have optional arguments for <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">ion</span></code>, and <code class="docutils literal notranslate"><span class="pre">wl</span></code>, which are by default set to <code class="docutils literal notranslate"><span class="pre">None</span></code>. For name and ion, the goal is to allow the user to specify specific ones. For <code class="docutils literal notranslate"><span class="pre">wl</span></code>, we’ll go one step further and allow either a specific wavelength, or a range of wavelengths input as a string of the form <code class="docutils literal notranslate"><span class="pre">&gt;4343</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;3050</span></code> or <code class="docutils literal notranslate"><span class="pre">2010-5000</span></code>.</p>
+<p>The usage of this method will look something like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ft</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;name,flux&#39;</span><span class="p">,</span><span class="n">ion</span><span class="o">=</span><span class="s1">&#39;[OII]&#39;</span><span class="p">,</span><span class="n">wl</span><span class="o">=</span><span class="s1">&#39;3000-5000&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You will of course need to do some string checking (particularly with wl) to figure out what the user wants, and then you can use your filtering methods you already wrote to successfully construct a result dataframe to return.</p>
+</div>
+</div>
+<div class="section" id="problem-2">
+<h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h2>
+<p>In this problem, we’re going to use the <a class="reference external" href="https://archive.stsci.edu/prepds/3d-hst/">3DHST catalog</a>, which contains numerous measurements of galaxies at high redshift taken with HST. This program was led at Yale(!) and the “3D” refers to the fact that beyond just imaging, spectroscopic information was also obtained.</p>
+<p>We’ll be using a subset of the catalog set up for the GOODS-South field, a well studied patch of the sky. The data are split across four <code class="docutils literal notranslate"><span class="pre">fits</span></code> files – but we’ll be using <code class="docutils literal notranslate"><span class="pre">pandas</span></code> to join them together!</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">.cat</span></code> file contains the primary catalog</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">.fout</span></code> file contains the output of <code class="docutils literal notranslate"><span class="pre">FAST</span></code>, a quick template fitting program for galaxies.</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">.RF</span></code> file contains the Rest Frame (de-redshifted) colors of the galaxies in common bands</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">.zout</span></code> file contains redshift estimates for all galaxies (either spec-z or photo-z) made using the EAZY redshift fitting code (also Yale!)</p></li>
+</ul>
+<div class="section" id="problem-2-1">
+<h3>Problem 2.1<a class="headerlink" href="#problem-2-1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Load the four datasets into Python, and create dataframes for each.</strong> For ease of following the solutions, we suggest you name these</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cat_df</span></code> for the catalog</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fast_df</span></code> for the fast output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rf_df</span></code> for the RF file</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">z_df</span></code> for the redshifts</p></li>
+</ul>
+<p><strong>Examine each of these dataframes to see what types of columns they have.</strong></p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Remember that the default extension for tabular data (as this is) will be 1, not 0 as we are used to for images. You can run pd.DataFrame() directly on the data attribute of this extension</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create cat_df </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#When you look at cat_df it should look like this</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>x</th>
+      <th>y</th>
+      <th>ra</th>
+      <th>dec</th>
+      <th>faper_f160w</th>
+      <th>eaper_f160w</th>
+      <th>faper_f140w</th>
+      <th>eaper_f140w</th>
+      <th>f_f160w</th>
+      <th>...</th>
+      <th>irac2_contam</th>
+      <th>irac3_contam</th>
+      <th>irac4_contam</th>
+      <th>contam_flag</th>
+      <th>f140w_flag</th>
+      <th>use_phot</th>
+      <th>near_star</th>
+      <th>nexp_f125w</th>
+      <th>nexp_f140w</th>
+      <th>nexp_f160w</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>11876.639</td>
+      <td>1632.890</td>
+      <td>53.093012</td>
+      <td>-27.954546</td>
+      <td>55.142755</td>
+      <td>0.046190</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>152.454867</td>
+      <td>...</td>
+      <td>0.000031</td>
+      <td>0.000187</td>
+      <td>0.001174</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>12056.715</td>
+      <td>1321.055</td>
+      <td>53.089613</td>
+      <td>-27.959742</td>
+      <td>0.530063</td>
+      <td>0.077372</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>0.638394</td>
+      <td>...</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>11351.875</td>
+      <td>1327.244</td>
+      <td>53.102913</td>
+      <td>-27.959642</td>
+      <td>0.467791</td>
+      <td>0.200590</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>0.714355</td>
+      <td>...</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>11415.681</td>
+      <td>1396.836</td>
+      <td>53.101709</td>
+      <td>-27.958481</td>
+      <td>12.497384</td>
+      <td>0.086093</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>27.270285</td>
+      <td>...</td>
+      <td>0.057395</td>
+      <td>0.206347</td>
+      <td>0.000656</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>11385.570</td>
+      <td>1384.729</td>
+      <td>53.102277</td>
+      <td>-27.958683</td>
+      <td>1.101740</td>
+      <td>0.087183</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>1.412912</td>
+      <td>...</td>
+      <td>2.027536</td>
+      <td>0.575527</td>
+      <td>-2.653543</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>50502</th>
+      <td>50503</td>
+      <td>3207.811</td>
+      <td>18767.998</td>
+      <td>53.256225</td>
+      <td>-27.668900</td>
+      <td>0.083831</td>
+      <td>0.017599</td>
+      <td>0.009053</td>
+      <td>0.083001</td>
+      <td>0.151608</td>
+      <td>...</td>
+      <td>-0.858407</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <th>50503</th>
+      <td>50504</td>
+      <td>3319.077</td>
+      <td>18889.404</td>
+      <td>53.254129</td>
+      <td>-27.666879</td>
+      <td>0.030584</td>
+      <td>0.017599</td>
+      <td>0.079141</td>
+      <td>0.082396</td>
+      <td>0.033300</td>
+      <td>...</td>
+      <td>-1.151515</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <th>50504</th>
+      <td>50505</td>
+      <td>7634.091</td>
+      <td>18915.908</td>
+      <td>53.172928</td>
+      <td>-27.666490</td>
+      <td>0.303036</td>
+      <td>0.024853</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>0.555012</td>
+      <td>...</td>
+      <td>1.567742</td>
+      <td>-0.129032</td>
+      <td>-1.215094</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>50505</th>
+      <td>50506</td>
+      <td>8669.859</td>
+      <td>18840.100</td>
+      <td>53.153437</td>
+      <td>-27.667759</td>
+      <td>0.416449</td>
+      <td>0.024596</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>0.526232</td>
+      <td>...</td>
+      <td>1.182879</td>
+      <td>0.794521</td>
+      <td>-0.668966</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>50506</th>
+      <td>50507</td>
+      <td>3041.903</td>
+      <td>18822.670</td>
+      <td>53.259346</td>
+      <td>-27.667986</td>
+      <td>0.030183</td>
+      <td>0.017599</td>
+      <td>0.011191</td>
+      <td>0.084154</td>
+      <td>0.036352</td>
+      <td>...</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>-99.000000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>26.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>50507 rows × 141 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make fast_df </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># look at it</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Make rf_df </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># look at it</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make z_df </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># look at it</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-2">
+<h3>Problem 2.2<a class="headerlink" href="#problem-2-2" title="Permalink to this headline">¶</a></h3>
+<p>You should notice that every one of these tables has 50507 rows. This is a relief! It means the creators were consistent, and that each object has a row in each table.</p>
+<p>You should also notice one column, <code class="docutils literal notranslate"><span class="pre">id</span></code>, is a unique identifier for each row in each table (and is consistent across tables). Pandas has assigned its own index (it’s off by 1 from the id column), but we might as well use <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<p><strong>For each of your four dataframes, set ‘id’ to be the index column. Show one of the df’s to show this worked.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># overwrite dataframes to have &#39;id&#39; as index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show one of your dataframes to confirm this worked. </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-3">
+<h3>Problem 2.3<a class="headerlink" href="#problem-2-3" title="Permalink to this headline">¶</a></h3>
+<p>Instead of working with these four dataframes separately, let’s join them all into one MEGA DATAFRAME.</p>
+<p>By setting ‘id’ as the index for each, we’ll be able to merge the dataframes using <code class="docutils literal notranslate"><span class="pre">pd.merge</span></code> with the <code class="docutils literal notranslate"><span class="pre">left_index</span></code> and <code class="docutils literal notranslate"><span class="pre">right_index</span></code> parameters set to true.</p>
+<p><strong>Create your mega dataframe, which we’ll simply call <code class="docutils literal notranslate"><span class="pre">df</span></code>, by consecutively merging the first two, then third and fourth dataframes.</strong></p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You should end up with 215 columns in your final dataframe.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Merge the dataframes</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-4">
+<h3>Problem 2.4<a class="headerlink" href="#problem-2-4" title="Permalink to this headline">¶</a></h3>
+<p>Let’s take a look at the redshift distribution of sources in the catalog.</p>
+<p>There are several estimates of the photometric redshift, the one we want to use is <code class="docutils literal notranslate"><span class="pre">z_peak</span></code> for photometry, or, if available, <code class="docutils literal notranslate"><span class="pre">z_spec_x</span></code>, from spectroscopy.</p>
+<p><strong>What percentage of the catalog have measured spectroscopic redshifts? The <code class="docutils literal notranslate"><span class="pre">z_spec_x</span></code> column is set to <code class="docutils literal notranslate"><span class="pre">-1</span></code> if no spectroscopic redshift exits.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-5">
+<h3>Problem 2.5<a class="headerlink" href="#problem-2-5" title="Permalink to this headline">¶</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">get_redshift()</span></code> which takes in an object ID, and returns <code class="docutils literal notranslate"><span class="pre">z_spec_x</span></code> for that source if it’s not -1, otherwise returns <code class="docutils literal notranslate"><span class="pre">z_peak</span></code>. Because <code class="docutils literal notranslate"><span class="pre">id</span></code> is a special word in python, we suggest using <code class="docutils literal notranslate"><span class="pre">objid</span></code> as the input, and setting df=df as an optional argument. You can make this a memory lite function by using <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code> to pull the row and only the two columns you need for this.</p>
+<p>There are two additional “flagged” values: -99.0 and -99.9 – Have your function output np.nan if this is the value in the table.</p>
+<p>Your function should return the redshift as well as a flag (string) ‘s’ or ‘p’, or ‘f’ for spectroscopic or photometric (or fail, if you’re returning nan).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Your get redshift function here </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Confirm your function works by testing it on objid 150; your results should match mine below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run your function </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.6689, &#39;p&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-6">
+<h3>Problem 2.6<a class="headerlink" href="#problem-2-6" title="Permalink to this headline">¶</a></h3>
+<p>Now that we can get the best redshift for each row, use a list comprehension to grab these values for every object. You can index the output tuple of your function at 0 to drop the flag for now.</p>
+<p>Once you have this, plot a histogram of the redshifts, using <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.subplots</span></code>. Make your plot nice!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>My list comprehension takes ~15 seconds to run. It’s a lot of data! If you wish, you may try to find a more optimized solution built on a full column operation rather than a loop. One possibility is to take the spec-z column, mask any bad values, and then replace those entries in the z-phot column and plot that…</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Get all (best) redshifts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We suggest making it an array after the list comprehension. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You’ll want to index just the non-nan values to make your plot. You can access the non-nan elements in an array via <code class="docutils literal notranslate"><span class="pre">arr[~np.isnan(arr)]</span></code>, with the tilde serving to invert the selection.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your plot here, mine for reference </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab6_49_0.png" src="../_images/Lab6_49_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="problem-2-7">
+<h3>Problem 2.7<a class="headerlink" href="#problem-2-7" title="Permalink to this headline">¶</a></h3>
+<p>Now do the same, but separately plot the distributions of redshift for those with spectroscopic redshifts and those that only have photometric. For this, you’ll want to set <code class="docutils literal notranslate"><span class="pre">density=True</span></code> in your <code class="docutils literal notranslate"><span class="pre">hist</span></code>, and play with the linestyles and opacities so that both are visible.</p>
+<p><strong>Bonus (+0.5): Use KDE from seaborn to smoothly represent the distribution</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build specz list </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># build photz list </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot it; here&#39;s mine!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab6_53_0.png" src="../_images/Lab6_53_0.png" />
+</div>
+</div>
+<p><strong>Do the differences between the two distributions make sense? Why or why not?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-3">
+<h2>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://iopscience.iop.org/article/10.3847/2041-8213/ab2f8c/pdf">UVJ diagram</a> is a useful diagnostic tool in extragalactic astronomy which allows one to relatively accurately diagnose a galaxy as star forming or quiescent, even in the presence of dust. You can read more at the link if you’re unfamiliar. It is composed by plotting the “U-V” color of the galaxy against the “V-J” colors. You’ll likely know U and V (these are from the Johnsons-Cousin’s filter system). J is a filter in the near infrared.</p>
+<p>In this problem, we’re going to write a function that can create a UVJ diagram for subsets of our data, cutting on mass and redshift.</p>
+<p>You’ll need to access the following columns in the data (besides redshift, which you’ve already handled):</p>
+<ul class="simple">
+<li><p>stellar mass: the mass of all the stars in the galaxy. (column: <code class="docutils literal notranslate"><span class="pre">lmass</span></code>, flagged value of -1)</p></li>
+<li><p>star formation rate: rate at which galaxy is forming stars. (column: <code class="docutils literal notranslate"><span class="pre">lsfr</span></code>, flagged value of -99.0)</p></li>
+<li><p>U band flux density (column: <code class="docutils literal notranslate"><span class="pre">l153</span></code>, flagged value of -99.0)</p></li>
+<li><p>V band flux density (column: <code class="docutils literal notranslate"><span class="pre">l155</span></code>, flagged value of -99.0)</p></li>
+<li><p>J band flux density (column: <code class="docutils literal notranslate"><span class="pre">l161</span></code>, flagged value of -99.0)</p></li>
+</ul>
+<div class="section" id="problem-3-1">
+<h3>Problem 3.1<a class="headerlink" href="#problem-3-1" title="Permalink to this headline">¶</a></h3>
+<p>For step one, we need to be able to filter our dataframe for particular mass and redshift ranges.</p>
+<p>Write a function, <code class="docutils literal notranslate"><span class="pre">select_galaxies()</span></code>, which takes as arguments <code class="docutils literal notranslate"><span class="pre">M,</span> <span class="pre">delta_M,</span> <span class="pre">z,</span> <span class="pre">delta_z</span></code> (and our dataframe).
+It should then return a df of only systems between M-deltaM to M+deltaM, and z-deltaz to z+deltaz. The columns it should return are the ones specified above, plus ‘z’.</p>
+<p>There is actually a column in <code class="docutils literal notranslate"><span class="pre">rf_df</span></code> called <code class="docutils literal notranslate"><span class="pre">z</span></code>, that contains the spec_z if available or the peak z if not. At the time of writing, I cannot determine why this column was not included in the merge. In any case, set <code class="docutils literal notranslate"><span class="pre">df['z']</span></code> equal to <code class="docutils literal notranslate"><span class="pre">rf_df.z</span></code> before continuing, as you’ll use it below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All masses and sfrs are in log units.</p>
+</div>
+<p>Try your function out using a mass of 10, delta M of 0.5 (i.e., a bin from 9.5 - 10.5), a redshift of 1, and a delta z of 0.25.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add rf_df.z to the dataframe df </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define your select galaxies function </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s the output for the provided example </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-3-2">
+<h3>Problem 3.2<a class="headerlink" href="#problem-3-2" title="Permalink to this headline">¶</a></h3>
+<p>Great, we can now get subsamples in mass/redshift bins. This is important because the UVJ diagram actually changes as a function of mass and redshift.</p>
+<p>Next we need to get the colors out. Write a function <code class="docutils literal notranslate"><span class="pre">get_colors()</span></code> which takes the same arguments as your <code class="docutils literal notranslate"><span class="pre">select_galaxies()</span></code> function above. Inside, it should run <code class="docutils literal notranslate"><span class="pre">select_galaxies</span></code> passing through the arguments, and then from the resulting data frame, calculate U-V and U-J (see below). Add these as columns to said dataframe with names ‘U-V’ and ‘V-J’ and return it.</p>
+<p>Run this function with the same mass/redshift bin from above and look at it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As noted above, the U,V, and J band data are in Fnu (flux densities). Thus, a color is computed via -2.5*log10(Lfilter1/Lfilter2)</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Define get colors </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here&#39;s the output you&#39;re looking for. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>z</th>
+      <th>lmass</th>
+      <th>lsfr</th>
+      <th>l153</th>
+      <th>l155</th>
+      <th>l161</th>
+      <th>U-V</th>
+      <th>V-J</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>44</th>
+      <td>0.68402</td>
+      <td>9.89</td>
+      <td>-1.28</td>
+      <td>3.76739</td>
+      <td>14.43560</td>
+      <td>46.5213</td>
+      <td>1.458486</td>
+      <td>1.270543</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>0.69426</td>
+      <td>9.76</td>
+      <td>-0.03</td>
+      <td>8.08497</td>
+      <td>21.07790</td>
+      <td>48.3969</td>
+      <td>1.040372</td>
+      <td>0.902476</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>0.94790</td>
+      <td>10.36</td>
+      <td>-1.90</td>
+      <td>1.94721</td>
+      <td>8.60585</td>
+      <td>49.2509</td>
+      <td>1.613452</td>
+      <td>1.894051</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>0.65070</td>
+      <td>10.12</td>
+      <td>0.33</td>
+      <td>13.25220</td>
+      <td>42.32950</td>
+      <td>112.5340</td>
+      <td>1.260888</td>
+      <td>1.061602</td>
+    </tr>
+    <tr>
+      <th>236</th>
+      <td>0.53257</td>
+      <td>10.35</td>
+      <td>-0.74</td>
+      <td>8.31773</td>
+      <td>42.76950</td>
+      <td>111.6020</td>
+      <td>1.777823</td>
+      <td>1.041345</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>49702</th>
+      <td>0.53180</td>
+      <td>9.97</td>
+      <td>0.36</td>
+      <td>41.66110</td>
+      <td>91.52100</td>
+      <td>200.9220</td>
+      <td>0.854475</td>
+      <td>0.853767</td>
+    </tr>
+    <tr>
+      <th>50000</th>
+      <td>0.83535</td>
+      <td>9.84</td>
+      <td>0.23</td>
+      <td>9.25872</td>
+      <td>21.86220</td>
+      <td>52.2972</td>
+      <td>0.932857</td>
+      <td>0.946961</td>
+    </tr>
+    <tr>
+      <th>50399</th>
+      <td>0.68057</td>
+      <td>10.46</td>
+      <td>-10.14</td>
+      <td>6.08630</td>
+      <td>38.30250</td>
+      <td>119.6430</td>
+      <td>1.997184</td>
+      <td>1.236650</td>
+    </tr>
+    <tr>
+      <th>50494</th>
+      <td>0.71150</td>
+      <td>9.59</td>
+      <td>-0.71</td>
+      <td>13.17360</td>
+      <td>25.57520</td>
+      <td>41.6413</td>
+      <td>0.720286</td>
+      <td>0.529263</td>
+    </tr>
+    <tr>
+      <th>50500</th>
+      <td>0.57982</td>
+      <td>9.79</td>
+      <td>-1.38</td>
+      <td>10.99390</td>
+      <td>29.39910</td>
+      <td>67.9242</td>
+      <td>1.067956</td>
+      <td>0.909226</td>
+    </tr>
+  </tbody>
+</table>
+<p>669 rows × 8 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="problem-3-3">
+<h3>Problem 3.3<a class="headerlink" href="#problem-3-3" title="Permalink to this headline">¶</a></h3>
+<p>Now that we can easily grab U-V and V-J colors for subsamples, we’re ready to plot!</p>
+<p>Next, set your xlim and ylim to (0,2) in V-J (x axis) and (0,2.8) in U-V (y axis).</p>
+<p>Once you have the distribution plotted nicely, use the definitions of the bounding box provided in <a class="reference external" href="https://iopscience.iop.org/article/10.1088/0004-637X/735/2/86/pdf">Whitaker et al. 2011</a> (Eqns 15, Fig 17 for example) to draw the box where quiescent galaxies sit.</p>
+<p>Finally, let’s add the galaxies. For this example, use a log mass of 9.5 with a delta M of 2 (so, galaxies from <span class="math notranslate nohighlight">\(10^{7.5}\)</span> <span class="math notranslate nohighlight">\(M_{\odot}\)</span> to <span class="math notranslate nohighlight">\(10^{11.5}\)</span> <span class="math notranslate nohighlight">\(M_{\odot}\)</span>), in the redshift range of 0.5 to 1.5. Can you identify the quiescent sequence?</p>
+</div>
+<div class="section" id="bonus-2">
+<h3>Bonus (+2)<a class="headerlink" href="#bonus-2" title="Permalink to this headline">¶</a></h3>
+<p>(+1) Now that you can easily plot up a UVJ diagram for a given mass/redshift bin, make a plot with 6 panels. Across the 3, plot the UVJ diagram in the redshift bins 0-0.5, 0.5-1.0, 1.0-2.0. In the top panel, include galaxies in the mass range 8-9.5, and in the bottom, 9.5-11.</p>
+<p>(+1) Feeling extra fancy? Use the conditions on the UVJ quiescent box to color the quiescent galaxies red and the star forming galaxies blue in you plots.</p>
+</div>
+</div>
+<div class="section" id="wrap-up">
+<h2>Wrap Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>We’ve barely scratched the surface for what we can do with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, but we hope that if you’re planning to work with “large” amounts of data (say, 200 columns and 500,000 rows), then pandas is a great tool for working with them.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "a330"
+        },
+        kernelOptions: {
+            kernelName: "a330",
+            path: "./Lab6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'a330'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lab5/Lab5.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lab 5: Stellar Spectroscopy + Fitting Models to Data</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lab1/Lab1_solutions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lab 1 Solutions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>

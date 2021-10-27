@@ -1,0 +1,2206 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6. Pandas &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 1: Overview, Review, and Environments" href="../Lab1/Lab1.html" />
+    <link rel="prev" title="4. Sampling with MCMC" href="../Lecture4/Lecture4.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book: Scientific Computing in Astrophysics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture2/Lecture2.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture4/Lecture4.html">
+   4. Sampling with MCMC
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. Pandas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3.html">
+   Lab 3: Building a Photometric Pipeline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4.html">
+   Lab 4:  Fitting a Model to Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab5/Lab5.html">
+   Lab 5: Stellar Spectroscopy + Fitting Models to Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab6/Lab6.html">
+   Lab 6: Pandas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lab Solutions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2_solutions.html">
+   Lab 2 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3_solutions.html">
+   Lab 3 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4_solutions.html">
+   Lab 4: Solutions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Final Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../FinalProject/finalprojects.html">
+   Final Project Guidelines
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quick Tips
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/TimingCode.html">
+   Timing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/Meshgrid.html">
+   Meshgrid
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/MetropolisHastingsClass.html">
+   An Object Oriented Metropolis Hastings
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Access
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lecture6/Pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lecture6/Pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-vs-pandas">
+   Numpy vs Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-pandas">
+   Introduction to Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtering-dataframes">
+   Filtering DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#joining-dataframes">
+   Joining DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-on-columns">
+   Operations on Columns
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dropping-rows-or-columns">
+     Dropping rows or columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-common-operations">
+   Other Common Operations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-i-o">
+   Data I/O
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pandas">
+<h1>6. Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
+<p>What is <code class="docutils literal notranslate"><span class="pre">pandas</span></code>?</p>
+<ul class="simple">
+<li><p>Lot of answers, depends on your use case.</p></li>
+<li><p>Primarily, pandas is a package built around the DataFrame</p></li>
+<li><p>DataFrames are a more flexible, SQL-like data container</p></li>
+</ul>
+<div class="section" id="numpy-vs-pandas">
+<h2>Numpy vs Pandas<a class="headerlink" href="#numpy-vs-pandas" title="Permalink to this headline">¶</a></h2>
+<p>When would we want to use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> instead of a trusty <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array?</p>
+<ul class="simple">
+<li><p>When we need to index columns by name</p></li>
+<li><p>When we need to index <em>rows</em> by name</p></li>
+<li><p>When we want to store heterogeneous data (e.g., one column of strings, next column of floats)</p></li>
+<li><p>When we have multiple tables we want to join together</p></li>
+<li><p>When we want to perform complex filtering operations on a single table.</p></li>
+<li><p>When the I/O for some data on disk is frustrating using <code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></li>
+</ul>
+<p>Note that the first bullet point (indexing columns of an array by name) can be accomplished via some other data containers, including <code class="docutils literal notranslate"><span class="pre">Astropy</span></code> <code class="docutils literal notranslate"><span class="pre">Table</span></code>s and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> <code class="docutils literal notranslate"><span class="pre">record</span> <span class="pre">arrays</span></code>.</p>
+<p><em>However</em>, many of the other bullet points are not easily accomplished with these methods. <em>Furthermore</em>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is the industry standard in data science and other fields. Learning it is a transferrable skill.</p>
+</div>
+<div class="section" id="introduction-to-pandas">
+<h2>Introduction to Pandas<a class="headerlink" href="#introduction-to-pandas" title="Permalink to this headline">¶</a></h2>
+<p>For the purposes of this introduction, we need to learn about 2 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> objects:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.Series</span></code>, and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>.</p></li>
+</ul>
+<p>DataFrames are constructed out of Series objects, but as it turns out, we don’t need to define them explicitly on most occasions.</p>
+<p>Let’s set up a data frame:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+
+<span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Good&#39;</span><span class="p">,</span><span class="s1">&#39;Bad&#39;</span><span class="p">,</span><span class="s1">&#39;Ugly&#39;</span><span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;measurement&#39;</span><span class="p">:</span><span class="n">array1</span><span class="p">,</span><span class="s1">&#39;quality&#39;</span><span class="p">:</span><span class="n">array2</span><span class="p">})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Bad</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Ugly</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>As you can see, one valid initialization is feeding in a dictionary with the desired column names as keys and the desired columns as values.</p>
+<p>Here’s another way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Good&#39;</span><span class="p">,</span><span class="s1">&#39;Bad&#39;</span><span class="p">,</span><span class="s1">&#39;Ugly&#39;</span><span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;measurement&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array1</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">array2</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Bad</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Ugly</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>i.e., we can create empty <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>, and dynamically set new columns the way we are used to setting the values of dictionaries for a given key.</p>
+<p>It is worth noting that this “dictionary-style” indexing of DataFrame columns is not the only way. If our column names have no spaces, we can also use dot notation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;measurement&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1
+1    2
+2    3
+Name: measurement, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">measurement</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1
+1    2
+2    3
+Name: measurement, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, both forms return the same array. Notice, though, that this “column” isn’t just an array… here we see our first pandas <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
+<p>You can think of a <code class="docutils literal notranslate"><span class="pre">Series</span></code> as a sort of wrapper/container around data arrays that provides extra functionality.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">quality</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    Good
+1     Bad
+2    Ugly
+Name: quality, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>For example, we can see that this Series object has a <code class="docutils literal notranslate"><span class="pre">Name</span></code> (which it tells us when we print it), and it has an <code class="docutils literal notranslate"><span class="pre">index</span></code> — that’s the 0,1,2 over on the left.
+As a note, if we ever want to extract <em>just</em> the data values of a series, we run</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Good&#39;, &#39;Bad&#39;, &#39;Ugly&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>I’ve found that the dot-notation indexing of DataFrames can be very handy – <code class="docutils literal notranslate"><span class="pre">.thing</span></code> is fewer characters to type than <code class="docutils literal notranslate"><span class="pre">['thing']</span></code>, and doesn’t require your fingers to find the <code class="docutils literal notranslate"><span class="pre">[]</span></code> keys.</p>
+<p>Let’s come back to our DataFrame, <code class="docutils literal notranslate"><span class="pre">df</span></code>. What’s going on with this index on the left?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Bad</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Ugly</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>measurement       1
+quality        Good
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <strong>index</strong> part of a DataFrame is a way to index specific <em>rows</em>, rather than specific <em>columns</em>. As you can see above, I used the <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> syntax, which tells pandas I’m inserting a row index, rather than a “column index”. Pandas then spits out each column and associated value for that row.</p>
+<p>We can set the index of a DataFrame to be whatever we want. For example, let’s say our measurements were taken on 3 dates:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2021-10-07&#39;</span><span class="p">,</span><span class="s1">&#39;2021-10-08&#39;</span><span class="p">,</span><span class="s1">&#39;2021-10-09&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>1</td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>2</td>
+      <td>Bad</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>3</td>
+      <td>Ugly</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now the <code class="docutils literal notranslate"><span class="pre">[0,1,2]</span></code> is replaced by our date strings.</p>
+<p>Now, if I want to pull the measurement and measurement quality from <code class="docutils literal notranslate"><span class="pre">2021-10-08</span></code>, I would use</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2021-10-08&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>measurement      2
+quality        Bad
+Name: 2021-10-08, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>What if I know the numerical index of the row I want, but don’t know the name of that row? Pandas doesn’t <em>love</em> it when we are in this state, but there is a solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>measurement      2
+quality        Bad
+Name: 2021-10-08, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">df.iloc[]</span></code> syntax allows you to index a row by true index number, rather than whatever the name of that row is.</p>
+</div>
+<div class="section" id="filtering-dataframes">
+<h2>Filtering DataFrames<a class="headerlink" href="#filtering-dataframes" title="Permalink to this headline">¶</a></h2>
+<p>So now that we know how to create a simple DataFrame, how do we go about filtering it? Instead of creating external masks or using <code class="docutils literal notranslate"><span class="pre">np.where()</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has a built in set of methods for accessing parts of a dataframe.</p>
+<p>Sticking with our measurement df, what if I want a view of my DataFrame, but only for the rows where the <code class="docutils literal notranslate"><span class="pre">quality</span></code> is either <code class="docutils literal notranslate"><span class="pre">'Bad'</span></code> or <code class="docutils literal notranslate"><span class="pre">'Ugly'</span></code>. We can do that as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">==</span><span class="s1">&#39;Bad&#39;</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">==</span><span class="s1">&#39;Ugly&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-08</th>
+      <td>2</td>
+      <td>Bad</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>3</td>
+      <td>Ugly</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can see that by putting our conditions inside <code class="docutils literal notranslate"><span class="pre">df.loc[]</span></code> the way we normally would in <code class="docutils literal notranslate"><span class="pre">np.where()</span></code>, we return a version of the DataFrame where only the bad and ugly measurement remains.</p>
+<p>What if I want to perform the same filtering, but I don’t want the whole DataFrame out, I just want a specific column? We can specify this as well:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">==</span><span class="s1">&#39;Bad&#39;</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">==</span><span class="s1">&#39;Ugly&#39;</span><span class="p">),</span><span class="s1">&#39;measurement&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-10-08    2
+2021-10-09    3
+Name: measurement, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We add a comma after our conditionals, and then specify the name of the column we want.</p>
+<p>This is extensible to multiple columns; we only have two here but it would look like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">==</span><span class="s1">&#39;Bad&#39;</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">==</span><span class="s1">&#39;Ugly&#39;</span><span class="p">),[</span><span class="s1">&#39;measurement&#39;</span><span class="p">,</span><span class="s1">&#39;quality&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-08</th>
+      <td>2</td>
+      <td>Bad</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>3</td>
+      <td>Ugly</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>i.e., we provide a list of column names we want to index, only where the conditions are met.</p>
+<p>Let’s say I want to set any ‘Bad’ or ‘Ugly’ measurements to <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">==</span><span class="s1">&#39;Bad&#39;</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">==</span><span class="s1">&#39;Ugly&#39;</span><span class="p">),</span><span class="s1">&#39;measurement&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>1.0</td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>NaN</td>
+      <td>Bad</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>NaN</td>
+      <td>Ugly</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Warning</strong>. A common “gotcha” with DataFrames is to not use the <code class="docutils literal notranslate"><span class="pre">col_indexer</span></code> as above when setting values, but rather something like the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">==</span><span class="s1">&#39;Bad&#39;</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">quality</span><span class="o">==</span><span class="s1">&#39;Ugly&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">measurement</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ipasha/anaconda3/envs/a330/lib/python3.8/site-packages/pandas/core/generic.py:5516: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self[name] = value
+</pre></div>
+</div>
+</div>
+</div>
+<p>We get this error because running <code class="docutils literal notranslate"><span class="pre">.measurement</span></code> or indexing with <code class="docutils literal notranslate"><span class="pre">['measurement']</span></code> creates a copy of that slice of the dataframe for view – meaning that if we try to set values in it, we are <strong>not</strong> affecting values in the underlying dataframe.</p>
+</div>
+<div class="section" id="joining-dataframes">
+<h2>Joining DataFrames<a class="headerlink" href="#joining-dataframes" title="Permalink to this headline">¶</a></h2>
+<p>A powerful strength of DataFrames is the ability to join/merge multiple dataframes on a given column. This behavior is inhereted from the way Databases (such as SQL) work.
+Let’s create another DataFrame that has some anciliary data also taken on our three dates:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;weather&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sunny&#39;</span><span class="p">,</span><span class="s1">&#39;cloudy&#39;</span><span class="p">,</span><span class="s1">&#39;cloudy&#39;</span><span class="p">]</span>
+<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;seeing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.55</span><span class="p">,</span><span class="mf">2.3</span><span class="p">,</span><span class="mf">3.2</span><span class="p">])</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2021-10-07&#39;</span><span class="p">,</span><span class="s1">&#39;2021-10-08&#39;</span><span class="p">,</span><span class="s1">&#39;2021-10-09&#39;</span><span class="p">]</span>
+<span class="n">df2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>weather</th>
+      <th>seeing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>sunny</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>cloudy</td>
+      <td>2.30</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>cloudy</td>
+      <td>3.20</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can easily combine these two DataFrames:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">new_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+      <th>weather</th>
+      <th>seeing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>1.0</td>
+      <td>Good</td>
+      <td>sunny</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>NaN</td>
+      <td>Bad</td>
+      <td>cloudy</td>
+      <td>2.30</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>NaN</td>
+      <td>Ugly</td>
+      <td>cloudy</td>
+      <td>3.20</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>When merging dataframes, we have to select which columns to merge on. Here, I’ve chosen a full join on the index. Let’s talk about the options:</p>
+<p>From database parlance, we can join/merge two tables as long as there is a <em>unique identifer</em> column that is shared across both tables. In our case, the <em>index</em> is that “column”.</p>
+<ul class="simple">
+<li><p>A left (outer) join means that we take <em>all</em> rows of <code class="docutils literal notranslate"><span class="pre">df</span></code>, and if df2 has no entry for some rows, we’ll fill it with NaNs.</p></li>
+<li><p>A right (outer) join means we will keep <em>all</em> rows of <code class="docutils literal notranslate"><span class="pre">df2</span></code>, and if df has no entry for some rows, we’ll fill it with NaNs.</p></li>
+<li><p>A full (outer) join means we keep <em>all</em> rows of <strong>both</strong> dataframes, filling in NaNs where either is missing data.</p></li>
+</ul>
+<p>Alternatively, we could ask for just the rows that have matches in both dataframes, dropping all other columns. This would be an inner join.</p>
+<p>Let’s see this in action. I’m going to add a date, measurement, and quality to df:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2021-10-10&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;Good&#39;</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>1.0</td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>NaN</td>
+      <td>Bad</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>NaN</td>
+      <td>Ugly</td>
+    </tr>
+    <tr>
+      <th>2021-10-10</th>
+      <td>5.0</td>
+      <td>Good</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now when we go to do our merge, <code class="docutils literal notranslate"><span class="pre">df2</span></code> won’t have a row for that last index. But if I use <code class="docutils literal notranslate"><span class="pre">df.join()</span></code>, I can specify an outer join:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+<span class="n">new_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+      <th>weather</th>
+      <th>seeing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>1.0</td>
+      <td>Good</td>
+      <td>sunny</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>NaN</td>
+      <td>Bad</td>
+      <td>cloudy</td>
+      <td>2.30</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>NaN</td>
+      <td>Ugly</td>
+      <td>cloudy</td>
+      <td>3.20</td>
+    </tr>
+    <tr>
+      <th>2021-10-10</th>
+      <td>5.0</td>
+      <td>Good</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Notice that I get NaN for the weather and seeing, as these weren’t present in <code class="docutils literal notranslate"><span class="pre">df2</span></code>. But I do keep that row overall.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">new_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+      <th>weather</th>
+      <th>seeing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>1.0</td>
+      <td>Good</td>
+      <td>sunny</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>NaN</td>
+      <td>Bad</td>
+      <td>cloudy</td>
+      <td>2.30</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>NaN</td>
+      <td>Ugly</td>
+      <td>cloudy</td>
+      <td>3.20</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Alternatively, if I use an “inner” join, I only keep indices that were in <em>both</em> dataframes. So I lose that entire row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">new_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+      <th>weather</th>
+      <th>seeing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>1.0</td>
+      <td>Good</td>
+      <td>sunny</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>NaN</td>
+      <td>Bad</td>
+      <td>cloudy</td>
+      <td>2.30</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>NaN</td>
+      <td>Ugly</td>
+      <td>cloudy</td>
+      <td>3.20</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>This time, I’ve specified I want a “right outer” join. Because the “righthand” dataframe (<code class="docutils literal notranslate"><span class="pre">df2</span></code>) doesn’t have a row for ‘2021-10-10’, it’s not part of the final df.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">new_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measurement</th>
+      <th>quality</th>
+      <th>weather</th>
+      <th>seeing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>1.0</td>
+      <td>Good</td>
+      <td>sunny</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>NaN</td>
+      <td>Bad</td>
+      <td>cloudy</td>
+      <td>2.30</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>NaN</td>
+      <td>Ugly</td>
+      <td>cloudy</td>
+      <td>3.20</td>
+    </tr>
+    <tr>
+      <th>2021-10-10</th>
+      <td>5.0</td>
+      <td>Good</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Wheras if I use ‘left’, I keep all rows of <code class="docutils literal notranslate"><span class="pre">df</span></code> including the new one, filling in NaNs for df2 where it has no values.</p>
+<p>You may have noticed that in the above examples, ‘left’ and ‘outer’ produced the same results. If so, good eye! They’re the same output in this case because <code class="docutils literal notranslate"><span class="pre">df2</span></code> has no rows <em>not</em> present in <code class="docutils literal notranslate"><span class="pre">df</span></code>. But if it did, then the ‘outer’ join would keep both that row and ‘2021-10-10’ from df, while ‘left’ would ignore the extra row in df2.</p>
+<p>As a note, the join’s we’ve been doing have <em>implicitly been using the index</em> as the join column, which is the default behavior. But if there were an actual column in the data that had the necessary properties, we could use the <code class="docutils literal notranslate"><span class="pre">pd.merge(df,df2,on='name')</span></code> syntax to join on that column instead.</p>
+</div>
+<div class="section" id="operations-on-columns">
+<h2>Operations on Columns<a class="headerlink" href="#operations-on-columns" title="Permalink to this headline">¶</a></h2>
+<p>We can carry out operations on columns of dataframes like we would with numpy arrays. For example, let’s say I have a dataframe as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">df3</span><span class="p">[</span><span class="s1">&#39;galaxy_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NGC 4300&#39;</span><span class="p">,</span><span class="s1">&#39;NGC 3055&#39;</span><span class="p">,</span><span class="s1">&#39;NGC 3235&#39;</span><span class="p">,</span><span class="s1">&#39;NGC 6532&#39;</span><span class="p">]</span>
+<span class="n">df3</span><span class="p">[</span><span class="s1">&#39;flux&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.1e-12</span><span class="p">,</span><span class="mf">1.5e-13</span><span class="p">,</span><span class="mf">4.6e-13</span><span class="p">,</span><span class="mf">1.8e-12</span><span class="p">])</span>
+<span class="n">df3</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.5</span><span class="p">,</span><span class="mf">33.7</span><span class="p">,</span><span class="mi">105</span><span class="p">,</span><span class="mi">22</span><span class="p">])</span>
+<span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>galaxy_name</th>
+      <th>flux</th>
+      <th>distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NGC 4300</td>
+      <td>1.100000e-12</td>
+      <td>10.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NGC 3055</td>
+      <td>1.500000e-13</td>
+      <td>33.7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NGC 3235</td>
+      <td>4.600000e-13</td>
+      <td>105.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NGC 6532</td>
+      <td>1.800000e-12</td>
+      <td>22.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>I can calculate the luminosity of these galaxies and make a new column as follows</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="n">lums</span> <span class="o">=</span> <span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">values</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">erg</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">cm</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">distance</span><span class="o">.</span><span class="n">values</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">Mpc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">Lsun</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="n">df3</span><span class="p">[</span><span class="s1">&#39;luminosity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">lums</span><span class="p">)</span>
+<span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>galaxy_name</th>
+      <th>flux</th>
+      <th>distance</th>
+      <th>luminosity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NGC 4300</td>
+      <td>1.100000e-12</td>
+      <td>10.5</td>
+      <td>6.578710</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NGC 3055</td>
+      <td>1.500000e-13</td>
+      <td>33.7</td>
+      <td>6.726290</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NGC 3235</td>
+      <td>4.600000e-13</td>
+      <td>105.0</td>
+      <td>8.200075</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NGC 6532</td>
+      <td>1.800000e-12</td>
+      <td>22.0</td>
+      <td>7.435057</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In this case, I use the <code class="docutils literal notranslate"><span class="pre">.values</span></code> to be sure things play nicely with <code class="docutils literal notranslate"><span class="pre">astropy</span></code>.</p>
+<div class="section" id="dropping-rows-or-columns">
+<h3>Dropping rows or columns<a class="headerlink" href="#dropping-rows-or-columns" title="Permalink to this headline">¶</a></h3>
+<p>So far, we’ve seen how to add things into dataframes and modify their values. But what if we want to drop a row or column entirely?</p>
+<p>For this, we need <code class="docutils literal notranslate"><span class="pre">df.drop()</span></code>. This command returns a version of the dataframe with the row or column dropped. As a note, the default behavior is to drop <em>rows</em>, so if you’re specifying a column, you also need to add <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;2021-10-09&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>weather</th>
+      <th>seeing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>sunny</td>
+      <td>0.55</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>cloudy</td>
+      <td>2.30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We specified an index there, let’s try a column:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;seeing&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>weather</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-10-07</th>
+      <td>sunny</td>
+    </tr>
+    <tr>
+      <th>2021-10-08</th>
+      <td>cloudy</td>
+    </tr>
+    <tr>
+      <th>2021-10-09</th>
+      <td>cloudy</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">df2.drop()</span></code> doesn’t overwrite df2. To do this, we’d need do do either of the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;seeing&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#OR </span>
+
+<span class="n">df2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;seeing&#39;</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I suggest the first, as it is easier to read and remember.</p>
+</div>
+</div>
+<div class="section" id="other-common-operations">
+<h2>Other Common Operations<a class="headerlink" href="#other-common-operations" title="Permalink to this headline">¶</a></h2>
+<p>Here I’m going to provide a grab bag of common pandas methods that are useful to know:</p>
+<p>We can return the unique elements of a column (and the number of them) via
+<code class="docutils literal notranslate"><span class="pre">df['col2'].unique()</span></code>
+and
+<code class="docutils literal notranslate"><span class="pre">df['col2].nunique()</span></code></p>
+<p>We can count how many times each value appears in a given column via
+<code class="docutils literal notranslate"><span class="pre">df['col2'].value_counts()</span></code></p>
+<p>We can sort a dataframe by the values in some column via
+<code class="docutils literal notranslate"><span class="pre">df.sort_values('col2')</span></code></p>
+</div>
+<div class="section" id="data-i-o">
+<h2>Data I/O<a class="headerlink" href="#data-i-o" title="Permalink to this headline">¶</a></h2>
+<p>A final use for <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is that it was designed to work with <em>messy</em> data. When loading data from, e.g., ascii files, there are often a lot of subtleties surrounding the spacings and columns, mixes of strings and floats, etc.</p>
+<p>Traditional <code class="docutils literal notranslate"><span class="pre">numpy</span></code> functions like <code class="docutils literal notranslate"><span class="pre">loadtxt()</span></code> or <code class="docutils literal notranslate"><span class="pre">genfromtxt()</span></code> struggle with these kinds of files, but often, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> has no trouble with it. At the very least, then, we can use pandas to get the data into python, where we know how to mess with it until it meets our requirements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;table2.dat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>ion</th>
+      <th>wl</th>
+      <th>flux</th>
+      <th>rms</th>
+      <th>I</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PN3m</td>
+      <td>[OII]</td>
+      <td>3727</td>
+      <td>373.9</td>
+      <td>58.6</td>
+      <td>517.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>PN3m</td>
+      <td>HeI</td>
+      <td>3805</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PN3m</td>
+      <td>HI</td>
+      <td>3835</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PN3m</td>
+      <td>[NeIII]</td>
+      <td>3869</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PN3m</td>
+      <td>HeI</td>
+      <td>3889</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Above, I’ve run a one line, no modification call of pandas’ <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function. With no issue, it loaded up this file, which contains column names (first row), and a variety of data types.</p>
+<p>Let’s try the same thing with numpy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;table2.dat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">72</span><span class="o">-</span><span class="mi">3</span><span class="n">c744ba5b70f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;table2.dat&#39;</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/envs/a330/lib/python3.8/site-packages/numpy/lib/npyio.py</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, like)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1146</span>         <span class="c1"># converting the data</span>
+<span class="g g-Whitespace">   </span><span class="mi">1147</span>         <span class="n">X</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1148</span>         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">read_data</span><span class="p">(</span><span class="n">_loadtxt_chunksize</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1149</span>             <span class="k">if</span> <span class="n">X</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1150</span>                 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/envs/a330/lib/python3.8/site-packages/numpy/lib/npyio.py</span> in <span class="ni">read_data</span><span class="nt">(chunk_size)</span>
+<span class="g g-Whitespace">    </span><span class="mi">997</span> 
+<span class="g g-Whitespace">    </span><span class="mi">998</span>             <span class="c1"># Convert each value according to its column and store</span>
+<span class="ne">--&gt; </span><span class="mi">999</span>             <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">conv</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">conv</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">converters</span><span class="p">,</span> <span class="n">vals</span><span class="p">)]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1000</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>             <span class="c1"># Then pack it according to the dtype&#39;s nesting</span>
+
+<span class="nn">~/anaconda3/envs/a330/lib/python3.8/site-packages/numpy/lib/npyio.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">997</span> 
+<span class="g g-Whitespace">    </span><span class="mi">998</span>             <span class="c1"># Convert each value according to its column and store</span>
+<span class="ne">--&gt; </span><span class="mi">999</span>             <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">conv</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">conv</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">converters</span><span class="p">,</span> <span class="n">vals</span><span class="p">)]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1000</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>             <span class="c1"># Then pack it according to the dtype&#39;s nesting</span>
+
+<span class="nn">~/anaconda3/envs/a330/lib/python3.8/site-packages/numpy/lib/npyio.py</span> in <span class="ni">floatconv</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">734</span>         <span class="k">if</span> <span class="s1">&#39;0x&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">735</span>             <span class="k">return</span> <span class="nb">float</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">736</span>         <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span> 
+<span class="g g-Whitespace">    </span><span class="mi">738</span>     <span class="n">typ</span> <span class="o">=</span> <span class="n">dtype</span><span class="o">.</span><span class="n">type</span>
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;name,ion,wl,flux,rms,I&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Yep. Numpy doesn’t like it. In part, having columns with strings and also columns with floats leaves us dead in the water. We want pandas for this.</p>
+<p>There are cases where pandas is annoying about reading things in and numpy is actually easier. My advice? Know both, and pick whichever one to read in the data causes the least headache. You can always turn an array into a dataframe (and vice versa, if the data are all the same type).</p>
+<p>We’re going to use the following dataset in the lab, so I’d like to briefly familiarize you with it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>ion</th>
+      <th>wl</th>
+      <th>flux</th>
+      <th>rms</th>
+      <th>I</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PN3m</td>
+      <td>[OII]</td>
+      <td>3727</td>
+      <td>373.9</td>
+      <td>58.6</td>
+      <td>517.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>PN3m</td>
+      <td>HeI</td>
+      <td>3805</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PN3m</td>
+      <td>HI</td>
+      <td>3835</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PN3m</td>
+      <td>[NeIII]</td>
+      <td>3869</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PN3m</td>
+      <td>HeI</td>
+      <td>3889</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1634
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;ion&#39;</span><span class="p">,</span><span class="s1">&#39;wl&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th>ion</th>
+      <th>wl</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">HII123</th>
+      <th rowspan="5" valign="top">HI</th>
+      <th>3835</th>
+      <td>1.0</td>
+      <td>6.5</td>
+      <td>NaN</td>
+      <td>6.5</td>
+      <td>6.5</td>
+      <td>6.5</td>
+      <td>6.5</td>
+      <td>6.5</td>
+    </tr>
+    <tr>
+      <th>4100</th>
+      <td>1.0</td>
+      <td>22.9</td>
+      <td>NaN</td>
+      <td>22.9</td>
+      <td>22.9</td>
+      <td>22.9</td>
+      <td>22.9</td>
+      <td>22.9</td>
+    </tr>
+    <tr>
+      <th>4340</th>
+      <td>1.0</td>
+      <td>42.8</td>
+      <td>NaN</td>
+      <td>42.8</td>
+      <td>42.8</td>
+      <td>42.8</td>
+      <td>42.8</td>
+      <td>42.8</td>
+    </tr>
+    <tr>
+      <th>4861</th>
+      <td>1.0</td>
+      <td>100.0</td>
+      <td>NaN</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+      <td>100.0</td>
+    </tr>
+    <tr>
+      <th>6563</th>
+      <td>1.0</td>
+      <td>498.4</td>
+      <td>NaN</td>
+      <td>498.4</td>
+      <td>498.4</td>
+      <td>498.4</td>
+      <td>498.4</td>
+      <td>498.4</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">PN9m</th>
+      <th rowspan="2" valign="top">[ArIII]</th>
+      <th>7135</th>
+      <td>1.0</td>
+      <td>16.9</td>
+      <td>NaN</td>
+      <td>16.9</td>
+      <td>16.9</td>
+      <td>16.9</td>
+      <td>16.9</td>
+      <td>16.9</td>
+    </tr>
+    <tr>
+      <th>7751</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>[NeIII]</th>
+      <th>3869</th>
+      <td>1.0</td>
+      <td>4.6</td>
+      <td>NaN</td>
+      <td>4.6</td>
+      <td>4.6</td>
+      <td>4.6</td>
+      <td>4.6</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>HeI/[ArIV]</th>
+      <th>4712</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>[NeIII]/HI</th>
+      <th>3968</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1634 rows × 8 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "a330"
+        },
+        kernelOptions: {
+            kernelName: "a330",
+            path: "./Lecture6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'a330'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lecture4/Lecture4.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">4. Sampling with MCMC</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lab1/Lab1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lab 1: Overview, Review, and Environments</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>

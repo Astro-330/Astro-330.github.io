@@ -7,6 +7,7 @@ parts:
     - file: Lecture1/Lecture1
     - file: Lecture2/Lecture2
     - file: Lecture4/Lecture4
+    - file: Lecture6/Pandas
     
   - caption: Labs
     chapters:
@@ -15,6 +16,7 @@ parts:
     - file: Lab3/Lab3
     - file: Lab4/Lab4
     - file: Lab5/Lab5
+    - file: Lab6/Lab6
 
   - caption: Lab Solutions 
     chapters:
