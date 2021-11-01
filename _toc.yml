@@ -8,6 +8,7 @@ parts:
     - file: Lecture2/Lecture2
     - file: Lecture4/Lecture4
     - file: Lecture6/Pandas
+    - file: Lecture7/Lecture7
     
   - caption: Labs
     chapters:
