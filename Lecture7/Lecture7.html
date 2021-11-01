@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7. Building Installable Packages &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 1: Overview, Review, and Environments" href="../Lab1/Lab1.html" />
+    <link rel="prev" title="6. Pandas" href="../Lecture6/Pandas.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book: Scientific Computing in Astrophysics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture2/Lecture2.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture4/Lecture4.html">
+   4. Sampling with MCMC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture6/Pandas.html">
+   6. Pandas
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7. Building Installable Packages
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3.html">
+   Lab 3: Building a Photometric Pipeline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4.html">
+   Lab 4:  Fitting a Model to Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab5/Lab5.html">
+   Lab 5: Stellar Spectroscopy + Fitting Models to Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab6/Lab6.html">
+   Lab 6: Pandas
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lab Solutions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2_solutions.html">
+   Lab 2 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3_solutions.html">
+   Lab 3 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4_solutions.html">
+   Lab 4: Solutions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Final Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../FinalProject/finalprojects.html">
+   Final Project Guidelines
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quick Tips
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/TimingCode.html">
+   Timing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/Meshgrid.html">
+   Meshgrid
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/MetropolisHastingsClass.html">
+   An Object Oriented Metropolis Hastings
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Access
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lecture7/Lecture7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lecture7/Lecture7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-write-a-package">
+   Why Write a Package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#package-design-abstract">
+   Package Design (abstract)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure-of-a-package">
+   Structure of a Package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-the-package">
+   Installing the Package
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="building-installable-packages">
+<h1>7. Building Installable Packages<a class="headerlink" href="#building-installable-packages" title="Permalink to this headline">¶</a></h1>
+<p>In this lecture, we’ll be talking about how to take code and turn it into something that can be installed on our system via <code class="docutils literal notranslate"><span class="pre">pip</span></code>, and <code class="docutils literal notranslate"><span class="pre">imported</span></code> anywhere on our system within Python.</p>
+<p>Note: Much of what I know about packaging up code was learned by reading Jo Bovy’s helpful <a class="reference external" href="https://pythonpackaging.info/index.html">resources</a> on this topic, and the example presented in this lecture draws heavily from the linked guide.</p>
+<div class="section" id="why-write-a-package">
+<h2>Why Write a Package<a class="headerlink" href="#why-write-a-package" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">package</span></code> is, in the abstract, just code. But most of the code we write (in particular, research code), doesn’t constitute a package. <em>Generally</em> this is because our research code is written to handle a hyper-specific set of commands for a unique project.</p>
+<p>This doesn’t mean we shouldn’t make our research code publically accessible. It’s scary, but as Hogg intimated during our conversation, it’s good for everyone involved, and for the science.</p>
+<p>A package, meanwhile, is what happens when you discover some piece of code you wrote is more <em>generally</em> applicable, to either yourself later or to others.</p>
+<p>For your <strong>final projects</strong>, you will be making a package. By definition, you are thinking of topics that prompt the creation of a general set of tools such as a package. But I want to emphasize that even when you’re just, say, writing research code, you may write a general function that you want to keep easily accessible for use later. Both are valid reasons to create a package.</p>
+<p><em>Example</em> The <code class="docutils literal notranslate"><span class="pre">implot()</span></code> function we wrote a while back for quickly displaying astronomical images? That’s a super handy function! I actually use it myself in my research code now. But rather than copying and pasting the function each time (which is both time consuming and prone to “version control” nightmares), I simply “installed” it on my computer.</p>
+<p>Finally: Well maintained, well documented, easy to use code that is hosted on GitHub is a <em>hallmark green flag</em> for anyone looking to hire a data scientist or computer scientist. Taking the bit of extra time to showcase your work in this manner is a great idea, and may even spawn new collaborations!</p>
+<p><em>“In my opinion, the single-most important reason behind a code’s success in gaining wide-spread use is being <strong>easy and intuitive to use</strong>. This should be the main driver behind any decision regarding details of implementation, documentation, and installation of your code. Always put the user first” - Jo Bovy</em></p>
+<p><em>Hint: This is exactly why <code class="docutils literal notranslate"><span class="pre">emcee</span></code> has over 5000 citations (a pretty ridiculous number in astronomy</em>).</p>
+</div>
+<div class="section" id="package-design-abstract">
+<h2>Package Design (abstract)<a class="headerlink" href="#package-design-abstract" title="Permalink to this headline">¶</a></h2>
+<p>Here are a few things to consider when making code a package for others to install and use:</p>
+<ul class="simple">
+<li><p>Limit dependencies as much as possible, ideally to just widespread ones like <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. If you only use one function from a specialized library, can you just implement that one thing yourself?</p></li>
+<li><p>Try to make any weird dependancies optional if at all possible, having <code class="docutils literal notranslate"><span class="pre">try:</span> <span class="pre">except</span></code> blocks to handle whether the user has them or not</p></li>
+<li><p>Try to make installation as easy as <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">packagname</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">package_address;</span> <span class="pre">cd</span> <span class="pre">packagename;</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code>.</p></li>
+<li><p>Have good documentation; have a readthedocs site if possible</p></li>
+<li><p>Keep a changelog somewhere public, especially for any major changes to the code’s structure or use</p></li>
+<li><p>In the docs, report which versions of python and numpy etc. your code has been most recently tested on (and try to keep it updated to the latest few versions)</p></li>
+<li><p>If possible (this is fancy), have a test suite that runs continuously when changes are pushed to your codebase, to check nothing breaks.</p></li>
+</ul>
+</div>
+<div class="section" id="structure-of-a-package">
+<h2>Structure of a Package<a class="headerlink" href="#structure-of-a-package" title="Permalink to this headline">¶</a></h2>
+<p>It’s time for the nitty gritty. How do we actually go about making a package? Beyond basic python code, a package has three key components</p>
+<ul class="simple">
+<li><p>Structure (handled via folders and files within folders)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> files which define the import behavior</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file which tells standard install libraries how to install the package on a computer.</p></li>
+</ul>
+<p>During this lecture, we’re going to create a package together. This package is going to be a place for you all to keep handy functions/classes you write over time so you can easily get to them.</p>
+<p>I have one of these, I call mine <code class="docutils literal notranslate"><span class="pre">myutils</span></code>. For example, in any python script/terminal, I can say <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">myutils.plotting</span> <span class="pre">import</span> <span class="pre">implot</span></code> to import that nice image plotter we wrote earilier this semester.</p>
+<p>Everyone decide now what you’d like to call your personal package. Make a folder somewhere on your system to store this package. I recommend somewhere easy to get to (I have a folder <code class="docutils literal notranslate"><span class="pre">/home/Software/</span></code> where I keep my own software as well as any I need to install from github rather than PyPI). There’s going to be a top-level directory for your package that holds everything. The name of this one doesn’t matter, it can also be your package name if you wish.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lecture7.ipynb        Lecture7.slides.html  <span class=" -Color -Color-Blue">example</span>/
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we saw, I’ve made a folder <code class="docutils literal notranslate"><span class="pre">example/</span></code> that is going to serve as my example in this lecture. This <code class="docutils literal notranslate"><span class="pre">example/</span></code> is the top level directory; my package name for this is going to be <code class="docutils literal notranslate"><span class="pre">exampy</span></code>, a name I’ve shamelessly stolen from Jo Bovy.</p>
+<p>Inside your toplevel folder (for me, <code class="docutils literal notranslate"><span class="pre">example/</span></code>, we’re going to have any README and documention files, a LICENSE (tells people how to cite/attribute our code and allowed uses), a CHANGELOG, and other ancilliary info. We will also, crucially, have our <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> here.</p>
+<p>For now, let’s focus on the code. Inside your toplevel folder, make a new directory that is the name of your desired package:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span> 
+<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;example/exampy/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">example</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Blue">exampy</span>/
+</pre></div>
+</div>
+</div>
+</div>
+<p>Great. This folder is going to store all the modules/submodules of our package.</p>
+<p>A simple package may have only one python file inside it, a more complicated one may have several files, and an even more complicated one may have sub <em>folders</em> with files.</p>
+<p>Each folder and file’s name is going to contribute to how people use our code. For example, my <code class="docutils literal notranslate"><span class="pre">myutils</span></code> package <em>could</em> just be one script with a ton of functions in it. But I could also make a separate script called <code class="docutils literal notranslate"><span class="pre">plotting.py</span></code> and put <code class="docutils literal notranslate"><span class="pre">implot()</span></code> in there. Now instead of <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">myutils</span> <span class="pre">import</span> <span class="pre">implot</span></code>, it’s <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">myutils.plotting</span> <span class="pre">import</span> <span class="pre">implot</span></code>.</p>
+<p>Is one better? Not really. For a personal utility library, it’s probably fine to shove them all in one. But it can be nice to organize things, especially if you’re trying to find where things are later to work on them.</p>
+<p>Inside your package folder (for me, <code class="docutils literal notranslate"><span class="pre">example/exampy/</span></code>), we’re going to need to make a file called <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. It’s allowed to be empty, so we could just do the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>touch example/exampy/__init__.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">example</span><span class="o">/</span><span class="n">exampy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__init__.py
+</pre></div>
+</div>
+</div>
+</div>
+<p>When someone types <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">exampy</span></code> later, it’s <em>that</em> init file that gets run. So we either need to put our functions/classes in there, or we can make separate files for them, and just import those files <em>inside the init</em>, leading to the same outcome. This is the standard practice, because it makes it easier for a user to navigate your github and find relevant functions.</p>
+<p>For the sake of this example, let’s say we know we want to have a completely different submodule, <code class="docutils literal notranslate"><span class="pre">plotting</span></code>, where we’ll put all the handy plotting functions we come up with over the years.</p>
+<p>Let’s further say that we predict we might want multiple python files with different sub-ideas within <code class="docutils literal notranslate"><span class="pre">plotting</span></code>, for example, <code class="docutils literal notranslate"><span class="pre">imaging</span></code> and <code class="docutils literal notranslate"><span class="pre">histograms</span></code>.</p>
+<p>This tells us <code class="docutils literal notranslate"><span class="pre">plotting</span></code> should be a folder-level name, with <code class="docutils literal notranslate"><span class="pre">imaging</span></code> and <code class="docutils literal notranslate"><span class="pre">histograms</span></code> being <code class="docutils literal notranslate"><span class="pre">.py</span></code> files inside. (Again, this is just a choice).</p>
+<p>In your <code class="docutils literal notranslate"><span class="pre">exampy/</span></code> folder, make a new folder called <code class="docutils literal notranslate"><span class="pre">plotting/</span></code>, and within <strong>it</strong>, make two empty python files, one called <code class="docutils literal notranslate"><span class="pre">imaging</span></code> and one called <code class="docutils literal notranslate"><span class="pre">histograms</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;example/exampy/plotting&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>touch example/exampy/plotting/imaging.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>touch example/exampy/plotting/histograms.py
+</pre></div>
+</div>
+</div>
+</div>
+<p>For every folder-level thing we make in a package, we need an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. Add one of these to your <code class="docutils literal notranslate"><span class="pre">plotting/</span></code> folder.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>touch example/exampy/plotting/__init__.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">example</span><span class="o">/</span><span class="n">exampy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__init__.py  <span class=" -Color -Color-Blue">plotting</span>/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">example</span><span class="o">/</span><span class="n">exampy</span><span class="o">/</span><span class="n">plotting</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__init__.py    histograms.py  imaging.py
+</pre></div>
+</div>
+</div>
+</div>
+<p>Awesome! Believe it or not, this is actually pretty much it when it comes to the overall structure of things within a simple package.</p>
+<p>The next question is, what do we put in each <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>? This turns out to depend on how we want the import statements to look when people use our code.</p>
+<p>Let’s start with the inner-nested init. What if we want the organizational convenience of having histogram and imaging stuff in different files, but still want to import them as <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">exampy.plotting</span> <span class="pre">import</span> <span class="pre">implot</span></code> or <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">exampy.plotting</span> <span class="pre">import</span> <span class="pre">my_cool_hist_func</span></code>?</p>
+<p>In this case, we would add the lines
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.histograms</span> <span class="pre">import</span> <span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.imaging</span> <span class="pre">import</span> <span class="pre">*</span></code></p>
+<p>to that inner init (note the dot). By importing <code class="docutils literal notranslate"><span class="pre">*</span></code> we pull all (usually bad practice, you could also specify them by name). Either way, the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">___</span> <span class="pre">import</span> <span class="pre">____</span></code> structure dumps them into this init’s namespace without the prepended python module names (histograms and imaging in this case). The dot says to search for those modules in the current directory.</p>
+<p>Alternatively, if in that init, I wrote <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.</span> <span class="pre">import</span> <span class="pre">histograms</span></code> and <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.</span> <span class="pre">import</span> <span class="pre">imaging</span></code>, those modules then get imported as <em>those names</em> when the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> runs, meaning the user would have to run, e.g., <code class="docutils literal notranslate"><span class="pre">exampy.plotting.imaging.implot()</span></code> or <code class="docutils literal notranslate"><span class="pre">exampy.plotting.histograms.my_cool_hist_func.</span></code>. Of course, when the USER imports into THEIR code, they can renane those long calls to something more convenient.</p>
+<p>The behavior you choose between those two is entirely up to you. Going back to Bovy’s advice, it comes down to what you think the best balance is between organization/clutter and ease of use. If you have <em>hundreds</em> of plotting functions, maybe keeping them more separate is good. If it’s only a few in each category, maybe pull them all together in the init so the user calls them directly under <code class="docutils literal notranslate"><span class="pre">plotting.</span></code>. Note the following convenience: if each big function is in its own file and you’re using git, changes are <em>very</em> easy to track.</p>
+<p>Following along, add one or the other version of the above imports to your <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. Then for the <em>outer</em> <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>, do the same, but for <code class="docutils literal notranslate"><span class="pre">plotting</span></code>. In this case, you probably want to use <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.</span> <span class="pre">import</span> <span class="pre">plotting</span></code> rather than <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.plotting</span> <span class="pre">import</span> <span class="pre">*</span></code>. (It’s going to know where to look because plotting has its own init file).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>more example/exampy/__init__.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>from . import plotting 
+[K[?1l&gt;e/exampy/__init__.py (END)[m[K
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>more example/exampy/plotting/__init__.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>from .histograms import * 
+from .imaging import *
+[K[?1l&gt;e/exampy/plotting/__init__.py (END)[m[K
+</pre></div>
+</div>
+</div>
+</div>
+<p>We may not have anything interesting to import yet inside our actual <code class="docutils literal notranslate"><span class="pre">.py</span></code> files, but we are actually done setting up the package as far as organization is concerned!</p>
+<p>Two steps to go: add some code, and make our <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>. Go grab your beautiful <code class="docutils literal notranslate"><span class="pre">implot()</span></code> function from earlier, and paste it into <code class="docutils literal notranslate"><span class="pre">imaging.py</span></code>. Be sure to grab the necessary imports (<code class="docutils literal notranslate"><span class="pre">numpy,</span> <span class="pre">astropy</span> <span class="pre">wcs,</span> <span class="pre">matplotlib</span></code>, etc) for it too, and put those at the top of the <code class="docutils literal notranslate"><span class="pre">imaging.py</span></code> file.</p>
+<p>We are now ready to make <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>. Create this as a new file in your toplevel directory (for me, <code class="docutils literal notranslate"><span class="pre">example/</span></code>). A very barebones working setup script looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">setuptools</span>
+
+<span class="n">setuptools</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;exampy&quot;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;0.1&quot;</span><span class="p">,</span>
+    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Imad Pasha&quot;</span><span class="p">,</span>
+    <span class="n">author_email</span><span class="o">=</span><span class="s2">&quot;imad.pasha@yale.edu&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A small example Python package&quot;</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;exampy&quot;</span><span class="p">,</span><span class="s2">&quot;exampy/plotting&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>(I’ll send this snippet to slack). <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> is something that ships with python, and handles most setup things for us. Your <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> for a self-installed, “only for me” package may not look any more complicated than this, but when publishing a package for the public, there’s some more bits to add which we won’t cover here.</p>
+<p>As a note, where you have to list all packages and subpackages, we could actually have setuptools find these for us via:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">packages</span><span class="o">=</span><span class="n">setuptools</span><span class="o">.</span><span class="n">find_packages</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;exampy&#39;</span><span class="p">,</span><span class="s1">&#39;exampy.*&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>in the <code class="docutils literal notranslate"><span class="pre">setuptools.setup()</span></code> call, which will search <code class="docutils literal notranslate"><span class="pre">exampy/</span></code> for any submodules.</p>
+<p>Some other useful things to set include:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">python_requires</span><span class="o">=</span><span class="s1">&#39;&gt;=3&#39;</span>
+</pre></div>
+</div>
+<p>to specify the python version be &gt;3. I recommend this, since these days very few maintainers of <em>new</em> code bother supporting python 2. There is also</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">install_requires</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span><span class="s2">&quot;scipy&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The above argument lets you specify pip-installable packages that are dependancies of your code. If <code class="docutils literal notranslate"><span class="pre">pip</span></code> goes to install your code and these aren’t present, it will attempt to install them via <code class="docutils literal notranslate"><span class="pre">pip</span></code> first. As with the python version above, I could specify <code class="docutils literal notranslate"><span class="pre">numpy&gt;=1.7</span></code> to specify versions.</p>
+</div>
+<div class="section" id="installing-the-package">
+<h2>Installing the Package<a class="headerlink" href="#installing-the-package" title="Permalink to this headline">¶</a></h2>
+<p>At this point, we are ready to install our package. The preferred way to do this these days is with <code class="docutils literal notranslate"><span class="pre">pip</span></code>, which can be used both to retrieve things from PyPI online, or to install things locally.</p>
+<p>When developing code, it is best to install it in <em>developer mode</em>, which makes it easier for your to implement and test changes. This is done via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>With this, the source is not copied to the installation directory, but rather an entry is made in the installation directory to find the code back in the original directory. This means that any changes you make are immediately available system-wide without requiring a re-installation. Of course, if you have the package already loaded in a Python session, you still have to exit and re-start the session (or use <code class="docutils literal notranslate"><span class="pre">importlib.reload</span></code>).</p>
+<p>When you are ready to do a full install, all it takes is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>So. I’m going to leave it here, and see if we can get everyone in class to a point where your <code class="docutils literal notranslate"><span class="pre">implot</span></code> function is installed and ready to import!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "a330"
+        },
+        kernelOptions: {
+            kernelName: "a330",
+            path: "./Lecture7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'a330'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lecture6/Pandas.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">6. Pandas</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lab1/Lab1.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lab 1: Overview, Review, and Environments</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>
