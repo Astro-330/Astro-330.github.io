@@ -1,0 +1,1776 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5 Solutions &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Project Guidelines" href="../FinalProject/finalprojects.html" />
+    <link rel="prev" title="Lab 4: Solutions" href="../Lab4/Lab4_solutions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book: Scientific Computing in Astrophysics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture2/Lecture2.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture4/Lecture4.html">
+   4. Sampling with MCMC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture6/Pandas.html">
+   6. Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture7/Lecture7.html">
+   7. Building Installable Packages
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3.html">
+   Lab 3: Building a Photometric Pipeline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4.html">
+   Lab 4:  Fitting a Model to Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lab5.html">
+   Lab 5: Stellar Spectroscopy + Fitting Models to Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab6/Lab6.html">
+   Lab 6: Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab7/Lab7.html">
+   Lab 7: Package Structure
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lab Solutions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2_solutions.html">
+   Lab 2 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3_solutions.html">
+   Lab 3 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4_solutions.html">
+   Lab 4: Solutions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 5 Solutions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Final Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../FinalProject/finalprojects.html">
+   Final Project Guidelines
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quick Tips
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/TimingCode.html">
+   Timing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/Meshgrid.html">
+   Meshgrid
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/MetropolisHastingsClass.html">
+   An Object Oriented Metropolis Hastings
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Access
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lab5/Lab5_solutions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lab5/Lab5_solutions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#goals-of-this-lab">
+   Goals of this lab:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1-keck-deimos-data">
+   Question 1:   Keck DEIMOS data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-2-spectral-reductions-with-pypeit">
+   Question 2:  Spectral Reductions with PypeIt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#answers-to-5-items-above">
+   Answers to 5 items above.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-many-spectra-are-contained-in-this-file">
+   How many spectra are contained in this file?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-3-plotting-1d-pypeit-output-spectra-and-fitting-by-eye">
+   Question 3: Plotting 1D PypeIt output spectra and fitting by eye
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-0-5">
+   Extra (+0.5)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-4-synthetic-model-spectra">
+   Question 4: Synthetic model spectra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-5-synthetic-model-spectra-smoothing-and-continuum-fitting">
+   Question 5: Synthetic model spectra – Smoothing and Continuum fitting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#smoothing-the-templates">
+     Smoothing the templates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fitting-the-continuum">
+     Fitting the Continuum
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-1-0">
+   Extra (1.0)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-6-chi-2-fitting-to-find-velocity">
+   Question 6:
+   <span class="math notranslate nohighlight">
+    \(\chi^2\)
+   </span>
+   fitting to find velocity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-7-chi-2-fitting-with-more-parameters">
+   Question 7:
+   <span class="math notranslate nohighlight">
+    \(\chi^2\)
+   </span>
+   fitting with more parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-8-mcmc-with-to-find-velocity">
+   Question 8:  MCMC with to find velocity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-9-mcmc-convergence">
+   Question 9:  MCMC convergence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-10-science">
+   Question 10:  Science
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-organizing-the-spectra-reduction-above-using-oop">
+   Bonus: Organizing the spectra/reduction above using OOP
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-5-solutions">
+<h1>Lab 5 Solutions<a class="headerlink" href="#lab-5-solutions" title="Permalink to this headline">¶</a></h1>
+<p>If imaging data is the ‘bread and butter’ of astronomy (see Lab 2), then spectrosopy is meat and potatoes.</p>
+<p>In this lab, we will guide you through reading, plotting and fitting spectra of stars in a Milky Way globular cluster.  The science goal is to determine the velocity and velocity errors for a handful of stars in order to determine if they are members of the globular cluster, or foreground stars in the Milky Way.    The coding goal is to apply both <span class="math notranslate nohighlight">\(\chi^2\)</span> fitting and MCMC fitting techniques when the model is more complicated.</p>
+<div class="section" id="goals-of-this-lab">
+<h2>Goals of this lab:<a class="headerlink" href="#goals-of-this-lab" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Explore a maintained software package (pypeit).</p></li>
+<li><p>Read a complicated fits file and plot a spectrum.</p></li>
+<li><p>Find parameters and errors via chi2 fitting when the model is not an analytic function</p></li>
+<li><p>Find parameters and errors via MCMC.</p></li>
+<li><p>Fitting polynomials to 2D surfaces, corner plots</p></li>
+</ol>
+</div>
+<div class="section" id="question-1-keck-deimos-data">
+<h2>Question 1:   Keck DEIMOS data<a class="headerlink" href="#question-1-keck-deimos-data" title="Permalink to this headline">¶</a></h2>
+<p>We will be working with data from the Keck Telescope’s DEIMOS instrument.   All Keck data is publically available on the Keck Data Archive (KOA) website.   While we will not be directly reducing the raw data, let’s take a look at these files to get a sense for what the data look like.   We’ve selected data from the Milky Way globular cluster NGC 7006.</p>
+<p>Head to the KOA website (<a class="reference external" href="https://koa.ipac.caltech.edu/cgi-bin/KOA/nph-KOAlogin">https://koa.ipac.caltech.edu/cgi-bin/KOA/nph-KOAlogin</a>) and search for all files take with DEIMOS on the night of June 3, 2011 (20110603).   Search the list for files with <code class="docutils literal notranslate"><span class="pre">Target</span> <span class="pre">Name</span> <span class="pre">==</span> <span class="pre">n7006</span></code> and <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">or</span> <span class="pre">Dispersion</span> <span class="pre">==</span> <span class="pre">mos</span></code>.    Find the column named <code class="docutils literal notranslate"><span class="pre">Quicklook</span> <span class="pre">Previews</span></code> and click on <code class="docutils literal notranslate"><span class="pre">[Raw]</span></code>.   This is a single exposure of a spectroscopic mask centered on NGC 7006.   You should see a hundred or so spectra in this image.</p>
+<p>We can see below the file image has multiple spectra (horizontal) in small sections of the detector (vertically). The vertical lines are skylines, present at certain wavelengths across the width of the slit. Notice that the tilt of these lines also varies across the detector… another challenge for reduction.</p>
+<img src="DE.20110603.45055.jpg" width="500" height="400"></div>
+<div class="section" id="question-2-spectral-reductions-with-pypeit">
+<h2>Question 2:  Spectral Reductions with PypeIt<a class="headerlink" href="#question-2-spectral-reductions-with-pypeit" title="Permalink to this headline">¶</a></h2>
+<p>Using the raw files downloaded from the KOA above , we [the A330 instructors] have run the science and calibration frames through a spectral reduction softare package called <code class="docutils literal notranslate"><span class="pre">PypeIt</span></code>:  <a class="reference external" href="https://pypeit.readthedocs.io/en/release/">https://pypeit.readthedocs.io/en/release/</a>.  The <code class="docutils literal notranslate"><span class="pre">PypeIt</span></code> github repository can be found here:  <a class="reference external" href="https://github.com/pypeit/PypeIt">https://github.com/pypeit/PypeIt</a></p>
+<p>While we won’t actually run <code class="docutils literal notranslate"><span class="pre">PypeIt</span></code> in this lab, we will be using its output files.   This is a software project that is actively being developed, so let’s look around at the code and identify some familar pieces:</p>
+<p>On github, take a look in the /pypeit directory and click on a few of the *.py files.</p>
+<ol class="simple">
+<li><p>Find one instance of PypeIt using a Class structure</p></li>
+<li><p>Find one instance of PypeIt not fully/properly populating a doc string :)</p></li>
+<li><p>Find a line of code that you understand and explain what its doing</p></li>
+<li><p>Fine a line of code that you don’t understand.</p></li>
+<li><p>How many branches current exist from the main <code class="docutils literal notranslate"><span class="pre">release</span></code> branch?</p></li>
+</ol>
+</div>
+<div class="section" id="answers-to-5-items-above">
+<h2>Answers to 5 items above.<a class="headerlink" href="#answers-to-5-items-above" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Find one instance of PypeIt using a Class structure</p></li>
+<li><p>Find one instance of PypeIt not fully/properly populating a doc string :)</p></li>
+<li><p>Find a line of code that you understand and explain what its doing</p></li>
+<li><p>Fine a line of code that you don’t understand.</p></li>
+<li><p>How many branches current exist from the main <code class="docutils literal notranslate"><span class="pre">release</span></code> branch?</p>
+<blockquote>
+<div><p>As of 10/4/2021, I counted 31 branches of pypeit.</p>
+</div></blockquote>
+</li>
+</ol>
+<p>In the data access directory, we have provide a PypeIt output file which contains one-dimensional spectra for all the stars observed in the DEIMOS mask <code class="docutils literal notranslate"><span class="pre">n7006a</span></code> that you viewed above.   Read in the file using the astropy.io.fits commands and view the contents using <code class="docutils literal notranslate"><span class="pre">hdu.info()</span></code>.   State how many spectra are contained in this file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;spec1d_DE.20110603.45055-n7006a_DEIMOS_2011Jun03T123053.021.fits&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code to view file contents</span>
+<span class="n">hdu</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">hdu</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Filename: spec1d_DE.20110603.45055-n7006a_DEIMOS_2011Jun03T123053.021.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU     231   ()      
+  1  SPAT0494-SLIT0507-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+  2  SPAT0589-SLIT0577-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+  3  SPAT0642-SLIT0717-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+  4  SPAT0716-SLIT0717-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+  5  SPAT1002-SLIT0946-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+  6  SPAT1141-SLIT1128-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+  7  SPAT1230-SLIT1226-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+  8  SPAT1306-SLIT1337-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+  9  SPAT1513-SLIT1485-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 10  SPAT1613-SLIT1596-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 11  SPAT1653-SLIT1669-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 12  SPAT1849-SLIT1817-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 13  SPAT1955-SLIT1967-DET01    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 14  SPAT0010-SLIT0018-DET02    1 BinTableHDU     63   4096R x 12C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 15  SPAT0058-SLIT0062-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 16  SPAT0150-SLIT0148-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 17  SPAT0191-SLIT0189-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 18  SPAT0237-SLIT0232-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 19  SPAT0274-SLIT0273-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 20  SPAT0316-SLIT0312-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 21  SPAT0352-SLIT0353-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 22  SPAT0403-SLIT0397-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 23  SPAT0437-SLIT0438-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 24  SPAT0485-SLIT0481-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 25  SPAT0526-SLIT0524-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 26  SPAT0572-SLIT0567-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 27  SPAT0610-SLIT0607-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 28  SPAT0648-SLIT0645-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 29  SPAT0687-SLIT0685-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 30  SPAT0732-SLIT0726-DET02    1 BinTableHDU     42   4096R x 2C   [1D, 1K]   
+ 31  SPAT0768-SLIT0766-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 32  SPAT0810-SLIT0807-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 33  SPAT0853-SLIT0849-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 34  SPAT0893-SLIT0889-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 35  SPAT0928-SLIT0929-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 36  SPAT0978-SLIT0973-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 37  SPAT1018-SLIT1020-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 38  SPAT1076-SLIT1069-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 39  SPAT1115-SLIT1116-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 40  SPAT1170-SLIT1168-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 41  SPAT1227-SLIT1224-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 42  SPAT1283-SLIT1283-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 43  SPAT1351-SLIT1342-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 44  SPAT1395-SLIT1391-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 45  SPAT1435-SLIT1431-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 46  SPAT1471-SLIT1469-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 47  SPAT1509-SLIT1508-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 48  SPAT1551-SLIT1547-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 49  SPAT1590-SLIT1589-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 50  SPAT1638-SLIT1631-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 51  SPAT1671-SLIT1670-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 52  SPAT1713-SLIT1711-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 53  SPAT1762-SLIT1763-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 54  SPAT1828-SLIT1825-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 55  SPAT1894-SLIT1884-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 56  SPAT1933-SLIT1959-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 57  SPAT1991-SLIT1959-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 58  SPAT2028-SLIT2026-DET02    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 59  SPAT0033-SLIT0037-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 60  SPAT0113-SLIT0102-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 61  SPAT0161-SLIT0163-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 62  SPAT0225-SLIT0223-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 63  SPAT0291-SLIT0304-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 64  SPAT0420-SLIT0413-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 65  SPAT0532-SLIT0511-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 66  SPAT0573-SLIT0577-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 67  SPAT0643-SLIT0651-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 68  SPAT0757-SLIT0739-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 69  SPAT0809-SLIT0804-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 70  SPAT0852-SLIT0856-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 71  SPAT0922-SLIT0932-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 72  SPAT1023-SLIT1031-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 73  SPAT1042-SLIT1031-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 74  SPAT1126-SLIT1113-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 75  SPAT1169-SLIT1186-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 76  SPAT1292-SLIT1279-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 77  SPAT1375-SLIT1375-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 78  SPAT1467-SLIT1481-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 79  SPAT1624-SLIT1603-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 80  SPAT1705-SLIT1698-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 81  SPAT1768-SLIT1780-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 82  SPAT1890-SLIT1905-DET03    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 83  SPAT0054-SLIT0140-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 84  SPAT0168-SLIT0140-DET04    1 BinTableHDU     42   4096R x 2C   [1D, 1K]   
+ 85  SPAT0181-SLIT0140-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 86  SPAT0306-SLIT0303-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 87  SPAT0429-SLIT0423-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 88  SPAT0555-SLIT0560-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 89  SPAT0651-SLIT0643-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 90  SPAT0728-SLIT0725-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 91  SPAT0804-SLIT0791-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 92  SPAT1037-SLIT1057-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 93  SPAT1172-SLIT1150-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 94  SPAT1229-SLIT1305-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 95  SPAT1576-SLIT1517-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 96  SPAT1604-SLIT1517-DET04    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 97  SPAT0485-SLIT0498-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 98  SPAT0580-SLIT0569-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+ 99  SPAT0633-SLIT0709-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+100  SPAT0994-SLIT0938-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+101  SPAT1133-SLIT1120-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+102  SPAT1222-SLIT1219-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+103  SPAT1299-SLIT1330-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+104  SPAT1505-SLIT1478-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+105  SPAT1606-SLIT1589-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+106  SPAT1646-SLIT1662-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+107  SPAT1842-SLIT1810-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+108  SPAT1948-SLIT1961-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+109  SPAT2038-SLIT2023-DET05    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+110  SPAT0050-SLIT0055-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+111  SPAT0142-SLIT0141-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+112  SPAT0183-SLIT0182-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+113  SPAT0229-SLIT0225-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+114  SPAT0266-SLIT0265-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+115  SPAT0309-SLIT0305-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+116  SPAT0345-SLIT0347-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+117  SPAT0395-SLIT0389-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+118  SPAT0430-SLIT0431-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+119  SPAT0477-SLIT0474-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+120  SPAT0519-SLIT0517-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+121  SPAT0564-SLIT0560-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+122  SPAT0603-SLIT0600-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+123  SPAT0641-SLIT0639-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+124  SPAT0679-SLIT0679-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+125  SPAT0725-SLIT0720-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+126  SPAT0761-SLIT0760-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+127  SPAT0803-SLIT0800-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+128  SPAT0846-SLIT0843-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+129  SPAT0883-SLIT0882-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+130  SPAT0922-SLIT0923-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+131  SPAT0971-SLIT0967-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+132  SPAT1014-SLIT1014-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+133  SPAT1070-SLIT1063-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+134  SPAT1109-SLIT1110-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+135  SPAT1163-SLIT1162-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+136  SPAT1221-SLIT1218-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+137  SPAT1277-SLIT1277-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+138  SPAT1344-SLIT1336-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+139  SPAT1389-SLIT1386-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+140  SPAT1429-SLIT1426-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+141  SPAT1465-SLIT1464-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+142  SPAT1504-SLIT1502-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+143  SPAT1545-SLIT1542-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+144  SPAT1584-SLIT1584-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+145  SPAT1632-SLIT1626-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+146  SPAT1665-SLIT1665-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+147  SPAT1707-SLIT1706-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+148  SPAT1756-SLIT1757-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+149  SPAT1822-SLIT1820-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+150  SPAT1888-SLIT1879-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+151  SPAT1928-SLIT1954-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+152  SPAT1985-SLIT1954-DET06    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+153  SPAT0029-SLIT0035-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+154  SPAT0110-SLIT0100-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+155  SPAT0158-SLIT0160-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+156  SPAT0222-SLIT0221-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+157  SPAT0288-SLIT0302-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+158  SPAT0417-SLIT0411-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+159  SPAT0530-SLIT0509-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+160  SPAT0570-SLIT0575-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+161  SPAT0640-SLIT0649-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+162  SPAT0755-SLIT0738-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+163  SPAT0807-SLIT0803-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+164  SPAT0850-SLIT0854-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+165  SPAT0920-SLIT0930-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+166  SPAT1021-SLIT1029-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+167  SPAT1040-SLIT1029-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+168  SPAT1124-SLIT1112-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+169  SPAT1167-SLIT1185-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+170  SPAT1241-SLIT1278-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+171  SPAT1291-SLIT1278-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+172  SPAT1373-SLIT1374-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+173  SPAT1466-SLIT1480-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+174  SPAT1466-SLIT1480-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+175  SPAT1623-SLIT1602-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+176  SPAT1704-SLIT1697-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+177  SPAT1767-SLIT1780-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+178  SPAT1889-SLIT1905-DET07    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+179  SPAT0164-SLIT0137-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+180  SPAT0177-SLIT0137-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+181  SPAT0302-SLIT0300-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+182  SPAT0425-SLIT0420-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+183  SPAT0551-SLIT0557-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+184  SPAT0648-SLIT0641-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+185  SPAT0725-SLIT0722-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+186  SPAT0800-SLIT0788-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+187  SPAT1034-SLIT1055-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+188  SPAT1168-SLIT1148-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+189  SPAT1225-SLIT1303-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+190  SPAT1574-SLIT1515-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+191  SPAT1601-SLIT1515-DET08    1 BinTableHDU     83   4096R x 22C   [1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1D, 1L, 1D, 1D, 1K]   
+192  DET01-DETECTOR    1 BinTableHDU     34   1R x 2C   [1D, 1D]   
+193  DET02-DETECTOR    1 BinTableHDU     34   1R x 2C   [1D, 1D]   
+194  DET03-DETECTOR    1 BinTableHDU     34   1R x 2C   [1D, 1D]   
+195  DET04-DETECTOR    1 BinTableHDU     34   1R x 2C   [1D, 1D]   
+196  DET05-DETECTOR    1 BinTableHDU     34   1R x 2C   [1D, 1D]   
+197  DET06-DETECTOR    1 BinTableHDU     34   1R x 2C   [1D, 1D]   
+198  DET07-DETECTOR    1 BinTableHDU     34   1R x 2C   [1D, 1D]   
+199  DET08-DETECTOR    1 BinTableHDU     34   1R x 2C   [1D, 1D]   
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="how-many-spectra-are-contained-in-this-file">
+<h2>How many spectra are contained in this file?<a class="headerlink" href="#how-many-spectra-are-contained-in-this-file" title="Permalink to this headline">¶</a></h2>
+<p>There are 191 individual spectra in this fits file.</p>
+</div>
+<div class="section" id="question-3-plotting-1d-pypeit-output-spectra-and-fitting-by-eye">
+<h2>Question 3: Plotting 1D PypeIt output spectra and fitting by eye<a class="headerlink" href="#question-3-plotting-1d-pypeit-output-spectra-and-fitting-by-eye" title="Permalink to this headline">¶</a></h2>
+<p>We have selected 3 spectra from this file which are high signal-to-noise stars.   From your fits table that you have read in, select extension 121, 135 and 157.   These can also be selected using the names ‘SPAT0564-SLIT0560-DET06’, ‘SPAT1163-SLIT1162-DET06’ and ‘SPAT0288-SLIT0302-DET07’.   Save the data for each spectrum separately.</p>
+<p>Plot wavelength versus counts/flux for each star.   Please use the optimal extraction results (‘OPT_<em>’).  If you need additional guidence for what is in this file, see the PypeIt documentation on spec1d_</em> files:  <a class="reference external" href="https://pypeit.readthedocs.io/en/release/out_spec1D.html">https://pypeit.readthedocs.io/en/release/out_spec1D.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each of these three stars, plot the wavelength versus counts.  Use ylim =  8300-8800 Angstrum</span>
+
+<span class="n">star_id</span> <span class="o">=</span> <span class="p">[</span><span class="mi">121</span><span class="p">,</span>  <span class="mi">135</span><span class="p">,</span>  <span class="mi">157</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">star_id</span><span class="p">:</span>
+    
+    <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Star ID: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">8300</span><span class="p">,</span><span class="mi">8850</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength (Ang)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab5_solutions_16_0.png" src="../_images/Lab5_solutions_16_0.png" />
+<img alt="../_images/Lab5_solutions_16_1.png" src="../_images/Lab5_solutions_16_1.png" />
+<img alt="../_images/Lab5_solutions_16_2.png" src="../_images/Lab5_solutions_16_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="extra-0-5">
+<h2>Extra (+0.5)<a class="headerlink" href="#extra-0-5" title="Permalink to this headline">¶</a></h2>
+<p>To get a sense for the velocity of each star, you might try measuring a rough velocity ‘by eye’.   The three strongest lines in the spectra above are from Calcium II:  8500.36, 8544.44, 8664.52 Angstrum. What velocity do you estimate?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># ROUGHLY GUESS VELOCITY (km/s) -- DONE HERE BY EYE</span>
+<span class="n">v_guess</span>  <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">410</span><span class="p">,</span><span class="o">-</span><span class="mi">400</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">]</span>
+
+<span class="n">ca_lines</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">8500.36</span><span class="p">,</span> <span class="mf">8544.44</span><span class="p">,</span> <span class="mf">8664.52</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="nb">id</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">star_id</span><span class="p">,</span> <span class="n">v_guess</span><span class="p">,</span> <span class="n">axs</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS&#39;</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Star ID: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">8460</span><span class="p">,</span><span class="mi">8700</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength (Ang)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="n">ca_lines</span><span class="p">:</span>
+        <span class="n">ca_guess</span> <span class="o">=</span> <span class="n">cl</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span><span class="o">+</span> <span class="n">v</span><span class="o">/</span><span class="mf">2.99e5</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">ca_guess</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab5_solutions_18_0.png" src="../_images/Lab5_solutions_18_0.png" />
+</div>
+</div>
+<p>So we now know the velocities we are going to fit for (for the three stars) are roughly in the range of -410, -400, and -50 km/s, respectively.</p>
+</div>
+<div class="section" id="question-4-synthetic-model-spectra">
+<h2>Question 4: Synthetic model spectra<a class="headerlink" href="#question-4-synthetic-model-spectra" title="Permalink to this headline">¶</a></h2>
+<p>In ASTR 255 and the extra question above, you have measured the velocity of a star by measuring the center of a known absorption line (either by eye or fitting a Gaussian) and comparing to its rest wavelength.   While this process does estimate the star’s velocity, it wastes much of the information present in the full spectrum.  To determine more accurate velocities, we turn to “template fitting” where a spectrum with a known velocity is compared to our unknown science spectrum.    A template spectrum can either be empiricial (an observed spectrum of a standard star where the velocity is already known) or synthetic (numerically computed from stellar models).   Here we will use synthetic templates from the PHEONIX library:  <a class="reference external" href="https://phoenix.astro.physik.uni-goettingen.de/">https://phoenix.astro.physik.uni-goettingen.de/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">template_file</span> <span class="o">=</span> <span class="s1">&#39;dmost_lte_5000_3.0_-2.0_.fits&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_synthetic_spectrum</span><span class="p">(</span><span class="n">pfile</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to load synthetic template file into python using vacuum wavelengths</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pfile: str</span>
+<span class="sd">        path to the synthitic fits file to load. </span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pwave: float array</span>
+<span class="sd">        Wavelengths of synthetic spectrum</span>
+<span class="sd">    pflux: float array</span>
+<span class="sd">        Flux of sythetic spectrum</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">pfile</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdu</span><span class="p">:</span>
+        <span class="n">data</span>     <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        
+    <span class="n">pflux</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;flux&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">awave</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;wave&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+    
+
+    <span class="c1"># CONVERTING AIR WAVELENGTHS TO VACUUM</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="n">awave</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="mf">0.00008336624212083</span> <span class="o">+</span> \
+            <span class="p">(</span><span class="mf">0.02408926869968</span> <span class="o">/</span> <span class="p">(</span><span class="mf">130.1065924522</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span>\
+            <span class="p">(</span><span class="mf">0.0001599740894897</span> <span class="o">/</span> <span class="p">(</span><span class="mf">38.92568793293</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">pwave</span>  <span class="o">=</span> <span class="n">awave</span><span class="o">*</span><span class="n">n</span>
+    
+    <span class="k">return</span> <span class="n">pwave</span><span class="p">,</span> <span class="n">pflux</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in synthetic spectra and plot wavelegth versus flux</span>
+<span class="n">pwave</span><span class="p">,</span> <span class="n">pflux</span> <span class="o">=</span> <span class="n">read_synthetic_spectrum</span><span class="p">(</span><span class="n">template_file</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pwave</span><span class="p">,</span><span class="n">pflux</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength (Ang)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Flux&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Flux&#39;)
+</pre></div>
+</div>
+<img alt="../_images/Lab5_solutions_24_1.png" src="../_images/Lab5_solutions_24_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="question-5-synthetic-model-spectra-smoothing-and-continuum-fitting">
+<h2>Question 5: Synthetic model spectra – Smoothing and Continuum fitting<a class="headerlink" href="#question-5-synthetic-model-spectra-smoothing-and-continuum-fitting" title="Permalink to this headline">¶</a></h2>
+<p>We will fit the sythetic spectrum to our science data with the goal of determining the velocity of our science spectrum.   The synthetic spectrum is at zero velocity.   To match the science data, we will need to (1) smooth the synthetic spectrum to the wavelength resolution of the science, (2) shift the sythetic spectrum to the velocity of the science data, and (3) rebin the synthetic spectrum and match continuum levels.</p>
+<div class="section" id="smoothing-the-templates">
+<h3>Smoothing the templates<a class="headerlink" href="#smoothing-the-templates" title="Permalink to this headline">¶</a></h3>
+<p>We will first address how to smooth the synthetic spectrum to match the data.   We will fit for this value below, but for the moment, let’s just choose a number based on a single point estimate. The DEIMOS spectral lines are well fit by a Gaussian with a 1-<span class="math notranslate nohighlight">\(\sigma\)</span> line width that is roughly 0.5 Angstrum.   The synthetic spectra have resolution of 0.02 Angstrum.   Thus, we need to smooth the sythetic spectra with a Gaussian kernal that is 0.5/0.02 = 25 pixels.</p>
+<p>Hint: scipy has functions which do Gaussian filtering in 1D.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function to Gaussin smooth the synthtic spectrum, using a smoothing kernal of 25 pixels.</span>
+
+<span class="kn">import</span> <span class="nn">scipy.ndimage</span> <span class="k">as</span> <span class="nn">scipynd</span>
+
+<span class="k">def</span> <span class="nf">smooth_spectrum</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span> <span class="n">lsf</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Smooth input spectrum using a Gaussian kernal</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    flux: float array</span>
+<span class="sd">        path to the synthitic fits file to load. </span>
+<span class="sd">    lsf: float</span>
+<span class="sd">        Line Spread Function.  LSF is used as the width of the Gaussian smoothing kernal</span>
+<span class="sd">       </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    smoothed_flux: float array</span>
+<span class="sd">        Smoothed input array</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">smoothed_flux</span> <span class="o">=</span> <span class="n">scipynd</span><span class="o">.</span><span class="n">gaussian_filter1d</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span><span class="n">lsf</span><span class="p">,</span><span class="n">truncate</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">smoothed_flux</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fitting-the-continuum">
+<h3>Fitting the Continuum<a class="headerlink" href="#fitting-the-continuum" title="Permalink to this headline">¶</a></h3>
+<p>We will next address the above step (3), the overall shape and value of the spectrum which we will call the ‘continuum’.   Let’s fit a function to the synthetic spectrum so that it is approximately the same as the science spectrum. For the section of a spectrum we are working with a <strong>linear function</strong> (i.e., like we fit in lab 4) is sufficient. To do this, we will first rebin the synthetic spectrum in wavelength to the same array as the data.</p>
+<p>Choose a science spectrum from above and rebin the sythentic template so that it uses the same wavelength array (consider using <code class="docutils literal notranslate"><span class="pre">np.interp()</span></code>). We need this to carry out point by point fits and comparisons between arrays.</p>
+<p>Next, determine the <strong>linear function</strong> (mx+b) needed to match the continuum of the synthetic spectrum to that of the science. The actual “thing” we want to fit with a line is the <em>response function</em>, the division between the science spectrum and the synthetic spectrum. So when you rebin your synthetic spectrum to the wavelengths of the data, you’ll then divide, and fit the resulting relation. The coefficients of this line will tell you how to multiply the synthetic spectrum (which has units very different than the data) to get the continua to line up roughly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a function to rebin the synthetic template to the data wavelength array and fit the continuuum.</span>
+<span class="k">def</span> <span class="nf">fit_continuum</span><span class="p">(</span><span class="n">pwave</span><span class="p">,</span><span class="n">pflux</span><span class="p">,</span><span class="n">data_wave</span><span class="p">,</span><span class="n">data_flux</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to load synthetic template file into python using vacuum wavelengths</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pfile: str</span>
+<span class="sd">        path to the synthitic fits file to load. </span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pwave: float array</span>
+<span class="sd">        Wavelengths of synthetic spectrum</span>
+<span class="sd">    pflux: float array</span>
+<span class="sd">        Flux of sythetic spectrum</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+        
+    <span class="n">new_templ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">data_wave</span><span class="p">,</span><span class="n">pwave</span><span class="p">,</span><span class="n">pflux</span><span class="p">)</span> <span class="c1">#rebin synthetic to data</span>
+    
+    <span class="c1"># CREATE A MASK TO REJECT LOWEST AND HIGHEST PIXELS</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">data_flux</span><span class="o">/</span><span class="n">new_templ</span> <span class="c1">#this is the response function</span>
+    <span class="n">msk</span> <span class="o">=</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="mi">99</span><span class="p">))</span> <span class="c1"># don&#39;t fit the outermost outlying points </span>
+    
+    
+    <span class="n">p</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">data_wave</span><span class="p">[</span><span class="n">msk</span><span class="p">],</span><span class="n">data_flux</span><span class="p">[</span><span class="n">msk</span><span class="p">]</span><span class="o">/</span><span class="n">new_templ</span><span class="p">[</span><span class="n">msk</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#fit </span>
+    <span class="n">pfit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">new_templ</span> <span class="o">*</span> <span class="n">pfit</span><span class="p">(</span><span class="n">data_wave</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above solution, we used <code class="docutils literal notranslate"><span class="pre">np.percentile</span></code> to make a mask so that the deepest absorption lines didn’t strongly affect the fit. Another way to do this is with an <em>iteratve polyfit</em>, which performs several iterations of fitting and sigma-clipping. We provide an example of an interative polyfit function below, which you could use within your fit continuum function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">iterative_polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">k_clip</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">x_to_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y_to_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
+        <span class="c1">#fit the data </span>
+        <span class="n">fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x_to_fit</span><span class="p">,</span><span class="n">y_to_fit</span><span class="p">,</span><span class="n">order</span><span class="p">)</span>
+        <span class="n">yfit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span><span class="n">x_to_fit</span><span class="p">)</span>
+        <span class="c1">#find residuals</span>
+        <span class="n">residuals</span> <span class="o">=</span> <span class="n">y_to_fit</span> <span class="o">-</span> <span class="n">yfit</span>
+        <span class="n">sigma_residuals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">residuals</span><span class="p">)</span>
+        <span class="c1">#identify outliers</span>
+        <span class="n">subsample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">residuals</span><span class="p">)</span><span class="o">&lt;</span><span class="n">k_clip</span><span class="o">*</span><span class="n">sigma_residuals</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1">#print(&#39;{} Points removed&#39;.format(removed))</span>
+        <span class="c1">#Set fitting data to be the things that had lower residuals than 3-sigma</span>
+        <span class="n">x_to_fit</span> <span class="o">=</span> <span class="n">x_to_fit</span><span class="p">[</span><span class="n">subsample</span><span class="p">]</span>
+        <span class="n">y_to_fit</span> <span class="o">=</span> <span class="n">y_to_fit</span><span class="p">[</span><span class="n">subsample</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">fit</span> <span class="c1">#From the final iteration </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK, now run both functions (your smoothing function and your rebin/continuum function) on the sythetic spectrum and plot the results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run both functions (smooth + rebin/continumm) and plot your smoothed, continuum normalized synthetic spectrum</span>
+<span class="c1"># Compare this to one of your science spectra.</span>
+
+<span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">star_id</span><span class="p">:</span>
+    
+    <span class="n">data</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="n">lsf</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="n">synthetic_smooth</span>  <span class="o">=</span> <span class="n">smooth_spectrum</span><span class="p">(</span><span class="n">pflux</span><span class="p">,</span> <span class="n">lsf</span><span class="p">)</span>
+    <span class="n">model</span>    <span class="o">=</span> <span class="n">fit_continuum</span><span class="p">(</span><span class="n">pwave</span><span class="p">,</span> <span class="n">synthetic_smooth</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS&#39;</span><span class="p">])</span>
+    
+    <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS&#39;</span><span class="p">],</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Science&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">],</span> <span class="n">model</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Zero Velocity Model&#39;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength (Ang)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Flux&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Star ID: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">8300</span><span class="p">,</span><span class="mi">8700</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab5_solutions_34_0.png" src="../_images/Lab5_solutions_34_0.png" />
+<img alt="../_images/Lab5_solutions_34_1.png" src="../_images/Lab5_solutions_34_1.png" />
+<img alt="../_images/Lab5_solutions_34_2.png" src="../_images/Lab5_solutions_34_2.png" />
+</div>
+</div>
+<p>So, the models above fit the science data, except for an unknown velocity shift.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because we are using a single template, it fits some of the stars (like absorption line depth/width) better than others. In reality, we would choose temmplates for each start that would better match. But as it turns out, even though the “best fit” here won’t be good in the “absolute” sense (except for one of the three stars), it will still (mostly) correctly identify the right shift. Put another way, the final shift may not be a great fit, but it will be the best one when we perform a grid search or mcmc.</p>
+</div>
+</div>
+</div>
+<div class="section" id="extra-1-0">
+<h2>Extra (1.0)<a class="headerlink" href="#extra-1-0" title="Permalink to this headline">¶</a></h2>
+<p>When fitting continua, we usually want to avoid the “features” in the spectrum. We could mask them out, or drop percentiles of the data far from the median… but we could also iteratively remove them. To do this, you would fit your chosen function to the data as a start, then iterate, throwing out 3 (or 5 or whatever works) sigma distant points and re-fitting. This works because emission and absorption lines have data points far from the continuum value. Try fitting your continuum this way to get a better estimate.</p>
+<p>See the script above <code class="docutils literal notranslate"><span class="pre">fit_continuum</span></code> where I have masked out the bottom 20% and top 1% of fluxes, or the iterative polyfit provided.</p>
+</div>
+<div class="section" id="question-6-chi-2-fitting-to-find-velocity">
+<h2>Question 6: <span class="math notranslate nohighlight">\(\chi^2\)</span> fitting to find velocity<a class="headerlink" href="#question-6-chi-2-fitting-to-find-velocity" title="Permalink to this headline">¶</a></h2>
+<p>The science and synthetic spectra above should roughly match– except for an unknown velocity shift.   You can shift the synthetic template in velocity by changing its wavelength array <em>before smoothing</em>.  Recall that <span class="math notranslate nohighlight">\(\delta \lambda = \lambda * v/c\)</span>.</p>
+<p>Write a <span class="math notranslate nohighlight">\(\chi^2\)</span> code to find the best-fit velocity for each of the three stars above.   Look up the velocity of the globular cluster NGC 7006 to justify the range of velocities to search over.   Consider the wavelength resolution of your science data to determine the spacing of your grid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calc_chi2</span><span class="p">(</span><span class="n">flux</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">ivar</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to calculate chi2</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">chi2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ivar</span> <span class="o">*</span> <span class="p">(</span><span class="n">flux</span><span class="o">-</span><span class="n">model</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">chi2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write a chi2 algorithm to determine the best fitting velocity and error.</span>
+
+<span class="n">v_guess</span>  <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">400</span><span class="p">,</span><span class="o">-</span><span class="mi">405</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">]</span>    <span class="c1"># Guesses from above</span>
+<span class="n">lsf</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="k">for</span> <span class="nb">id</span><span class="p">,</span><span class="n">vg</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">star_id</span><span class="p">,</span><span class="n">v_guess</span><span class="p">):</span>
+    
+    <span class="c1"># SET DATA SPECTRUM AND INITIALIZE VELOCITY GRID</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">v_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span> <span class="o">+</span> <span class="n">vg</span> 
+
+    <span class="n">chi2_grid</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">v_grid</span><span class="p">:</span>
+        
+        <span class="c1"># SHIFT SYNTHETIC WAVELENGTH </span>
+        <span class="n">shifted_wave</span> <span class="o">=</span>   <span class="n">pwave</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">v</span><span class="o">/</span><span class="mf">2.997924e5</span><span class="p">)</span>     
+
+        <span class="c1"># SMOOTH TEMPLATE</span>
+        <span class="n">synthetic_smooth</span> <span class="o">=</span> <span class="n">smooth_spectrum</span><span class="p">(</span><span class="n">pflux</span><span class="p">,</span> <span class="n">lsf</span><span class="p">)</span>
+        
+        <span class="c1"># MATCH CONTINUUM</span>
+        <span class="n">model</span>            <span class="o">=</span> <span class="n">fit_continuum</span><span class="p">(</span><span class="n">shifted_wave</span><span class="p">,</span> <span class="n">synthetic_smooth</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS&#39;</span><span class="p">])</span>
+        
+        <span class="c1"># CALCULATE CHI2 AND APPEND</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">calc_chi2</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS&#39;</span><span class="p">],</span> <span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS_IVAR&#39;</span><span class="p">])</span>
+        <span class="n">chi2_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chi2_grid</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+        
+        
+ 
+    <span class="c1"># FIND BEST VALUE</span>
+    <span class="n">idx_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">chi2_grid</span><span class="p">)</span>
+    
+    <span class="c1"># FIND ERROR</span>
+    <span class="n">msk</span> <span class="o">=</span> <span class="n">chi2_grid</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">chi2_grid</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.</span><span class="p">)</span>
+    <span class="n">v_err</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">v_grid</span><span class="p">[</span><span class="n">msk</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">v_grid</span><span class="p">[</span><span class="n">msk</span><span class="p">]))</span><span class="o">/</span><span class="mf">2.</span>
+
+    <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Question 6, STAR ID: </span><span class="si">{}</span><span class="s1">   Velocity = </span><span class="si">{:0.1f}</span><span class="s1"> +/- </span><span class="si">{:0.2f}</span><span class="s1"> km/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">v_grid</span><span class="p">[</span><span class="n">idx_min</span><span class="p">],</span><span class="n">v_err</span><span class="p">)</span>
+    
+    <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v_grid</span><span class="p">,</span><span class="n">chi2_grid</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Velocity (km/s)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Chi2&#39;</span><span class="p">)</span>    
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">v_grid</span><span class="p">[</span><span class="n">idx_min</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab5_solutions_42_0.png" src="../_images/Lab5_solutions_42_0.png" />
+<img alt="../_images/Lab5_solutions_42_1.png" src="../_images/Lab5_solutions_42_1.png" />
+<img alt="../_images/Lab5_solutions_42_2.png" src="../_images/Lab5_solutions_42_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="question-7-chi-2-fitting-with-more-parameters">
+<h2>Question 7:  <span class="math notranslate nohighlight">\(\chi^2\)</span> fitting with more parameters<a class="headerlink" href="#question-7-chi-2-fitting-with-more-parameters" title="Permalink to this headline">¶</a></h2>
+<p>In Question 6, we fixed the smoothing value to 25 pixels and used a single function to match the sythentic to science continuum.   Next, let’s redo <span class="math notranslate nohighlight">\(\chi^2\)</span>, but now including these values in the fit.   This will be a 2 parameter chi2 fit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repeat $chi^2$ fitting searching over 2 (and bonus 4) parameters: </span>
+<span class="c1">#             velocity, smoothing, and (bonus) continuum value (m,b)</span>
+<span class="c1"># If you use 4 parameters, this will get ugly.  </span>
+<span class="c1">#</span>
+<span class="c1"># Calculate errors from your chi2 contours on the velocity only.</span>
+
+<span class="n">v_guess</span>  <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">400</span><span class="p">,</span><span class="o">-</span><span class="mi">400</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">]</span>
+<span class="n">lsf_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="nb">id</span><span class="p">,</span><span class="n">vg</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">star_id</span><span class="p">,</span><span class="n">v_guess</span><span class="p">):</span>
+    
+    <span class="c1"># SET DATA SPECTRUM AND INITIALIZE VELOCITY GRID</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">wmask</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">8300</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">8700</span><span class="p">)</span>
+
+    <span class="n">v_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span> <span class="o">+</span> <span class="n">vg</span> 
+
+    <span class="c1"># DOUBLE FOR LOOP, HERE WE COME!</span>
+    <span class="n">chi2_grid</span><span class="p">,</span> <span class="n">v_arr</span><span class="p">,</span> <span class="n">lsf_arr</span> <span class="o">=</span> <span class="p">[],[],[]</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">v_grid</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">lsf</span> <span class="ow">in</span> <span class="n">lsf_grid</span><span class="p">:</span>
+
+            <span class="c1"># SHIFT SYNTHETIC WAVELENGTH </span>
+            <span class="n">shifted_wave</span> <span class="o">=</span>   <span class="n">pwave</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">v</span><span class="o">/</span><span class="mf">2.997924e5</span><span class="p">)</span>     
+
+            <span class="c1"># SMOOTH TEMPLATE</span>
+            <span class="n">synthetic_smooth</span> <span class="o">=</span> <span class="n">smooth_spectrum</span><span class="p">(</span><span class="n">pflux</span><span class="p">,</span> <span class="n">lsf</span><span class="p">)</span>
+
+            <span class="c1"># MATCH CONTINUUM</span>
+            <span class="n">model</span>            <span class="o">=</span> <span class="n">fit_continuum</span><span class="p">(</span><span class="n">shifted_wave</span><span class="p">,</span> <span class="n">synthetic_smooth</span><span class="p">,</span>\
+                                             <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">][</span><span class="n">wmask</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS&#39;</span><span class="p">][</span><span class="n">wmask</span><span class="p">])</span>
+
+            <span class="c1"># CALCULATE CHI2 AND APPEND</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">calc_chi2</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS&#39;</span><span class="p">][</span><span class="n">wmask</span><span class="p">],</span> <span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS_IVAR&#39;</span><span class="p">][</span><span class="n">wmask</span><span class="p">])</span>
+            <span class="n">chi2_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chi2_grid</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+            <span class="n">v_arr</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v_arr</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+            <span class="n">lsf_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lsf_arr</span><span class="p">,</span><span class="n">lsf</span><span class="p">)</span>
+        
+    <span class="c1"># PLOT CHI2 RESULTS</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+    <span class="n">idx_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">chi2_grid</span><span class="p">)</span>
+    
+    <span class="c1"># FIND ERROR</span>
+    <span class="n">msk</span> <span class="o">=</span> <span class="n">chi2_grid</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">chi2_grid</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.</span><span class="p">)</span>
+    <span class="n">v_err</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">v_arr</span><span class="p">[</span><span class="n">msk</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">v_arr</span><span class="p">[</span><span class="n">msk</span><span class="p">]))</span><span class="o">/</span><span class="mf">2.</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">v_arr</span><span class="p">,</span><span class="n">lsf_arr</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="n">chi2_grid</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span>\
+            <span class="n">vmin</span><span class="o">=</span><span class="n">chi2_grid</span><span class="p">[</span><span class="n">idx_min</span><span class="p">],</span><span class="n">vmax</span> <span class="o">=</span><span class="n">chi2_grid</span><span class="p">[</span><span class="n">idx_min</span><span class="p">]</span><span class="o">+</span><span class="mi">1000</span><span class="p">)</span>
+
+    <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;Q7, STAR ID: </span><span class="si">{}</span><span class="s1">   Velocity = </span><span class="si">{:0.1f}</span><span class="s1"> +/- </span><span class="si">{:0.2f}</span><span class="s1"> kms  Line Width = </span><span class="si">{}</span><span class="s1"> pixels&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> \
+                                                             <span class="n">v_arr</span><span class="p">[</span><span class="n">idx_min</span><span class="p">],</span><span class="n">v_err</span><span class="p">,</span><span class="n">lsf_arr</span><span class="p">[</span><span class="n">idx_min</span><span class="p">])</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v_arr</span><span class="p">[</span><span class="n">idx_min</span><span class="p">],</span><span class="n">lsf_arr</span><span class="p">[</span><span class="n">idx_min</span><span class="p">],</span><span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Velocity (km/s)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Line Spread (pixels)&#39;</span><span class="p">)</span>    
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab5_solutions_45_0.png" src="../_images/Lab5_solutions_45_0.png" />
+<img alt="../_images/Lab5_solutions_45_1.png" src="../_images/Lab5_solutions_45_1.png" />
+<img alt="../_images/Lab5_solutions_45_2.png" src="../_images/Lab5_solutions_45_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="question-8-mcmc-with-to-find-velocity">
+<h2>Question 8:  MCMC with to find velocity<a class="headerlink" href="#question-8-mcmc-with-to-find-velocity" title="Permalink to this headline">¶</a></h2>
+<p>Repeat Question 7 but this time fitting with MCMC.  We suggest writing a single function <code class="docutils literal notranslate"><span class="pre">make_model</span></code>  which creates a single synthetic model spectrum given an input velocity and smoothing.
+Report your best fit velocity and errors.</p>
+<p>You can chose to fit 2 parameters (velocity and smoothing), or as a bonus all 4 parameters (velocity, smoothing and continuum fit values).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">emcee</span>
+<span class="kn">import</span> <span class="nn">corner</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># MCMC to find velocity only.  Report your best fit velocity and errors.</span>
+<span class="c1"># Plot full corner plots for all fitted parameters.</span>
+
+<span class="k">def</span> <span class="nf">mk_model</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">data_wave</span><span class="p">,</span> <span class="n">data_flux</span><span class="p">,</span> <span class="n">data_ivar</span><span class="p">,</span> <span class="n">syn_wave</span><span class="p">,</span> <span class="n">syn_flux</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Create a model spectrum </span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span> 
+    <span class="c1"># SHIFT SYNTHETIC WAVELENGTH </span>
+    <span class="n">shifted_wave</span> <span class="o">=</span>   <span class="n">syn_wave</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mf">2.997924e5</span><span class="p">)</span>     
+
+    <span class="c1"># SMOOTH TEMPLATE</span>
+    <span class="n">synthetic_smooth</span> <span class="o">=</span> <span class="n">smooth_spectrum</span><span class="p">(</span><span class="n">syn_flux</span><span class="p">,</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1"># MATCH CONTINUUM</span>
+    <span class="n">model</span>            <span class="o">=</span> <span class="n">fit_continuum</span><span class="p">(</span><span class="n">shifted_wave</span><span class="p">,</span> <span class="n">synthetic_smooth</span><span class="p">,</span> <span class="n">data_wave</span><span class="p">,</span> <span class="n">data_flux</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lnprob</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">data_wave</span><span class="p">,</span> <span class="n">data_flux</span><span class="p">,</span> <span class="n">data_ivar</span><span class="p">,</span> <span class="n">syn_wave</span><span class="p">,</span> <span class="n">syn_flux</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Evaluate whether to accept sample</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span> 
+    <span class="n">lp</span> <span class="o">=</span> <span class="n">lnprior</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">lp</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+
+    <span class="k">return</span> <span class="n">lp</span> <span class="o">+</span> <span class="n">lnlike</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">data_wave</span><span class="p">,</span> <span class="n">data_flux</span><span class="p">,</span> <span class="n">data_ivar</span><span class="p">,</span> <span class="n">syn_wave</span><span class="p">,</span> <span class="n">syn_flux</span><span class="p">)</span>
+
+
+
+<span class="k">def</span> <span class="nf">lnprior</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Set priors on parameters</span>
+<span class="sd">    &#39;&#39;&#39;</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="o">-</span><span class="mi">500</span> <span class="o">&lt;</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+    
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+
+
+<span class="k">def</span> <span class="nf">lnlike</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">data_wave</span><span class="p">,</span> <span class="n">data_flux</span><span class="p">,</span> <span class="n">data_ivar</span><span class="p">,</span> <span class="n">syn_wave</span><span class="p">,</span> <span class="n">syn_flux</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Evaluate the log-likelihood</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    theta: float array</span>
+<span class="sd">        Current values of fitted parameters</span>
+<span class="sd">        </span>
+<span class="sd">    x,y, sigma: float arrays</span>
+<span class="sd">        Data points and one sigma errors</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    lnl</span>
+<span class="sd">        log-likelihood value  </span>
+<span class="sd">    &#39;&#39;&#39;</span> 
+    <span class="c1"># MAKE MODEL</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">mk_model</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">data_wave</span><span class="p">,</span> <span class="n">data_flux</span><span class="p">,</span> <span class="n">data_ivar</span><span class="p">,</span> <span class="n">syn_wave</span><span class="p">,</span> <span class="n">syn_flux</span><span class="p">)</span>
+
+    <span class="c1"># EVALUATE LIKELIHOOD</span>
+    <span class="n">chi2</span> <span class="o">=</span> <span class="p">((</span><span class="n">data_flux</span> <span class="o">-</span> <span class="n">model</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">data_ivar</span>
+    <span class="n">lnl</span>  <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">chi2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">lnl</span>
+
+
+<span class="k">def</span> <span class="nf">initialize_walkers</span><span class="p">(</span><span class="n">vguess</span><span class="p">,</span><span class="n">lguess</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Initialize the walkers using an initial guess</span>
+
+<span class="sd">    &#39;&#39;&#39;</span> 
+        
+    <span class="c1"># Two free parameters (m,b) and 20 walkers</span>
+    <span class="n">ndim</span><span class="p">,</span> <span class="n">nwalkers</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span>
+    <span class="n">p0</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">ndim</span> <span class="o">*</span> <span class="n">nwalkers</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">nwalkers</span><span class="p">,</span> <span class="n">ndim</span><span class="p">))</span>
+
+    <span class="c1"># initialize slope </span>
+    <span class="n">p0</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">p0</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">50.</span> <span class="o">-</span> <span class="mi">25</span><span class="p">)</span> <span class="o">+</span> <span class="n">vguess</span>
+    
+    
+    <span class="c1"># initialize intercept</span>
+    <span class="n">p0</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">p0</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="n">lguess</span>
+    
+    <span class="n">p0</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">vguess</span><span class="p">,</span><span class="n">lguess</span><span class="p">])</span> <span class="o">+</span> <span class="mf">1e-4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">ndim</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nwalkers</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="n">ndim</span><span class="p">,</span><span class="n">nwalkers</span><span class="p">,</span><span class="n">p0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_mcmc</span><span class="p">(</span><span class="n">sampler</span><span class="p">,</span> <span class="n">burnin</span><span class="p">,</span> <span class="n">ndim</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Plot emcee sample chains and make corner plot</span>
+<span class="sd">    &#39;&#39;&#39;</span> 
+     
+    <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sampler</span><span class="o">.</span><span class="n">chain</span><span class="p">[</span><span class="n">ii</span><span class="p">,:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sampler</span><span class="o">.</span><span class="n">chain</span><span class="p">[</span><span class="n">ii</span><span class="p">,:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Velocity (km/s)&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Line Width (pixels)&#39;</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Step Number&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Step Number&#39;</span><span class="p">)</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Velocity (V) Sample chains&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Smoothing (LSF) Sample chains&#39;</span><span class="p">)</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">burnin</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Burn-in&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">burnin</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+    <span class="c1"># PLOT CORNER</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">,</span><span class="s1">&#39;lsf&#39;</span><span class="p">]</span>
+    <span class="n">samples</span>   <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">chain</span><span class="p">[:,</span> <span class="n">burnin</span><span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ndim</span><span class="p">))</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">corner</span><span class="o">.</span><span class="n">corner</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span><span class="n">show_titles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">quantiles</span><span class="o">=</span><span class="p">[</span><span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.84</span><span class="p">])</span>
+    
+<span class="c1">#    return best_v,best_v_err</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_best_fit</span><span class="p">(</span><span class="n">best_v</span><span class="p">,</span><span class="n">best_lsf</span><span class="p">,</span><span class="n">data_wave</span><span class="p">,</span><span class="n">data_flux</span><span class="p">,</span><span class="n">data_ivar</span><span class="p">,</span><span class="n">starid</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Plot best fitting model over science spectrum</span>
+<span class="sd">    &#39;&#39;&#39;</span>     
+      
+    <span class="n">template_file_name</span> <span class="o">=</span> <span class="s1">&#39;dmost_lte_5000_3.0_-2.0_.fits&#39;</span>
+    <span class="n">syn_wave</span><span class="p">,</span> <span class="n">syn_flux</span> <span class="o">=</span> <span class="n">read_synthetic_spectrum</span><span class="p">(</span><span class="n">template_file_name</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">mk_model</span><span class="p">([</span><span class="n">best_v</span><span class="p">,</span><span class="n">best_lsf</span><span class="p">],</span> <span class="n">data_wave</span><span class="p">,</span> <span class="n">data_flux</span><span class="p">,</span> <span class="n">data_ivar</span><span class="p">,</span> <span class="n">syn_wave</span><span class="p">,</span> <span class="n">syn_flux</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_wave</span><span class="p">,</span><span class="n">data_flux</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Science&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_wave</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Best Fit Model&#39;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength (Ang)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Flux&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">8300</span><span class="p">,</span><span class="mi">8700</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Star ID: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">starid</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_mcmc</span><span class="p">(</span><span class="n">starid</span><span class="p">,</span> <span class="n">vguess</span><span class="p">,</span> <span class="n">lguess</span><span class="p">,</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">max_n</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Set up MCMC and run</span>
+<span class="sd">    &#39;&#39;&#39;</span>     
+ 
+    <span class="n">data</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="n">starid</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">data_wave</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">]</span>
+
+    <span class="n">wmask</span> <span class="o">=</span> <span class="p">(</span><span class="n">data_wave</span> <span class="o">&gt;</span> <span class="mi">8300</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data_wave</span> <span class="o">&lt;</span> <span class="mi">8700</span><span class="p">)</span>
+
+    <span class="n">data_wave</span> <span class="o">=</span> <span class="n">data_wave</span><span class="p">[</span><span class="n">wmask</span><span class="p">]</span>
+    <span class="n">data_flux</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS&#39;</span><span class="p">][</span><span class="n">wmask</span><span class="p">]</span>
+    <span class="n">data_ivar</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS_IVAR&#39;</span><span class="p">][</span><span class="n">wmask</span><span class="p">]</span>
+    
+    <span class="n">template_file_name</span> <span class="o">=</span> <span class="s1">&#39;dmost_lte_5000_3.0_-2.0_.fits&#39;</span>
+    <span class="n">syn_wave</span><span class="p">,</span> <span class="n">syn_flux</span> <span class="o">=</span> <span class="n">read_synthetic_spectrum</span><span class="p">(</span><span class="n">template_file_name</span><span class="p">)</span>
+
+    <span class="n">ndim</span><span class="p">,</span> <span class="n">nwalkers</span><span class="p">,</span> <span class="n">p0</span> <span class="o">=</span> <span class="n">initialize_walkers</span><span class="p">(</span><span class="n">vguess</span><span class="p">,</span><span class="n">lguess</span><span class="p">)</span>
+
+    <span class="c1"># INITIALIZE SAMPLER</span>
+    <span class="n">sampler</span> <span class="o">=</span> <span class="n">emcee</span><span class="o">.</span><span class="n">EnsembleSampler</span><span class="p">(</span><span class="n">nwalkers</span><span class="p">,</span> <span class="n">ndim</span><span class="p">,</span> <span class="n">lnprob</span><span class="p">,</span> \
+                            <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">data_wave</span><span class="p">,</span> <span class="n">data_flux</span><span class="p">,</span> <span class="n">data_ivar</span><span class="p">,</span> <span class="n">syn_wave</span><span class="p">,</span> <span class="n">syn_flux</span><span class="p">))</span>
+
+    <span class="c1"># RUN MCMC</span>
+    <span class="n">pos</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">state</span> <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">run_mcmc</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">max_n</span><span class="p">)</span>
+    
+    <span class="c1"># CALCULATE NUMBER OF BURNIN SAMPLES</span>
+    <span class="n">tau</span>    <span class="o">=</span> <span class="n">sampler</span><span class="o">.</span><span class="n">get_autocorr_time</span><span class="p">(</span><span class="n">tol</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">burnin</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">tau</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of burnin samples: &#39;</span><span class="p">,</span><span class="n">burnin</span><span class="p">)</span>
+    
+    <span class="c1"># CHECK IF THINGS CONVERGED</span>
+    <span class="n">converged</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">tau</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">&lt;</span> <span class="n">sampler</span><span class="o">.</span><span class="n">iteration</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Did chains converge [0/1:]? &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">converged</span><span class="p">))</span>
+    
+    <span class="c1"># CALCULATE BEST VALUES</span>
+    <span class="n">best_v</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sampler</span><span class="o">.</span><span class="n">chain</span><span class="p">[:,</span><span class="n">burnin</span><span class="p">:,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">best_lsf</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sampler</span><span class="o">.</span><span class="n">chain</span><span class="p">[:,</span><span class="n">burnin</span><span class="p">:,</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">best_v_err</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">sampler</span><span class="o">.</span><span class="n">chain</span><span class="p">[:,</span><span class="n">burnin</span><span class="p">:,</span><span class="mi">0</span><span class="p">],</span><span class="mi">84</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">sampler</span><span class="o">.</span><span class="n">chain</span><span class="p">[:,</span><span class="n">burnin</span><span class="p">:,</span><span class="mi">0</span><span class="p">],</span><span class="mi">16</span><span class="p">))</span><span class="o">/</span><span class="mf">2.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Best velocity: </span><span class="si">{:0.2f}</span><span class="s1"> +/- </span><span class="si">{:0.2f}</span><span class="s1"> km/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">best_v</span><span class="p">,</span><span class="n">best_v_err</span><span class="p">))</span>
+
+    <span class="c1"># PLOT STUFF</span>
+    <span class="n">plot_best_fit</span><span class="p">(</span><span class="n">best_v</span><span class="p">,</span><span class="n">best_lsf</span><span class="p">,</span><span class="n">data_wave</span><span class="p">,</span><span class="n">data_flux</span><span class="p">,</span><span class="n">data_ivar</span><span class="p">,</span> <span class="n">starid</span><span class="p">)</span>
+    <span class="n">plot_mcmc</span><span class="p">(</span><span class="n">sampler</span><span class="p">,</span> <span class="n">burnin</span><span class="p">,</span> <span class="n">ndim</span><span class="p">)</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">star_ids</span>  <span class="o">=</span> <span class="p">[</span><span class="mi">121</span><span class="p">,</span>  <span class="mi">135</span><span class="p">,</span>  <span class="mi">157</span><span class="p">]</span>
+<span class="n">v_guess</span>   <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">400</span><span class="p">,</span><span class="o">-</span><span class="mi">405</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">]</span>
+<span class="n">lsf_guess</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">run_mcmc</span><span class="p">(</span><span class="n">star_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v_guess</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lsf_guess</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">max_n</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of burnin samples:  73
+Did chains converge [0/1:]?  0
+Best velocity: -402.26 +/- 0.41 km/s
+</pre></div>
+</div>
+<img alt="../_images/Lab5_solutions_55_1.png" src="../_images/Lab5_solutions_55_1.png" />
+<img alt="../_images/Lab5_solutions_55_2.png" src="../_images/Lab5_solutions_55_2.png" />
+<img alt="../_images/Lab5_solutions_55_3.png" src="../_images/Lab5_solutions_55_3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">run_mcmc</span><span class="p">(</span><span class="n">star_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v_guess</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lsf_guess</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">max_n</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of burnin samples:  105
+Did chains converge [0/1:]?  0
+Best velocity: -405.34 +/- 0.07 km/s
+</pre></div>
+</div>
+<img alt="../_images/Lab5_solutions_56_1.png" src="../_images/Lab5_solutions_56_1.png" />
+<img alt="../_images/Lab5_solutions_56_2.png" src="../_images/Lab5_solutions_56_2.png" />
+<img alt="../_images/Lab5_solutions_56_3.png" src="../_images/Lab5_solutions_56_3.png" />
+</div>
+</div>
+<p>Thee MCMC results for Star 2 don’t look very good.   This seems to be very sensitive to input values.   Many of you were able to get better looking results!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">run_mcmc</span><span class="p">(</span><span class="n">star_ids</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">v_guess</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lsf_guess</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hdu</span><span class="p">,</span> <span class="n">max_n</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of burnin samples:  72
+Did chains converge [0/1:]?  0
+Best velocity: -49.90 +/- 0.29 km/s
+</pre></div>
+</div>
+<img alt="../_images/Lab5_solutions_58_1.png" src="../_images/Lab5_solutions_58_1.png" />
+<img alt="../_images/Lab5_solutions_58_2.png" src="../_images/Lab5_solutions_58_2.png" />
+<img alt="../_images/Lab5_solutions_58_3.png" src="../_images/Lab5_solutions_58_3.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the context of MCMC, you’ll often hear people talk about “marginalization”. This is a classic example. Marginalization is the process of fitting for parameters we care about, plus “nuisance parameters” that we don’t (like the smoothing and continuum values), and then “marginalizing out” the nuisance parameters by taking the 1D posterior spread only of the parameter of interest.</p>
+</div>
+</div>
+<div class="section" id="question-9-mcmc-convergence">
+<h2>Question 9:  MCMC convergence<a class="headerlink" href="#question-9-mcmc-convergence" title="Permalink to this headline">¶</a></h2>
+<p>Confirm that your MCMC above converged and that you are discarding the appropriate number of samples when determining your parameters (that is the burnin number).</p>
+<blockquote>
+<div><p>With 2000 samples, my code did not formally converge yet still provides reliable best fit values.  However, the error on these values are less well determined.   If I were to publish this work, I would run more samples to ensure the errors are correct.</p>
+</div></blockquote>
+</div>
+<div class="section" id="question-10-science">
+<h2>Question 10:  Science<a class="headerlink" href="#question-10-science" title="Permalink to this headline">¶</a></h2>
+<p>And finally, some science questions:</p>
+<ol>
+<li><p>Do velocities agree between chi2 and mcmc within error?</p>
+<blockquote>
+<div><p>The velocities agree very well between these methods.</p>
+</div></blockquote>
+</li>
+<li><p>Are the velocity errors the same?</p>
+<blockquote>
+<div><p>The errors for chi2 tend to be smaller.</p>
+</div></blockquote>
+</li>
+<li><p>Are these three stars part of NGC 7006?</p>
+<blockquote>
+<div><p>The velocity of NGC 7006 is -384 km/s.  Star 1 and 2 are definitely members of NGC 7006.  Star 3 is a foreground star, mostly likely associated with the Milky Way’s disk.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="bonus-organizing-the-spectra-reduction-above-using-oop">
+<h2>Bonus: Organizing the spectra/reduction above using OOP<a class="headerlink" href="#bonus-organizing-the-spectra-reduction-above-using-oop" title="Permalink to this headline">¶</a></h2>
+<p>Here’s two classes that do everything above fairly neatly, with an example of their use.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Spectrum</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">file</span><span class="p">,</span><span class="n">extension</span><span class="p">,</span><span class="n">wl_min</span><span class="o">=</span><span class="mi">8300</span><span class="p">,</span><span class="n">wl_max</span><span class="o">=</span><span class="mi">8800</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="o">=</span> <span class="n">extension</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wl_min</span> <span class="o">=</span> <span class="n">wl_min</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wl_max</span> <span class="o">=</span> <span class="n">wl_max</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">unc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_and_truncate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ext</span><span class="p">,</span><span class="n">wl_min</span><span class="o">=</span><span class="n">wl_min</span><span class="p">,</span><span class="n">wl_max</span><span class="o">=</span><span class="n">wl_max</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">load_and_truncate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">extension</span><span class="p">,</span><span class="n">wl_min</span><span class="p">,</span><span class="n">wl_max</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdu</span><span class="p">:</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="n">extension</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="n">extension</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">m</span><span class="p">,</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="n">wl_min</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="n">wl_max</span><span class="p">))</span>
+        <span class="n">flux</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS&#39;</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
+        <span class="n">wave</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;OPT_WAVE&#39;</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
+        <span class="n">unc</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;OPT_COUNTS_IVAR&#39;</span><span class="p">][</span><span class="n">m</span><span class="p">]</span>
+        <span class="n">unc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="n">unc</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wave</span><span class="p">,</span><span class="n">flux</span><span class="p">,</span><span class="n">unc</span>
+    
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">other</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">unc</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">unc</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">other</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">other</span><span class="p">,</span><span class="s1">&#39;wave&#39;</span><span class="p">):</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="n">other</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1">#assume tuple x,y</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">other</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">other</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wl_min</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">wl_max</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wl_min</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">wl_max</span><span class="p">,</span><span class="mi">25</span><span class="p">))</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span><span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Flux&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;wavelength&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+    <span class="k">def</span> <span class="nf">chi_squared</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">flux</span><span class="p">):</span>
+        <span class="n">chi2</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">flux</span> <span class="o">-</span> <span class="n">flux</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">unc</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">red_chi2</span> <span class="o">=</span> <span class="n">chi2</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">red_chi2</span>
+    
+<span class="k">class</span> <span class="nc">FitSynthetic</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">fname</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdu</span><span class="p">:</span>
+            <span class="n">data</span>     <span class="o">=</span> <span class="n">hdu</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flux</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;flux&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">awave</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;wave&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
+        <span class="c1"># CONVERTING AIR WAVELENGTHS TO VACUUM</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">4</span> <span class="o">/</span> <span class="n">awave</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">+</span> <span class="mf">0.00008336624212083</span> <span class="o">+</span> \
+                <span class="p">(</span><span class="mf">0.02408926869968</span> <span class="o">/</span> <span class="p">(</span><span class="mf">130.1065924522</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span>\
+                <span class="p">(</span><span class="mf">0.0001599740894897</span> <span class="o">/</span> <span class="p">(</span><span class="mf">38.92568793293</span> <span class="o">-</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wave</span>  <span class="o">=</span> <span class="n">awave</span><span class="o">*</span><span class="n">n</span>
+    <span class="k">def</span> <span class="nf">add_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">spec</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec</span> <span class="o">=</span> <span class="n">spec</span>        
+        
+    <span class="k">def</span> <span class="nf">match_continuum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">synth_interp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="p">)</span>
+        <span class="n">response_fn</span> <span class="o">=</span> <span class="n">synth_interp</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">flux</span>
+        <span class="n">fit_response</span> <span class="o">=</span> <span class="n">iterative_polyfit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="n">response_fn</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">fit_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">fit_response</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">wave</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+            <span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="n">response_fn</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="n">fit_vals</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">8300</span><span class="p">,</span><span class="mi">8800</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">matched_flux</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flux</span> <span class="o">/</span> <span class="n">fit_vals</span>
+    
+    
+    <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">velocity</span><span class="p">,</span><span class="n">sigma</span><span class="o">=</span><span class="mi">25</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Shift, Smooth, and Rebin synthetic spectrum based on a velocity and kernel</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">velocity</span><span class="o">*=</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="o">/</span><span class="n">u</span><span class="o">.</span><span class="n">s</span>
+        <span class="n">new_wave</span> <span class="o">=</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">wave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">angstrom</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wave</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">angstrom</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">velocity</span><span class="o">/</span><span class="n">astro_c</span><span class="o">.</span><span class="n">c</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">angstrom</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">smoothspec</span> <span class="o">=</span> <span class="n">gaussian_filter1d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">matched_flux</span><span class="p">,</span><span class="n">sigma</span><span class="p">)</span>
+        <span class="n">m</span><span class="p">,</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">new_wave</span><span class="o">&gt;</span><span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">wl_min</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">new_wave</span><span class="o">&lt;</span><span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">wl_max</span><span class="p">))</span>
+        <span class="n">swave</span> <span class="o">=</span> <span class="n">new_wave</span><span class="p">[</span><span class="n">m</span><span class="p">]</span>
+        <span class="n">sflux</span> <span class="o">=</span> <span class="n">smoothspec</span><span class="p">[</span><span class="n">m</span><span class="p">]</span>
+        <span class="n">rebinned</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="n">swave</span><span class="p">,</span><span class="n">sflux</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span> <span class="n">rebinned</span>
+        
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">wl_min</span><span class="p">,</span><span class="n">wl_max</span><span class="p">,</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span><span class="n">other</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">which</span><span class="o">==</span><span class="s1">&#39;raw&#39;</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">which</span><span class="o">==</span><span class="s1">&#39;matched&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="s1">&#39;matched_flux&#39;</span><span class="p">):</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">matched_flux</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;matched flux not found, try running match_continuum method.&#39;</span><span class="p">)</span>
+                
+        <span class="k">if</span> <span class="n">other</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">wave</span><span class="p">,</span><span class="n">other</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">wl_min</span><span class="p">,</span><span class="n">wl_max</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">wl_min</span><span class="p">,</span><span class="n">wl_max</span><span class="p">,</span><span class="mi">25</span><span class="p">))</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span><span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Flux&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;wavelength&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s the use case. I set things up such that the <code class="docutils literal notranslate"><span class="pre">FitSynthetic</span></code> class gets fed a <code class="docutils literal notranslate"><span class="pre">Spectrum</span></code> object and works with it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">star_example</span> <span class="o">=</span> <span class="n">Spectrum</span><span class="p">(</span><span class="n">file</span><span class="p">,</span><span class="mi">121</span><span class="p">)</span> <span class="c1">#initialize spectrum object for one of the stars </span>
+
+<span class="n">fit</span> <span class="o">=</span> <span class="n">FitSynthetic</span><span class="p">(</span><span class="n">template_file</span><span class="p">)</span> <span class="c1">#initialize fit synthetic with a file</span>
+<span class="n">fit</span><span class="o">.</span><span class="n">add_spectrum</span><span class="p">(</span><span class="n">star_example</span><span class="p">)</span> <span class="c1"># add the star spec</span>
+<span class="n">fit</span><span class="o">.</span><span class="n">match_continuum</span><span class="p">()</span> <span class="c1"># match the continuum </span>
+
+<span class="c1"># I can now ask for a model with any velocity or smmoothing</span>
+
+<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="o">-</span><span class="mi">400</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># And my Spectrum class has a handy chi2 function to compare itself to any input model </span>
+
+<span class="n">star_example</span><span class="o">.</span><span class="n">chi_squared</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above means the all the code you need to write to fit a velocity by minimizing chi2 looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">min_chi2</span><span class="p">(</span><span class="n">spectrum</span><span class="p">,</span><span class="n">template_file</span><span class="p">,</span><span class="n">v_grid</span><span class="p">):</span>
+    <span class="n">fit</span> <span class="o">=</span> <span class="n">FitSynthetic</span><span class="p">(</span><span class="n">template_file</span><span class="p">)</span>
+    <span class="n">fit</span><span class="o">.</span><span class="n">add_spectrum</span><span class="p">(</span><span class="n">spectrum</span><span class="p">)</span>
+    <span class="n">fit</span><span class="o">.</span><span class="n">match_continuum</span><span class="p">()</span>
+    <span class="n">store</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">v_grid</span><span class="p">():</span>
+        <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+        <span class="n">c2</span><span class="p">,</span><span class="n">c2r</span> <span class="o">=</span> <span class="n">spectrum</span><span class="o">.</span><span class="n">chi_squared</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">store</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c2r</span><span class="p">)</span>
+    <span class="n">minc2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">v_grid</span><span class="p">[</span><span class="n">minc2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, each state of each class has handy <code class="docutils literal notranslate"><span class="pre">plot</span></code> methods to plot up what’s being stored.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "a330"
+        },
+        kernelOptions: {
+            kernelName: "a330",
+            path: "./Lab5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'a330'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lab4/Lab4_solutions.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lab 4: Solutions</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../FinalProject/finalprojects.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Final Project Guidelines</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>
