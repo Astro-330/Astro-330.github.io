@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 4: Fitting a Model to Data &#8212; Astro 330 Course Book</title>
+    <title>Lab 7: Package Structure &#8212; Astro 330 Course Book</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -101,10 +101,38 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lab 5: Stellar Spectroscopy + Fitting Models to Data" href="../Lab5/Lab5.html" />
-    <link rel="prev" title="Lab 3: Building a Photometric Pipeline" href="../Lab3/Lab3.html" />
+    <link rel="next" title="Lab 1 Solutions" href="../Lab1/Lab1_solutions.html" />
+    <link rel="prev" title="Lab 6: Pandas" href="../Lab6/Lab6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -194,8 +222,8 @@
    Lab 3: Building a Photometric Pipeline
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4.html">
    Lab 4:  Fitting a Model to Data
   </a>
  </li>
@@ -209,8 +237,8 @@
    Lab 6: Pandas
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Lab7/Lab7.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lab 7: Package Structure
   </a>
  </li>
@@ -237,7 +265,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Lab4_solutions.html">
+  <a class="reference internal" href="../Lab4/Lab4_solutions.html">
    Lab 4: Solutions
   </a>
  </li>
@@ -328,7 +356,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Lab4/Lab4.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Lab7/Lab7.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -353,7 +381,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lab4/Lab4.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lab7/Lab7.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -376,44 +404,48 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-chi-2-fitting">
-   Part 1:
-   <span class="math notranslate nohighlight">
-    \(\chi^2\)
-   </span>
-   Fitting
+  <a class="reference internal nav-link" href="#problem-1-artpop">
+   Problem 1: Artpop
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-1">
-     Question 1
+    <a class="reference internal nav-link" href="#problem-1-1">
+     Problem 1.1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-2">
-     Question 2
+    <a class="reference internal nav-link" href="#problem-1-2">
+     Problem 1.2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-3">
-     Question 3
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-mcmc-fitting">
-   Part 2:   MCMC Fitting
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-4">
-     Question 4
+    <a class="reference internal nav-link" href="#problem-1-3">
+     Problem 1.3
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-5">
-     Question 5
+    <a class="reference internal nav-link" href="#problem-1-4">
+     Problem 1.4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-5">
+     Problem 1.5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-6">
+     Problem 1.6
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-7">
+     Problem 1.7
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bonus-problem-1">
+     Bonus Problem (+1)
     </a>
    </li>
   </ul>
@@ -429,68 +461,110 @@
         
               <div>
                 
-  <div class="section" id="lab-4-fitting-a-model-to-data">
-<h1>Lab 4:  Fitting a Model to Data<a class="headerlink" href="#lab-4-fitting-a-model-to-data" title="Permalink to this headline">¶</a></h1>
-<p>In this lab, we will begin to build various tools to fit a model to data.  The goal is to understand, implement and compare chi2 and MCMC fitting routines to fake data.    In Lab 5, we will apply these tools to real spectroscopic data from Keck / DEIMOS.</p>
-<p>The goals of the lab are:</p>
-<ol class="simple">
-<li><p>Use python modules to perform <span class="math notranslate nohighlight">\(\chi^2\)</span> fits on data</p></li>
-<li><p>Write and compare to your own <span class="math notranslate nohighlight">\(\chi^2\)</span> algorithm</p></li>
-<li><p>Explore sampling algorithms</p></li>
-<li><p>Write an MCMC algorithmm and compare to <span class="math notranslate nohighlight">\(\chi^2\)</span> results</p></li>
-</ol>
-<div class="section" id="part-1-chi-2-fitting">
-<h2>Part 1:   <span class="math notranslate nohighlight">\(\chi^2\)</span> Fitting<a class="headerlink" href="#part-1-chi-2-fitting" title="Permalink to this headline">¶</a></h2>
-<p>In this lab, we will largely follow two papers — one written by D.W. Hogg (NYU/CCA), Jo Bovy (U Toronto), and Dustin Lang (Perimeter), and the other by Hogg and Dan Foreman-Mackey (CCA).</p>
-<p>The first of these is accessible here:
-<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2010arXiv1008.4686H/abstract">https://ui.adsabs.harvard.edu/abs/2010arXiv1008.4686H/abstract</a></p>
-<div class="section" id="question-1">
-<h3>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h3>
-<p>Do Exercise 1 from Hogg+ (2010) using a standard python routine of your choice (e.g., <code class="docutils literal notranslate"><span class="pre">polyfit</span></code>, <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>, etc. The data (Table 1) are available in the A330 public page under Data Access as well as in your Git directories (as the file is small). As a note, you should <strong>remove the outlier points</strong> from this dataset as described in the instructions for Exercise 1 in the Hogg+ document. Please report your best fit values and errors on these values.  These should be very close to those in Figure 1 of the paper.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you are using np.polyfit, set the <code class="docutils literal notranslate"><span class="pre">cov='unscaled'</span></code> keyword in polyfit to have it return not only the fit coefficients, but also the full covariance matrix. The parameter uncertainties, assuming no off-axis covariance, are the square roots of the diagonal terms (of which for a linear fit there will be 2. You can pull the diagonal terms of a square array using <code class="docutils literal notranslate"><span class="pre">np.diag()</span></code>.</p>
-</div>
-</div>
-<div class="section" id="question-2">
-<h3>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h3>
-<p>Repeat the question above, however, this time write your own script to solve this problem by evaluating chi2 on a grid of m and b values. You should write a <code class="docutils literal notranslate"><span class="pre">chi2()</span></code> function that reads in 4 arguments <code class="docutils literal notranslate"><span class="pre">m,b,data_x,data_y,unc_y</span></code> (though you can call them what you want). You should then write a <code class="docutils literal notranslate"><span class="pre">fit_line()</span></code> or <code class="docutils literal notranslate"><span class="pre">minimize_chi2()</span></code> function that will, across your grid of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> values, evaluate chi2 using your <code class="docutils literal notranslate"><span class="pre">chi2()</span></code> function. You may use the values above to guide your grid, making sure the grid spans at least 2-sigma in both directions.</p>
-<p>Plot the chi2 values for all grid points. We suggest creating an array, <code class="docutils literal notranslate"><span class="pre">chi2_image</span></code>, which is a shape characterized by the lengthd of your <code class="docutils literal notranslate"><span class="pre">m_grid</span></code> and <code class="docutils literal notranslate"><span class="pre">b_grid</span></code>s. Then, as you double-for-loop over <code class="docutils literal notranslate"><span class="pre">m</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> values and calculate <code class="docutils literal notranslate"><span class="pre">chi2</span></code>, you can set <code class="docutils literal notranslate"><span class="pre">chi2_image[i,j]</span></code> to the output chi2 value.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Remember, <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> values won’t index your array directly. So you’ll want to loop via something like <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i,m</span> <span class="pre">in</span> <span class="pre">enumerate(m_grid):</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">j,b</span> <span class="pre">in</span> <span class="pre">enumerate(b_grid):</span></code> if you’re going to do that.</p>
-</div>
-<p>While chi2 fitting is reliable for determining the best-fit values, it is not always easy to estimate errors on these parameters. For example, in the above example, we had to explicitly initialize a grid of parameters to fit on, and as soon as this grid has to get finely spaced, or moves into any number of dimensions &gt; 2, everything gets much more computationally expensive to calculate, and understanding the chi-squared “surface” in multi-D becomes difficult. Additionally, we had to narrow in our range of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> values to get it to work, but there may actually be a better solution elsewhere in parameter space that we’re not accessing.</p>
-</div>
-<div class="section" id="question-3">
-<h3>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h3>
-<p>Determine the best fit parameters and one-sigma errors from Question 1.2.  The best-fit value can either be the minimum chi2 value or (bonus) by fitting a function to your chi2 values and interpolating the best fit.</p>
-<p>Determine the 1-sigma errors on your best-fit parameters. by noting the surface where chi2 = chi2 +2.3</p>
-</div>
-</div>
-<div class="section" id="part-2-mcmc-fitting">
-<h2>Part 2:   MCMC Fitting<a class="headerlink" href="#part-2-mcmc-fitting" title="Permalink to this headline">¶</a></h2>
-<p>While chi2 is a good method for determining best-fitting values, it less reliable in determining errors on those parameters.   If your science question requires good error estimates and/or if your model contains more than a few parameters, Monte Carlo (MCMC) is a popular tool.</p>
-<p><a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2018ApJS..236...11H/abstract">https://ui.adsabs.harvard.edu/abs/2018ApJS..236…11H/abstract</a></p>
-<p>You will need to install two packages for this work inside of your A330 environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">emcee</span>
-<span class="n">conda</span> <span class="n">install</span> <span class="n">corner</span>
+  <div class="section" id="lab-7-package-structure">
+<h1>Lab 7: Package Structure<a class="headerlink" href="#lab-7-package-structure" title="Permalink to this headline">¶</a></h1>
+<p>In this lab, we’re going to be doing less coding, and more exploration of how projects/packages are organized. We’ll look at several packages and evaluate how the developer designed the UI (user interface) for the code.</p>
+<div class="section" id="problem-1-artpop">
+<h2>Problem 1: Artpop<a class="headerlink" href="#problem-1-artpop" title="Permalink to this headline">¶</a></h2>
+<p>Artpop (co-written by Johnny Greco and Shany Danieli) is a package that lets you simulate images of a galaxy or stellar population under realistic observing conditions. There are several pieces that go into this, from the creation of a stellar population from isochrones, spatially distributing those stars, and the “simulating” the obsevation under different conditions and bands.</p>
+<div class="section" id="problem-1-1">
+<h3>Problem 1.1<a class="headerlink" href="#problem-1-1" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to the <a class="reference external" href="https://artpop.readthedocs.io/en/latest/index.html">documentation</a> for Artpop. Follow the instructions to install it in your a330 environment using the normal pip install.</p>
+<p>Next, go to the <strong>Quick Start</strong> Tutorial, and follow along with it in your own notebook. Write a function that reads in an artpop <code class="docutils literal notranslate"><span class="pre">src</span></code> object and does the imaging and observing steps shown (we’ll leave those alone). Then, create 3-5 sources with different stellar population inputs than the example provided and plot them up. We’ll give a bonus point for the most interesting looking galaxy created.</p>
+<p>Below, I’ve shown an output I made.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="kn">from</span> <span class="nn">astropy.visualization</span> <span class="kn">import</span> <span class="n">make_lupton_rgb</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># Project import</span>
+<span class="kn">import</span> <span class="nn">artpop</span>
+
+<span class="c1"># Code here</span>
 </pre></div>
 </div>
-<div class="section" id="question-4">
-<h3>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h3>
-<p>Read Hogg et al. 2018 and do Problems 1-4.</p>
-<p>For Problem 1, you are welcome to explore just the mean and varience.</p>
-<p>For Problem 2, you have no choice.  Use python :)</p>
-<p>For Problem 4, I found it easier to do 4b first, then 4a.</p>
 </div>
-<div class="section" id="question-5">
-<h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h3>
-<p>While the above problems should give you a sense for how MCMC works, most reseach problems use standard packages to run MCMC.  MCMC packages in astronomy include emcee, MultiNest,  Dynasty.</p>
-<p>Write an MCMC to evaluate the data in Question 1+2 above using emcee.   We suggest checking out the guide to MCMC here:</p>
-<p><a class="reference external" href="https://prappleizer.github.io/Tutorials/MCMC/MCMC_Tutorial.html">https://prappleizer.github.io/Tutorials/MCMC/MCMC_Tutorial.html</a></p>
-<p>We suggest 20 walkers and 2000 steps for your sampler.    Plot both the sampler chains and a corner plot of the results.</p>
-<p>Compare the best fit values for m and b from the chi2 and MCMC, as well as their errors.</p>
+</div>
+</div>
+<div class="section" id="problem-1-2">
+<h3>Problem 1.2<a class="headerlink" href="#problem-1-2" title="Permalink to this headline">¶</a></h3>
+<p>Returning to the home page, look at the list of Modules at the bottom. These are the outermost modules of the package. This is easier visualized by looking at the <a class="reference external" href="https://github.com/ArtificialStellarPopulations/ArtPop">Github Repo</a> directly.</p>
+<p>Go to the repo and click into the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file. You’ll see there’s a bit more code there than in our in-class example, but the actual setup block looks similar, with some additional dependancies listed.</p>
+<p>In the cell below, write a setup block based on the one from class / the one here for artpop, but for YOUR final project idea. You won’t know your dependancies and such yet, but fill in whatever you can.</p>
+</div>
+<div class="section" id="problem-1-3">
+<h3>Problem 1.3<a class="headerlink" href="#problem-1-3" title="Permalink to this headline">¶</a></h3>
+<p>Now click into the folder labeled <code class="docutils literal notranslate"><span class="pre">src/artpop</span></code>. This is where the actual source code for artpop is stored. You’ll see several folders and several files, along with the all important <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. Johnny and Shany have elected to have some of the classes/functions directly as files here, while some others are inside submodules with a few files and their own init files.</p>
+<p>Click into the <code class="docutils literal notranslate"><span class="pre">image</span></code> folder and copy/paste below the import statements listed in that submodule’s init py. Based on the form of imports there, how would the user import the <code class="docutils literal notranslate"><span class="pre">ArtImager</span></code> class from <code class="docutils literal notranslate"><span class="pre">imager.py</span></code>? Write out a valid import that a user could use.</p>
+<p>Next, go back to the outer directory (<code class="docutils literal notranslate"><span class="pre">src/artpop</span></code>) and look at the init file there. This one is a bit more complicated, but only the imports at the bottom matter to us. Based on THOSE imports, is <code class="docutils literal notranslate"><span class="pre">ArtImager</span></code> (stored at <code class="docutils literal notranslate"><span class="pre">artpop.image.imager.ArtImager</span></code>, formally) directly importable as <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">artpop</span> <span class="pre">import</span> <span class="pre">ArtImager</span></code>? Why or why not?</p>
+</div>
+<div class="section" id="problem-1-4">
+<h3>Problem 1.4<a class="headerlink" href="#problem-1-4" title="Permalink to this headline">¶</a></h3>
+<p>Based on your answer above and looking back at the lecture slides, list 2 pros and 2 cons of using the particular import schema Artpop uses in its <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> files.</p>
+</div>
+<div class="section" id="problem-1-5">
+<h3>Problem 1.5<a class="headerlink" href="#problem-1-5" title="Permalink to this headline">¶</a></h3>
+<p>ArtPop has some tests set up in the <code class="docutils literal notranslate"><span class="pre">/tests</span></code> folder. Click into it, and click on <code class="docutils literal notranslate"><span class="pre">test_space.py</span></code>. This suite of tests is set up to ensure the spatial star distributions are being created correctly by the code.</p>
+<p>The test consists of one class with three methods. Explain what each is doing in a sentence. Then pick one of the latter two to copy below and explain in more detail what it is checking and how. You may find the documentation for <a class="reference external" href="https://docs.python.org/3/library/unittest.html">unittest</a> helpful.</p>
+<p>Unit testing is not required for your final project, but having a few tests is highly recommended (and will be worth some bonus credit).</p>
+</div>
+<div class="section" id="problem-1-6">
+<h3>Problem 1.6<a class="headerlink" href="#problem-1-6" title="Permalink to this headline">¶</a></h3>
+<p>In class, we learned that in an <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>, you can say <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.foo</span> <span class="pre">import</span> <span class="pre">*</span></code> to import all classes/functions/variables from that script. It turns out, we can actually get a bit more control over what gets imported. In the Artpop Github, navigate into <code class="docutils literal notranslate"><span class="pre">/image/imager.py</span></code>. Near the top, you’ll see the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;IdealObservation&#39;</span><span class="p">,</span> <span class="s1">&#39;ArtObservation&#39;</span><span class="p">,</span> <span class="s1">&#39;IdealImager&#39;</span><span class="p">,</span> <span class="s1">&#39;ArtImager&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">__all__</span></code> command is special, and actually defines “all” the things that are going to be seen by the <code class="docutils literal notranslate"><span class="pre">*</span></code> import statement above when pulling from, e.g., <code class="docutils literal notranslate"><span class="pre">imager.py</span></code>. If an <code class="docutils literal notranslate"><span class="pre">__all__</span></code> is defined, only the things listed will by imported by default.</p>
+<p>To practice this, go ahead and find your <code class="docutils literal notranslate"><span class="pre">exampy</span></code> package from lecture (or whatever you called it), and in the <code class="docutils literal notranslate"><span class="pre">imaging.py</span></code> file where you pasted <code class="docutils literal notranslate"><span class="pre">implot()</span></code>, add an <code class="docutils literal notranslate"><span class="pre">__all__</span></code> as shown in Artpop that lists it.</p>
+<p>At the end of this lab, you’ll copy your package (the outermost directory) into your github repo for this assignment so we can go look at it.</p>
+</div>
+<div class="section" id="problem-1-7">
+<h3>Problem 1.7<a class="headerlink" href="#problem-1-7" title="Permalink to this headline">¶</a></h3>
+<p>Using the provided documentation and tutorials, create a galaxy with artpop that has stellar populations similar to question 1.1 above….. but in the shape of a ring!</p>
+<p>All the information and pieces needed to do this are there in the various docs on Artpop’s page. As you search for what you need, think about the structure of the tutorials and guides in the context of your own upcoming projects.</p>
+<p>After creating your “ring galaxy” and displaying it, answer the following: What was one helpful and one confusing thing about the way artpop’s docs are laid out? Is there anything you would change or add?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your ring should look something like this </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab7_19_0.png" src="../_images/Lab7_19_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="bonus-problem-1">
+<h3>Bonus Problem (+1)<a class="headerlink" href="#bonus-problem-1" title="Permalink to this headline">¶</a></h3>
+<p>Following more of the tutorials present, inject your ring galaxy into a real astronomical image background.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s the blank sky we&#39;ll be injecting into </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab7_22_0.png" src="../_images/Lab7_22_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># OOOoooooOOOhhhhh, Ring Galaxyyyyyy!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab7_23_0.png" src="../_images/Lab7_23_0.png" />
+</div>
+</div>
+<p>Tada!</p>
 </div>
 </div>
 </div>
@@ -508,7 +582,7 @@
         },
         kernelOptions: {
             kernelName: "a330",
-            path: "./Lab4"
+            path: "./Lab7"
         },
         predefinedOutput: true
     }
@@ -525,19 +599,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../Lab3/Lab3.html" title="previous page">
+        <a class="left-prev" href="../Lab6/Lab6.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lab 3: Building a Photometric Pipeline</p>
+                <p class="prevnext-title">Lab 6: Pandas</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../Lab5/Lab5.html" title="next page">
+        <a class="right-next" href="../Lab1/Lab1_solutions.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lab 5: Stellar Spectroscopy + Fitting Models to Data</p>
+                <p class="prevnext-title">Lab 1 Solutions</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
