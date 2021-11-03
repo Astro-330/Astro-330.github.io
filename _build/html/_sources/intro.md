@@ -13,10 +13,14 @@ This course is intended to build on the introductory programming experience stud
 ## Course Format
 The course consists of (1) weekly Python lectures (2) in-depth tutorial/workshop days during which students work together on programming assignments, and (3) seminar lectures by invited outside experts who are pushing the forefront of Python in Astronomy.  There are weekly coding assignments and a final capstone project. We found that several of the assignments available on the left are best given 2 weeks (with 2 in-class work days) to complete, but this will depend on the level of the students. 
 
+### Guest Speakers 
+
 We are grateful to the speakers who met with our students this semester - below is a running list, including some of the packages they are associated with:
 - Prof. X Prochaska (UCSC; `pypeit`)
 - Prof. David Hogg (NYU/Flatiron CCA; `emcee`)
 - Shany Danieli (IAS/Princeton; `artpop`)
+- Yao-Yuan Mao (Rutgers;`adstex`)
+- Adrian Price-Whelan (CCA/Flatiron; `gala`,`astropy`)
 
 
 ## Lab Assignments & Github
@@ -33,7 +37,7 @@ We graded the course as follows:
 - 5%   Participation
 
 ## Capstone Projects
-We will soon post a document here detailing the components of the capstone project, which is completed in stages and has rubrics associated with each component. Ultimately the final project is designed as an opportunity for students to write a “substantial” piece of code that leverages the skills they have learned in the course. Their goal is to create a package which 
+The page linked at left details the components of the capstone project, which is completed in stages and has rubrics associated with each component. Ultimately the final project is designed as an opportunity for students to write a “substantial” piece of code that leverages the skills they have learned in the course. Their goal is to create a package which 
 - Is stored as functions and classes  in python modules, and can thus
 - Be imported into other code for general use, is
 - Installable via `pip`, allowing functions/classes to be imported from anywhere on the system, and is 
