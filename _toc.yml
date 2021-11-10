@@ -20,6 +20,7 @@ parts:
     - file: Lab5/Lab5
     - file: Lab6/Lab6
     - file: Lab7/Lab7
+    - file: Lab8/Lab8
 
   - caption: Lab Solutions 
     chapters:
