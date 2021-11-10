@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 8: Playing with Interactivity &#8212; Astro 330 Course Book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lab 1 Solutions" href="../Lab1/Lab1_solutions.html" />
+    <link rel="prev" title="Lab 7: Package Structure" href="../Lab7/Lab7.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/a330_banner.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Astro 330 Course Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Astro 330 Course Book: Scientific Computing in Astrophysics
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture1/Lecture1.html">
+   1. Astronomical Imaging &amp; Functional Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture2/Lecture2.html">
+   2. Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture4/Lecture4.html">
+   4. Sampling with MCMC
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture6/Pandas.html">
+   6. Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture7/Lecture7.html">
+   7. Building Installable Packages
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lecture8/Lecture8.html">
+   8. Interactivity in Python
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1.html">
+   Lab 1: Overview, Review, and Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2.html">
+   Lab 2: Astronomical Imaging I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3.html">
+   Lab 3: Building a Photometric Pipeline
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4.html">
+   Lab 4:  Fitting a Model to Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab5/Lab5.html">
+   Lab 5: Stellar Spectroscopy + Fitting Models to Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab6/Lab6.html">
+   Lab 6: Pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab7/Lab7.html">
+   Lab 7: Package Structure
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lab 8: Playing with Interactivity
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lab Solutions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab1/Lab1_solutions.html">
+   Lab 1 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab2/Lab2_solutions.html">
+   Lab 2 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab3/Lab3_solutions.html">
+   Lab 3 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab4/Lab4_solutions.html">
+   Lab 4: Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Lab5/Lab5_solutions.html">
+   Lab 5 Solutions
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Final Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../FinalProject/finalprojects.html">
+   Final Project Guidelines
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Quick Tips
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/TimingCode.html">
+   Timing your code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/Meshgrid.html">
+   Meshgrid
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../QuickTips/MetropolisHastingsClass.html">
+   An Object Oriented Metropolis Hastings
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Data Access
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data_access.html">
+   Data Access
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lab8/Lab8.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Lab8/Lab8.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-1-widgets-with-matplotlib">
+   Problem 1: Widgets with Matplotlib
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-1">
+     Problem 1.1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-2">
+     Problem 1.2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-3">
+     Problem 1.3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-4">
+     Problem 1.4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-1-5">
+     Problem 1.5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bonus-problem">
+     Bonus Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bonus-problem-2-3">
+     Bonus Problem 2 (+3)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lab-8-playing-with-interactivity">
+<h1>Lab 8: Playing with Interactivity<a class="headerlink" href="#lab-8-playing-with-interactivity" title="Permalink to this headline">¶</a></h1>
+<p>In this lab, we’re going to play around with interactive elements, following from Monday’s lecture. This lab shouldn’t take you longer than class to complete, as you should be in the process of really getting into the depths of your final projects this week (and onward).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This lab will be a little different than previous ones. Because interactivity often requires standalone scripts, you won’t be able to do everything inside a notebook. I’ll be using this notebook to provide code snippets, but you’ll ultimately be working in <code class="docutils literal notranslate"><span class="pre">.py</span></code> files for this assignment.</p>
+</div>
+<div class="section" id="problem-1-widgets-with-matplotlib">
+<h2>Problem 1: Widgets with Matplotlib<a class="headerlink" href="#problem-1-widgets-with-matplotlib" title="Permalink to this headline">¶</a></h2>
+<p>I mentioned in lecture that <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> has a widgets feature, that allows for sliders, text entry, and buttons. Of all options, this is one of the clunkiest, and your “GUI” (the program people use) will actually be a glorified plot. But for simple applications, this method of making guis requires the least amount of “new python/libraries” to learn.</p>
+<p>Below, I’ve shown a picture of a GUI I made in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> for a quick D&amp;D related program:</p>
+<img src='./monsterhp_gui.png' width='400' /><p>As you can see at the top, this is a <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> <code class="docutils literal notranslate"><span class="pre">Figure</span></code> object. But it <em>does</em> have the functionality of a GUI, with text entry fields and buttons.</p>
+<p>The downside of the above is that every element (button, field, etc) is specified in <em>figure coordinates</em>, and took a lot of fiddling to get placed properly. HTML-based templates don’t have this problem.</p>
+<p>We won’t be doing anything quite this complex in this lab, but it’s useful to know what’s possible.</p>
+<div class="section" id="problem-1-1">
+<h3>Problem 1.1<a class="headerlink" href="#problem-1-1" title="Permalink to this headline">¶</a></h3>
+<p>In this example, we’ll add sliders to a plot that set the <code class="docutils literal notranslate"><span class="pre">vmin</span></code> and <code class="docutils literal notranslate"><span class="pre">vmax</span></code> parameters of a <code class="docutils literal notranslate"><span class="pre">plt.imshow()</span></code> command. This will let us dynamically play with the scaling of a plotted image. Because the “raw” value of these parameters can vary widely from image to image, a more robust two sliders would be “mean” (the centerpoint of the range), and “scale” (the multiplier on the standard deviation of the image to apply). This should be familiar from lab 2.</p>
+<p>The building blocks of an interactive matplotlib plot are the following</p>
+<ul class="simple">
+<li><p>an initial plot</p></li>
+<li><p>a Button or Slider object, which is attached to an axis on the figure</p></li>
+<li><p>an “update” function, provided to the Button/Slider. Running the <code class="docutils literal notranslate"><span class="pre">slider.on_changed(update)</span></code> executes the update function when the slider/button is interacted with.</p></li>
+<li><p>the update function’s interior usually has plotting commands unlike those we are used to. Instead of remaking new figures, we’re going to overwrite the data being plotted in the figure (see below)</p></li>
+</ul>
+<p><strong>Start off by making a script which loads any <code class="docutils literal notranslate"><span class="pre">FITS</span></code> image (one of your own or one we’ve used in class), and uses your <code class="docutils literal notranslate"><span class="pre">implot</span></code> to plot it in a window when the code is run.</strong>*</p>
+<p>If you followed along last Monday’s lecture, you should be able to import your function from the example package you installed!</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>When in scripts, you need a <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> as the last line of your plotting code to get it to show up, which is not an issue in jupyter notebooks. You’ll also want to set <code class="docutils literal notranslate"><span class="pre">plt.ion()</span></code> at the top of your code (under the imports).</p>
+</div>
+</div>
+<div class="section" id="problem-1-2">
+<h3>Problem 1.2<a class="headerlink" href="#problem-1-2" title="Permalink to this headline">¶</a></h3>
+<p>Great, we now have code that plots an image in a pop-up window.</p>
+<p>We now need to add an <code class="docutils literal notranslate"><span class="pre">axes</span></code> object to the plot, which is going to contain our axis. There are about a million ways to do this.</p>
+<p>In this case, we are going to add two commands:</p>
+<ul class="simple">
+<li><p>one tells the plot to make a little bit of extra space on the right</p></li>
+<li><p>the second makes the axis</p></li>
+</ul>
+<p>This is a little complicated, so I’m going to provide this code. Do try to figure it out though! It also makes sure that the new axes are the same height as our image.</p>
+<p>You should get something like what I show below – two tall skinny axes next to your image.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You&#39;ll need this import</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span><span class="p">,</span> <span class="n">axes_size</span>
+
+<span class="c1">#This block assumes you have fig, ax defined, which come from setting fig, ax to your implot command.</span>
+
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">aspect</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1">#aspect ratio of the slider (tall and skinny)</span>
+<span class="n">pad_fraction</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># padding</span>
+<span class="n">width</span> <span class="o">=</span> <span class="n">axes_size</span><span class="o">.</span><span class="n">AxesY</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.</span><span class="o">/</span><span class="n">aspect</span><span class="p">)</span> <span class="c1"># this will be the width of each slider</span>
+<span class="n">pad</span> <span class="o">=</span> <span class="n">axes_size</span><span class="o">.</span><span class="n">Fraction</span><span class="p">(</span><span class="n">pad_fraction</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span> <span class="c1"># this is the true padding in fig coords</span>
+<span class="n">mean_ax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="n">pad</span><span class="p">)</span> <span class="c1"># add axes to the right</span>
+<span class="n">scale_ax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">width</span><span class="p">,</span><span class="n">pad</span><span class="o">=</span><span class="n">pad</span><span class="o">+</span><span class="n">width</span><span class="p">)</span> <span class="c1">#add axes to the right</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Lab8_5_0.png" src="../_images/Lab8_5_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="problem-1-3">
+<h3>Problem 1.3<a class="headerlink" href="#problem-1-3" title="Permalink to this headline">¶</a></h3>
+<p>We are going to need to access the <code class="docutils literal notranslate"><span class="pre">matplotlib.AxesImage</span></code> object currently sitting inside <code class="docutils literal notranslate"><span class="pre">ax</span></code> when returned by <code class="docutils literal notranslate"><span class="pre">implot</span></code>. I’m providing this line for you – add it right below your <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">ax</span></code> call.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_images</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#this retrieves the image objects inside ax. There&#39;s only one, so we&#39;ll grab the 0th index.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="problem-1-4">
+<h3>Problem 1.4<a class="headerlink" href="#problem-1-4" title="Permalink to this headline">¶</a></h3>
+<p>We now can move on to making the sliders! The code for making sliders and assigning them to pre-existing axes is pretty simple. I’m providing the code to do this for the ‘mean’ axis below – copy it and modify it to make it work for the scale axis as well.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You’ll need some additional imports: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">matplotlib.widgets</span> <span class="pre">import</span> <span class="pre">Slider</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">mean_ax</span><span class="p">,</span> 
+              <span class="n">label</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> 
+              <span class="n">valmin</span><span class="o">=-</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">im</span><span class="p">),</span> 
+              <span class="n">valmax</span><span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">im</span><span class="p">),</span> 
+              <span class="n">valinit</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">im</span><span class="p">),</span> 
+              <span class="n">valstep</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+              <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">)</span>
+
+<span class="c1">## Add one for scale </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the cell above, I’ve had to set a max and min value for this slider. I chose one tenth the mean of the image, and 10x. You can play around with this as you wish.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you assign sliders to the axes, the tick labels will automatically dissapear. You should now have two movable sliders… they just don’t change anything yet.</p>
+</div>
+</div>
+<div class="section" id="problem-1-5">
+<h3>Problem 1.5<a class="headerlink" href="#problem-1-5" title="Permalink to this headline">¶</a></h3>
+<p>The final piece of the puzzle is writing the <code class="docutils literal notranslate"><span class="pre">update()</span></code> function. This function gets triggered when one of our sliders updates.</p>
+<p>The way we <strong>modify</strong> what’s going on on our plot without <strong>replotting</strong> it is via <code class="docutils literal notranslate"><span class="pre">image.set_clim(vmin,vmax)</span></code>, followed by <code class="docutils literal notranslate"><span class="pre">fig.canvas.draw()</span></code>.</p>
+<p>When working with interactive changes and animations in matplotlib, we never want to create thousands of figures as a slider changes, we just want to re-draw the figure we have. The above lines set the min/max limits as desired, and the canvas draw command redraws the figure.</p>
+<p>You’ll need to write an update function that carries these two commands out. But inside, it needs to determine what <code class="docutils literal notranslate"><span class="pre">vmin</span></code> and <code class="docutils literal notranslate"><span class="pre">vmax</span></code> should be. Luckily, we know this: it’s whatever the mean of the image is times the “mean” slider value, plus or minus the standard deviation of the image times the “scale” slider value. We can access the value of each slider via <code class="docutils literal notranslate"><span class="pre">mean.val</span></code> and <code class="docutils literal notranslate"><span class="pre">scale.val</span></code>. Thus, our update function doesn’t need any inputs, it will just read the slider values from the global namespace (marginally bad practice but it’s fine…)</p>
+<p>Implement your <code class="docutils literal notranslate"><span class="pre">update()</span></code> function.</p>
+<p>Then, add the following lines:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add update function </span>
+
+
+<span class="n">mean</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+<span class="n">scale</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(Assuming you named your second slider <code class="docutils literal notranslate"><span class="pre">scale</span></code>.)</p>
+<p>That’s it! Once you run this, you should be able to change both the mean and scale sliders and see how this dynamically changes the details you see in the images!</p>
+<p>Below is an image of what my final “plot/app” looks like:</p>
+<img src="final_look.png" width="400"/>
+</div>
+<div class="section" id="bonus-problem">
+<h3>Bonus Problem<a class="headerlink" href="#bonus-problem" title="Permalink to this headline">¶</a></h3>
+<p>You may know that tools like <code class="docutils literal notranslate"><span class="pre">DS9</span></code> allow you to click buttons that change the scaling from linear to log or zscale. You can also choose from several colormaps.</p>
+<p>These features are <em>very easy</em> to add to your code above! You will import <code class="docutils literal notranslate"><span class="pre">Button</span></code> from matplotlibs widgets (where <code class="docutils literal notranslate"><span class="pre">Slider</span></code> came from), and add buttons for some of these changes. Then just add functions for the <code class="docutils literal notranslate"><span class="pre">on_clicked</span></code> method of each button, which use matplotlib commands like <code class="docutils literal notranslate"><span class="pre">image.set_cmap()</span></code> to set the relevant parameter and then redraw the canvas.</p>
+<p>Choose from the following (or add up to 2 of your own) features to add to your code. For each one you implement, we’ll give 0.5 bonus points on the lab.</p>
+<ul class="simple">
+<li><p>reverse cmap button (changes the colormap to the <code class="docutils literal notranslate"><span class="pre">_r</span></code> version or vice versa)</p></li>
+<li><p>set cmap buttons (add some buttons for several well known cmaps, like gray, plasma, viridis, etc)</p></li>
+<li><p>set scaling (little harder, but use something like <code class="docutils literal notranslate"><span class="pre">LogNorm()</span></code> to allow a button press to set the actual mapping of counts to something not linear. We suggest log as the easiest, but plenty more exist to play with. <code class="docutils literal notranslate"><span class="pre">astropy</span></code> has some (even zscale!) implemented (<a class="reference external" href="https://docs.astropy.org/en/stable/api/astropy.visualization.ZScaleInterval.html">see here</a>).</p></li>
+</ul>
+</div>
+<div class="section" id="bonus-problem-2-3">
+<h3>Bonus Problem 2 (+3)<a class="headerlink" href="#bonus-problem-2-3" title="Permalink to this headline">¶</a></h3>
+<p>If you make a snazzy version of this, package it up! Someone should be able to, e.g.,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ds9LikePlotting</span> <span class="kn">import</span> <span class="n">ds9plot</span> 
+
+<span class="n">ds9plot</span><span class="p">(</span><span class="n">some_image</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>after which a snazzy plot comes up, with sliders and buttons that give (some) ds9-like functionality, with an initial view that’s already good (thanks to our awesome <code class="docutils literal notranslate"><span class="pre">implot</span></code> function).</p>
+<p>This question is great practice for your final projects….</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "a330"
+        },
+        kernelOptions: {
+            kernelName: "a330",
+            path: "./Lab8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'a330'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../Lab7/Lab7.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lab 7: Package Structure</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Lab1/Lab1_solutions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lab 1 Solutions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Imad Pasha & Marla Geha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+    
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+
+    
+  </body>
+</html>
