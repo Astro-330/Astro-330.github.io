@@ -7,7 +7,7 @@ Your final project is an opportunity for you to write a “substantial” piece 
 
 You may work **alone** or with **one (1) partner**.  If you work with a partner, we expect to see ~50% contribution from both of you, and will confirm that this is the case via questioning, code reviews, and github commits. We also expect the project to be **more substantive** than a project worked on alone.
 
-## Project Requirments
+## Project Requirements
 
 The following should be considered base requirements, but are subject to modification if you talk to the instructors and provide rationale for why such a change is warranted. 
 
