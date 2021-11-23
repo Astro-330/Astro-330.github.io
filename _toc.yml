@@ -29,6 +29,7 @@ parts:
       - file: Lab3/Lab3_solutions
       - file: Lab4/Lab4_solutions
       - file: Lab5/Lab5_solutions
+      - file: Lab6/Lab6_solutions
 
   - caption: Final Projects
     chapters:
