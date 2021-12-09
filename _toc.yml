@@ -2,6 +2,9 @@ format: jb-book
 root: intro
 
 parts:
+  - caption: Course Overview
+    chapters:
+    - file: ClassOverview
   - caption: Lectures
     chapters:
     - file: Lecture1/Lecture1
